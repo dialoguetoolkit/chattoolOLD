@@ -5,17 +5,6 @@
     
   </head>
   <body>
-    does this work?
-    <nav>
-      <a href="/">Home</a>
-      <a href="/blog/">Blog</a>
-    </nav>
-    <h1>{{ page.title }}</h1>
-    <section>
-      {{ content }}
-    </section>
-    <footer>
-      &copy; to me
-    </footer>
+      BODY
   </body>
 </html>

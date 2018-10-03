@@ -1,0 +1,21 @@
+6890|Canada
+14328|ireland
+16625|france
+21218|germany
+26578|belgium
+30297|spain
+35656|russia
+44953|romania
+61250|australia
+82468|the netherlands
+84984|holland
+109484|norway
+112437|finland
+114187|sweden
+156297|guatamala
+167890|colombia
+185828|haiti
+203875|scotland
+205953|wales
+266109|afghanistan
+275406|israel

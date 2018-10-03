@@ -1,0 +1,4 @@
+diet.task.mazegame.JSetupFrameEventHandler
+diet.task.mazegame.JSetupMazeSquareButtonHandler2
+diet.task.mazegame.JSetupMazeSquareButtonHandler1
+diet.task.mazegame.JSetupFrame

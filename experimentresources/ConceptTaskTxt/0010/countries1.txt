@@ -1,0 +1,34 @@
+4593|Russia
+6453|Spain
+11375|United Kingdom
+15203|Belguim
+19687|Indonesia
+26140|Cyprus
+27781|China
+29968|Japan
+36312|France
+48781|Netherlands
+51406|Mexico
+55343|Portugal
+66281|Mexico
+98984|Urugwai
+102703|Germany
+105656|Taiwan
+113203|Poland
+116156|Lithuania
+118781|Latvia
+124031|Serbia 
+129718|Uzbekistan
+136718|Kazakhstan
+142953|Armenia
+153671|UAE
+167343|Trinidad and Tabago
+172921|Nigeria
+190968|Scotland
+205187|Austria
+212406|Azerbaijan
+220500|Turkmenistan
+230671|Greece
+235812|Iran
+252000|Peru
+285031|Switzerland

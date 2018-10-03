@@ -1,0 +1,40 @@
+5156|japan
+6468|brazil
+7234|uk
+8437|england
+9531|scotland
+10843|ireland
+11500|ales
+13031|australia
+21125|czechoslovakia
+25390|sri lanka
+26703|india
+28671|china
+30640|nepal
+31734|tibet
+43875|easter island?
+46171|mexico
+48031|peru
+54046|quatemela
+55906|belize
+68921|thailand
+69578|burma
+72968|camobida
+75812|vietnam
+76687|laos
+87843|greenaldn
+90906|*land
+96265|spain?
+97687|france?
+99000|germany?
+101953|holland?
+114093|afghanistan
+118906|pakistan
+151390|antartica
+154406|artcic
+191312|portugal
+192515|reece
+193937|italy
+209687|russia?
+224453|new zealand
+239656|tonga

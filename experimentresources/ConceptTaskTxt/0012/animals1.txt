@@ -1,0 +1,33 @@
+10062|lion
+11922|tiger
+15093|seal
+19140|wolf
+27890|cart
+28656|dog
+31609|blue whale
+36312|great white shark
+40797|rhino
+44187|lynx
+57640|kangaroo
+64312|zebra
+72078|goat
+78203|tuna
+79843|cod
+81812|salmon
+83015|trout
+114843|axalotyl
+128515|moose
+133218|brown bear
+135187|black bear
+145578|polar bear
+150390|panda
+165047|python
+166468|cobra
+171609|tarantula
+189000|cockroach
+219406|spider monkey
+224547|mouse
+234062|antelope
+239859|anteater
+245328|king penguin
+274859|panther

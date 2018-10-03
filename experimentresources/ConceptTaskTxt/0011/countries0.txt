@@ -1,0 +1,50 @@
+5031|usa
+6890|canada
+8203|mexico
+10390|panama
+17718|england
+19906|italy
+22531|switzerland
+24062|china
+24937|japan
+26359|thailand
+27343|tibet
+34343|belgium
+35656|turkey
+38609|germany
+45937|czech republic
+48343|croatia
+57750|austria
+78531|wheres amsterdam
+86406|denmark
+89140|chad
+90781|south africa
+93187|egypt
+95484|morocco
+99531|nigeria
+101390|algeria
+116703|iceland#
+118562|greenland
+147547|brazil
+148531|chile
+149625|argentina
+162203|nicaragua
+165156|jamaica
+167343|st thomas
+168984|st croix
+172156|puerto rico
+180031|dominican republic
+184515|st maarten
+196765|antigua
+237453|russia
+245875|poland
+254515|lithuania
+257140|lebanon
+259656|saudi arabia
+261515|iraq
+262500|iran
+272672|kuwait
+281203|jordan
+291375|yemen
+293125|uganda
+297828|kenya

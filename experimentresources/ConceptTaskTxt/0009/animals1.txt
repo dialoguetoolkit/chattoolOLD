@@ -1,0 +1,28 @@
+15203|tiger
+24063|polar bear
+25922|panda
+31063|dolphin
+39485|lion
+44407|guinea-pig
+57313|eagle
+64532|rabbit
+68688|bumble bee
+73172|honey bee
+86844|iberian cat
+102922|lemur
+105547|camel
+110907|blue whale
+126985|parrot
+135844|salmon
+147547|grasshopper
+157391|fish
+198516|otter
+221922|anaconda
+226078|viper
+246203|skunk
+263922|pigeons
+277266|cow
+280766|goat
+290172|giraffe
+293125|hippo
+298375|rhino

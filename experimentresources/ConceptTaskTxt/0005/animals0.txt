@@ -1,0 +1,29 @@
+3281|Sheep
+4265|cows
+6125|cats
+7219|dogs
+8859|mice
+15422|otter
+23406|beaver
+26031|yak
+31500|anteater
+34562|lynx
+46484|meerkat
+57969|rat
+65953|panther
+75359|guineau pig
+85094|fish (of various types)
+90672|ostrich
+93406|eagle
+100187|penguin
+106969|(polar) bear
+110359|seal
+112000|walrus
+132125|wolf
+157828|worm
+159578|beetle
+160890|fly
+192828|tarantula
+198953|scorpion
+236578|orangutang
+238656|chimpanzee

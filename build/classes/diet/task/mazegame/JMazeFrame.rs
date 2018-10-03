@@ -1,0 +1,5 @@
+diet.task.mazegame.JMazeFrame_this_keyAdapter
+diet.task.mazegame.LabelTimer
+diet.task.mazegame.JMazeFrame
+diet.task.mazegame.JMazeFrame_this_windowStateAdapter
+diet.task.mazegame.JMazeFrame_this_componentAdapter

@@ -1,0 +1,52 @@
+5250|ostrich
+6343|emu
+15312|kasuaweri
+20015|mountain goat
+20562|tiger
+23843|vole
+25156|shrew
+27562|mole
+29968|naked mole rat
+34781|rat
+40250|ibex
+41890|lynx
+45281|white rino
+57968|sea lion
+61468|mountain lion
+63218|lion fish
+69343|prawn
+76453|thompsons gazelle
+82250|sun fish
+92312|dog
+92968|wolf
+95484|coyote
+98984|domestic cat
+106531|lema
+120750|tree frog
+126218|chicken
+127312|duck
+130812|kangaroo
+138250|red deer
+139343|roe deer
+148531|japanese water deer
+154875|red panda
+162531|kiwi
+178281|black widow
+185718|human
+188781|gorilla
+191406|orangutan
+197312|chimpanzee
+209781|gibon
+224984|galapagos penguin
+233625|emporer penguin
+242375|puffin
+248718|bumble bee
+256593|honey bee (european)
+260750|asiatic honey bee
+265890|wasp
+267968|termite
+272562|fire ant
+275078|driver ant
+285468|leopard
+293781|anteater
+299468|praying mantis

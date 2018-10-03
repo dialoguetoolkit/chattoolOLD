@@ -1,0 +1,26 @@
+MAZE No: 0
+[ 5 0 ]Link South is a gate. Link West 
+[ 4 0 ]Link North is a gate. Link East Link West 
+[ 3 0 ]Link North Link East Link West 
+[ 5 1 ]Link North is a gate. Link South Link West 
+[ 4 1 ]Link East Link West 
+[ 3 1 ]Link East Link West 
+[ 2 0 ]Link East Link West 
+[ 1 0 ]Link East Link West 
+[ 5 2 ]Link North Link West 
+[ 4 2 ]Link East Link West 
+[ 3 -1 ]Link North Link South 
+[ 3 2 ]SWITCH 
+Link East 
+[ 2 1 ]FINISHLink East Link South 
+[ 4 -1 ]Link South is a gate. 
+[ 3 -2 ]Link North Link South 
+[ 3 -3 ]Link East Link South 
+[ 4 -3 ]Link South Link West 
+[ 4 -2 ]SWITCH 
+Link North 
+[ 0 0 ]BEGINLink East Link West 
+[ -1 0 ]SWITCH 
+Link East 
+[ 2 2 ]Link North Link South 
+[ 2 3 ]Link North 

@@ -1,0 +1,58 @@
+7109|zimbabwe
+16406|yemen
+28656|wales
+40469|venezuela
+43312|vanuatu
+47359|tunisia
+49656|turkey
+53812|tibet
+56219|taiwan
+65844|scotland
+68141|serbia
+69891|spain
+75469|solomon islands
+87172|brazil
+88922|argentina
+90891|uruguay
+92422|colombia
+95156|bolivia
+96469|peru
+113531|surinam
+117031|paraguay
+118453|chile
+124141|dutch guyana
+128625|usa
+130922|mexico
+133219|guatemala
+138797|panama
+141969|nicaragua
+143719|jamaica
+145031|haiti
+147547|cuba
+156734|belize
+163625|el salvador
+170844|china
+173797|japam
+177734|n korea
+179922|s korea
+182656|india
+191734|kazakstan
+194469|turkmenistan
+197641|uzbekistan
+201250|thailand
+203109|loas
+210656|vietnam
+213719|cambodia
+218531|macau
+225750|honk kng
+230016|mongolia
+232531|oman
+236578|saudi arabia
+253312|armenia
+256812|azerbaijan
+259547|georgia
+267531|kyrgystan
+280328|bhutan
+285906|nepal
+289516|sri lanka
+295641|mauritius

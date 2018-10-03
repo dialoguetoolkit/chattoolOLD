@@ -1,0 +1,218 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body>
+<meta charset="utf-8">
+<title>Web Socket JavaScript Echo Client</title>
+<script language="javascript" type="text/javascript">
+
+
+
+//    username = prompt("Username:");
+    
+    var username ="";
+    var password ="";
+    //var wsUri = getRootUri() + "/websocket-echo/echo";
+    var img_url = "http://homepages.inf.ed.ac.uk/gmills/stimuliset9/d001_06_06.jpg";
+    
+    //function getRootUri() {
+    //    return "ws://" + (document.location.hostname == "" ? "localhost" : document.location.hostname) + ":" +
+    //           (document.location.port == "" ? "8080" : document.location.port);
+    //}
+
+    websocket = new WebSocket("ws://localhost:8080/");
+    
+    
+    function init() {
+    
+    
+        output = document.getElementById("output");
+      //  websocket = new WebSocket(wsUri);
+        
+        websocket.onopen = function (evt) {
+            onOpen(evt);
+        };
+        websocket.onmessage = function (evt) {
+            onMessage(evt);
+        };
+        websocket.onerror = function (evt) {
+            onError(evt);
+        };
+        websocket.onclose = function () {
+            setTimeout(function(){
+                init();
+            }, 5000); //Try to reconnect every 5 seconds
+        };
+    }
+
+    function onOpen(evt) {
+
+//        if (textID.value !== ''){
+//            doSend(textID.value);
+    }
+
+    clear_var = setTimeout(clear_indicator, 2000);
+    
+    function onMessage(evt) {
+        var text = String(evt.data);
+        var json = JSON.parse(text);
+        switch (json.indicator){
+            case "done":
+                if (json.username === username){            
+                    writeToScreen("YOU: " +json.message);
+                }
+                else{
+                    writeToScreen(json.username+": " +json.message);
+                }
+                scroll_to_bottom();
+            case "typing":
+                if (json.username !== username){
+                    document.getElementById("typing_on").innerHTML = "User is typing...";
+                    clearTimeout(clear_var);
+                    clear_var = setTimeout(clear_indicator, 2000);
+                }
+            case "login":
+                //
+        }
+    }
+
+    function onError(evt) {
+        writeToScreen('<span style="color: red;">Reconnect...</span> ');
+    }
+
+    var new_string = '{"indicator":"done","characters":[';
+    
+    function doSend(message) {
+    		new_string = new_string.concat("],\"message\":\"",
+                                        message,
+                                        "\",\"timestamp\":",
+                                        new Number(new Date()),
+                                        ",\"username\":\"",
+                                        String(username),
+                                        "\"}");
+//        writeToScreen("SENT: " + new_string);
+    	    websocket.send(new_string);
+      	 	new_string = '{"indicator":"done","characters":[';
+       		document.getElementById("textID").value = '';
+    
+    }
+    
+    function info(e){
+        if (e.keyCode === 13){
+            doSend(textID.value);
+            e.preventDefault();
+        }
+        else{
+            if (new_string !==  '{"indicator":"done","characters":['){
+                new_string = new_string.concat(",");
+            }
+            new_string = new_string.concat("{\"character\":\"",
+                                            String.fromCharCode(e.keyCode),
+                                            "\",",
+                                            "\"timestamp\":",
+                                            new Number(new Date()),
+                                            "}");
+            keystroke_info = "{\"indicator\":\"typing\",\"username\":\"" + username + "\",\"character\":\"" + 
+                                String.fromCharCode(e.keyCode) + "\"," + 
+                                "\"timestamp\":" + new Number(new Date()) + "}";
+            //websocket.send(username + " IS_TYPING");
+            websocket.send(keystroke_info);
+        }   
+    }
+
+    function writeToScreen(message) {
+        var pre = document.createElement("p");
+        pre.style.wordWrap = "break-word";
+        pre.innerHTML = message;
+        //alert(output);
+        output.appendChild(pre);
+    }
+    
+    
+    function clear_indicator(){
+        document.getElementById('typing_on').innerHTML = "  ";  
+    }
+
+    window.addEventListener("load", init, false);
+
+    function log_in(){
+        username = document.getElementById("username").value;
+        password = document.getElementById("password").value;
+        document.getElementById("textchat").hidden = false;
+        document.getElementById("image").hidden = false;
+        document.getElementById("output").hidden = false;
+        document.getElementById("loginpage").hidden = true;
+        login_info = '{"indicator":"login","username":"'+ username + '","password":"' + password + '"}';
+        websocket.send(login_info);
+    }
+    
+    function form_complete(e){
+        if (e.keyCode === 13){
+            log_in();
+            e.preventDefault();
+        }
+    }
+    
+    function scroll_to_bottom(){
+        document.getElementById("output").scrollTop = document.getElementById("output").scrollHeight;
+    }
+    
+</script>
+
+<h2 style="text-align: center;">WebSocket Client</h2>
+<br></br>
+
+<div id="loginpage" style="text-align: center;">
+    <form action="" >
+        Username<br><br>
+        <input id="username"  size="30" type="text" autocomplete="off"><br><br>
+        Password<br><br>
+        <input id="password" size="30" type="password" onkeypress="form_complete(event)" autocomplete="off"><br><br>
+        <input id="login" onclick="log_in()" value="Login" type="button">
+    </form>
+</div>
+
+<div id ="image" style="text-align: center" hidden>
+    <br>
+    <img src = "http://homepages.inf.ed.ac.uk/gmills/stimuliset9/d001_06_06.jpg" alt="" height="400" width="600">
+</div>
+<br>
+
+<div id="output" hidden></div>
+
+<div id="textchat" style="text-align: center" hidden>
+    <p id="typing_on"> </p>
+    <form action="">
+        <input id="textID" name="message" size="60" onkeypress="info(event)" type="text" autocomplete="off">
+        <input id="send" onclick="doSend(textID.value)" value="Send" type="button"><br>
+    </form>
+</div>
+</body>
+<style>
+    #output{
+        overflow-y: auto;
+        margin-right: 50px;
+        float:right;
+        width: 600px;
+        height: 370px;
+        border: solid buttonshadow;
+        
+    }
+    #image{
+        margin-left: 30px;
+        float:left;
+    }
+    
+    #textchat{
+        float: right;
+        margin-right: 100px;
+    }
+    #typing_on{
+        height: 30px;
+    }
+   
+</style>
+</html> 
+

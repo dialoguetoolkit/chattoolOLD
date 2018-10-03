@@ -1,0 +1,86 @@
+<html>
+	<body>
+	    <div>
+	        <input type="text" id="input" />
+	    </div>
+	    <div>
+
+	        <input type="button" id="connectBtn" value="CONNECT"
+	            onclick="connect()" /> <input type="button" id="sendBtn"
+	            value="SEND" onclick="send()" disabled="true" />
+	    </div>
+        <div>
+        <form action="" >
+        Username<br><br>
+        <input id="username"  size="30" type="text" autocomplete="off"><br><br>
+        Password<br><br>
+        <input id="password" size="30" type="password" onkeypress="form_complete(event)" autocomplete="off"><br><br>
+        <input id="login" onclick="log_in()" value="Login" type="button">
+    </form>
+        
+        </div>
+	    <div id="output">
+	        <p>Output</p>
+	    </div>
+	</body>
+	 
+	<script type="text/javascript">
+	    var webSocket;
+	    var output = document.getElementById("output");
+	    var connectBtn = document.getElementById("connectBtn");
+	    var sendBtn = document.getElementById("sendBtn");
+	 
+	    function connect() {
+	        // open the connection if one does not exist
+
+	        if (webSocket !== undefined
+	                && webSocket.readyState !== WebSocket.CLOSED) {
+	            return;
+	        }
+	        // Create a websocket
+	        webSocket = new WebSocket("ws://localhost:8080/");
+	 
+	        webSocket.onopen = function(event) {
+	            updateOutput("Connected!");
+	            connectBtn.disabled = true;
+	            sendBtn.disabled = false;
+	 
+	        };
+	 
+	        webSocket.onmessage = function(event) {
+	            updateOutput(event.data);
+	        };
+	 
+	        webSocket.onclose = function(event) {
+	            updateOutput("Connection Closed");
+	            connectBtn.disabled = false;
+	            sendBtn.disabled = true;
+	        };
+	    }
+	 
+	    function send() {
+
+	        var text = document.getElementById("input").value;
+
+	        webSocket.send(text);
+
+	    }
+
+	 
+
+	    function closeSocket() {
+
+	        webSocket.close();
+
+	    }
+
+	 
+
+	    function updateOutput(text) {
+
+	        output.innerHTML += "<br/>" + text;
+
+	    }
+
+	</script>
+	</html>

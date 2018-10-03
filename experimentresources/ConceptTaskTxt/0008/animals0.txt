@@ -1,0 +1,45 @@
+6016|turtles
+7110|seals
+8750|dolphins
+13563|deer
+21766|giraffee
+24172|elephant
+27235|crocodile
+28547|dog
+29641|cat
+32813|hamster
+38500|guinea pig
+46485|tortoise
+72188|zooplankton
+76125|calanus
+83782|semibalanus balanoidies
+92969|chthalamus montagui
+124141|ants
+129719|dragon flies
+135844|grasshoppers
+140547|frogs
+142297|neuts
+143500|toads
+151485|bivalves
+154547|mussels
+157063|salmon
+159469|trout
+162422|great white sharks
+167344|whale sharks
+173688|shrimps
+176532|lobsters
+181235|crayfish
+187141|starfish
+207813|seahorses
+209782|whales
+223672|sponges
+230782|crabs
+243469|zebra
+246860|raindeer
+254516|hippo
+260204|osterich
+269391|polar bear
+279125|fox
+287329|butterflies
+293125|panda
+294985|tiger

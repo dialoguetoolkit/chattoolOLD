@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.2
+Created-By: 1.7.0_55-b13 (Oracle Corporation)
+Bundle-Name: Dialogue Experimental Toolkit
+Bundle-Version: ${version.num}
+Bundle-Date: 
+Implementation-Title: Dialogue Experimental Toolkit
+Implementation-Version: 
+Implementation-URL: http://cogsci.eecs.qmul.ac.uk/diet/
+

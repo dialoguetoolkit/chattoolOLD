@@ -1,0 +1,31 @@
+22500|guinea passau
+25813|morroco
+31828|egypt
+34891|kenya
+37078|malawi
+48672|cote divoirs
+54797|ghana
+57641|nigeria
+59500|niger
+75141|botswana
+80282|congo
+85094|north korea
+86953|south korea
+92860|japan
+94610|china
+96907|russia
+113532|australia
+127094|siera lione
+141094|united arab emirates
+148641|argentina
+153016|chile
+158375|uzbekinstan
+164828|kazikstan
+169094|tazikistan
+195453|mexico
+199282|costa rica
+205625|haiti
+227500|somalia
+243141|not mali
+258016|mozambique
+265016|central african republic

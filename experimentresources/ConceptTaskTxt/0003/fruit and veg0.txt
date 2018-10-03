@@ -1,0 +1,20 @@
+7546|bananas
+11703|carrots
+13453|dates
+25375|potatoes
+28546|mangos
+30515|papayas
+33906|raspberries
+38281|strawberries
+66953|tomatoes
+85421|aubergine
+107187|sweet potato
+117687|kumquat
+127421|kiwi
+131468|kale
+161453|sea weed
+164500|cauliflower
+167343|cabbage
+171062|broccoli
+220718|brussel sprouts
+225421|parnips

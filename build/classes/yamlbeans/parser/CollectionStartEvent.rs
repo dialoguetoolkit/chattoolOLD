@@ -1,0 +1,1 @@
+com.esotericsoftware.yamlbeans.parser.CollectionStartEvent

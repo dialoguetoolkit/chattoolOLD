@@ -1,0 +1,20 @@
+9625|cat dog mouse
+29859|giraffe
+39703|chicken
+41672|snake
+44625|dolphin
+47359|turtle
+53047|monkey
+59609|lemur
+73719|bear!
+77547|polar bear
+90016|rabbits
+98656|rats
+113531|fish
+118344|betta splendens
+130484|lizards ghekkos
+160781|worm
+162531|spider
+188672|horse
+231766|starfish
+235594|salmon

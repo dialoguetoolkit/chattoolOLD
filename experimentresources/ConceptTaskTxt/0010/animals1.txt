@@ -1,0 +1,25 @@
+5469|Tiger
+6672|Lion
+8969|Wolf
+11922|Panther
+23735|Wild dog
+27453|Bear
+30735|Goat
+36641|Bull
+48016|Cow
+59172|Pig
+63766|Turkey
+81156|Shark
+84000|Piranha
+87828|Eagle
+89031|Snake
+113860|Dinosaur
+126985|reptiles
+136172|Butterflies
+156297|Crocodile
+167672|hamsters
+183641|rat
+205516|Girrafe 
+219844|hamsters
+243797|evil hamsters
+269938|Mules

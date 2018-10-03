@@ -1,0 +1,32 @@
+3391|COW
+9297|cHICKEN
+15969|DOG
+19031|CAT
+26031|Tiger
+28547|Lion
+32484|Red Panda
+34781|Panda
+36859|Penguin
+44406|Gorilla
+51187|Polar Bear
+56109|Dung Beetle
+133766|Alligator
+138031|Snake
+155094|Giraffe
+157391|Hippo
+159687|Rhino
+177187|Human's are mammals 
+215031|Wolves
+217766|Hyenna
+228266|Warthog
+231875|Pigs
+239312|EELS
+246312|Meerkat
+254844|Acopi
+261953|Seals
+270922|Walrus and yes Okapi
+276281|Leopard
+278359|Jaguar
+287875|Duck
+290500|Swan
+299141|Goat

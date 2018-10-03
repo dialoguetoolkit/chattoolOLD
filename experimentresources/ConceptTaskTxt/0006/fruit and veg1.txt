@@ -1,0 +1,42 @@
+24281|apples
+31937|bananas
+38172|watermelon
+39812|melon
+41781|pinapple
+43531|oranges
+45172|tangerine
+49218|necturine
+66390|mango
+100297|mange tout
+102593|runner beans
+105656|broccoli
+108500|peas
+117578|tomatoes
+119000|carrots
+120203|celery
+122390|spinach
+123703|rocket
+127093|watercress
+132015|courgettes
+137922|butternut squash
+142515|lemons
+143609|limes
+153234|peppers
+155640|onions
+165047|cabbage
+180578|kale
+191078|red cabbage
+196984|its like broccoli in a way
+202781|chicory
+206281|fennel
+220062|pak choy
+240515|parnips
+242484|beetrot
+245875|sweet potatoe
+257906|blackcurrants
+266437|cranberries
+268078|apricots
+270484|prunes
+277265|raisons
+280437|saltanas
+283390|currents

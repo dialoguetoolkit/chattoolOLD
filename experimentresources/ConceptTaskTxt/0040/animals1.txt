@@ -1,0 +1,53 @@
+5796|dog
+6453|cat
+9515|rabbit
+10609|hamster
+16515|buffalo
+17828|giraffe
+19359|elephant
+24062|koala
+25703|platypus
+30078|pangolin
+31609|anteater
+36421|orangutang
+37843|gorilla
+49984|sabre tooth
+56875|tartigrades!
+60484|penguin
+63765|gammarus
+77328|cheetah
+79187|leopard
+80281|impala
+81812|gazelle
+83562|crocodile
+84875|alligator
+91546|brown bear
+95375|siberian tiger
+97125|blue tiger
+105000|golden eagle
+106968|bald eagle
+109593|pidgeon 
+112109|sparrowhawk
+117687|flycatcher
+127203|tapir
+132781|monkey
+141531|baboon
+145031|wildcat
+148093|passerine
+150390|wolf
+167453|birds
+175109|mole
+178718|wild dogs
+184734|garden snake
+187031|anaconda
+189218|python
+191187|spitting cobra
+199609|komodo dragon
+215031|narwhal! 
+230453|parrot
+240296|spider monkey
+244015|homo sapien
+255171|sparrow
+271468|spider
+279671|howlin monkeys? 
+291703|tortoise, turtles

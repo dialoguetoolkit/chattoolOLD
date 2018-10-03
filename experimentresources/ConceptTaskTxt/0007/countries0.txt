@@ -1,0 +1,52 @@
+5250|kenya
+7328|venezuela
+11813|kazacstan
+14766|bulgaria
+16844|bolivia
+19359|usa
+24719|czech republic
+27453|slovakia
+31063|romania
+35000|cyprus
+39047|monaco
+46375|mexico
+49328|haha
+54031|jordan
+57969|brazil
+68469|FALKLANDS
+71750|rwanda
+74703|sweden
+78203|norway
+79516|denmark
+81922|finalnd
+85531|greenland
+86625|iceland
+96031|italy
+105219|cameroon
+109594|south africa
+112438|iraq
+117141|afghanistan
+119766|pakistan
+121516|india
+123922|sri lanka
+126547|china
+138797|phillipines
+146016|vietnam
+147328|laos
+154219|hungary
+161328|australia
+164391|new zelanad
+172484|greece
+191406|ivory coast
+201469|syria
+207266|lebanaon
+216344|morocco
+218313|algeria
+222141|al;bania
+235813|poalnd
+244125|germany
+246969|holland
+249813|belgium
+251672|switzerland
+281203|croatia
+296188|ghana

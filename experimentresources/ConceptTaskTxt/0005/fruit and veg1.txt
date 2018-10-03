@@ -1,0 +1,18 @@
+10828|pepper
+87500|grape
+103031|melon
+105984|carrot
+116922|grapefruit
+132234|satsuma
+135297|tangerine
+139344|blood orange
+143500|peach
+146234|plum
+151484|sprout
+194906|plum
+209453|strawberry
+222578|pineapple
+238000|parsnip
+258781|cabbage
+262828|lettuce
+282625|blueberries

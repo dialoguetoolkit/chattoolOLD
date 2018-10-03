@@ -1,0 +1,25 @@
+6344|afghanistan
+15969|canada
+22641|borneo
+36531|france
+37953|germany
+54797|iraq
+77656|europe - spain, denmark, sweden, norway
+94750|luxembourg, belgium
+134531|somalia
+139234|kenya
+146891|zimbabwe
+153016|russia
+161328|australia
+163625|new zealand
+173141|poland
+178391|india
+179703|pakistan
+180797|syria
+184516|north korea!
+189875|egypt
+190969|turkey
+218750|greece
+230234|sri lanka
+242375|bangladesh
+276500|greenland

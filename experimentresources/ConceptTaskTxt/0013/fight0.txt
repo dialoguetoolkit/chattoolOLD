@@ -1,0 +1,3 @@
+16609|self
+40234|panel
+44390|automatic

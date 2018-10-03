@@ -1,0 +1,24 @@
+7109|tomato
+10390|lemon
+11922|orange
+16625|apple
+31609|pear
+34015|melon
+46703|sweetcorn
+50422|cucumber
+57203|strawberry
+59172|peach
+61359|plum
+78203|papaya
+83343|lychee
+102484|spinach
+108062|strawbz
+111234|blueberry
+114297|petit pois
+139234|apricots
+156406|satsuma
+158922|clementines
+166797|oranges
+189328|lime
+232750|radish
+235156|sprouts

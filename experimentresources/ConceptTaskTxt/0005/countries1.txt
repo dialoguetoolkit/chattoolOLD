@@ -1,0 +1,39 @@
+5360|england
+8094|scotland
+9953|wales
+14875|republic of ireland
+18266|northern ireland
+20016|france
+22969|belgium
+25485|germany
+29641|usa
+34344|canada
+36313|mexico
+38610|brazil
+43969|nigeria
+53922|finland
+56110|sweden
+58078|norway
+59938|denmark
+66172|switzerland
+74813|afghanistan
+78313|pakistan
+86297|poland
+100953|australia
+103688|new zealand
+110797|grerenland
+112219|iceland
+114297|kenya
+117797|zimbabwe
+129172|japan
+131578|china
+134641|hong kong
+136828|chile
+142516|north korea
+145906|south korea
+173250|ethiopia
+199172|sudan
+221266|nicuragua 
+267750|true
+285469|estonia
+292250|lithuania

@@ -1,0 +1,23 @@
+17828|england
+19141|wales
+23407|scotland
+26360|northern ireland
+28110|ireland
+37953|UK
+102703|USA
+104891|Canada
+109047|Luxembourg
+115063|Vatican City
+118672|Andorra
+164391|Brazil
+168657|Venezuela
+172266|Colombia
+177516|Argentina
+190860|Tibet
+213610|Palestine
+256922|Belgium
+261078|Denmark
+265672|Sweden
+272453|Latvia
+275735|Romania
+282625|Georgia

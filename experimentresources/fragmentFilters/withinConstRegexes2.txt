@@ -1,0 +1,4 @@
+EndsInTag midNP ((\S+\s+)*)(((PRP\$|DT|CD|JJ)\s((JJ|RB|NN|CD)\s)*)NN[SP]*)((\s([A-Z&&[^VTIC]][A-Z&&[^R]][A-Z]*|CD))*\s(VB[DGNPZ]*|VB[DNPZ]*\s(RB\s)*VBG))((\s([A-Z&&[^VTIC]][A-Z]*|CD))*)\s(DT|PRP\$)
+EndsInTag midNP ((\S+\s+)*)(((JJ|NN)\s)*NN[SP]*)((\s([A-Z&&[^VTIC]][A-Z&&[^R]][A-Z]*|CD))*\s(VB[DGNPZ]*|VB[DNPZ]*\s(RB\s)*VBG))((\s([A-Z&&[^VTIC]][A-Z]*|CD))*)\s(DT|PRP\$)
+EndsInTag midPP ((\S+\s+)*)(((PRP\$|DT|CD|JJ)\s((JJ|RB|NN|CD)\s)*)NN[SP]*)((\s([A-Z&&[^VTIC]][A-Z&&[^R]][A-Z]*|CD))*\s(VB[DGNPZ]*|VB[DNPZ]*\s(RB\s)*VBG))((\s([A-Z&&[^VTIC]][A-Z]*|CD))*)\s(TO|IN)
+EndsInTag midPP ((\S+\s+)*)(((JJ|NN)\s)*NN[SP]*)((\s([A-Z&&[^VTIC]][A-Z&&[^R]][A-Z]*|CD))*\s(VB[DGNPZ]*|VB[DNPZ]*\s(RB\s)*VBG))((\s([A-Z&&[^VTIC]][A-Z]*|CD))*)\s(TO|IN)

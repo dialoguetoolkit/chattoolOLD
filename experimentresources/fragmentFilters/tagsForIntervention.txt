@@ -1,0 +1,9 @@
+High_High: CC RB VB VBP VBZ
+Mid_High: NN PRP
+Low_High: DT JJ
+Low_Low: MD RP
+Mid_Low: VBG VBN
+Low_Mid: TO
+High_Low: WHB
+High_Mid: NNP NNS VBD
+Mid_Mid: IN

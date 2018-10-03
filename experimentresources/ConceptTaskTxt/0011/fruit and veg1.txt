@@ -1,0 +1,21 @@
+8531|carrot
+13453|broccoli
+19796|mango
+25046|pineapple
+30296|pumpkin
+34562|cucumber
+46156|strawberry
+49109|raspberry
+52171|blueberry
+71093|salmon berry
+94937|beets
+98000|radish
+112765|cauliflower
+189875|pear
+195671|asian pear
+199937|peach
+210765|apricot
+219078|lemon
+224765|lime
+276718|rhubarb
+285031|celery

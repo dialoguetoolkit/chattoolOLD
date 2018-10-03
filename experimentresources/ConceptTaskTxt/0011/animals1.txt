@@ -1,0 +1,43 @@
+5141|cat
+8203|dog
+14438|eagle
+20125|sparrow
+23188|hawk
+24391|owl
+31063|wooopecker
+37625|stellar's jay
+40578|blue jay
+44516|dove
+69125|pygmy marmoset
+73938|chicken
+86407|bull
+90782|ram
+93844|yak
+101391|reindeer
+107625|deer
+109594|moose
+113969|red wolf
+116813|grey wolf
+121735|cougar
+129172|bear
+140985|grizzly bear
+145469|polar bear
+148203|black bear
+158922|red fox
+161875|arctic fox
+167453|penguin
+172266|rabbit
+174344|rat
+177188|mouse
+180469|gerbil
+193157|guinea pig
+202344|ferret
+205844|snake
+209235|iguana
+230891|panda
+247188|fruit bat
+250141|vampire bat
+256703|falcon
+265672|robin
+280766|flamingo
+285578|kiwi

@@ -1,0 +1,41 @@
+4484|lion
+5796|tigers
+8421|bears
+20015|kangaroo
+21328|leopard
+25156|panda
+34671|whale
+36421|shark
+45500|mammoth
+46812|dodo
+51078|polar bear
+64640|zebra
+70875|horse
+74375|pig
+74921|cow
+76125|chicken
+81156|mouse
+81812|vole
+82468|rat
+88593|ant
+89906|bee
+105437|sloth
+117468|african elephant
+120640|asian elephant
+127421|ant eater
+135625|wart hog
+137484|meerkat
+149734|lion
+153125|passerine
+174671|cayote
+182765|badger 
+192062|lizard
+195015|newt
+195890|toad
+196546|frog
+221265|pygmy hedgehog
+232750|hawk
+251125|monkeys
+254296|howler monkey
+258453|spider monkey 
+264140|lemar

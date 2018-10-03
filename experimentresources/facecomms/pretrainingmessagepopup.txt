@@ -1,0 +1,22 @@
+OK. You have now finished the test phase.
+Now you need to collaborate with your partner.
+On each trial, both of you will have the same faces in front of you.
+The order of the faces is randomly jumbled up.
+One of you will have a set of faces with one face that is selected in a box.
+The other person will have a set of faces with numbers underneath each face.
+Your task together is to complete it as quickly and as accurately as possible.
+
+Important:
+
+This part of the experiment is a "conversation" between you and your partner.
+Unlike the previous session, you can speak as much as you want with your partner before you make a guess.
+
+There is no time limit, but the faster you guess the more points you can get.
+
+Each correct guess is worth 5 points, but each incorrect guess is worth -2 points.
+
+You can only guess up to two times per trial.  If you reach 200 points, you can end the training early.
+
+You must use forward slash ( / ) to enter guesses.  For example: /3 or /11
+
+

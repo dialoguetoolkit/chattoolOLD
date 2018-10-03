@@ -1,0 +1,23 @@
+7328|kangaroo
+14656|beaver
+23078|badger
+26906|squirrel
+32156|rhino
+34125|elephant
+38719|camel
+39703|horse
+48562|leopard
+51516|tiger
+52500|lion
+59281|vervet monkeyys
+65187|sloth
+75031|hamster
+82906|tortoise
+89578|deer
+100078|parrot
+122500|dinosaurs 
+157391|donkey
+178828|cow
+205516|ants
+216125|meer cat
+232859|crocodile

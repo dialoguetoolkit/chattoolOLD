@@ -1,0 +1,100 @@
+<html>
+	<body>
+    <div id = "logindiv" >
+    <form id = "loginform" action="" >
+        Username<br><br>
+        <input id="username"  size="30" type="text" autocomplete="off"><br><br>
+        Password<br><br>
+        <input id="password" size="30" type="password" onkeypress="form_complete(event)" autocomplete="off"><br><br>
+        <input id="login" onclick="loginFROMFORM()" value="Login" type="button">
+    </form>
+    </div>
+    <div id="output">
+	        
+	</div>
+    
+    </body>
+    
+    
+    <script type="text/javascript">
+        var webSocket;
+        var output = document.getElementById("output");
+        var participantid = "";
+        var username ="";
+        var loginwassuccessful = false;
+        
+        document.getElementById('logindiv').style.display = 'none';
+        
+
+        
+        
+        
+        updateOutput("Trying to connect to server.");
+        initializewebsocket();
+        
+        
+        
+        
+        function initializewebsocket(){    
+           webSocket = new WebSocket("ws://localhost:8080/");
+           webSocket.onopen = function(event) {
+	            updateOutput("Connected!");
+                if(username=="" && participantid==""){
+                   document.getElementById('logindiv').style.display = 'block';
+                }
+                if(loginwassuccessful){
+                    loginUSINGPRESTORED();
+                }
+                else{
+                    updateOutput("Please enter details and press LOGIN");
+                }
+	       };
+           webSocket.onclose = function(event) {
+	            updateOutput("Connection Closed");
+                initializewebsocket();
+	       };
+           websocket.onmessage = function (evt) {
+               onMessage(evt);
+           }; 
+           
+           
+           
+        }
+        
+       
+
+        
+        
+        function loginUSINGPRESTORED(){
+             login_info = '{"indicator":"login","username":"'+ username + '","password":"' + password + '"}'; websocket.send(login_info);
+        }
+        
+        function loginFROMFORM(){
+             updateOutput("trying to login");
+             username = document.getElementById("username").value;
+             password = document.getElementById("password").value;
+             updateOutput("trying to login");
+             login_info = '{"msgtype":"login","username":"'+ username + '","password":"' + password + '"}'; 
+             updateOutput("trying to login3");
+             webSocket.send(login_info);
+             updateOutput("trying to login4");
+             
+        }
+        
+        
+       
+        
+        
+        
+        
+        function updateOutput(text) {
+
+	        output.innerHTML += "<br/>" + text;
+
+	    }
+        
+        
+        
+    </script>
+    
+</html>

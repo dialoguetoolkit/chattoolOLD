@@ -1,0 +1,28 @@
+20141|lizards
+31406|gheko
+41469|kimodo dragon (however you spell it!)
+47594|chamaeleon
+57875|jesus lizard
+92547|birds
+113656|fox
+115297|boadger
+118250|stoat
+119781|ferret
+122297|pine martin
+127766|weasel
+129625|beaver
+131156|wolf
+132906|bear
+140453|grass snake
+141984|adder
+156641|coyote
+158719|roadrunner
+162766|armidillo
+199078|elk
+200500|moose
+204875|deer
+211219|ibex
+221062|platypus
+226641|walaby
+232000|dingo
+240094|tazmanian devil

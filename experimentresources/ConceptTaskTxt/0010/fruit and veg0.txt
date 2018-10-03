@@ -1,0 +1,15 @@
+6344|apples
+14657|oranges
+17719|pears
+53047|strawberries
+57641|tomatoes
+62344|jackfruit
+71313|cauliflower
+81594|cherries
+89141|raspberries
+92969|blueberries
+105219|jalapenos
+169969|durians
+190641|rambutans
+202344|green veggies.
+216563|red chilli

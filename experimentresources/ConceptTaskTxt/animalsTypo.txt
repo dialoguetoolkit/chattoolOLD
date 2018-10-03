@@ -1,0 +1,1005 @@
+typed	code	subcode
+!!!	~	~
+(can't fly like the osterich!)	ostrich	~
+(polar) bear	polarbear	~
+(that was a load of uk, ex-uk ones	~	~
+*beef	~	~
+*coyote	coyote	~
+*duck	duck	~
+*gazelle	gazelle	~
+*panther	panther	~
+*pig	pig	~
+*rat	rat	~
+*snake	snake	~
+*tha	~	~
+*that	~	~
+..	~	~
+/next	~	~
+?	~	~
+a whole book about hamsters?	hamster	~
+aardvark	aardvark	~
+acopi	okapi	~
+adder	adder	~
+african elephant	elephant	african
+aha!	~	~
+ahh thats the one	~	~
+albania	~	~
+aligator	alligator	~
+al-jufiwara	~	~
+alligator	alligator	~
+alligators	alligator	~
+always wanted one	~	~
+amphibious mammals	mammal	~
+anaconda	anaconda	~
+anaenome	anemone	~
+and you said fish before	fish	~
+angel fish	angelfish	~
+angelfish	angelfish	~
+animal kingdom 	~	~
+animal rights	~	~
+animals	~	~
+anomalies-platypus	platypus	~
+anr	ant	~
+ant	ant	~
+ant - what else would the anteater eat?!?	ant/anteater	~
+ant eater	anteater	~
+ant, antelope, bear, bug, baboon, cat, cheetah, dog, dinasour( when instinct), elephant, fish, frog. giraffe, gorilla, horse, hamster, jaguar, kangaroo, kowala(sp), lion	ant/antelope/bear/bug/baboon/cat/cheetah/dog/dinosaur/elephant/fish/frog/giraffe/gorilla/horse/hamster/jaguar/kangaroo/koala/lion	~
+anteater	anteater	~
+anteater even	anteater	~
+antelope	antelope	~
+antelopes	antelope	~
+anteter	anteater	~
+ants	ant	~
+ants - we have learnt so much about ants 	ant	~
+ape	ape	~
+aphids	aphid	~
+aple	ape	~
+arctic fox	snowfox	~
+are humans animals? or does our sense of reason distinguish us and make us fundamentally different?	human	~
+are insects animals?	insect	~
+are those animals right?	~	~
+aries	sheep	aries
+armadillo	armadillo	~
+armadillo9	armadillo	~
+armidillo	armadillo	~
+arse	~	~
+art	rat	~
+as in they are angry and they attack people 	~	~
+as is spook	~	~
+asexual 	~	~
+asian elephant	elephant	asian
+asiatic honey bee	honeybee	~
+asp	asp	~
+austrich	ostrich	~
+aw	~	~
+axalotyl	axolotl	~
+aye aye	~	~
+baboon	baboon	~
+badger	badger	~
+badger 	badger	~
+baer	bear	~
+balck widow	blackwidow	~
+bald eagle	eagle	bald
+ball python	python	ball
+baracuda	barracuda	~
+basilisk	basilisk	~
+bat	bat	~
+bay	bat	~
+bear	bear	~
+bear!	bear	~
+bearded dragon	lizard	beardeddragon
+bears	bear	~
+bears 	bear	~
+beatle	beetle	~
+beaver	beaver	~
+bee	bee	~
+beef	~	~
+bees	bee	~
+beetle	beetle	~
+beetles	beetle	~
+beew	~	~
+beluga whale	whale	beluga
+bengal tigers	bengaltiger	~
+betta splendens	betta	~
+big	~	~
+big cats such as lions, tigers, lepoards, cheetas,  	lion/tiger/leopard/cheetah	~
+bio diversity 	~	~
+bird	bird	~
+bird 	bird	~
+bird flu 	bird	~
+birds	bird	~
+birds is really broad	bird	~
+bison	bison	~
+bivalves	mussel	bivalve
+black bear	blackbear	~
+black widow	blackwidow	~
+black widows	blackwidow	~
+blackbird	blackbird	~
+blue jay	bluejay	~
+blue tiger	tiger	blue
+blue tit	bird	bluetit
+blue tongued skink	skink	blutongued
+blue whale	bluewhale	~
+bluebird	bluebird	~
+bluejay	bluejay	~
+boa constrcitor	boaconstrictor	~
+boadger	badger	~
+boar	boar	~
+boars	boar	~
+bobcat	bobcat	~
+bonobo	bonobo	~
+bottle nose dolphin	dolphin	bottlenose
+bottlenose dolphin	dolphin	bottlenose
+bovines	cow	bovine
+brittle star	starfish	brittlestar
+brown	~	~
+brown anole	anole	brown
+brown bear	brownbear	~
+budgery gah	budgerigar	~
+budgie	budgerigar	~
+buffalo	buffalo	~
+buffaloo	buffalo	~
+bull	bull	~
+bulls	bull	~
+bumble bee	bee	~
+bushbaby	bushbaby	~
+but it falls under fish	fish	~
+but my friend got me a rat instead	rat	~
+but neither are...	~	~
+but smaller?	~	~
+buterfly	butterfly	~
+butterflies	butterfly	~
+butterfly	butterfly	~
+calanus	shrimp	calanus
+calbear	bear	~
+camel	camel	~
+cant remember if we said that	~	~
+carnivore omnivore 	~	~
+carolina corn snake	cornsnake	~
+cart	cat	~
+cat	cat	~
+cat 	cat	~
+cat dog mouse	cat/dog/mouse	~
+cat dog zebra elephant bear platypus camel	cat/dog/zebra/elephant/bear/platypus/camel	~
+categories worked last time	~	~
+caterpillar	caterpillar	~
+caterpillars	caterpillar	~
+caterpillas	caterpillar	~
+catfish	catfish	~
+cats	cat	~
+cattle	cattle	~
+cayote	coyote	~
+cayoter	coyote	~
+centipede	centipede	~
+centipedes	centipede	~
+chamaeleon	chameleon	~
+chameleon	chameleon	~
+cheater	cheetah	~
+cheeta	cheetah	~
+cheetah	cheetah	~
+cheetahs	cheetah	~
+chettah	cheetah	~
+chicken	chicken	~
+chickens	chicken	~
+chimp	chimpanzee	~
+chimpanzee	chimpanzee	~
+chinchilla	chinchilla	~
+chinchillas	chinchilla	~
+chinese mitten crab	crab	chinesemitten
+chipmunk	chipmunk	~
+chop chop	~	~
+chthalamus montagui	crab	chthalamus montagui
+cin-chilla	chinchilla	~
+circus acts - bears are often forced to perform tricks 	bear	~
+clown fish	clownfish	~
+clownfish	clownfish	~
+cobra	cobra	~
+cobras	cobra	~
+cockroach	cockroach	~
+cod	fish	cod
+cod, salmon	fish/salmon	cod
+cold blooded 	~	~
+colour	~	~
+common fox	fox	~
+conga eel	eel	conger
+coocon	~	~
+cougar	cougar	~
+cow	cow	~
+cow and bull	cow/bull	~
+cows	cow	~
+coy	koi	~
+coyote	coyote	~
+crab	crab	~
+crab - or is this sealife?	crab	~
+crabs	crab	~
+crangon crangon!	shrimp	crangoncrangon
+crayfish	crayfish	~
+crested gecko	gecko	crested
+crocodile	crocodile	~
+crocodile 	crocodile	~
+crocodilee	crocodile	~
+crocodiles	crocodile	~
+crocodiles, 	crocodile	~
+crow	crow	~
+cruelty	~	~
+daddy-long legs	daddylonglegs	~
+danny	~	~
+dark	~	~
+david falk	~	~
+day gecko	gecko	~
+deer	deer	~
+deers	deer	~
+der	deer	~
+dik dik	dik	~
+ding beetle	beetle	dung
+dingo	dingo	~
+dinosaur	dinosaur	~
+dinosaurs	dinosaur	~
+dinosaurs 	dinosaur	~
+dinosaurs lol	dinosaur	~
+diplodocus	dinosaur	diplodocus
+do birds count?	bird	~
+do i literally cover all types of fish by saying fish	fish	~
+do insects count as animals?	insect	~
+do inverts count do you think~?	~	~
+do they count sponges	sponge	~
+do you okapi?	okapi	~
+do9gfish	dogfish	~
+dodo	dodo	~
+dodo - both extinct	dodo	~
+dodo?	dodo	~
+dog	dog	~
+dog 	dog	~
+dogs	dog	~
+dogs, cats, hamsters, mice, 	dog/cat/hamster/mouse	~
+dolfin	dolphin	~
+dolphin	dolphin	~
+dolphine	dolphin	~
+dolphins	dolphin	~
+domestic cat	cat	~
+donkey	donkey	~
+donkeys	donkey	~
+door mouse	dormouse	~
+doplin	dolphin	~
+dove	dove	~
+doves	dove	~
+dragon	dragon	~
+dragon flies	dragonfly	~
+dragonflies	dragonfly	~
+driver ant	ant	driver
+duch	duck	~
+duck	duck	~
+duck 	duck	~
+duckling	duck	~
+ducks	duck	~
+dung beetle	beetle	dung
+eagle	eagle	~
+eagle is a bird not animal	eagle	~
+eagles	eagle	~
+earthworms	earthworm	~
+earwigs	insect	earwig
+eating plants	~	~
+echidna!	echidna	~
+echindna	echidna	~
+echinoderm	starfish	echinoderm
+eel	eel	~
+eels	eel	~
+eggs!	~	~
+elepahnt	elephant	~
+elephant	elephant	~
+elephant 	elephant	~
+elephant seal	elephant	~
+elephants	elephant	~
+elk	elk	~
+emporer penguin	penguin	emporer
+emu	emu	~
+evil hamsters	hamster	~
+evolution 	~	~
+extinct animals should be fine right	~	~
+extinction	~	~
+fair	~	~
+fairy penguin	penguin	fairy
+falcon	falcon	~
+fdidget	~	~
+fennec fox	fennec	~
+ferrels	ferret	~
+ferret	ferret	~
+feseant	pheasant	~
+finding nemo	~	~
+fire ant	ant	fire
+fish	fish	~
+fish 	fish	~
+fish (of various types)	fish	~
+fish are animals	fish	~
+fish not animals	fish	~
+flamingo	flamingo	~
+flamingos	flamingo	~
+fleas	flea	~
+flies	fly	~
+fly	fly	~
+flycatcher	bird	flycatcher
+flying squirrel	flyingsquirrel	~
+food chain 	~	~
+fosa	civet	fossa
+fox	fox	~
+foxes	fox	~
+frog	frog	~
+frogs	frog	~
+from the hayashi clan	~	~
+fruit bat	bat	fruit
+fruit fly	fly	fruit
+fujiwara	~	~
+fur	~	~
+fur trade	~	~
+furry	~	~
+galapagos penguin	penguin	galapagos
+gammarus	shrimp	gammarus
+garden snake	gardensnake	~
+gazelel	gazelle	~
+gazelle	gazelle	~
+gelding	horse	~
+georgia	~	~
+gerbil	gerbil	~
+germany	~	~
+gheko	gecko	~
+giant panda	panda	giant
+gibon	gibbon	~
+ginuea pig	guineapig	~
+giraffe	giraffe	~
+giraffee	giraffe	~
+giraffes	giraffe	~
+girrafe 	giraffe	~
+gnu	wildebeest	~
+goat	goat	~
+goats	goat	~
+god, i suck at this! 	~	~
+godzilla	~	~
+gold fish	goldfish	~
+golden eagle	eagle	golden
+golden mole	mole	mole
+goldfish	goldfish	~
+goode	goose	~
+goood gooood	~	~
+goose	goose	~
+goriila	gorilla	~
+gorilla	gorilla	~
+grass snake	watersnake	~
+grasshopper	grasshopper	~
+grasshoppers	grasshopper	~
+great tit	bird	greattit
+great white shark	greatwhiteshark	~
+great white sharks	greatwhiteshark	~
+green anole	anole	green
+greenflys	fly	green
+grey hound	greyhound	~
+grey wolf	wolf	grey
+griffin	dragon	griffin
+grizzly bear	grizzlybear	~
+groilla	gorilla	~
+guinea pid	guineapig	~
+guinea pig	guineapig	~
+guinea pigs	guineapig	~
+guinea-pig	guineapig	~
+guineau pig	guineapig	~
+guinnea pig	guineapig	~
+haddock	fish	haddock
+haha	~	~
+haha urchin	urchin	~
+hahaha	~	~
+hahaha yeah just spider i said a few more earlier	spider	~
+hair	~	~
+hakuna matata	~	~
+hammerhead shark	hammerheadshark	~
+hampster	hamster	~
+hamster	hamster	~
+hamsters	hamster	~
+hare	hare	~
+have you said vole?	vole	~
+hawk	hawk	~
+he is an animal	~	~
+hedge hog	hedgehog	~
+hedgehog	hedgehog	~
+hedgehogs	hedgehog	~
+hehe	~	~
+hello	~	~
+hello kitty	kitten	~
+hen	hen	~
+hence the name, haha.	~	~
+herbivore	~	~
+herds 	~	~
+heron	heron	~
+herring	herring	~
+hibernation 	~	~
+hipopotamus	hippopotamus	~
+hippo	hippopotamus	~
+hippopotamus	hippopotamus	~
+hippopotamus(sp)	hippopotamus	~
+hmm maybe	~	~
+homo sapien	human	~
+homo sapiens sapiens	human	~
+honey badger	badger	badger
+honey badgers	badger	badger
+honey bee	honeybee	~
+honey bee (european)	honeybee	~
+honeybadger!!!!	badger	badger
+horse	horse	~
+horses	horse	~
+horses, sheep, pigs, 	horse/sheep/pig	~
+hounds	dog	~
+housefly	fly	~
+how do u spell ghekko?	gecko	~
+howler monkey	howlermonkey	~
+howlin monkeys? 	howlermonkey	~
+human	human	~
+human beings	human	~
+humans	human	~
+human's are mammals 	human	~
+humpback wha;e	humpbackwhale	~
+humpback whale	humpbackwhale	~
+hyena	hyena	~
+hyena - wicked laugh	hyena	~
+hyenas	hyena	~
+hyene	hyena	~
+hyenna	hyena	~
+hyngna	hyena	~
+i don't really know many australian ones!	~	~
+i guess so, i thought insects are... well they should be	insect	~
+i guess, yeah	~	~
+i know loads but haveing trouble thinking of any! argh!	~	~
+i know which ones you mean the really ratty things you want to stamp on	rat	~
+i like hamsters	hamster	~
+i think we are animals 	~	~
+iberian cat	lynx	iberian
+ibex	ibex	~
+if amphibians count then insects do	amphibian/insect	~
+iguana	iguana	~
+i'm gonna do stuff in the sea	~	~
+impala	impala	~
+includes scotland	~	~
+insects	insect	~
+invertebrates	~	~
+is a fish	fish	~
+is that correct?	~	~
+is that even a thing?!	~	~
+is that how you spell it?	~	~
+it can walk on water!	~	~
+it's an animal!	~	~
+its just team work	~	~
+its like a story lol	~	~
+its words in the category tough	~	~
+ivory trade 	~	~
+jackal	jackal	~
+jackal - from a pack of cards	jackal	~
+jaguar	jaguar	~
+jaguars	jaguar	~
+japanese hornet	hornet	japanese
+japanese water deer	deer	water
+jawfish	fish	jaw
+jeffroy's marmoset	marmoset	white-headed
+jellyfis	jellyfish	~
+jellyfish	jellyfish	~
+jesus lizard	lizard	jesus
+joey	kangaroo	~
+kangaroo	kangaroo	~
+kangaroo rat	rat	kangaroo
+kangaroos	kangaroo	~
+kangeroo	kangaroo	~
+kangoroo	kangaroo	~
+kasuaweri	cassowary	~
+kestrel	kestrel	~
+killer whales	killerwhale	~
+kimodo dragon (however you spell it!)	komododragon	~
+king kong	~	~
+king penguin	penguin	king
+kitten	kitten	~
+kitty	kitten	~
+kiwi	kiwi	~
+koala	koala	~
+koala bear	koala	~
+koala bears	koala	~
+koala?	koala	~
+kobe beef cows	cow	~
+kola bear	koala	~
+komodo dragon	komododragon	~
+ladybids	ladybug	~
+ladybird	ladybug	~
+ladybirds	ladybug	~
+lamb	sheep	~
+lambs 	lamb	~
+large 	~	~
+leapords	leopard	~
+lema	lemur	~
+lemar	lemur	~
+lemur	lemur	~
+leopard	leopard	~
+leopard 	leopard	~
+leopard gecko	gecko	leopard
+leopard seal	seal	leopard
+leopards	leopard	~
+leoparp	leopard	~
+lets think of a place	~	~
+ligar	liger	~
+liger	liger	~
+like bees	bee	~
+like frogs	frog	~
+lima	lemur	~
+linx	lynx	~
+lion	lion	~
+lion cub	lion	~
+lion fish	lionfish	~
+lion#	lion	~
+lions	lion	~
+lizard	lizard	~
+lizards	lizard	~
+lizards ghekkos	gecko	~
+llama	llama	~
+lmao	~	~
+lobster	lobster	~
+lobsters	lobster	~
+lol	~	~
+lynx	lynx	~
+magpie	magpie	~
+mahi mahi	fish	mahimahi
+mallard	mallard	~
+mammals	mammal	~
+mammals is easier, i might just name loads of thenm for the time being!	mammal	~
+mammoth	woollymammoth	~
+mammoths	woollymammoth	~
+manatee	manatee	~
+may flies	fly	may
+may flies 	fly	may
+maybe	~	~
+meer cat	meerkat	~
+meer kat	meerkat	~
+meercat	meerkat	~
+meerkat	meerkat	~
+mega fauna	~	~
+mice	mouse	~
+micre	mouse	~
+midges	fly	midge
+mile end canal ducks	duck	~
+mink	mink	~
+mockingbird	mockingbird	~
+mogwai	~	~
+mole	mole	~
+moles	mole	~
+monekey	monkey	~
+mongoose	mongoose	~
+monkey	monkey	~
+monkeys	monkey	~
+monkeys, penguins, 	monkey/penguin	~
+monkfish	fish	monkfish
+mono vision e.g eyes at the front of their heads can only see in one direction 	~	~
+moose	moose	~
+mosquito	mosquito	~
+mosquitoes	mosquito	~
+mosquitos	mosquito	~
+moth	moth	~
+moths	moth	~
+mountain goat	mountaingoat	~
+mountain lion	mountainlion	~
+mouse	mouse	~
+mule	mule	~
+mules	mule	~
+muppet (animal is the drummer)	~	~
+mussels	mussel	~
+mutt	dog	~
+my spelling if animals is horrible, it turns out!	~	~
+naked mole rat	nakedmolerat	~
+narwal	narwhal	~
+narwhal	narwhal	~
+narwhal! 	narwhal	~
+neuts	newt	~
+newt	newt	~
+nice psychological book about hamsters	hamster	~
+no dung beetle	beetle	dung
+no i didn't	~	~
+no they're not i think they're not vertebrates	~	~
+nocturnal 	~	~
+normal fox	fox	~
+not factual i think	~	~
+not sure	~	~
+not sure on spellings there	~	~
+not technically animal i believe	~	~
+nurse shark	shark	nurse
+octopus	octopus	~
+octupus	octopus	~
+oh goodness i know so many animals it's insane. i studied biology!!!	~	~
+oh my	~	~
+oh, it's dead but the dodo?	dodo	~
+oh, ok, sure!	~	~
+ok then	~	~
+okapi	okapi	~
+okay i get you	~	~
+on farms you will find cows	cow	~
+oooh	~	~
+opossum	opossum	~
+opposum	opossum	~
+or did u say cow	cow	~
+or lizards, whichever you prefer!	lizard	~
+orangatan	orangutan	~
+orangatans 	orangutan	~
+orangatun	orangutan	~
+orangutan	orangutan	~
+orangutang	orangutan	~
+orca	orca	~
+orca whale	orca	~
+osterich	ostrich	~
+ostrich	ostrich	~
+other animals in the zoo include:	~	~
+other rodent like creatures	rodent	~
+otter	otter	~
+owl	owl	~
+owls	owl	~
+ox	ox	~
+oyster	oyster	~
+panda	panda	~
+panda bear	panda	~
+pandas	panda	~
+pangolin	anteater	pangolin
+panther	panther	~
+panthers,	panther	~
+parakeet	parakeet	~
+paranas	piranha	~
+parrot	parrot	~
+parrots	parrot	~
+passerine	bird	passerine
+peacock	peacock	~
+peacocks	peacock	~
+pelican	pelican	~
+pelicans	pelican	~
+penguin	penguin	~
+penguins	penguin	~
+pets	~	~
+pheasant	pheasant	~
+pheonix	dragon	phoenix
+pi	~	~
+pidgeon	pigeon	~
+pidgeon 	pigeon	~
+pig	pig	~
+pig 	pig	~
+pigeon	pigeon	~
+pigeons	pigeon	~
+pigoens	pigeon	~
+pigs	pig	~
+pine martin	bird	pinemartin
+pinguins	penguin	~
+piranha	piranha	~
+pirhana	piranha	~
+pirhanha	piranha	~
+plaice	fish	plaice
+platypus	platypus	~
+plenty of those around qm campus	~	~
+pnather	panther	~
+pny	pony	~
+poaching	~	~
+polar  bear	polarbear	~
+polar bear	polarbear	~
+polar bears	polarbear	~
+pollychaetes	worm	polychaetes
+ponies	pony	~
+pony	pony	~
+porcupine	porcupine	~
+porpoise	porpoise	~
+porpoises	porpoise	~
+possom	possum	~
+pot belly pig	potbelliedpig	~
+prawn	prawn	~
+prawns	prawn	~
+praying mantis	prayingmantis	~
+proboscis monkey	monkey	proboscis
+puffin	puffin	~
+puma	puma	~
+puppy	dog	~
+pygmy hedgehog	hedgehog	pygmy
+pygmy marmoset	marmoset	pygmy
+python	python	~
+quail	quail	~
+rabbit	rabbit	~
+rabbit, rat	rabbit/rat	~
+rabbits	rabbit	~
+rabies	~	~
+raccoon	raccoon	~
+racoon	raccoon	~
+racoons	raccoon	~
+raindeer	reindeer	~
+ram	ram	~
+raptor	raptor	~
+rat	rat	~
+rats	rat	~
+rattle snake	rattlesnake	~
+rattle snale	rattlesnake	~
+rattlesnake	rattlesnake	~
+raven	raven	~
+ravens	raven	~
+red deer	deer	red
+red fox	fox	red
+red kite	kite	red
+red panda	panda	red
+red squirrel	squirrel	red
+red wolf	wolf	red
+regent canal swans	swan	~
+regularly	~	~
+reindeer	reindeer	~
+reindeer!	reindeer	~
+reptiles	reptile	~
+reptiles...	reptile	~
+reticulated python	python	reticulated
+rhino	rhino	~
+rhinosaurous	rhino	~
+rhinosaurus	rhino	~
+right then.	~	~
+rinosorous	rhino	~
+roadrunner	roadrunner	~
+roaster	rooster	~
+robin	robin	~
+roe	deer	roe
+roe deer	deer	roe
+rooster	rooster	~
+rufus	~	~
+s...	~	~
+sabertooth tiger	tiger	sabertooth
+sabre tooth	tiger	sabertooth
+said that ya monkey	monkey	~
+salamander	salamander	~
+salmon	salmon	~
+same with bear	bear	~
+same with sparrow	sparrow	~
+sandshrew	shrew	~
+saw in the zoo the other day	~	~
+scales	~	~
+scampi	~	~
+scarab beetle	beetle	scarab
+scorpion	scorpion	~
+scorpions	scorpion	~
+sea animals- such as star fish, sea horses, fishs, sharks, whales	starfish/seahorse/fish/shark/whale	~
+sea cow	manatee	~
+sea horse	seahorse	~
+sea lion	sealion	~
+sea turtle	turtle	~
+sea-faring mammals	mammal	~
+seagul	seagull	~
+seagull	seagull	~
+seaguls	seagull	~
+seahorse	seahorse	~
+seahorses	seahorse	~
+seal	seal	~
+seals	seal	~
+seasl	seal	~
+semibalanus balanoidies	crab	semibalanusbalanoidies
+shark	shark	~
+sharks	shark	~
+sharp teeth	~	~
+sheep	sheep	~
+sheep goat	sheep/goat	~
+shell	~	~
+shellfish	mussel	~
+sheper	sheep	~
+shetland pony	pony	shetland
+shrew	shrew	~
+shrews	shrew	~
+shrimp	shrimp	~
+shrimps	shrimp	~
+siamese fighting fish	betta	~
+siberian tiger	tiger	siberian
+silverback gorilla	gorilla	silverback
+skunk	skunk	~
+sloth	sloth	~
+slow loris	loris	slow
+slug	slug	~
+slugs 	slug	~
+small	~	~
+small 	~	~
+snail	snail	~
+snails	snail	~
+snake	snake	~
+snake 	snake	~
+snake - or are reptiles separate?  do you mean mammals?	snake	~
+snakee	snake	~
+snakes	snake	~
+snakw	snake	~
+snow leopard	snowleopard	~
+so africa	~	~
+so houshold pets include	~	~
+so no	~	~
+sole	fish	sole
+some can grow back body parts like worms 	worm	~
+some larger animals are invertebrates	~	~
+some lay eggs	~	~
+some people keep horses and donkeys, although not usually indoors.	horse/donkey	~
+songbird	songbird	~
+sorry	~	~
+sparrow	sparrow	~
+sparrowhawk	hawk	sparrowhawk
+sparrows	sparrow	~
+specific animals like goldfish, or categories like fish?	goldfish	~
+sperm whale	whale	sperm
+sperm whalee	whale	sperm
+sphinx	~	~
+sphinx?	~	~
+spider	spider	~
+spider monkey	spidermonkey	~
+spider monkey 	spidermonkey	~
+spider monkey (have you said that)	spidermonkey	~
+spiders	spider	~
+spiky things	~	~
+spines	~	~
+spitting cobra	cobra	~
+sponges	sponge	~
+spotty 	~	~
+squid	squid	~
+squirel	squirrel	~
+squirell	squirrel	~
+squirrel	squirrel	~
+squirrell	squirrel	~
+squirrels	squirrel	~
+stallion	horse	~
+starfish	starfish	~
+starfish?	starfish	~
+steak	~	~
+steak?	~	~
+stellar's jay	jay	stellars
+sting ray	stingray	~
+stoat	stoat	~
+stop being silly cr	~	~
+stout	stoat	~
+stripy	~	~
+sun fish	fish	sun
+surely?	~	~
+swallow	swallow	~
+swan	swan	~
+swans	swan	~
+sword fish	swordfish	~
+swordfish	swordfish	~
+tadpole	tadpole	~
+tails	~	~
+tapir	tapir	~
+tarantula	tarantula	~
+tarantulas	tarantula	~
+taratantula	tarantula	~
+tartigrades!	shrimp	tardigrade
+tazmanian devil	tasmaniandevil	~
+teddy bears	bear	~
+terantula	tarantula	~
+termite	termite	~
+termites	termite	~
+terrapin	turtle	terrapin
+text	~	~
+that is an amphibian	amphibian	~
+that'll be a sight	~	~
+that's how i see it	~	~
+that's in the category animals	~	~
+the other big bird...erm...	bird	~
+the way i find it easy to rememebr animals togther are from movies e.g madagascar- thers a lion, girrafe, zebra, hipopotamus(sp), penguins, monkeys	lion/giraffe/zebra/hippopotamus/penguin/monkey	~
+theere we go	~	~
+then wilder animals that you might find in the zoo include	~	~
+theres a cartoon on one	~	~
+there's a couple!	~	~
+theres rhinos	rhino	~
+things like fur, scales etc would they count?	~	~
+think antartica	~	~
+think of monkeys	monkey	~
+think pest	~	~
+thompsons gazelle	gazelle	thompsons
+those monkeys with the human faces	monkey	~
+thy are animals	~	~
+tiger	tiger	~
+tigers	tiger	~
+tigon	liger	tiglon
+tit	bird	tit
+toad	toad	~
+toads	toad	~
+tortoise	tortoise	~
+tortoise, turtles	tortoise/turtle	~
+toucans	toucan	~
+tprawn	prawn	~
+tree frog	treefrog	~
+t-rex	dinosaur	trex
+trout	trout	~
+trout, tuna	trout/tuna	~
+trunks 	~	~
+try the other aussie ones.	~	~
+tuatara	lizard	tuatara
+tucan	toucan	~
+tuna	tuna	~
+tunaaaa	tuna	~
+turkey	turkey	~
+turtle	turtle	~
+turtles	turtle	~
+tyrannosaurus rex	dinosaur	trex
+u said that	~	~
+ultimate shrew	shrew	~
+umm	~	~
+unicorn	unicorn	~
+unicorns	unicorn	~
+united kingdom	~	~
+urchin	urchin	~
+v.lion king related	lion	~
+v.nice	~	~
+vampire bat	bat	vampire
+vertebrates	~	~
+vervet monkeyys	monkey	vervet
+vervet monkeyys :d	monkey	vervet
+viper	viper	~
+vole	vole	~
+vulpines	fox	~
+vulture	vulture	~
+wait i think i know	~	~
+walaby	wallaby	~
+walking around inca trail	~	~
+walrus	walrus	~
+walrus and yes okapi	walrus/okapi	~
+warm blooded 	~	~
+wart hog	warthog	~
+warthog	warthog	~
+warthog - timon and pumba!	warthog	~
+was jus about to correct myself	~	~
+wasp	wasp	~
+water dragon	lizard	waterdragon
+waterflea	shrimp	waterflea
+we exhibit animalistic tendacies	~	~
+we learnt about them in scotland hahahaha theyre birds	bird	~
+weasel	weasel	~
+well  u know what i'm talking about	~	~
+whale	whale	~
+whale sharks	whaleshark	~
+whales	whale	~
+whales, dolphins, seals, penguins	whale/dolphin/seal/penguin	~
+whart hog	warthog	~
+what are the ones like hamsters and rats...	hamster/rat	~
+what are those things called you see in peru	~	~
+what else	~	~
+what is tha	~	~
+whats a passerine	bird	passerine
+what's that?	~	~
+whats the thing when a horse and a donkey mate	horse/donkey	~
+whats those that smell	~	~
+whatt	~	~
+white rino	rhino	white
+white shark	greatwhiteshark	~
+wild boar	wildboar	~
+wild dog	wilddog	~
+wild dogs	wilddog	~
+wildcat	wildcat	~
+wildebeast	wildebeest	~
+wilderbeast	wildebeest	~
+windhound	dog	windhound
+winged squirrel	flyingsquirrel	~
+wolf	wolf	~
+wolfs	wolf	~
+wolverine	wolverine	~
+wolves	wolf	~
+woodlouse	louse	woodlouse
+woof	wolf	~
+wooooahhh	~	~
+wooopecker	woodpecker	~
+worm	worm	~
+worms	worm	~
+worms 	worm	~
+wtf	~	~
+wurms	worm	~
+yack	yak	~
+yak	yak	~
+yeah	~	~
+yeah!	~	~
+yeah, i don't know many of these!	~	~
+yeah, i think so.	~	~
+yeah.	~	~
+yeh they have good cheeks.	~	~
+yep	~	~
+yes	~	~
+yes i know	~	~
+yes you have	~	~
+yo	~	~
+you do mammals!	mammal	~
+you don't	~	~
+you know there are evil hamsters	hamster	~
+you should read flowers for algernon	~	~
+zebra	zebra	~
+zebras	zebra	~
+zebras, 	zebra	~
+zebu	zebu	~
+zeebra	zebra	~
+zooplankton	jellyfish	zooplankton
+zooplankton adn so on?	jellyfish	zooplankton
+	~	~

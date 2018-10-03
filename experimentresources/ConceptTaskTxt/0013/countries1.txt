@@ -1,0 +1,43 @@
+28438|america
+31172|argentina
+36641|uruguay
+41344|peru
+56985|brazil
+69344|azerbaijan
+84000|congo
+87719|sudan 
+89360|mali
+91000|somalia
+96688|sweden
+99641|norway 
+101719|finland
+103797|romania
+107844|egypt
+110907|turkey
+115282|russia
+118016|slovakia
+133547|check republic
+136172|tunisia
+148860|portugal
+158922|solomon islands
+161219|tonga
+166141|new zealand
+178938| bosnia herzogovina
+182657|macedonia
+205297|ethipia
+209344|eritrea
+214594|mozambique
+216563|senegal
+218532|niger
+223782|nigeria
+230235|hungary
+233516|ukraine
+240407|lebanoon
+242375|syria
+244016|iraq
+251454|china
+279454|liberia
+281860|libya
+290938|kurdistan
+292250|iran
+294438|pakistan

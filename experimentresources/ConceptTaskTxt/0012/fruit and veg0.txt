@@ -1,0 +1,22 @@
+25485|pears
+41782|bananas
+44735|oranges
+50969|potatoes
+64094|carrot
+66719|cauliflower
+71641|avocado
+113641|cucumbers
+119985|melon
+124141|watermelon
+129391|steak
+139547|dragon fruit
+145141|olive
+146453|tomato
+151813|peach
+153782|plum
+156078|nectarine
+170297|satsuma
+196766|grape
+211750|BEETROOT
+241828|EGGPLANT
+252000|CORGUETTE

@@ -1,0 +1,31 @@
+4812|apple
+6343|orange
+8968|banana
+11812|prune
+14109|raisin
+14984|grape
+19578|kumquat
+21984|star fruit
+26578|squash
+30078|zucchini
+42656|spinach
+46156|lettuce
+52500|blueberry
+57859|blackberry
+59609|elderberry
+71312|watermelon
+79406|caltalope
+86953|cantalope
+92093|honeydew
+98000|radish
+107953|corn
+111453|green beans
+113859|kidney beans
+116484|black beans
+147984|potato
+155859|sweet potato
+194687|plum
+196656|nectarine
+221484|bok choy
+230343|water chestnut
+296406|olives

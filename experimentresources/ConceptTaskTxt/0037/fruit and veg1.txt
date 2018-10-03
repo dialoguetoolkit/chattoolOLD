@@ -1,0 +1,19 @@
+19031|pear
+20672|plum
+24390|grape
+28437|goosebury
+34781|rhubarb.
+39922|peach
+82797|green beans
+88593|broad beans
+91109|lentils, etc.
+101281|lemon
+105765|orange?
+117468|berries
+126078|blackberry, blueberry, cranberry, etc, etc.
+136828|apple!
+165047|peanut.
+212843|coconut.
+233078|olives.
+254187|cucumber
+272234|sring onion, chili pepper, etc.

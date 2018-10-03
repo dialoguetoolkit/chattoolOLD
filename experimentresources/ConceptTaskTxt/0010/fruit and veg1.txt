@@ -1,0 +1,19 @@
+49000|melon
+51844|appricot
+56766|citrus
+61469|blueberries
+72625|cucumbers
+81594|watermelon
+87500|blackberries
+102703|grapes
+114407|lettuce
+124032|spinach
+159141|passion fruit
+173032|banana
+191078|blood oranges
+198516|cabbage
+199828|carrot
+213938|onions
+222360|green chilli
+245328|pomegranade
+289735|broccoli

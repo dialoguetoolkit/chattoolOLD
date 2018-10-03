@@ -17,7 +17,7 @@ The toolkit provides an extensive API for scripting these manipulations, as well
 
 The chattool automatically records all keypresses, words and turns, notifications (including typing notifications and read receipts), number of edits, typing speed, typing overlap.
 
-Instead of costly and time-intensive transcription, all data is immediately available for analysis. The data is saved in a variety of formats - to help both qualitative and quantitative analyses (e.g. loading into SPSS, R, Excel, MATLAB).
+Instead of costly and time-intensive transcription, all data is immediately available for analysis. The data is saved in a variety of formats - to help both qualitative and quantitative analyses (e.g. loading into SPSS, R, Excel, MATLAB) .
 
 ![GitHub Logo](/documentation/imgs/feature-image-1.png)
 Format: ![Alt Text](url)

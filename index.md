@@ -19,5 +19,5 @@ The chattool automatically records all keypresses, words and turns, notification
 
 Instead of costly and time-intensive transcription, all data is immediately available for analysis. The data is saved in a variety of formats - to help both qualitative and quantitative analyses (e.g. loading into SPSS, R, Excel, MATLAB).
 
-![GitHub Logo](/documentation/imgs.png)
+![GitHub Logo](/documentation/imgs/feature-image-1.png)
 Format: ![Alt Text](url)

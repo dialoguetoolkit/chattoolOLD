@@ -19,7 +19,7 @@ The toolkit provides an extensive API for scripting these manipulations, as well
 
 Instead of costly and time-intensive transcription, all data is immediately available for analysis. The data is saved in a variety of formats - to help both qualitative and quantitative analyses (e.g. loading into SPSS, R, Excel, MATLAB).
 </td>
-    <td><img align="right" src="https://github.com/gjmills/dialoguetoolkit/edit/master/documentation/imgs/feature-image-2.png"></td>
+    <td><img align="right" src="https://raw.githubusercontent.com/gjmills/dialoguetoolkit/master/documentation/imgs/feature-image-2.png"></td>
   </tr>
 </table>
 

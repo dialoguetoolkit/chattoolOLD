@@ -13,7 +13,7 @@ The toolkit provides an extensive API for scripting these manipulations, as well
 
 ## Recorded data
 
-<table style="border: 5px solid black;">
+<table>
    <tr>
     <td>The chattool automatically records all keypresses, words and turns, notifications (including typing notifications and read receipts), number of edits, typing speed, typing overlap.
 

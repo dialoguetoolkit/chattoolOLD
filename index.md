@@ -23,3 +23,31 @@ Instead of costly and time-intensive transcription, all data is immediately avai
   </tr>
 </table>
 
+## Manipulating the interface
+
+Existing software (e.g. whatsapp, viber, line, wechat) use subtly different interfaces that have undocumented, ad-hoc and constantly changing features. The effect of these interface features on interaction are currently poorly understood.
+The toolkit allows configuration of all aspects of the interface, including the screen dimensions, text (colour, font, positioning), typing synchrony and interleaving of turns, typing status, read receipts, as well as simulating network conditions, e.g. latency. 
+
+
+
+## Manipulating the interaction
+
+Possible kinds of experimental intervention include: 
+
+* Conceptual & linguistic coordination
+
+  * Manipulation of lexical, syntactic and semantic constituents (e.g. by inserting "spoof" clarification requests into the  interaction that target a specific element - see image to the right).
+  * Manipulation of the specificity of referring expressions.
+  * Manipulation of priming & levels of alignment.
+
+Procedural coordination
+
+  * Manipulation of the timing and sequencing of turns.
+
+Group-membership and identity:
+
+  * Manipulation of participatory status (e.g overhearer vs. bystander).
+  * Manipulation of (apparent) identity of participant.
+  * Assigning participants to different sub-groups, e.g. to allow group-specific conventions to emerge.
+
+

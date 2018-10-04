@@ -40,7 +40,7 @@ Possible kinds of experimental intervention include:
   * Manipulation of the specificity of referring expressions.
   * Manipulation of priming & levels of alignment.
 
-Procedural coordination
+* Procedural coordination
 
   * Manipulation of the timing and sequencing of turns.
 

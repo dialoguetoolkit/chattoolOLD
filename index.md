@@ -34,17 +34,17 @@ The toolkit allows configuration of all aspects of the interface, including the 
 
 Possible kinds of experimental intervention include: 
 
-* Conceptual & linguistic coordination
+* **Conceptual & linguistic coordination**
 
   * Manipulation of lexical, syntactic and semantic constituents (e.g. by inserting "spoof" clarification requests into the  interaction that target a specific element - see image to the right).
   * Manipulation of the specificity of referring expressions.
   * Manipulation of priming & levels of alignment.
 
-* Procedural coordination
+* **Procedural coordination**
 
   * Manipulation of the timing and sequencing of turns.
 
-Group-membership and identity:
+* **Group-membership and identity:**
 
   * Manipulation of participatory status (e.g overhearer vs. bystander).
   * Manipulation of (apparent) identity of participant.

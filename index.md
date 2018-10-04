@@ -10,18 +10,8 @@ All participants' turns are routed via the server which can be scripted to detec
 The toolkit provides an extensive API for scripting these manipulations, as well as a constantly expanding library of experimental setups that can be reconfigured
 
 # Features
-<img align="right" src="/documentation/imgs/feature-image-2.png">
-
 
 ## Recorded data
-
-The chattool automatically records all keypresses, words and turns, notifications (including typing notifications and read receipts), number of edits, typing speed, typing overlap.
-
-Instead of costly and time-intensive transcription, all data is immediately available for analysis. The data is saved in a variety of formats - to help both qualitative and quantitative analyses (e.g. loading into SPSS, R, Excel, MATLAB).
-
-![](/documentation/imgs/feature-image-1.png)
-
-
 
 <table style="width:100%">
    <tr>

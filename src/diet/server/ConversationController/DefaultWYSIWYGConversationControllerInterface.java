@@ -1,4 +1,9 @@
+
+
 //Please note that this code is released on a slightly more restrictive license. Contact g.j.mills@rug.nl before use
+
+
+
 package diet.server.ConversationController;
 import diet.attribval.AttribVal;
 import diet.client.ClientInterfaceEvents.ClientInterfaceEventTracker;
@@ -26,6 +31,10 @@ import java.awt.Dimension;
 import java.util.Vector;
 import javax.swing.text.MutableAttributeSet;
 
+
+
+
+//Please note that this code is released on a slightly more restrictive license. Contact g.j.mills@rug.nl before use
 
 
 

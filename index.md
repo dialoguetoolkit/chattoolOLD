@@ -69,7 +69,7 @@ The real strength of this toolkit is in manipulating the interaction. Since all 
 
 <p>Gao, G., Hwang, S. Y., Culbertson, G., & Fussell, S. R. (2017). Beyond Information Content: The Effects of Culture On Affective Grounding in Instant Messaging Conversations.</p>
 
-<p>Liebman, N., & Gergle, D. (2016, February). It's (Not) Simply a Matter of Time: The Relationship Between CMC Cues and Interpersonal Affinity. In Proceedings of the 19th ACM Conference on Computer-Supported Cooperative Work & Social Computing (pp. 570-581). ACM.</p>
+<p>Liebman, N., & Gergle, D. (2016, February).<b> It's (Not) Simply a Matter of Time: The Relationship Between CMC Cues and Interpersonal Affinity.</b> In Proceedings of the 19th ACM Conference on Computer-Supported Cooperative Work & Social Computing (pp. 570-581). ACM.</p>
 
 <p>Concannon, S., Healey, P. G., & Purver, M. (2015). <a href = "./publications/concannon-et-al15semdialexp.pdf"><b>Shifting Opinions: An Experiment on Agreement and Disagreement in Dialogue</b></a> SEMDIAL 2015 goDIAL, 15.</p>
          

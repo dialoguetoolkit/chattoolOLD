@@ -67,6 +67,8 @@ The real strength of this toolkit is in manipulating the interaction. Since all 
 
 <p> Yu, Y., Eshghi, A., Mills, G., & Lemon, O. J. (2017). The burchak corpus: a challenge data set for interactive learning of visually grounded word meanings. In Belz, Anya, Erkut Erdem, Katerina Pastra, and Krystian Mikolajczyk. "Proceedings of the Sixth Workshop on Vision and Language." In Proceedings of the Sixth Workshop on Vision and Language. 2017.</P>
 
+<p>GAO, G., HWANG, S. Y., CULBERTSON, G., & FUSSELL, S. R. (2017). Beyond Information Content: The Effects of Culture On Affective Grounding in Instant Messaging Conversations.</p>
+
 
 <p>Concannon, S., Healey, P. G., & Purver, M. (2015). <a href = "./publications/concannon-et-al15semdialexp.pdf"><b>Shifting Opinions: An Experiment on Agreement and Disagreement in Dialogue</b></a> SEMDIAL 2015 goDIAL, 15.</p>
          

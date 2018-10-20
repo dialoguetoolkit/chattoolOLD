@@ -68,6 +68,8 @@ The latest version of the toolkit is available as a <a href = "https://github.co
  
 # Documentation
 
+<a href = "./docs/gettingstarted">Getting started</A>
+
 
 # Development 
 

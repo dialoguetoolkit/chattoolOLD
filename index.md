@@ -46,21 +46,16 @@ The real strength of this toolkit is in manipulating the interaction. Since all 
     <p>
  
 * **Group-membership and identity:**
-
   * Manipulation of participatory status (e.g overhearer vs. bystander).
   * Manipulation of (apparent) identity of participant.
   * Assigning participants to different sub-groups, e.g. to allow group-specific conventions to emerge.
   <p>
 
-<A href = "./docs/mazegame">mg</A>
+
+# Features
 
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+# Documentation
 
 
-
-
+# Publications

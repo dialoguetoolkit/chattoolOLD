@@ -59,6 +59,15 @@ The real strength of this toolkit is in manipulating the interaction. Since all 
 
 <p>Mills, G. J. and Healey, P. G. T. (submitted) <a href = "http://homepages.inf.ed.ac.uk/gmills/MillsHealey2013Submission.pdf"><B>A dialogue experimentation toolkit.</B></A>
    
+
+
+
+
+<p>Healey, P. G., Mills, G. J., Eshghi, A., & Howes, C. (2018). Running repairs: Coordinating meaning in dialogue. Topics in cognitive science, 10(2), 367-388.</p>   
+
+<p> Yu, Y., Eshghi, A., Mills, G., & Lemon, O. J. (2017). The burchak corpus: a challenge data set for interactive learning of visually grounded word meanings. In Belz, Anya, Erkut Erdem, Katerina Pastra, and Krystian Mikolajczyk. "Proceedings of the Sixth Workshop on Vision and Language." In Proceedings of the Sixth Workshop on Vision and Language. 2017.</P>
+
+
 <p>Concannon, S., Healey, P. G., & Purver, M. (2015). <a href = "./publications/concannon-et-al15semdialexp.pdf"><b>Shifting Opinions: An Experiment on Agreement and Disagreement in Dialogue</b></a> SEMDIAL 2015 goDIAL, 15.</p>
          
 <p>Nolle, Jonas, Kristian Tylen, and Gregory Mills. (2015) "Environmental affordances shape linguistic coordination in the maze game." </p>

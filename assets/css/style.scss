@@ -9,6 +9,7 @@
     width: 100%;
     overflow: auto;
     word-break: normal;
+    border: 0px solid $table-border-color;
     word-break: keep-all; // For Firefox to horizontally scroll wider tables.
     -webkit-overflow-scrolling: touch;
 

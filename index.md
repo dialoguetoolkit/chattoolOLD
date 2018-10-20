@@ -51,4 +51,4 @@ Possible kinds of experimental intervention include:
   * Assigning participants to different sub-groups, e.g. to allow group-specific conventions to emerge.
 
 
-<A href = "./docs/mazegame.md">maze game</A>
+<A href = "./docs/mazegame">mg</A>

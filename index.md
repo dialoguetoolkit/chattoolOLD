@@ -111,7 +111,7 @@ The real strength of this toolkit is in manipulating the interaction. Since all 
 
 <p>Patrick G. T. Healey, Arash Eshghi, Christine Howes, and Matthew Purver.(2011) <B><A HREF ="http://www.eecs.qmul.ac.uk/~mpurver/papers/healey-et-al11std.pdf">Making a contribution: Processing clarification requests in dialogue</A></B>. In Proceedings of the 21st Annual Meeting of the Society for Text and Discourse, Poitiers, July 2011. </P>
 
-<p>Mills, G. J. and Gregoromichelaki, E. (2010) <B> <A HREF = semdial2010.pdf>Establishing coherence in dialogue: sequentiality, intentions and negotiation.</A></B> In Proceedings of SemDial (PozDial). Adam Mickiewicz University, Poznan, Poland 16-18th June. </p>
+<p>Mills, G. J. and Gregoromichelaki, E. (2010) <B> <A HREF = "semdial2010.pdf">Establishing coherence in dialogue: sequentiality, intentions and negotiation.</A></B> In Proceedings of SemDial (PozDial). Adam Mickiewicz University, Poznan, Poland 16-18th June. </p>
 
 <p>Kempson, R., Gregoromichelaki E., Mills, G. Purver, M., Howes, C., Healey, P. (2010) <B>On Dialogue Modelling, Language Processing Dynamics, and Linguistic Knowledge</B> Linguistic Evidence 2010, Tübingen, Feb 2010. </P>
 
@@ -119,7 +119,7 @@ The real strength of this toolkit is in manipulating the interaction. Since all 
 
 <p>Kempson R, Gregoromichelaki E, Purver M, Mills G, Gargett A, Howes C (2009) <B> How mechanistic can accounts of interaction be? </B> In: Proceedings of Diaholmia, the 13th workshop on the semantics and pragmatics of dialogue</p>
 
-<p>Mills, G. J. and Healey, P.G.T. (2008) <B><A HREF = "./publications/MillsHealey2008_Alignment.pdf">Semantic negotiation in dialogue: mechanisms of alignment.</B></A> in Proceedings of the 8th SIGdial workshop on Discourse and Dialogue, Columbus, OH, US; June 2008.</P>
+<p>Mills, G. J. and Healey, P.G.T. (2008) <B><A HREF = "./publications/MillsHealey2008_Alignment.pdf">Semantic negotiation in dialogue: mechanisms of alignment.</A></B> in Proceedings of the 8th SIGdial workshop on Discourse and Dialogue, Columbus, OH, US; June 2008.</P>
 
 <P>Mills, G. J. (2007) <B>Semantic co-ordination in dialogue: the role of direct interaction.</B>  PhD Thesis. </P>
 

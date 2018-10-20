@@ -84,7 +84,7 @@ The real strength of this toolkit is in manipulating the interaction. Since all 
          
 <P> Mills, G.J.  (2012) <B> Making and breaking procedural conventions in dialogue</B> . Poster presented at Annual meeting of the cognitive science society (CogSci), Kyoto</P>
 
-<P> Davidenko, N. and Mills G. J.  (2012)<B> <A HREF ="./publications/davidenkoMills2012-Facecomms.pdf"> Describing faces: Conventionalizing ontologies through dialogic interaction</B></A> . Poster presented at Annual meeting of the cognitive science society (CogSci), Kyoto</P>
+<P> Davidenko, N. and Mills G. J.  (2012)<B> <A HREF ="./publications/davidenkoMills2012-Facecomms.pdf"> Describing faces: Conventionalizing ontologies through dialogic interaction</A></B> . Poster presented at Annual meeting of the cognitive science society (CogSci), Kyoto</P>
 
 <P>Christine Howes, Patrick G. T. Healey, Matthew Purver, and Arash Eshghi. (2012) <B><A HREF= "http://www.eecs.qmul.ac.uk/~mpurver/papers/howes-et-al12amlap.pdf"> Finishing each other's. . . responding to incomplete contributions in dialogue</A></B>. In Architectures and Mechanisms for Language Processing, Riva del Garda, 2012. </P>
 

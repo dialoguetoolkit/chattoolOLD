@@ -127,14 +127,18 @@ public class IntelligentIO {
     
     
     public void saveTurn(Turn t){
-       
+         
          try{
+             // System.err.println("SL051");
              this.writeToObjectFileCreatingIfNecessary("turnsserialized.obj",t );
+             //System.err.println("SL052");
          }catch (Exception e){
              e.printStackTrace();
          }
          try{
+            //  System.err.println("SL05A");
              saveTurnAsText(t);        
+            //  System.err.println("SL05B");
          }
          catch (Exception e){
              e.printStackTrace();
@@ -149,6 +153,7 @@ public class IntelligentIO {
         
     public void saveTurnAsText(Turn t){
         String line = "";
+        // System.err.println("SL06A");
         if(t instanceof NormalTurnProducedByParticipant){
             NormalTurnProducedByParticipant tpbp = (NormalTurnProducedByParticipant)t;
             line = line +  tpbp.getCH().getConversationName() + separator;
@@ -216,9 +221,16 @@ public class IntelligentIO {
             line = line + " " + separator;
             line = line + dtbs.getIOAdditionalValues() + separator;
             
+            
+           
         }
 
+       //   System.err.println("SL07A");
+        
         this.writeToTextFileCreatingIfNecessary("turns.txt", line+"\n");
+        
+       // System.exit(-567);
+        
         //this.saveTurnAsAttribVals(t);
         
     }

@@ -241,11 +241,11 @@ public class ConversationHistory implements Serializable {
 		Vector recipients = getConversantsAddingIfNecessary(recipientsNames);
             
             
-                
+                //System.err.println("SL03");
                 Turn t = new DataToBeSaved(this, subdialogueID, dataType, timeOnClientOfStartTyping,timeOnClientOfSending, timeOnServerOfReceipt, senderID, senderUsername, apparentSenderUsername, text,
 				recipients, wasBlocked, keyPresses, documentUpdates,clientinterfaceEvents , additionalValues);
 
-                
+                //System.err.println("SL04");
                 this.convIO.saveTurn(t);
                 
 	}

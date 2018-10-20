@@ -27,6 +27,8 @@ public class Configuration implements Cloneable{
         
     }
     
+   public String wysiwyglicense = "Please note that this interface is released under a more restrictive license - until 2022 - if used in academic publication - author of code must be included as coauthor" ;
+        
     
     public String startup_start_as_CLIENT_or_SERVER_or_CHOICE = "CHOICE";
     public int server_port_number_to_listen_for_clients = 20000;

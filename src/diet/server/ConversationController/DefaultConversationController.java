@@ -198,6 +198,9 @@ public abstract class DefaultConversationController  {
     }
     
  
+    public void  initializePostSetup(){
+        //Called after everything has been set up and initialized on the GUI and chattool side
+    }
     
     public static boolean showcCONGUI() {
         return false;

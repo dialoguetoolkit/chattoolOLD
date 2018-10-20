@@ -1,4 +1,9 @@
+
+
 //Please note that this code is released on a slightly more restrictive license. Contact g.j.mills@rug.nl before use
+
+
+
 package diet.server.ConversationController;
 import diet.attribval.AttribVal;
 import diet.client.ClientInterfaceEvents.ClientInterfaceEventTracker;
@@ -26,6 +31,10 @@ import java.awt.Dimension;
 import java.util.Vector;
 import javax.swing.text.MutableAttributeSet;
 
+
+
+
+//Please note that this code is released on a slightly more restrictive license. Contact g.j.mills@rug.nl before use
 
 
 
@@ -74,6 +83,7 @@ public class DefaultWYSIWYGConversationControllerInterface extends DefaultConver
         this.wysiwygtm.setAllOnSameTrack(singleTrackOption);
         durationOfTextFadeout = CustomDialog.getLong("How long should text be displayed for? (ms)", 3000);
         //this.fh.setFloorHoldingTime(durationFloorHolding);
+        doSaveOfLicense();
     }
     
    
@@ -88,15 +98,28 @@ public class DefaultWYSIWYGConversationControllerInterface extends DefaultConver
         if(numberOfTracks>2)this.wysiwygtm.setAllOnSameTrack(false);
         this.durationOfTextFadeout=durationOfTimeout;
         //this.fh.setFloorHoldingTime(durationFloorHolding);
-    }
+          doSaveOfLicense();
+      
+   }
     
    
-    
+    private void doSaveOfLicense(){
+        
+        try{
+          String text = ""+sett.wysiwyglicense;
+          System.err.println("SL01");
+          c.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("Important", "license info", "license info", "license info", "license info", 0, 0, 0, new Vector(),text, new Vector());
+          System.err.println("SLE");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
     
     
     
      @Override
     public boolean requestParticipantJoinConversation(String participantID) {
+       // this.doSaveOfLicense();
         return true;        
     }
     

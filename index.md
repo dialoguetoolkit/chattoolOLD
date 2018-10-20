@@ -13,15 +13,23 @@ The toolkit provides an extensive API for scripting these manipulations, as well
 
 ## Recorded data
 
-<table>
-   <tr>
-    <td>The chattool automatically records all keypresses, words and turns, notifications (including typing notifications and read receipts), number of edits, typing speed, typing overlap.
+The chattool automatically records all keypresses, words and turns, notifications (including typing notifications and read receipts), number of edits, typing speed, typing overlap.
 
 Instead of costly and time-intensive transcription, all data is immediately available for analysis. The data is saved in a variety of formats - to help both qualitative and quantitative analyses (e.g. loading into SPSS, R, Excel, MATLAB).
-</td>
-    <td><img align="right" src="https://raw.githubusercontent.com/gjmills/dialoguetoolkit/master/documentation/imgs/feature-image-2.png"></td>
-  </tr>
-</table>
+
+
+## Integrated tasks
+
+The chat tool includes a set of dialogue tasks, including:
+
+* The <a href =    "https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/toward-a-mechanistic-psychology-of-dialogue/83442BA495E0D5F81BDB615E4109DBD2" >maze game </A>
+* The <a href = "https://pdfs.semanticscholar.org/dd2b/dd2c4df589cc3be1f4bfab6c42d8a9dc6609.pdf">tangram task </A> and any other joint reference tasks
+* The <a href = "https://scholar.google.nl/citations?user=eIghKWMAAAAJ&hl=en&oi=sra" confidence task </A>
+<p></p> 
+
+Other dialogue tasks can be easily programmed in java/swing
+
+<p></p>
 
 ## Manipulating the interface
 
@@ -130,4 +138,14 @@ The real strength of this toolkit is in manipulating the interaction. Since all 
   
   
 
+
+<table>
+   <tr>
+    <td>The chattool automatically records all keypresses, words and turns, notifications (including typing notifications and read receipts), number of edits, typing speed, typing overlap.
+
+Instead of costly and time-intensive transcription, all data is immediately available for analysis. The data is saved in a variety of formats - to help both qualitative and quantitative analyses (e.g. loading into SPSS, R, Excel, MATLAB).
+</td>
+    <td><img align="right" src="https://raw.githubusercontent.com/gjmills/dialoguetoolkit/master/documentation/imgs/feature-image-2.png"></td>
+  </tr>
+</table>
 

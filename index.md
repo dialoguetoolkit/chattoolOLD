@@ -52,9 +52,6 @@ The real strength of this toolkit is in manipulating the interaction. Since all 
   <p>
 
 
-# Features
-
-
 # Documentation
 
 

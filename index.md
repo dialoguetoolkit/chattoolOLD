@@ -69,6 +69,10 @@ The latest version of the toolkit is available as a <a href = "https://github.co
 # Documentation
 
 
+# Development 
+
+The source code of the project is hosted at  <a href = "https://github.com/dialoguetoolkit/chattool">https://github.com/dialoguetoolkit/chattool</a>. 
+
 # Publications
 
 <p>Mills, G. J. and Healey, P. G. T. (submitted) <a href = "http://homepages.inf.ed.ac.uk/gmills/MillsHealey2013Submission.pdf"><B>A dialogue experimentation toolkit.</B></A>

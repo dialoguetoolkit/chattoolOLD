@@ -63,7 +63,7 @@ The real strength of this toolkit is in manipulating the interaction. Since all 
 
 # Download and run the toolkit
 
-The latest version of the toolkit is available as a <a href = "https://github.com/dialoguetoolkit/chattool/releases/download/v4.6.2/chattool_runme.zip"> <b>zip file </b> </a>
+The latest version of the toolkit is available as a <a href = "https://github.com/dialoguetoolkit/chattool/releases/download/4.6.2/chattool_runme.zip"> <b>zip file </b> </a>
 
  
 # Documentation
@@ -149,15 +149,3 @@ The source code of the project is hosted at  <a href = "https://github.com/dialo
 
   
   
-
-
-<table>
-   <tr>
-    <td>The chattool automatically records all keypresses, words and turns, notifications (including typing notifications and read receipts), number of edits, typing speed, typing overlap.
-
-Instead of costly and time-intensive transcription, all data is immediately available for analysis. The data is saved in a variety of formats - to help both qualitative and quantitative analyses (e.g. loading into SPSS, R, Excel, MATLAB).
-</td>
-    <td><img align="right" src="https://raw.githubusercontent.com/gjmills/dialoguetoolkit/master/documentation/imgs/feature-image-2.png"></td>
-  </tr>
-</table>
-

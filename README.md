@@ -20,7 +20,7 @@ To start a client from the commandline you need to specify the IP address and po
 
 ```java -jar "chattool.jar" CLIENT localhost 20000```
 
-It is also possible to start clients (locally) from the GUI by pressing the button
+It is also possible to start clients (locally) from the GUI by selecting the button "Additional Client" 
 
 
 

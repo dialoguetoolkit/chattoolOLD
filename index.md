@@ -46,16 +46,20 @@ The real strength of this toolkit is in manipulating the interaction. Since all 
 
   * Manipulation of lexical, syntactic and semantic constituents (e.g. by inserting "spoof" clarification requests into the  interaction that target a specific element - see image below).
   * Manipulation of the specificity of referring expressions.
+  * Manipulation of signals of positive feedback (e.g. inserting, blocking or transforming signals such as "ok", "yeah")
+  * Manipulation of signals of negative feedback (e.g. inserting, blocking or transforming clarification requests such as "what?" or "huh?" or "sorry why?")
+  * Manipulation of discourse markers, e.g. "so?"
   * Manipulation of priming & levels of alignment.
   <p>
  
 * **Procedural coordination**
   * Manipulation of the timing and sequencing of turns.
     <p>
+ * Introducing artificial hesitations//disfluencies (e.g. "umm", "uhh")
  
 * **Group-membership and identity:**
   * Manipulation of participatory status (e.g overhearer vs. bystander).
-  * Manipulation of (apparent) identity of participant.
+  * Manipulation of (apparent) identity of participant (e.g. gender, age, community membership)
   * Assigning participants to different sub-groups, e.g. to allow group-specific conventions to emerge.
   <p>
 

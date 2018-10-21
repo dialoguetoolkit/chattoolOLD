@@ -4,7 +4,7 @@ This repository is a netbeans project. If opened in netbeans it should run "out 
 
 
 
-## Speeding up development of conversation controller objects
+## Speeding up testing cycle of conversation controller objects
 
 After a while you will probably get bored of going through the process of 
 1. Starting the chattool
@@ -14,7 +14,14 @@ After a while you will probably get bored of going through the process of
 To get round this you can start any Conversation Controller object, along with the required number of clients by using the following syntax:
 
 ```java
-javac -jar "chatool.jar" nogui_ccname_autologin CONVERSATIONCONTROLLERNAME````
+javac -jar "chatool.jar" nogui_ccname_autologin CONVERSATIONCONTROLLERNAME
 ```
+
+For example:
+
+```java
+javac -jar "chatool.jar" nogui_ccname_autologin DyadicTurnByTurnInterface
+```
+
 
 

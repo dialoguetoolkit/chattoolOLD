@@ -27,4 +27,4 @@ javac -jar "chatool.jar" nogui_ccname_autologin DyadicTurnByTurnInterface
 This will automatically start the chattool, load the ConversationController object, initialize the clients and log them in
 
 The default number of clients to start is 2 (which is specified in 
-```Configuration.defaultGroupSize = 2```
+```Configuration.defaultGroupSize```

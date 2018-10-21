@@ -397,7 +397,7 @@ public class MazeGameConversationControllerMultipleDyads extends DefaultConversa
     
     
     public static boolean showcCONGUI(){
-        return true;
+        return false;
     } 
 
    

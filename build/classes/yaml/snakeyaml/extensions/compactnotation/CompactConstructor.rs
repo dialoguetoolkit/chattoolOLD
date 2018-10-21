@@ -1,2 +1,0 @@
-org.yaml.snakeyaml.extensions.compactnotation.CompactConstructor$ConstructCompactObject
-org.yaml.snakeyaml.extensions.compactnotation.CompactConstructor

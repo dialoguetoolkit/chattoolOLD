@@ -175,7 +175,10 @@ public class FaceComms2016_RAP_WYSIWYGDyadic  extends DefaultWYSIWYGConversation
                 
     
     
-      
+        public static boolean showcCONGUI(){
+        return false;
+    }     
+       
         
        
     }

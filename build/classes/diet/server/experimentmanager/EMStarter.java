@@ -423,19 +423,13 @@ defaults.put("List:\"List.cellRenderer\"[Disabled].background", laf.getDerivedCo
             
            
            
-            Class    c = Class.forName( "diet.server.ConversationController.DefaultDyadicConversationController");
+           // Class    c = Class.forName( "diet.server.ConversationController.DefaultDyadicConversationController");
            
             
             
             
             
-           if(c==null){
-              System.err.println("EMSTARTER CLASSFORNAME IT IS NULL");
-             // System.exit(-6);
-           }else{
-               System.err.println("EMSTARTER CLASSFORNAME FOUND THE CLASS");
-               //System.exit(-8);
-           }
+          
         }
         catch(Exception e){
             e.printStackTrace();                

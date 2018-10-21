@@ -181,6 +181,8 @@ public abstract class DefaultConversationController  {
         c.convIO = new IntelligentIO(c,parentDirectory,this.getID());
         pp = new ParticipantPartnering(c);
         itnt = new IsTypingOrNotTyping(this, sett.client_TextEntryWindow_istypingtimeout);
+      // itnt = new IsTypingOrNotTyping(this, 2500);
+       
     }
     
     public DefaultConversationController(Conversation c, long istypingtimeout){
@@ -195,9 +197,13 @@ public abstract class DefaultConversationController  {
         c.convIO = new IntelligentIO(c,parentDirectory,this.getID());
         pp = new ParticipantPartnering(c);
         itnt = new IsTypingOrNotTyping(this, istypingtimeout);
+        
     }
     
  
+    public void  initializePostSetup(){
+        //Called after everything has been set up and initialized on the GUI and chattool side
+    }
     
     public static boolean showcCONGUI() {
         return false;

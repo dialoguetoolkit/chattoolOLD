@@ -1,2 +1,0 @@
-diet.task.mazegame.JMazePanel2
-diet.task.mazegame.JMazePanel2_this_componentAdapter

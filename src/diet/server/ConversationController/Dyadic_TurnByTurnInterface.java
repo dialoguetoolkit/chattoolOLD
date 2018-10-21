@@ -1,0 +1,153 @@
+package diet.server.ConversationController;
+import diet.client.ClientInterfaceEvents.ClientInterfaceEvent;
+import diet.client.ClientInterfaceEvents.ClientInterfaceEventStringPrettifier;
+import diet.debug.Debug;
+import diet.message.MessageChatTextFromClient;
+import diet.message.MessageClientInterfaceEvent;
+import diet.message.MessageKeypressed;
+import diet.message.MessageTask;
+import diet.message.MessageWYSIWYGDocumentSyncFromClientInsert;
+import diet.message.MessageWYSIWYGDocumentSyncFromClientRemove;
+import diet.server.ConnectionListener;
+import diet.server.Conversation;
+import diet.server.Participant;
+import java.awt.event.KeyEvent;
+import java.util.Date;
+import java.util.Vector;
+import javax.json.JsonObject;
+import javax.json.JsonObjectBuilder;
+
+
+
+
+public class Dyadic_TurnByTurnInterface extends DefaultConversationController{
+
+    
+    
+    
+    public static boolean showcCONGUI(){
+        return true;
+    } 
+
+    
+    
+    public Dyadic_TurnByTurnInterface(Conversation c) {
+        super(c);
+        String portNumberOfServer = ""+ConnectionListener.staticGetPortNumber();
+        this.setID("Dyadic");
+        this.experimentHasStarted=true;     
+    }
+    public Dyadic_TurnByTurnInterface(Conversation c, long istypingtimeout) {
+        super(c,istypingtimeout);
+        String portNumberOfServer = ""+ConnectionListener.staticGetPortNumber();
+        this.setID("Dyadic");
+        this.experimentHasStarted=true;     
+        
+        
+    }
+    
+    
+    
+    
+    
+     @Override
+    public boolean requestParticipantJoinConversation(String participantID) {
+        return true;        
+    }
+    
+    
+    @Override
+    public synchronized void participantJoinedConversation(final Participant p) {
+        super.participantJoinedConversation(p);
+        if(c.getParticipants().getAllParticipants().size()==2) {
+             pp.createNewSubdialogue(c.getParticipants().getAllParticipants());
+             //this.itnt.addGroupWhoAreMutuallyInformedOfTyping(c.getParticipants().getAllParticipants());
+             this.itnt.addPairWhoAreMutuallyInformedOfTyping(c.getParticipants().getAllParticipants().elementAt(0), c.getParticipants().getAllParticipants().elementAt(1));
+        }
+      
+    }
+    
+    
+    
+    
+
+    
+    @Override
+    public void participantRejoinedConversation(Participant p) {     
+        super.participantRejoinedConversation(p);      
+    }
+    
+    
+    
+   
+   
+   
+   
+   
+   
+   
+   public synchronized void processTaskMove(MessageTask mtm, Participant origin) {            
+    }
+   
+   
+   
+    
+    @Override
+    public synchronized void processChatText(Participant sender, MessageChatTextFromClient mct){    
+          itnt.removeSpoofTypingInfoAfterThreshold(sender, new Date().getTime());
+          itnt.processTurnSentByClient(sender);
+          c.newrelayTurnToPermittedParticipants(sender, mct);
+    }
+    
+    
+    
+    
+    
+    
+    
+    @Override
+    public void processKeyPress(Participant sender,MessageKeypressed mkp){
+       super.processKeyPress(sender, mkp);
+        // super.processKeyPress(sender, mkp);
+        //this.itnt.processDoingsByClient(sender);
+         //this.itnt.addSpoofTypingInfo(sender, new Date().getTime()+1000);
+         //this.itnt.addSpoofTypingInfo(sender, new Date().getTime()+2000);
+       
+        
+    }
+
+    
+    @Override
+    public void processWYSIWYGTextInserted(Participant sender,MessageWYSIWYGDocumentSyncFromClientInsert mWYSIWYGkp){
+ 
+           //this.itnt.processDoingsByClient(sender);
+    }
+    
+    
+    
+    @Override
+    public void processWYSIWYGTextRemoved(Participant sender,MessageWYSIWYGDocumentSyncFromClientRemove mWYSIWYGkp){
+          // this.itnt.processDoingsByClient(sender);
+    }
+
+    
+   
+    
+    @Override
+    public void processClientEvent(Participant origin, MessageClientInterfaceEvent mce) {
+       
+    }
+    
+   
+    
+   
+   
+
+
+    
+    
+   
+
+   
+
+}

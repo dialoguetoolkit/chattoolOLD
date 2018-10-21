@@ -335,7 +335,13 @@ public class FaceComms2016WYSIWYGDyadic_InteractionDesignClass  extends DefaultW
            return null;
        }
            
-        
+       
+       
+       
+       public static boolean showcCONGUI(){
+        return false;
+    }     
+       
        
     }
     

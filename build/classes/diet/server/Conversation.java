@@ -233,6 +233,9 @@ public class Conversation extends Thread{
        
         
         this.expManager.connectUIWithExperimentManager(this,cHistoryUIM);
+        
+        cC.initializePostSetup();
+        
     }
 
     
@@ -994,10 +997,10 @@ public class Conversation extends Thread{
     
     public void newsaveAdditionalRowOfDataToSpreadsheetOfTurns(String subdialogueID, String datatype,  String senderID, String senderUsername, String apparentSenderUsername,long timeOfCreationOnClient ,long timeOfSendOnClient, long timeOfRELAYONSERVER, Vector recipientsNames, String text, Vector<AttribVal> additionalData){
         try{
-           System.err.println("SL02");
+           //System.err.println("SL02");
            cH.saveDataAsRowInSpreadsheetOfTurns(subdialogueID, datatype,timeOfCreationOnClient ,timeOfSendOnClient, timeOfRELAYONSERVER ,senderID, senderUsername, apparentSenderUsername,text.replaceAll("\n", "(NEWLINE)"),recipientsNames,false,new Vector<Keypress>(), new Vector<DocChange>()  ,new Vector<ClientInterfaceEvent>() , additionalData, false);
              }catch (Exception e){
-            
+                e.printStackTrace();
         }
     }
     

@@ -40,7 +40,7 @@ public class IsTypingOrNotTyping extends Thread{
     //HashtableWithDefaultvalue htEndOfPreviousturn = new HashtableWithDefaultvalue(new Long(-1));
     //HashtableWithDefaultvalue htStartOfCurrentTurn = new HashtableWithDefaultvalue(new Long(-1));
     
-    long inactivitythreshold = 30;
+    long inactivitythreshold = 3000;
     public boolean doActivity = true;
     
     DefaultConversationController cC;
@@ -64,7 +64,7 @@ public class IsTypingOrNotTyping extends Thread{
     public IsTypingOrNotTyping(DefaultConversationController cC,long inactivityThreshold){
         this.cC=cC;
        // this.inactivitythreshold=80;
-        //this.inactivitythreshold=inactivityThreshold;
+        this.inactivitythreshold=inactivityThreshold;
         this.start();
     }
     

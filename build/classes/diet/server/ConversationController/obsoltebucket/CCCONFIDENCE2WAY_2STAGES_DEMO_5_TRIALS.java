@@ -1,4 +1,5 @@
 package diet.server.ConversationController.obsoltebucket;
+import diet.server.ConversationController.CCCONFIDENCE;
 import diet.message.MessageChatTextFromClient;
 import diet.message.MessageKeypressed;
 import diet.message.MessageWYSIWYGDocumentSyncFromClientInsert;

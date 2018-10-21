@@ -6,7 +6,7 @@ package diet.task.stimuliset;
 
 import diet.message.MessageChatTextFromClient;
 import diet.server.Conversation;
-import diet.server.ConversationController.obsoltebucket.CCCONFIDENCE;
+import diet.server.ConversationController.CCCONFIDENCE;
 import diet.server.Participant;
 import diet.task.DefaultTaskController;
 import diet.utils.ArrayToolkit;

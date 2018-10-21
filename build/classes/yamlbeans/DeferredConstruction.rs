@@ -1,3 +1,0 @@
-com.esotericsoftware.yamlbeans.DeferredConstruction
-com.esotericsoftware.yamlbeans.DeferredConstruction$PropertyValue
-com.esotericsoftware.yamlbeans.DeferredConstruction$ParameterValue

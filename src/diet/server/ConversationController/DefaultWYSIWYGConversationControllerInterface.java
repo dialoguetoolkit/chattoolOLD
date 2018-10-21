@@ -61,7 +61,7 @@ public class DefaultWYSIWYGConversationControllerInterface extends DefaultConver
     
     
     public static boolean showcCONGUI(){
-        return true;
+        return false;
     } 
 
     

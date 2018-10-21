@@ -21,7 +21,7 @@ import java.util.Vector;
  *
  * @author gj
  */
-public class FaceComms2016_TURNBYTURN_TRIADIC_NICK extends FaceComms2016_TURNBYTUN_TRIADIC{
+public class FaceComms2016_TURNBYTURN_TRIADIC_NICK extends Triadic_TurnByTurnInterface_ReferringToFaces{
 
     
     

@@ -16,7 +16,6 @@ import java.io.File;
 import java.util.Date;
 import java.util.Vector;
 import javax.swing.JOptionPane;
-import diet.server.ConversationController.obsoltebucket.CCCONFIDENCE;
 
 
 
@@ -94,7 +93,7 @@ public class CCCONFIDENCE4WAY extends CCCONFIDENCE implements InterfaceForJCount
      
     
     public static boolean showcCONGUI() {
-        return true;
+        return false;
     }
     
     

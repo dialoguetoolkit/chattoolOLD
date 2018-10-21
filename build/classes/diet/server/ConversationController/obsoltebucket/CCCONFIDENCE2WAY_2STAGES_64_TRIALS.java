@@ -1,4 +1,5 @@
 package diet.server.ConversationController.obsoltebucket;
+import diet.server.ConversationController.CCCONFIDENCE;
 import diet.client.ClientInterfaceEvents.ClientInterfaceEvent;
 import diet.message.*;
 import diet.server.Conversation;

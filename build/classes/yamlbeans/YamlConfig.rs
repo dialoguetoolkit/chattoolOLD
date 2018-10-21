@@ -1,5 +1,0 @@
-com.esotericsoftware.yamlbeans.YamlConfig$WriteConfig
-com.esotericsoftware.yamlbeans.YamlConfig$ConstructorParameters
-com.esotericsoftware.yamlbeans.YamlConfig$WriteClassName
-com.esotericsoftware.yamlbeans.YamlConfig$ReadConfig
-com.esotericsoftware.yamlbeans.YamlConfig

@@ -8,7 +8,7 @@ package diet.task.mazegame.server;
 import diet.server.ConversationController.obsoltebucket.CCMAZE_DYADIC_MULTI_2_PARTICIPANTS_SEPARATE_DYADS_MAZEBYMAZE_TIMEOUT;
 import diet.server.ConversationController.obsoltebucket.CCMAZE_DYADIC_MULTI_2_PARTICIPANTS_SEPARATE_DYADS_MAZEBYMAZE_TIMEOUT_EXTERNALMAZEGAME;
 import diet.server.ConversationController.DefaultConversationController;
-import diet.server.ConversationController.DefaultDyadicConversationController;
+import diet.server.ConversationController.Dyadic_TurnByTurnInterface;
 import javax.swing.SwingUtilities;
 
 /**
@@ -174,7 +174,7 @@ public class JMazeGameControlFrameLimitedControl extends javax.swing.JFrame {
         jToggleButton1.setText("");
       if(cC instanceof CCMAZE_DYADIC_MULTI_2_PARTICIPANTS_SEPARATE_DYADS_MAZEBYMAZE_TIMEOUT)((CCMAZE_DYADIC_MULTI_2_PARTICIPANTS_SEPARATE_DYADS_MAZEBYMAZE_TIMEOUT)cC).startExperiment();
         if(cC instanceof CCMAZE_DYADIC_MULTI_2_PARTICIPANTS_SEPARATE_DYADS_MAZEBYMAZE_TIMEOUT_EXTERNALMAZEGAME)(( CCMAZE_DYADIC_MULTI_2_PARTICIPANTS_SEPARATE_DYADS_MAZEBYMAZE_TIMEOUT_EXTERNALMAZEGAME)cC).startExperiment();
-       if(cC instanceof DefaultDyadicConversationController){
+       if(cC instanceof Dyadic_TurnByTurnInterface){
           // ((DefaultMultipartyConversationController)cC).startmazegame();
        }
     }//GEN-LAST:event_jToggleButton1ActionPerformed

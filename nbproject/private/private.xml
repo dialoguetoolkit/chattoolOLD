@@ -11,20 +11,20 @@
             <url>src/diet/server/Conversation.java</url>
             <bookmark id="1">
                 <name/>
-                <line>1083</line>
+                <line>1086</line>
                 <key/>
             </bookmark>
             <bookmark id="0">
                 <name/>
-                <line>2009</line>
+                <line>2012</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/DefaultConversationController.java</file>
             <file>file:/C:/github3/chattool/src/diet/server/Conversation.java</file>
-            <file>file:/C:/github3/chattool/nbproject/build-impl.xml</file>
             <file>file:/C:/github3/chattool/src/diet/server/ConversationController/DefaultWYSIWYGConversationControllerInterface.java</file>
             <file>file:/C:/github3/chattool/src/diet/server/io/IntelligentIO.java</file>
             <file>file:/C:/github3/chattool/src/diet/server/conversationhistory/ConversationHistory.java</file>

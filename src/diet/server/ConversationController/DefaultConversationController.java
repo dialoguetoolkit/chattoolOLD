@@ -181,6 +181,8 @@ public abstract class DefaultConversationController  {
         c.convIO = new IntelligentIO(c,parentDirectory,this.getID());
         pp = new ParticipantPartnering(c);
         itnt = new IsTypingOrNotTyping(this, sett.client_TextEntryWindow_istypingtimeout);
+      // itnt = new IsTypingOrNotTyping(this, 2500);
+       
     }
     
     public DefaultConversationController(Conversation c, long istypingtimeout){
@@ -195,6 +197,7 @@ public abstract class DefaultConversationController  {
         c.convIO = new IntelligentIO(c,parentDirectory,this.getID());
         pp = new ParticipantPartnering(c);
         itnt = new IsTypingOrNotTyping(this, istypingtimeout);
+        
     }
     
  

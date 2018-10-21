@@ -61,7 +61,7 @@ public class DefaultWYSIWYGConversationControllerInterface extends DefaultConver
     
     
     public static boolean showcCONGUI(){
-        return true;
+        return false;
     } 
 
     
@@ -83,7 +83,7 @@ public class DefaultWYSIWYGConversationControllerInterface extends DefaultConver
         this.wysiwygtm.setAllOnSameTrack(singleTrackOption);
         durationOfTextFadeout = CustomDialog.getLong("How long should text be displayed for? (ms)", 3000);
         //this.fh.setFloorHoldingTime(durationFloorHolding);
-        doSaveOfLicense();
+        
     }
     
    
@@ -98,9 +98,14 @@ public class DefaultWYSIWYGConversationControllerInterface extends DefaultConver
         if(numberOfTracks>2)this.wysiwygtm.setAllOnSameTrack(false);
         this.durationOfTextFadeout=durationOfTimeout;
         //this.fh.setFloorHoldingTime(durationFloorHolding);
-          doSaveOfLicense();
+        
       
    }
+
+    @Override
+    public void initializePostSetup() {
+       this.doSaveOfLicense();
+    }
     
    
     private void doSaveOfLicense(){
@@ -109,7 +114,7 @@ public class DefaultWYSIWYGConversationControllerInterface extends DefaultConver
           String text = ""+sett.wysiwyglicense;
           System.err.println("SL01");
           c.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("Important", "license info", "license info", "license info", "license info", 0, 0, 0, new Vector(),text, new Vector());
-          System.err.println("SLE");
+         //System.err.println("SLE");
         }catch(Exception e){
             e.printStackTrace();
         }

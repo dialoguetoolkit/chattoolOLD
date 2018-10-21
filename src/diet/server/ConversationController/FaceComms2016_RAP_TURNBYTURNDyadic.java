@@ -25,7 +25,7 @@ import java.util.Vector;
  *
  * @author gj
  */
-public class FaceComms2016_RAP_TURNBYTURNDyadic extends DefaultDyadicConversationController{
+public class FaceComms2016_RAP_TURNBYTURNDyadic extends Dyadic_TurnByTurnInterface{
 
     
     FaceCommsTaskControllerDyadic fctc;
@@ -219,5 +219,10 @@ public class FaceComms2016_RAP_TURNBYTURNDyadic extends DefaultDyadicConversatio
     public void processButtonPress(Participant sender, MessageButtonPressFromClient mbfc) {
        // this.fctc.processChatText(sender, "/"+mbfc.buttonname.substring(1));
     }
+    
+      public static boolean showcCONGUI(){
+        return false;
+    }     
+       
     
 }

@@ -43,3 +43,14 @@ This will automatically start the chattool, load the ConversationController obje
 The default number of clients to start is 2 (which is specified in ```Configuration.defaultGroupSize```
 
 These can be saved in netbeans project configurations
+
+
+# Programming the chat-tool
+
+## Workflow
+
+
+
+
+
+

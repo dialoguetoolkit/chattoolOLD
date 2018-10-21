@@ -2,23 +2,31 @@
 
 This repository is a netbeans project. If opened in netbeans it should run "out of the box"
 
+If the jar file is run without any command line parameters it will show a GUI that lets you choose whether to run the server or the client functionality.
+
+
 ## Starting the server
 
-If the OS has java configured correctly, it s
+To start the server, use ```java -jar "chattool.jar SERVER``` 
+
+The server will listen for incoming connections on port 20000
+
+To change this, use ```java -jar "chattool.jar SERVER  %PORTNUMBER%```  where %PORTNUMBER% is the portnumber
 
 
 ## Starting the client
 
+To start a client from the commandline you need to specify the IP address and port number to connect to
+
+```java -jar "chattool.jar" CLIENT localhost 20000```
+
+It is also possible to start clients (locally) from the GUI by pressing the button
+
+
 
 ## Speeding up testing cycle of conversation controller objects
 
-After a while you will probably get bored of going through the process of 
-1. Starting the chattool
-2. Manually selecting the Conversation Controller object
-3. Selecting start
-4. Starting the right number of clients
-
-To get round this you can start any Conversation Controller object, along with the required number of clients by using the following syntax:
+The process of starting servers and clients is quite tedious for developing. To get round this you can start any Conversation Controller object, along with the required number of clients by using the following syntax:
 
 ```
 javac -jar "chatool.jar" nogui_ccname_autologin CONVERSATIONCONTROLLERNAME

@@ -13,7 +13,8 @@ After a while you will probably get bored of going through the process of
 
 To get round this you can start any Conversation Controller object, along with the required number of clients by using the following syntax:
 
-``javac -jar "chatool.jar" nogui_ccname_autologin CONVERSATIONCONTROLLERNAME````
-
+```java
+javac -jar "chatool.jar" nogui_ccname_autologin CONVERSATIONCONTROLLERNAME````
+```
 
 

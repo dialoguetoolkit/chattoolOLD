@@ -12,3 +12,12 @@ The following equipment is required to run experiments using the software:
 
 * Two or more computers run the client software. This program runs on each participant’s computer. It provides an interface that displays the conversation and allows the participants to type text to each other. 
 
+# Network connection.
+
+The clients must be able to connect to the server. The server has to be able to accept incoming connections on at least one port (you might need to ask systems admin to "open" a port on the firewall). Any combination of WIFI / ethernet should work as long as the server can accept incoming connections from the clients.
+
+# Software required:
+
+The chat tool is written in java and runs on windows, mac, linux.
+
+It is strongly recommended to use the most recent version of java for your platform. Please avoid using java 1.8  (java 1.7 works ok, and so do versions above 1.8 - this is due to some issues in the graphics libraries in some versions of java 1.8)

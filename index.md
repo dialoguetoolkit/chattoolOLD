@@ -63,7 +63,7 @@ The real strength of this toolkit is in manipulating the interaction. Since all 
 
 # Download and run the toolkit
 
-The latest version of the toolkit is available as a <a href = "https://github.com/dialoguetoolkit/chattool/releases/download/v4.6.1/chattool_runme.zip"> <b>zip file </b> </a>
+The latest version of the toolkit is available as a <a href = "https://github.com/dialoguetoolkit/chattool/releases/download/v4.6.2/chattool_runme.zip"> <b>zip file </b> </a>
 
  
 # Documentation

@@ -2,6 +2,12 @@
 
 This repository is a netbeans project. If opened in netbeans it should run "out of the box"
 
+## Starting the server
+
+If the OS has java configured correctly, it s
+
+
+## Starting the client
 
 
 ## Speeding up testing cycle of conversation controller objects
@@ -28,3 +34,5 @@ This will automatically start the chattool, load the ConversationController obje
 
 The default number of clients to start is 2 (which is specified in 
 ```Configuration.defaultGroupSize```
+
+These can be saved in netbeans project configurations

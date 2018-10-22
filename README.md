@@ -52,16 +52,8 @@ These can be saved in netbeans project configurations
 The standard approach to creating a new experimental intervention is to:
 
 1. Create a subclass of ```DefaultConversationController```
-2. make sure that ```showCCOnGUI()``` returns true (this will
+2. make sure that ```showCCOnGUI()``` returns true (this will display your ConversationController class in the GUI)
 3. Customize the conversation controller object, e.g. 
    * modify ```participantJoinedConversation(...)``` to specify what happens when a conversation logs in
-   * modify ```processChatText(....)```to 
-   * ..* Modify
-
-
-The standard approach to creating a new experimental intervention is to create a subclass of DefaultConversationController. This is the central "switchboard" through which all messages pass. This is also where you write the code (if necessary) that responds to users logging in (e.g. assigning to particular conditions). To make the 
-
-
-
-
-
+   * modify ```processChatText(....)```. This method specifies what happens when a participant sends a message. The default behaviour is to simply relay the message to all other participants. This method can be modified to, e.g. selectively block (shadowban) messages, or to transform messages (e.g. replace or add text), or to send entriely artificial turns. There is a large set of methods in ```Conversation```, such as ```Conversation.newsendArtificialTurn(....)``` for doing this.
+4. Test the setup locally (run as demo) or by using the method above (Speeeding up testing cycle of conversation controller objects)

@@ -49,12 +49,13 @@ These can be saved in netbeans project configurations
 
 ## ConversationController object
 
-The main component of the chattool is the ConversationController object. The chattool is designed so that when you are designing an experiment you only need to modify code in the ConversationController 
+The main part of the chattool is the ConversationController object. The chattool is designed so that when you are program an experiment you only need to modify code in the ConversationController object. 
 
-It should in principle be possible to program interventions
+The ConversationController sits in the middle between all the participants. All chattext, GUI events, keyboard events are sent to the ConversationController object.
 
 
-## Workflow
+
+## Workflow when programming the chattool
 
 The standard approach to creating a new experimental intervention is to:
 
@@ -64,3 +65,7 @@ The standard approach to creating a new experimental intervention is to:
    * modify ```participantJoinedConversation(...)``` to specify what happens when a conversation logs in
    * modify ```processChatText(....)```. This method specifies what happens when a participant sends a message. The default behaviour is to simply relay the message to all other participants. This method can be modified to, e.g. selectively block (shadowban) messages, or to transform messages (e.g. replace or add text), or to send entriely artificial turns. There is a large set of methods in ```Conversation```, such as ```Conversation.newsendArtificialTurn(....)``` for doing this.
 4. Test the setup locally (run as demo) or by using the method above (Speeeding up testing cycle of conversation controller objects)
+
+### 
+
+

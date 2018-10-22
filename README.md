@@ -47,6 +47,13 @@ These can be saved in netbeans project configurations
 
 # Programming the chat-tool
 
+## ConversationController object
+
+The main component of the chattool is the ConversationController object. The chattool is designed so that when you are designing an experiment you only need to modify code in the ConversationController 
+
+It should in principle be possible to program interventions
+
+
 ## Workflow
 
 The standard approach to creating a new experimental intervention is to:

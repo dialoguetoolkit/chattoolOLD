@@ -69,3 +69,11 @@ The standard approach to creating a new experimental intervention is to:
 ### 
 
 
+# During an experiment
+
+## To get input from the user:
+
+Show a popup and receive the response in the ConversationController object
+
+
+

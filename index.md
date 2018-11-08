@@ -84,10 +84,11 @@ The source code of the project is hosted at  <a href = "https://github.com/dialo
 <p>Mills, G. J. and Healey, P. G. T. (submitted) <a href = "http://homepages.inf.ed.ac.uk/gmills/MillsHealey2013Submission.pdf"><B>A dialogue experimentation toolkit.</B></A>
    
 
-
+<p>Atkinson, M., Mills, G. J., & Smith, K. (2018). <A HREF= "https://academic.oup.com/jole/advance-article/doi/10.1093/jole/lzy010/5146761"> Social group effects on the emergence of communicative conventions and language complexity.</A> Journal of Language Evolution.</p>
 
 
 <p>Healey, P. G., Mills, G. J., Eshghi, A., & Howes, C. (2018). Running repairs: Coordinating meaning in dialogue. Topics in cognitive science, 10(2), 367-388.</p>   
+
 
 <p> Yu, Y., Eshghi, A., Mills, G., & Lemon, O. J. (2017). The burchak corpus: a challenge data set for interactive learning of visually grounded word meanings. In Belz, Anya, Erkut Erdem, Katerina Pastra, and Krystian Mikolajczyk. "Proceedings of the Sixth Workshop on Vision and Language." In Proceedings of the Sixth Workshop on Vision and Language. 2017.</P>
 

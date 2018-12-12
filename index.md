@@ -89,6 +89,8 @@ The source code of the project is hosted at  <a href = "https://github.com/dialo
 
 <p>Healey, P. G., Mills, G. J., Eshghi, A., & Howes, C. (2018). Running repairs: Coordinating meaning in dialogue. Topics in cognitive science, 10(2), 367-388.</p>   
 
+<p> Gao, G., Hwang S. Y., Jung M., & Fussell, S.R. (2018). Beyond Information Content: The Effects of Culture on Affective Grounding in Instant Messaging Conversations. CSCW 2018.</p>
+
 
 <p> Yu, Y., Eshghi, A., Mills, G., & Lemon, O. J. (2017). The burchak corpus: a challenge data set for interactive learning of visually grounded word meanings. In Belz, Anya, Erkut Erdem, Katerina Pastra, and Krystian Mikolajczyk. "Proceedings of the Sixth Workshop on Vision and Language." In Proceedings of the Sixth Workshop on Vision and Language. 2017.</P>
 

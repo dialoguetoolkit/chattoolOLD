@@ -7,7 +7,7 @@ The toolkit can be used "off-the-shelf" to collect and prepare instant-messaging
 
 All participants' turns are routed via the server which can be scripted to detect, for example target words, phrases or syntactic constructions. This information can then be used, in real-time to trigger experimental interventions that are sensitive to the interactional context.
 
-The toolkit provides an extensive API for scripting these manipulations, as well as a constantly expanding library of experimental setups that can be reconfigured
+The toolkit provides an extensive API for scripting these manipulations, as well as a constantly expanding library of experimental setups that can be reconfigured.
 
 # Features
 

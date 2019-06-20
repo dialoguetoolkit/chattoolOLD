@@ -44,126 +44,36 @@ import javax.swing.text.MutableAttributeSet;
  * @author user
  */
 public abstract class DefaultConversationController  {
-
-    public static Configuration sett = new Configuration();
-    //public Configuration actualSettings = (Configuration)defaultsettings.clone();
-    
-    
-    //Below are some debug parameters - they are not essential.
-    //public static int param_minParticipantIDLength = 4; //This has to be static, because it is looked up by ExperimentManager before any Conversation Controller objects have been instantiated
-    //public static boolean debugMESSAGEBLOCKAGE = false; //true;//false;//true;//true;//false;//true;
-    //public static boolean allowCHATCLIENTTOSENDDEBUGCOMMANDS = true;
-    //public static boolean doAUTOLOGIN = false;
-    public static CyclicRandomParticipantIDGeneratorGROOP autologinParticipantIDGenerator = new CyclicRandomParticipantIDGeneratorGROOP(); 
-    //public static boolean debugTime= true;
-    //public long loggingOverrunTime = 500;  //time in milliseconds
-    
-    
-    
-    /*
-         Below are experiment parameters. It is (strongly!) advisable not to edit them here, but instead override in a subclass
-         These parameters are intended primarily for initializing the experiment, not for changing the chat tool behaviour while the experiment is running
-         There is no guarantee that changing these parameters during an experiment will have the desired effect! Please write custom code instead.
-    
-    */
-    //public String param_experimentID = "NEEDS TO BE SET";
-    //public int param_numberOfParticipants = 2;
-    //public int param_widthOdMainWindow = 600;
-    //public int param_heightOfMainWindow = 350;
-    //public int param_widthOfTextEntryWindow =300;
-    //public int param_heightOfTextEntryWindow = 150;
-    //public int param_maximumCharLengthOfTextEntry = 500;
-    //public int param_isTypingTimeOut = 1000;
-    
-    
-    //public int param_numberOfWindows = 1;
-    
-    
-    //These settings below are the default - however they might be overriden by custom implementations of the StlyeManager
-    
-    //public Color param_backgroundcolor = Color.white;
-    
-    
-    //How text from other participants appears by default:
-    //public String param_fontfamily_OTHER = "Monospace";
-    //public int param_fontsize_OTHER = 22;
-    //public boolean param_fontisbold_OTHER = false;
-    //public boolean param_fontisitalic_OTHER = false;
-    //public Color param_fontforegroundcolor_OTHER = Color.BLUE;
-    
-    //How own text appears:
-    //public String param_fontfamily_SELF = "Monospace";
-    //public int param_fontsize_SELF = 22;
-    //public boolean param_fontisbold_SELF = false;
-    //public boolean param_fontisitalic_SELF = false;
-    //public Color param_fontforegroundcolor_SELF = Color.BLACK;
-    
-    
-    //How text from the server (i.e. instructions) appears:
-    //public String param_fontfamily_SERVER = "Monospace";
-    //public int param_fontsize_SERVER = 22;
-    //public boolean param_fontisbold_SERVER = false;
-    //public boolean param_fontisitalic_SERVER = false;
-    //public Color param_fontforegroundcolor_SERVER = Color.RED;
-    
-    
-    
-    //Settings for interventions:
-    //public static String defaultSpoofErrorMessage = "Network error - please wait";
-    
-    
-    //Settings for output to CSV spreadsheet
-    //static public String spreadsheetOutputSeparator = "|I|";
-    //static public String spreadsheetOutputNEWLINESTRING = "((NEWLINE))";
-    
-    
-    
-    //static public String fakeTypingByClientSTARTTrigger = "/startdebug"; //This is used by the client to generate fake "is typing events"
-    //static public String fakeTypingByClientSTOPTrigger = "/stopdebug"; //This is used by the client to generate fake "is typing events"
-    
-    
-    ///Be very! vareful modifying this. If it is modified without checking all its uses - can lead to crash!
-   // static public String[] headerForSpreadsheetOutputFile = {"ExperimentID", "ServerTimestampOfSavingToFile", "SubdialogueID", "Turntype", "SernderID", "SenderUsername", "ApparentSender", "Text", 
-     //    "Recipient(s)", "NoOfDocumentDeletes", "NoOfKeypressDeletes", "ClientTimestampONSET", "ClientTimestampENTER", "ServerTimestampOfReceiptAndOrSending"};
-         
-    
-    //Below are settings for the ExperimentManager GUI
-    //static public String experimentmanager_gui_instructionToClient = "Please wait for further instructions. Thankyou!";
-    //static public String experimentmanager_gui_websiteURL = "http://www.qualtrics.com";
-    
-    //static public String tcontact = "+"+   "31" + "XXX" + "YYY" + "ZZZ";
-    //static public String econtact = "g (dot) j (dot) mills (at) rug (dot) nl";
-    //static public String econtactname = "Gregory Mills";
-    
-    
-    //Below is versioning information
-    //static final public double softwareversion = 5.00;
-    //static final public String aboutstring = 
-    //"This is the 4th incarnation of the chat tool. It grew out of the ROSSINI project (P.G.T. Healey, Queen Mary University)\n"
-    //+ "It was used by Matt Purver for his thesis, was rebuilt for G. Mills's thesis, and then programmed as a stand-alone toolkit\n"
-    //+ "as part of the DiET project (EPSRC). It has been modified and extended as part of the DynDial project (Kings College & QMUL)\n"
-    //+ "and also as part of ERIS (FP7 EU Project, G.J Mills, Stanford and University of Edinburgh).\n\n"+
-
-     //"Contributors to the design, coding and documentation of the chat tool include:\n"
-     //       + "Pat Healey, Jonathan Ginzburg, James King, Matt Purver, Arash Eshghi, Chris Howes and Eleni Gregoromichelaki."+
-            
-     //       "\n\nIf you would like to know more, please email:\n"+econtactname+"\n"+econtact+"\n";
-    
-    
-    
-    
-    
-    
-    //end of paramater settings.
-    
+ 
     public Conversation c;
+    
+    public static Configuration sett = new Configuration();
+    //The confguration file for the chat-tool
+  
+    public static CyclicRandomParticipantIDGeneratorGROOP autologinParticipantIDGenerator = new CyclicRandomParticipantIDGeneratorGROOP(); 
+    //Used to generate ParticipantIDs when using the autologin function when developing
+    
     public IsTypingOrNotTyping itnt; //= new IsTypingOrNotTyping(this, param_isTypingTimeOut);
-    public ParticipantPartnering pp;// = new ParticipantPartnering(c);
+    //This object is used to generate the "is tpying" status indicator messages - note that these can be manipulated    
+    
+    public ParticipantPartnering pp;
+    //This is used to store who speaks with whom
+    
     public StyleManager sm = new StyleManager(this);
+    //This is used to make sure that each person sees other participants' text with consistent colours / fonts
+    
     public TaskControllerInterface tc;
-    public Random r = new Random(new Date().getTime());
+    //Many experiments also involve some dialogue task
+    
+     public Random r = new Random(new Date().getTime());
+    
+     
+     
+     
+     
     public boolean experimentHasStarted = false; 
-   
+    
+    private Vector participantJoinedConversationButNotAssignedToGroup = new Vector();
     
     
     
@@ -200,9 +110,11 @@ public abstract class DefaultConversationController  {
         
     }
     
- 
+    /**
+    * This is called after the object has been created and connected with the GUI and filesystem. 
+    */
     public void  initializePostSetup(){
-        //Called after everything has been set up and initialized on the GUI and chattool side
+        
     }
     
     public static boolean showcCONGUI() {
@@ -215,20 +127,26 @@ public abstract class DefaultConversationController  {
    
     
     
- 
+   
    
     public StyleManager getStyleManager() {
         return sm;
     }
 
-   
+    
+    
+     /**
+    * Called by the client when the client attempts to connect to the server
+    */   
     public boolean requestParticipantJoinConversation(String participantID) {
         return true;
     }
     
     
             
-    
+    /**
+    * Sends the setup information to the client interface
+    */
    public MessageClientSetupParameters processRequestForInitialChatToolSettings(){      
                boolean alignmentIsVertical = true;
                boolean deletesPermitted =true;
@@ -264,7 +182,7 @@ public abstract class DefaultConversationController  {
        return null;          
     }
     
-    private Vector participantJoinedConversationButNotAssignedToGroup = new Vector();
+  
     
     public void participantJoinedConversation(Participant p){
         participantJoinedConversationButNotAssignedToGroup.add(p);
@@ -424,12 +342,12 @@ public abstract class DefaultConversationController  {
     }
     
     
-    public void processWYSIWYGFloorRequest(Participant p, MessageWYSIWYGFloorRequest mwysiwygfr){
+    public void processWYSIWYGFloorRequestDEPRECATED(Participant p, MessageWYSIWYGFloorRequest mwysiwygfr){
        
     }
                         
     
-    public void processWYSIWYGFloorChangeConfirm(Participant sender, diet.message.MessageWYSIWYGFloorChangeConfirm mwysiwygfcc){
+    public void processWYSIWYGFloorChangeConfirmDEPRECATED(Participant sender, diet.message.MessageWYSIWYGFloorChangeConfirm mwysiwygfcc){
         
     }
     

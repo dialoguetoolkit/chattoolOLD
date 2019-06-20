@@ -44,7 +44,7 @@ public class JFrameStimulusSingleImageCountdownThread extends Thread{
           while(new Date().getTime()-startTime<duration){
            try{
             Thread.sleep(100);
-            System.err.println("WAKING");
+            //System.err.println("WAKING");
            }
            catch(Exception e){
                e.printStackTrace();

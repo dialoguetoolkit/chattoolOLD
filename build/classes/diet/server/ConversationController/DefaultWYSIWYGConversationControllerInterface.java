@@ -1,4 +1,5 @@
 
+//Note this is updated code
 
 //Please note that this code is released on a slightly more restrictive license. Contact g.j.mills@rug.nl before use
 
@@ -47,12 +48,14 @@ public class DefaultWYSIWYGConversationControllerInterface extends DefaultConver
     //int numberOfParticipantsPerConversation = CustomDialog.getInteger("How many participants?", 3); 
     long durationOfTextFadeout =3000;//= CustomDialog.getLong("How long should text be displayed for? (ms)", 3000);
     //int numberOfTracks = 1;//CustomDialog.getInteger("How many tracks?", 1);
-    boolean singleTrackOption =true;
+    public boolean singleTrackOption =true;
     
     //public boolean doMultitrackspace = false; //CustomDialog.getBoolean("On multitrack - add spaces whenever someone types");
     
     
+    //This is used to store previous character - e.g. to detect commands with slash
     HashtableWithDefaultvalue saveOutputFromDocInserts_hashtableMOSTRECENTTEXT = new HashtableWithDefaultvalue("");
+    
     
     WYSIWYGReconstructingTurnsFromDocInserts wysiwygRTFDI= new  WYSIWYGReconstructingTurnsFromDocInserts(this);
     WYSIWYGReconstructingTurnsFromClientEvents wysiwygRTFCI = new  WYSIWYGReconstructingTurnsFromClientEvents(this);
@@ -95,7 +98,10 @@ public class DefaultWYSIWYGConversationControllerInterface extends DefaultConver
         this.setID("WYSIWYGInterface");
         this.experimentHasStarted=true; 
         
-        if(numberOfTracks>2)this.wysiwygtm.setAllOnSameTrack(false);
+        if(numberOfTracks>1){
+            this.wysiwygtm.setAllOnSameTrack(false);
+            singleTrackOption=false;
+        }
         this.durationOfTextFadeout=durationOfTimeout;
         //this.fh.setFloorHoldingTime(durationFloorHolding);
         
@@ -200,17 +206,15 @@ public class DefaultWYSIWYGConversationControllerInterface extends DefaultConver
     
     @Override
     public void processWYSIWYGTextInserted(Participant sender,MessageWYSIWYGDocumentSyncFromClientInsert mWYSIWYGkp){
-        //fh.processWYSIWYGTextInserted(sender, mWYSIWYGkp);
-         this.saveOutputFromDocInserts_hashtableMOSTRECENTTEXT.putObject(sender, mWYSIWYGkp.getTextTyped());
-        //System.err.println("RECEIVED DOCINSERT:"+mWYSIWYGkp.getTextTyped());
         
+        this.saveOutputFromDocInserts_hashtableMOSTRECENTTEXT.putObject(sender, mWYSIWYGkp.getTextTyped());
+        
+         
         Vector recipients = this.pp.getRecipients(sender);
         for(int i=0;i<recipients.size();i++){    
             Participant pRecipient = (Participant)recipients.elementAt(i);
             int windowNumber = this.wysiwygtm.getTrackInWhichSendersTextIsDisplayedOnRecepientsScreen(sender, pRecipient);
-            //windowNumber = this.wysiwygtm.getTrackInWhichSendersTextIsDisplayedOnRecepientsScreen(sender, pRecipient);
             if(windowNumber < 0) windowNumber =0;
-            //windowNumber=1;
             MutableAttributeSet mas=sm.getStyleForRecipient(sender, pRecipient); 
             this.sendWYSIWYGTextToClient(pRecipient, windowNumber,mWYSIWYGkp.getTextTyped() , mas, sender.getUsername());
             
@@ -246,13 +250,13 @@ public class DefaultWYSIWYGConversationControllerInterface extends DefaultConver
     
    
      @Override
-    public void processWYSIWYGFloorRequest(Participant sender,MessageWYSIWYGFloorRequest mwysiwygfr) {
+    public void processWYSIWYGFloorRequestDEPRECATED(Participant sender,MessageWYSIWYGFloorRequest mwysiwygfr) {
         //fh.processWYSIWYGFloorRequest(sender, mwysiwygfr);
         //this.saveOutputFromDocInserts(sender, mwysiwygfr);
     }
     
     
-    public void processWYSIWYGFloorChangeConfirm(Participant sender, diet.message.MessageWYSIWYGFloorChangeConfirm mwysiwygfcc){
+    public void processWYSIWYGFloorChangeConfirmDEPRECATED(Participant sender, diet.message.MessageWYSIWYGFloorChangeConfirm mwysiwygfcc){
         //fh.processWYSIWYGFloorChangeConfirm(sender, mwysiwygfcc);
     }
 

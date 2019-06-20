@@ -31,19 +31,21 @@ public class ParticipantConnection extends Thread {
     private Vector v = new Vector();
     private Participant particip;
     private boolean isLoggedIn = false;
-    public long timeOfLastTyping = 0;
+    private long timeOfLastTyping = 0;
     private String textEntryWindow ="";
 
-    public long numberOfChatTurnsReceivedFromClient =0;
+    private long numberOfChatTurnsReceivedFromClient =0;
 
-    ObjectInputStream in;
-    ObjectOutputStream out;
+   
+
+    private ObjectInputStream in;
+    private ObjectOutputStream out;
     private ExperimentManager expM;
-    ConnectionToClientSendLockFlushingAndPeriodicResetting ctcSL;
+    private ConnectionToClientSendLockFlushingAndPeriodicResetting ctcSL;
     
-    boolean mostRecentErrorhasBeenFlagged = false;
-    long timeOfMostRecentmessageFromClient = 0;
-    long timeOfMostRecentmChatTextFromClient =0;
+    private boolean mostRecentErrorhasBeenFlagged = false;
+    private long timeOfMostRecentmessageFromClient = 0;
+    private long timeOfMostRecentmChatTextFromClient =0;
 
     public ParticipantConnection(ObjectInputStream instream, ObjectOutputStream outstream,ExperimentManager exM){
         Conversation.printWSln("Main", "Creating new ParticipantConnection");
@@ -79,7 +81,7 @@ public class ParticipantConnection extends Thread {
     }
     
     
-    Vector pongs = new Vector();
+    private Vector pongs = new Vector();
     
 
     /**
@@ -92,8 +94,8 @@ public class ParticipantConnection extends Thread {
       
    }
 
-    boolean debug = true;
-    long start0 = new Date().getTime();
+    private boolean debug = true;
+    private long start0 = new Date().getTime();
 
     /**
      * Sends message to Client
@@ -163,7 +165,7 @@ public class ParticipantConnection extends Thread {
     }
     
     
-    public MessageClientLogon mclContainingInternetSettings=null;
+    private MessageClientLogon mclContainingInternetSettings=null;
 
      public String getClientIPAddress(){
          if(this.mclContainingInternetSettings!=null ) return this.mclContainingInternetSettings.getLocal_ina().getHostAddress();
@@ -188,7 +190,7 @@ public class ParticipantConnection extends Thread {
     private synchronized void appendand(Object o){
     
        
-   this.timeOfMostRecentmessageFromClient = new Date().getTime();
+    this.timeOfMostRecentmessageFromClient = new Date().getTime();
 
     Message m = (Message)o;
     m.setTimeOfReceipt();
@@ -264,7 +266,7 @@ public class ParticipantConnection extends Thread {
      * @return false if Participant email and login can't be established
      * @throws java.lang.Exception
      */
-    public boolean verifyLoginDetailsAndActivate() throws Exception {
+    private boolean verifyLoginDetailsAndActivate() throws Exception {
         String participantIDgiven = "";
         String usernamegiven = "";
         send(new MessagePopupClientLogonEmailRequest("Please enter your Participant ID\nOnly use letters and numbers\n", "",expM.getMinParticipantIDLength()));
@@ -414,6 +416,11 @@ public class ParticipantConnection extends Thread {
 
 
 
+     public long getNumberOfChatTurnsReceivedFromClient() {
+        return numberOfChatTurnsReceivedFromClient;
+    }
+    
+    
 
      /**
      * Main loop which constantly checks connection for incoming messages

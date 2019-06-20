@@ -12,6 +12,8 @@
             <name>chattool</name>
             <minimum-ant-version>1.6.5</minimum-ant-version>
             <source-roots>
+                <root id="src.tangramset01.dir"/>
+                <root id="src.tangramlists.dir"/>
                 <root id="src.lists.dir"/>
                 <root id="src.discoursepragmatics.dir"/>
                 <root id="src.stimulisingle.dir"/>

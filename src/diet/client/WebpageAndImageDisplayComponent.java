@@ -115,6 +115,7 @@ public class WebpageAndImageDisplayComponent {
 
         
     public void changeJProgressBar(final String text,final Color colorForeground, int value){
+       
         if(value<0)value =0;
         if(value>100)value=100;
         final int valCorr=value;

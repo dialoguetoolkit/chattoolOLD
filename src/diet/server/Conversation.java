@@ -421,7 +421,7 @@ public class Conversation extends Thread{
 
                  if (m instanceof MessageWYSIWYGFloorRequest){
                          MessageWYSIWYGFloorRequest mwysiwygfr = (MessageWYSIWYGFloorRequest)m;
-                         cC.processWYSIWYGFloorRequest(origin, mwysiwygfr );
+                         cC.processWYSIWYGFloorRequestDEPRECATED(origin, mwysiwygfr );
                          try{
                              
                          }catch(Exception e){
@@ -436,7 +436,7 @@ public class Conversation extends Thread{
                 
                  if (m instanceof MessageWYSIWYGFloorChangeConfirm){
                          MessageWYSIWYGFloorChangeConfirm mwysiwygfr = (MessageWYSIWYGFloorChangeConfirm)m;
-                         cC.processWYSIWYGFloorChangeConfirm(origin, mwysiwygfr );
+                         cC.processWYSIWYGFloorChangeConfirmDEPRECATED(origin, mwysiwygfr );
                          try{
                              
                          }catch(Exception e){

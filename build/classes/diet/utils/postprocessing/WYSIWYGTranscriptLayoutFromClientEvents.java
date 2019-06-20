@@ -26,9 +26,12 @@ public class WYSIWYGTranscriptLayoutFromClientEvents {
            
            //File directory = new File("C:\\New folder (2)\\DATAANALYSIS\\2017.05.19.FaceCommsInteractionDesignClass\\0038FaceComms2016WYSIWYGDyadic_InteractionDesignClass");
            
-          File directory = new File("C:\\New folder (2)\\DATAANALYSIS\\2017.05.19.FaceCommsInteractionDesignClass\\001RAWDATA\\0040PROCESSING.STEP1");
+          //File directory = new File("C:\\New folder (2)\\DATAANALYSIS\\2017.05.19.FaceCommsInteractionDesignClass\\001RAWDATA\\0040PROCESSING.STEP1");
            
-           
+         // File directory = new File("C:\\New folder (3)\\DATAANALYSIS\\2019.05.FaceComms.SocialMediaClass\\0055FaceComms2016WYSIWYGDyadic_InteractionDesignClass");
+           File directory =  new File("C:\\New folder (3)\\DATAANALYSIS\\2017.05.19.FaceCommsInteractionDesignClass\\001RAWDATA\\0041FaceComms2016WYSIWYGDyadic_InteractionDesignClass");
+         
+          
            WYSIWYGReconstructingTurnsFromClientEvents1 wrt1 = new WYSIWYGReconstructingTurnsFromClientEvents1(directory);
            WYSIWYGTranscriptLayout wtl = new WYSIWYGTranscriptLayout();
            

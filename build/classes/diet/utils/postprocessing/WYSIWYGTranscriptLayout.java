@@ -27,9 +27,11 @@ public class WYSIWYGTranscriptLayout {
      public void processDirectory(File directory){
          //         directory =   new File("C:\\New folder (2)\\DATAANALYSIS\\2017.05.19.FaceCommsInteractionDesignClass\\0038FaceComms2016WYSIWYGDyadic_InteractionDesignClass");//wysiwyg_cie_LLLL1_s2580861_o_s3016080.txt";
         directory =  directory =   new File("C:\\New folder (2)\\DATAANALYSIS\\2017.05.19.FaceCommsInteractionDesignClass\\001RAWDATA\\0040PROCESSING.STEP2");//wysiwyg_cie_LLLL1_s2580861_o_s3016080.txt";
-   
-          directory =   new File("C:\\New folder\\gd2\\2017-2018\\ExpPrag\\LABCHATTOOL\\data\\saved experimental data\\0003FaceComms2016WYSIWYGDyadic_InteractionDesignClass");//wysiwyg_cie_LLLL1_s2580861_o_s3016080.txt";
-       
+        directory =   new File("C:\\New folder\\gd2\\2017-2018\\ExpPrag\\LABCHATTOOL\\data\\saved experimental data\\0003FaceComms2016WYSIWYGDyadic_InteractionDesignClass");//wysiwyg_cie_LLLL1_s2580861_o_s3016080.txt";
+        
+       // directory = new File("C:\\New folder (3)\\DATAANALYSIS\\2019.05.FaceComms.SocialMediaClass\\0043FaceComms2016WYSIWYGDyadic_InteractionDesignClass");
+       // directory = new File("C:\\New folder (3)\\DATAANALYSIS\\2019.05.FaceComms.SocialMediaClass\\0045FaceComms2016WYSIWYGDyadic_InteractionDesignClass");
+       //  directory = new File("C:\\New folder (3)\\DATAANALYSIS\\2016.FACECOMMS-InteractionDesignClass\\01.RAWDATA\\0002NEEDS TO BE SET");
          
          // File directory = new File(s);
          File[] listings = directory.listFiles();

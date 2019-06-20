@@ -175,13 +175,13 @@ public class DefaultWYSIWYGConversationControllerInterface2BACKUPWORKSOK extends
     
    
      @Override
-    public void processWYSIWYGFloorRequest(Participant sender,MessageWYSIWYGFloorRequest mwysiwygfr) {
+    public void processWYSIWYGFloorRequestDEPRECATED(Participant sender,MessageWYSIWYGFloorRequest mwysiwygfr) {
         //fh.processWYSIWYGFloorRequest(sender, mwysiwygfr);
         //this.saveOutputFromDocInserts(sender, mwysiwygfr);
     }
     
     
-    public void processWYSIWYGFloorChangeConfirm(Participant sender, diet.message.MessageWYSIWYGFloorChangeConfirm mwysiwygfcc){
+    public void processWYSIWYGFloorChangeConfirmDEPRECATED(Participant sender, diet.message.MessageWYSIWYGFloorChangeConfirm mwysiwygfcc){
         //fh.processWYSIWYGFloorChangeConfirm(sender, mwysiwygfcc);
     }
 

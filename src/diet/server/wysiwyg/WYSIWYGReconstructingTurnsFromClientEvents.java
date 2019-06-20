@@ -124,7 +124,9 @@ public class WYSIWYGReconstructingTurnsFromClientEvents {
     private void saveAppendedStringLTRForParticipant(Participant sender, MessageClientInterfaceEvent mcieCURRENT){
             String filenameSELF =  "wysiwyg_cie_"+sender.getParticipantID()+"_"+sender.getUsername()+"_s_.txt";
             long numberOfEventsRecorded = (long)this.htNumberOfEventsRecorded.getObject(sender);
-            if(!this.selfHasAlreadySavedClientEvent){
+            if(!this.selfHasAlreadySavedClientEvent){  // this doesn't make sense...it is looking ut up for self...but who is self? Doesn't this duplicate functions from below?
+                
+                System.err.println("CREATING_CIE_"+sender.getUsername()+"..."+mcieCURRENT.getClientInterfaceEvent().getType() );
                 String prepend ="";
                 for(int i=0;i<numberOfEventsRecorded;i++){
                     prepend = prepend +DefaultConversationController.sett.recordeddata_CSVSeparator;

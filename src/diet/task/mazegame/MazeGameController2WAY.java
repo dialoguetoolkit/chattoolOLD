@@ -271,6 +271,8 @@ public class MazeGameController2WAY extends DefaultTaskController{
     
     
     public MazeGameController2WAY(Conversation c, File p1Mazes, File p2Mazes){
+         CustomDialog.showModelessDialog("Important: You must press START when starting the experiment!\n");
+       
          //ObjectInputStream oi = new ObjectInputStream
         try{
         ObjectInputStream p1Oi = new ObjectInputStream(new FileInputStream(p1Mazes));
@@ -307,6 +309,8 @@ public class MazeGameController2WAY extends DefaultTaskController{
     }
     
     public MazeGameController2WAY(Conversation c, Vector p1Mazes, Vector p2Mazes, long timeToStayStill){
+        CustomDialog.showModelessDialog("Important: You must press START when starting the experiment!\n");
+     
         timeParticipantMustStayStill=timeToStayStill;
           this.c=c;
           this.pDirectorMazes=p1Mazes;
@@ -319,7 +323,7 @@ public class MazeGameController2WAY extends DefaultTaskController{
     }
     
     public MazeGameController2WAY(Conversation c, Vector p1Mazes, Vector p2Mazes){
-        
+        CustomDialog.showModelessDialog("Important: You must press START when starting the experiment!\n");
         this.c=c;
         if(timeParticipantMustStayStill==-1){
             MazeGameController2WAY.timeParticipantMustStayStill=CustomDialog.getLong("This is a new option for the maze game...\n"

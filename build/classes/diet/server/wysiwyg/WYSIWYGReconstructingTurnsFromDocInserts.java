@@ -8,8 +8,8 @@ package diet.server.wysiwyg;
 
 import diet.message.Message;
 import diet.message.MessageWYSIWYGDocumentSyncFromClientInsert;
-import diet.server.Conversation;
 import diet.server.ConversationController.DefaultConversationController;
+import diet.server.ConversationController.WYSIWYGTube.Content.TubeFakeInsertedText;
 import diet.server.Participant;
 import java.util.Hashtable;
 import java.util.Vector;
@@ -32,8 +32,70 @@ public class WYSIWYGReconstructingTurnsFromDocInserts {
         this.cC=cC;
     }
     
+    
+    /*  processFakeText (String fakesender, String text)
+    
+     // checks to see if current turn is by fakesender. 
+            If current turn is not by fake sender,
+    
+    
+    
+    */
+    
+    Participant serverP=new Participant(null,"server","server"); //This is a hack
+    
+    public synchronized void processFakeInsertedText(TubeFakeInsertedText wfit){
+        String groupIDOfSender = cC.pp.getSubdialogueID(wfit.apparentSender);  //could be null  
+        Participant group_MostRecentSender = null;
+        Vector group_currentTurn = new Vector();
+        
+        if(groupIDOfSender!=null && !groupIDOfSender.equalsIgnoreCase("")){
+            Object o = htGroup_MostRecentSender.get(groupIDOfSender);
+            if(o!=null){
+                group_MostRecentSender=(Participant)o;
+            }
+            Object o2 = htGroup_CurrentTurn.get(groupIDOfSender);
+            if(o2!=null){
+                group_currentTurn = (Vector)o2;
+            }
+        }
+        
+        if(groupIDOfSender!=null&& !groupIDOfSender.equalsIgnoreCase("") &&  serverP!=group_MostRecentSender && group_MostRecentSender!=null){
+            this.saveToToTurnsFile(group_MostRecentSender, group_currentTurn);
+            group_currentTurn = new Vector();
+            
+            MessageWYSIWYGDocumentSyncFromClientInsert mWYSIWYGkp = new MessageWYSIWYGDocumentSyncFromClientInsert("server","server",wfit.text,0,0,"", false,0);
+            mWYSIWYGkp.setTimeOfReceipt();
+            
+            group_currentTurn.addElement(mWYSIWYGkp);
+            htGroup_CurrentTurn.put(groupIDOfSender, group_currentTurn);
+            htGroup_MostRecentSender.put(groupIDOfSender, serverP);      
+            System.err.println("WYSIWYG-RECONSTRUCTINGTURNS-TURNCHANGE");
+        }
+        else if (groupIDOfSender!=null&& !groupIDOfSender.equalsIgnoreCase("") ){
+            
+            MessageWYSIWYGDocumentSyncFromClientInsert mWYSIWYGkp = new MessageWYSIWYGDocumentSyncFromClientInsert("server","server",wfit.text,0,0,"", false,0);
+             mWYSIWYGkp.setTimeOfReceipt();
+            group_currentTurn.addElement(mWYSIWYGkp);
+            htGroup_CurrentTurn.put(groupIDOfSender, group_currentTurn);
+            htGroup_MostRecentSender.put(groupIDOfSender, serverP);   
+            System.err.println("WYSIWYG-RECONSTRUCTINGTURNS-SAMETURN");
+        }
+        else{
+            Vector v = new Vector();
+            MessageWYSIWYGDocumentSyncFromClientInsert mWYSIWYGkp = new MessageWYSIWYGDocumentSyncFromClientInsert("server","server",wfit.text,0,0,"", false,0);
+           
+            v.addElement(mWYSIWYGkp);
+            this.saveToToTurnsFile(serverP, v);
+            System.err.println("WYSIWYG-RECONSTRUCTINGTURNS-SAVINGEACHCHARACTERSAVINGEACHCHARACTER");
+        }
+    }
+    
+    
+    
+    
     public synchronized void processAppendedDocumentInsert(Participant sender,MessageWYSIWYGDocumentSyncFromClientInsert mWYSIWYGkp){
-        this.saveToHorizontalFile(sender, mWYSIWYGkp);  
+        this.saveToHorizontalFile(sender, mWYSIWYGkp);  //Doesn't do anything...
         String groupIDOfSender = cC.pp.getSubdialogueID(sender);  //could be null  
         Participant group_MostRecentSender = null;
         Vector group_currentTurn = new Vector();

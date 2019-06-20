@@ -119,7 +119,7 @@ public class JParticipantsTableModel extends AbstractTableModel {
              return "Not fully connected yet";
         }
         else if (y==7){
-             if(pc.numberOfChatTurnsReceivedFromClient>0)  return   (((new Date().getTime()- pc.getTimeOfLastChatTextSentToServer()))/1000) +" secs";
+             if(pc.getNumberOfChatTurnsReceivedFromClient()>0) return   (((new Date().getTime()- pc.getTimeOfLastChatTextSentToServer()))/1000) +" secs";
              return "Hasn't sent any chat text yet";
         }
         else if (y==8){

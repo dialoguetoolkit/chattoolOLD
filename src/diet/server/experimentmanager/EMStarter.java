@@ -154,6 +154,7 @@ public class EMStarter {
     
     
     public static void checkVersion(){
+        if(2<5)return;
         String version = System.getProperty("java.version");
         System.out.println("VERSION OF JAVA IS: "+version);
         if(version.startsWith("1.1")||version.startsWith("1.2")||version.startsWith("1.3")||version.startsWith("1.4")

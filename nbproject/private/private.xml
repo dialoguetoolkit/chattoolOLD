@@ -23,11 +23,33 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/DefaultConversationController.java</file>
-            <file>file:/C:/github3/chattool/src/diet/server/Conversation.java</file>
-            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/DefaultWYSIWYGConversationControllerInterface.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/Dyadic_TurnByTurnInterface_MazeGame.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/Dyadic_WYSIWYGInterface.java</file>
+            <file>file:/C:/github3/chattool/src/diet/task/mazegame/MazeGameController2WAY.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/conversation/ui/JParticipantsTableModel.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/wysiwyg/WYSIWYGReconstructingTurnsFromClientEvents.java</file>
             <file>file:/C:/github3/chattool/src/diet/server/io/IntelligentIO.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ParticipantConnection.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/Dyadic_TurnByTurn_GROUNDING.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/Configuration.java</file>
+            <file>file:/C:/github3/chattool/src/diet/utils/HashtableWithDefaultvalue.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/MazeGameConversationControllerMultipleDyads.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/DefaultWYSIWYGConversationControllerInterface.java</file>
+            <file>file:/C:/github3/chattool/src/diet/utils/postprocessing/WYSIWYGTranscriptLayout.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/Dyadic_WYSIWYGInterface_ReferringToFaces.java</file>
+            <file>file:/C:/github3/chattool/src/diet/utils/postprocessing/WYSIWYGReconstructingTurnsFromClientEvents1.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/Dyadic_WYSIWYGInterface_Manipulation.java</file>
             <file>file:/C:/github3/chattool/src/diet/server/conversationhistory/ConversationHistory.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/DefaultConversationController.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ParticipantPartnering/SubDialogue.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/wysiwyg/WYSIWYGReconstructingTurnsFromDocInserts.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ParticipantPartnering/ParticipantPartnering.java</file>
+            <file>file:/C:/github3/chattool/src/diet/client/JChatFrameRightMost/JChatFrameRightMostMultipleWindows.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/ui/CustomDialog.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/Conversation.java</file>
+            <file>file:/C:/github3/chattool/src/diet/task/FaceComms/FaceCommsTaskControllerDyadic.java</file>
+            <file>file:/C:/github3/chattool/src/diet/utils/postprocessing/WYSIWYGTranscriptLayoutFromClientEvents.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/FaceComms2016_RAP_WYSIWYGDyadic.java</file>
         </group>
     </open-files>
 </project-private>

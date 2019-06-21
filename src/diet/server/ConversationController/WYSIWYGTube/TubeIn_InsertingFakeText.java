@@ -29,16 +29,18 @@ public class TubeIn_InsertingFakeText extends Thread implements WYSIWYGTube{
          
          Hashtable<Participant,Vector> htEachParticipantsText = new Hashtable();
          
+         public String[][] targetsqueries = {  {"pilot","sorry why the pilot?"},  {"doctor","yeah but why the doctor?"}     };
          
-         public String targetToDetect = "pilot";
-         public String query = "Sorry why the pilot?";
+         
+         //public String targetToDetect = "pilot";
+         //public String query = "Sorry why the pilot?";
          public int interventionMinPreInterventionGap = 1000;
          public int interventionMaxPreInterventionGap = 1500;
          public int interventionMinIntraWordGap =20;
          public int interventionMaxIntraWordGap =300;
          public int interventionMinInterWordGap =150; 
          public int interventionMaxInterWordGap =400; 
-         public int postInterventionMaxDelayBetweenCharactersWhenFlushingBuffer = 300;
+         public int postInterventionMaxDelayBetweenCharactersWhenFlushingBuffer = 70;
          public int postInterventionMinDelayBetweenCharactersWhenFlushingBuffer = 50;
 
          Dyadic_WYSIWYGInterface_Manipulation dw;
@@ -56,8 +58,10 @@ public class TubeIn_InsertingFakeText extends Thread implements WYSIWYGTube{
          }
          
          public void doSetup(){
-             this.targetToDetect= CustomDialog.getString("Fake turn:\nWhat is the target turn that 'triggers' the fake turn?",  "pilot");
-             this.query=CustomDialog.getString("What is the fake turn?", "sorry why the pilot?");
+             String t= CustomDialog.getString("Fake turn:\nWhat is the target turn that 'triggers' the fake turn?\n",  "pilot");
+             String q=CustomDialog.getString("What is the fake turn?", "sorry why the pilot?");
+             
+             targetsqueries = new String[][]{  {t,q},  };
              
             interventionMinPreInterventionGap= CustomDialog.getInteger("Fake turn:\nWhat is minumum response time?\n(Milliseconds after detecting target)", interventionMinPreInterventionGap);
             interventionMaxPreInterventionGap = CustomDialog.getInteger("Fake turn:\nWhat is maximum response time?\n(Milliseconds after detecting target)", interventionMaxPreInterventionGap);
@@ -88,17 +92,8 @@ public class TubeIn_InsertingFakeText extends Thread implements WYSIWYGTube{
                  this.htEachParticipantsText.put(sender,participantsText );
              }
              participantsText.add(mWYSIWYGInsert);
-             String targetIdentified = this.detectTarget(sender);
-             if(targetIdentified!=null){
-                    
-                     Participant fakesender =dw.pp.getRecipients(sender).elementAt(0);
-                     
-                     this.addFakeText(fakesender, query,   this.interventionMinPreInterventionGap, this.interventionMaxPreInterventionGap ,              this.interventionMinIntraWordGap, this.interventionMaxIntraWordGap, this.interventionMinInterWordGap, this.interventionMaxInterWordGap);
-                      
-                      
-                      
-                 
-             }
+             this.detectTarget(sender);
+             
              
              notifyAll();
          }
@@ -146,22 +141,28 @@ public class TubeIn_InsertingFakeText extends Thread implements WYSIWYGTube{
          
          
          
-         public String detectTarget(Participant sender){
+         public void detectTarget(Participant sender){
             
              Vector<MessageWYSIWYGDocumentSyncFromClientInsert> participantsText = this.htEachParticipantsText.get(sender);
-             if(participantsText==null)return null;
+             if(participantsText==null)return;
              String previousText ="";
              for(int i=participantsText.size()-1;i>=0 && i>=participantsText.size()-100;i--){
                  MessageWYSIWYGDocumentSyncFromClientInsert mWYSIWYGInsert = participantsText.elementAt(i);
                  if(mWYSIWYGInsert.getTextTyped().equalsIgnoreCase(" ")) break; // IT JUST DETECTS 
                  previousText = mWYSIWYGInsert.getTextTyped()+previousText;
              }
-             if(previousText.endsWith(targetToDetect)){
-                 System.err.println("PREVIOUS TEXT IS NONNULL:"+previousText);
-                  return targetToDetect;
+             for(int i=0;i<this.targetsqueries.length;i++){
+                 String[] targetquery = targetsqueries[i];
+                 String target = targetquery[0];
+                 String query = targetquery[1];
+                 if(previousText.endsWith(target)){
+                     Participant fakesender =dw.pp.getRecipients(sender).elementAt(0);
+                     this.addFakeText(fakesender, query,   this.interventionMinPreInterventionGap, this.interventionMaxPreInterventionGap ,              this.interventionMinIntraWordGap, this.interventionMaxIntraWordGap, this.interventionMinInterWordGap, this.interventionMaxInterWordGap);
+                      System.err.println("PREVIOUS TEXT IS NONNULL:"+previousText);
+                 }
+                 
+                  
              }
-             System.err.println("PREVIOUS TEXT IS NULL:"+previousText);
-             return null;
              
          }
          

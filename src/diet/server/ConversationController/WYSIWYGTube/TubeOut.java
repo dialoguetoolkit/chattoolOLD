@@ -61,10 +61,12 @@ public class TubeOut extends Thread{
          }
          
          public synchronized void add(Participant sender, MessageWYSIWYGDocumentSyncFromClientInsert mWYSIWYGInsert){
-             incoming.addElement( mWYSIWYGInsert);
-             incoming_senders.add(sender);
+             
              
              //ht.put(mWYSIWYGInsert, sender);
+             checkIfDelayNeedsTobeAdded();
+             incoming.addElement( mWYSIWYGInsert);
+             incoming_senders.add(sender);
              notifyAll();
          }
          
@@ -74,27 +76,67 @@ public class TubeOut extends Thread{
          }
          
          
+         public void checkIfDelayNeedsTobeAdded(){
+             if(incoming.size()==0){
+                 isTailEndOfIntervention = false;
+                 System.err.println("TAIL END: FALSE");
+             }  
+             else if(incoming.lastElement() instanceof TubeFakeInsertedText){
+                 isTailEndOfIntervention = true;
+                 System.err.println("TAIL END: TRUE");
+             }
+             if(isTailEndOfIntervention){
+                 long gap =(long) this.minDelayBetweenCharactersWhenFlushingBufferPostIntervention+ r.nextInt(this.maxDelayBetweenCharactersWhenFlushingBufferPostIntervention-this.minDelayBetweenCharactersWhenFlushingBufferPostIntervention);                            
+                 TubeControlFakeDelay fd = new TubeControlFakeDelay();
+                 fd.delay=gap;
+                 incoming.add(fd);
+                 incoming_senders.add(new Participant(null,"server","server")); //This is a hack!  
+                 System.err.println("TAIL END: ADD");
+             }
+             displayTube();
+         }
+         
+         public void displayTube(){
+             for(int i=0;i<incoming.size();i++){
+                 Object o = incoming.elementAt(i);
+                 if(o instanceof TubeFakeInsertedText){
+                     System.err.println("TUBECONTENTS(tfi): "+   ((TubeFakeInsertedText)o).text      );
+                 }
+                 else if (o instanceof MessageWYSIWYGDocumentSyncFromClientInsert){
+                    MessageWYSIWYGDocumentSyncFromClientInsert mW = (MessageWYSIWYGDocumentSyncFromClientInsert)o;
+                     System.err.println("TUBECONTENTS(mWY): "+   mW.getTextToAppendToWindow()      );
+                 }
+             }
+         }
+         
+         
+         
+         public boolean isTailEndOfIntervention = false;
+         
+         
          
          public void run(){
              doloop();
          }
          
          
-         boolean processingintervention=false;
+         //boolean processingintervention=false;
          
          Random r = new Random();
+         
+          TubeFakeInsertedText mostRecentIntervention = null;
+         
+         
          private synchronized void doloop(){
              while(2<5){
                  try{
                      wait(); 
                      System.err.println("CHECKING TO SEE IF BIGGER THAN 0");
                      while (incoming.size()>0){
-                         System.err.println("BIGGER THAN");
+                         System.err.println("BIGGER THAN.."+incoming.size());
                          Object o = incoming.elementAt(0);
                          if(o instanceof  MessageWYSIWYGDocumentSyncFromClientInsert){
-                              boolean textIsFirstTextAfterIntervention = false;
-                              if(processingintervention)textIsFirstTextAfterIntervention=true;
-                              processingintervention=false;
+                              
                               
                               
                               MessageWYSIWYGDocumentSyncFromClientInsert mWYSIWYGInsert = (MessageWYSIWYGDocumentSyncFromClientInsert)o;
@@ -107,33 +149,15 @@ public class TubeOut extends Thread{
                               incoming.removeElementAt(0);
                               incoming_senders.removeElementAt(0);
                               
-                              if(textIsFirstTextAfterIntervention){
-                                  Vector newIncoming = new Vector();
-                                  Vector newIncoming_senders = new Vector();
                              
-                                  for(int i=0; i < incoming.size();i++){
-                                     newIncoming.add(incoming.elementAt(i));
-                                     newIncoming_senders.add(incoming_senders.elementAt(i));                                 
-                                     long gap =(long) this.minDelayBetweenCharactersWhenFlushingBufferPostIntervention+ r.nextInt(this.maxDelayBetweenCharactersWhenFlushingBufferPostIntervention-this.minDelayBetweenCharactersWhenFlushingBufferPostIntervention);
-                                     
-                                     TubeControlFakeDelay fd = new TubeControlFakeDelay();
-                                     fd.delay=gap;
-                                     newIncoming.add(fd);
-                                     newIncoming_senders.add(new Participant(null,"server","server")); //This is a hack!  
-                                     
-                                  
-                                 }
-                                 this.incoming=newIncoming;
-                                 this.incoming_senders=newIncoming_senders;
-                                 //System.exit(-56678);
-                              }
                               
                               
                          }
                          else if (o instanceof TubeFakeInsertedText ){
-                             processingintervention=true;
+                             
                              //System.exit(-567);
                              TubeFakeInsertedText wfi = (TubeFakeInsertedText )o;
+                             mostRecentIntervention = wfi;
                              long wakeUpTime = new Date().getTime()+wfi.delayBeforeSending;
                              
                              try{

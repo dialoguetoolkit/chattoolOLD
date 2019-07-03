@@ -59,12 +59,13 @@ The ConversationController sits in the middle between all the participants. All 
 
 The standard approach to creating a new experimental intervention is to:
 
-1. Create a subclass of ```DefaultConversationController```
-2. make sure that ```showCCOnGUI()``` returns true (this will display your ConversationController class in the GUI)
-3. Customize the conversation controller object, e.g. 
+1. Create a subclass of ```DefaultConversationController``` , e.g. ```MyNewConversationController```
+2. make sure that ```showCCOnGUI()``` returns true (this will display your ConversationController class in the main GUI of the chat-tool)
+3. To speed up debugging/testing, there is a command-line option that starts the server, loads your ConversationController object, starts 2 clients (no. of clients can be changed in the settings), and logs the clients into the server. Assuming your new ConversationController object is ```MyConversationController```, use the following command: ```javac -jar "chatool.jar" nogui_ccname_autologin MyNewConversationController```
+4. Customize the conversation controller object, e.g. 
    * modify ```participantJoinedConversation(...)``` to specify what happens when a conversation logs in
    * modify ```processChatText(....)```. This method specifies what happens when a participant sends a message. The default behaviour is to simply relay the message to all other participants. This method can be modified to, e.g. selectively block (shadowban) messages, or to transform messages (e.g. replace or add text), or to send entriely artificial turns. There is a large set of methods in ```Conversation```, such as ```Conversation.newsendArtificialTurn(....)``` for doing this.
-4. Test the setup locally (run as demo) or by using the method above (Speeeding up testing cycle of conversation controller objects)
+5. Test the setup locally (run as demo) or by using the method above (Speeeding up testing cycle of conversation controller objects)
 
 ### 
 

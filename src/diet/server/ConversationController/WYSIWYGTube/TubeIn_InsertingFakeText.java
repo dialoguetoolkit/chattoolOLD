@@ -30,10 +30,7 @@ public class TubeIn_InsertingFakeText extends Thread implements WYSIWYGTube{
          Hashtable<Participant,Vector> htEachParticipantsText = new Hashtable();
          
          public String[][] targetsqueries = {  {"pilot","sorry why the pilot?"},  {"doctor","yeah but why the doctor?"}     };
-         
-         
-         //public String targetToDetect = "pilot";
-         //public String query = "Sorry why the pilot?";
+        
          public int interventionMinPreInterventionGap = 1000;
          public int interventionMaxPreInterventionGap = 1500;
          public int interventionMinIntraWordGap =20;

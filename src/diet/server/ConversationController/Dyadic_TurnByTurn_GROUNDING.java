@@ -7,10 +7,9 @@ package diet.server.ConversationController;
 
 import diet.message.MessageChatTextFromClient;
 import diet.server.Conversation;
+import diet.server.ConversationController.ui.CustomDialog;
 import diet.server.Participant;
-import diet.task.JointReference.JointReferenceTaskController;
-import java.awt.Color;
-import java.util.Date;
+import diet.task.JointReference.JointReferenceTaskTwoStages;
 
 /**
  *
@@ -18,7 +17,7 @@ import java.util.Date;
  */
 public class Dyadic_TurnByTurn_GROUNDING extends DefaultConversationController{
 
-    JointReferenceTaskController jrtc = new JointReferenceTaskController(this, 5000);
+    JointReferenceTaskTwoStages jrtc = new JointReferenceTaskTwoStages(this, 5000);
     Participant pDirector;
     Participant pMatcher;
     
@@ -37,7 +36,12 @@ public class Dyadic_TurnByTurn_GROUNDING extends DefaultConversationController{
     public synchronized void processChatText(Participant sender, MessageChatTextFromClient mct) {
         
         if(mct.getText().startsWith("/")){
-            if(sender!=pDirector )jrtc.processChatText(sender, mct.getText());        
+            if(jrtc.isTraining() &&  sender!=pDirector ){
+                jrtc.processChatText(sender, mct.getText());
+            }
+            else if (!jrtc.isTraining()) {
+                 jrtc.processChatText(sender, mct.getText());
+            }
         
         }
         else{
@@ -66,6 +70,9 @@ public class Dyadic_TurnByTurn_GROUNDING extends DefaultConversationController{
              pp.createNewSubdialogue(c.getParticipants().getAllParticipants());
              //this.itnt.addGroupWhoAreMutuallyInformedOfTyping(c.getParticipants().getAllParticipants());
              this.itnt.addPairWhoAreMutuallyInformedOfTyping(c.getParticipants().getAllParticipants().elementAt(0), c.getParticipants().getAllParticipants().elementAt(1));
+             
+             
+             CustomDialog.showDialog("PRESS OK TO START!");
              this.experimentHasStarted=true;
              
              jrtc.startTask(pDirector, pMatcher);
@@ -75,6 +82,10 @@ public class Dyadic_TurnByTurn_GROUNDING extends DefaultConversationController{
         
         
     }
+    
+    
+    
+    
     
     
    public static boolean showcCONGUI() {

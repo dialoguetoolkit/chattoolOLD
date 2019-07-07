@@ -18,8 +18,8 @@ import diet.task.JointReference.JointReferenceTaskTwoStages;
 public class Dyadic_TurnByTurn_GROUNDING extends DefaultConversationController{
 
     JointReferenceTaskTwoStages jrtc = new JointReferenceTaskTwoStages(this, 5000);
-    Participant pDirector;
-    Participant pMatcher;
+   // Participant pDirector;
+   // Participant pMatcher;
     
     
     public Dyadic_TurnByTurn_GROUNDING(Conversation c) {
@@ -36,12 +36,9 @@ public class Dyadic_TurnByTurn_GROUNDING extends DefaultConversationController{
     public synchronized void processChatText(Participant sender, MessageChatTextFromClient mct) {
         
         if(mct.getText().startsWith("/")){
-            if(jrtc.isTraining() &&  sender!=pDirector ){
+            
                 jrtc.processChatText(sender, mct.getText());
-            }
-            else if (!jrtc.isTraining()) {
-                 jrtc.processChatText(sender, mct.getText());
-            }
+          
         
         }
         else{
@@ -62,11 +59,9 @@ public class Dyadic_TurnByTurn_GROUNDING extends DefaultConversationController{
     public void participantJoinedConversation(Participant p) {
         super.participantJoinedConversation(p); 
         
-        if(c.getParticipants().getAllParticipants().size()==1){
-            this.pDirector=p;
-        }
+       
         if(c.getParticipants().getAllParticipants().size()==2) {
-             this.pMatcher=p;
+            
              pp.createNewSubdialogue(c.getParticipants().getAllParticipants());
              //this.itnt.addGroupWhoAreMutuallyInformedOfTyping(c.getParticipants().getAllParticipants());
              this.itnt.addPairWhoAreMutuallyInformedOfTyping(c.getParticipants().getAllParticipants().elementAt(0), c.getParticipants().getAllParticipants().elementAt(1));
@@ -75,11 +70,18 @@ public class Dyadic_TurnByTurn_GROUNDING extends DefaultConversationController{
              CustomDialog.showDialog("PRESS OK TO START!");
              this.experimentHasStarted=true;
              
-             jrtc.startTask(pDirector, pMatcher);
+             jrtc.startTask((Participant)c.getParticipants().getAllOtherParticipants(p).elementAt(0), p);
              //c.changeJProgressBar(pDirector, "CHATFRAME", "text", Color.red, 50);
              //c.changeJProgressBar(pMatcher, "CHATFRAME", "text", Color.red, 50);
         }
         
+        
+    }
+
+    @Override
+    public void participantRejoinedConversation(Participant p) {
+        super.participantRejoinedConversation(p); 
+        jrtc.participantRejoined(p);
         
     }
     

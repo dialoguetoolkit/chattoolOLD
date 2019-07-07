@@ -29,7 +29,7 @@ import java.util.Vector;
  */
 public class JointReferenceTaskController implements JTrialTimerActionRecipientInterface {
 
-    
+    JJPauser jjp = new JJPauser();
 
     DefaultConversationController cC;
     

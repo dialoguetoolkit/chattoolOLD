@@ -29,7 +29,7 @@ import java.util.Vector;
  */
 public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientInterface {
 
-    
+    JJPauser jjp =new JJPauser();
 
     DefaultConversationController cC;
     
@@ -70,6 +70,9 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
       boolean istrainingphase = CustomDialog.getBoolean("Training or test phase", "TRAINING", "TEST");
       
       
+      //Vector loadedTraining = new Vector();
+      //Vector loadedTEsting = new Vector();
+      
     
     public JointReferenceTaskTwoStages(DefaultConversationController cC) {
         //durationOfStimulus = 5000;//CustomDialog.getLong("How long should the stimuli be displayed for?", 5000);
@@ -95,20 +98,17 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
     }
     
     
-    private void loadReferentlistTesting(){
+    private void loadReferentlistTestingOLD(){
         
       
         String dir = "" ;
         String mat="";
         int matchset =-1;
         
-        dir = "D5_A_2.png";    matchset = 6;  mat = "set"+matchset+ ".png";  vpairs.add(new String[]{dir,mat});
-        
-        
-        dir = "D5_B_3.png";    matchset = 7; mat = "set"+matchset+ ".png";  vpairs.add(new String[]{dir,mat});
+        dir ="D5_A_2.png";    matchset = 6;  mat = "set"+matchset+ ".png";  vpairs.add(new String[]{dir,mat});   
+        dir ="D5_B_3.png";    matchset = 7; mat = "set"+matchset+ ".png";  vpairs.add(new String[]{dir,mat});
         dir= "D5_E_1.png";     matchset = 8; mat = "set"+matchset+ ".png"; vpairs.add(new String[]{dir,mat});
-        dir = "D5_H_4.png";    matchset = 6; mat = "set"+matchset+ ".png"; vpairs.add(new String[]{dir,mat});
-        
+        dir ="D5_H_4.png";    matchset = 6; mat = "set"+matchset+ ".png"; vpairs.add(new String[]{dir,mat});
         
        
         dir = "D6_B_7.png";    matchset = 5; mat = "set"+matchset+ ".png"; vpairs.add(new String[]{dir,mat});
@@ -117,9 +117,9 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
         dir = "D6_G_0.png";    matchset = 5; mat = "set"+matchset+ ".png"; vpairs.add(new String[]{dir,mat});
         
       
-        dir ="D7_A_3.png";     matchset = 5; mat = "set"+matchset+ ".png"; vpairs.add(new String[]{dir,mat});
-        dir="D7_C_1.png";      matchset = 6; mat = "set"+matchset+ ".png"; vpairs.add(new String[]{dir,mat});
-        dir="D7_E_7.png";      matchset = 8; mat = "set"+matchset+ ".png"; vpairs.add(new String[]{dir,mat});
+        dir = "D7_A_3.png";     matchset = 5; mat = "set"+matchset+ ".png"; vpairs.add(new String[]{dir,mat});
+        dir = "D7_C_1.png";      matchset = 6; mat = "set"+matchset+ ".png"; vpairs.add(new String[]{dir,mat});
+        dir = "D7_E_7.png";      matchset = 8; mat = "set"+matchset+ ".png"; vpairs.add(new String[]{dir,mat});
         dir = "D7_G_5.png";    matchset = 8; mat = "set"+matchset+ ".png"; vpairs.add(new String[]{dir,mat});
                 
         
@@ -135,7 +135,112 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
     }
     
     
+     private void loadReferentlistTesting(){
+         boolean foundseq = false;
+         while(!foundseq){
+              Vector vp = this.generateReferentlistTesting();
+              if(vp!=null){
+                  foundseq=true;
+                  vpairs=vp;
+              }
+              else{
+                  
+              }
+         }
+     }
+     
+     
+     
+     private Vector generateReferentlistTesting(){
+        
+         Vector vpairscandidate = new Vector();
+         
+         String dir = "" ;
+        String mat="";
+        int matchset =-1;
+        
+        
+       
+        SequenceOfFour sf4 = new SequenceOfFour(5,6,7,8);
+       
+        
+        SequenceOfThree sf3 = new SequenceOfThree(6,7,8);
+        dir ="D5_A_2.png";    matchset = sf3.getNext();  mat = "set"+matchset+ ".png";  vpairscandidate.add(new String[]{dir,mat});   
+        dir ="D5_B_3.png";    matchset = sf3.getNext(); mat = "set"+matchset+ ".png";  vpairscandidate.add(new String[]{dir,mat});
+        dir= "D5_E_1.png";    matchset = sf3.getNext(); mat = "set"+matchset+ ".png"; vpairscandidate.add(new String[]{dir,mat});
+        dir ="D5_H_4.png";    matchset = sf4.getNext(matchset,5); if (matchset==-1)return null     ;mat = "set"+matchset+ ".png"; vpairscandidate.add(new String[]{dir,mat});
+        
+       
+        sf3 = new SequenceOfThree(5,7,8);
+        dir = "D6_B_7.png";    matchset = sf3.getNext(); mat = "set"+matchset+ ".png"; vpairscandidate.add(new String[]{dir,mat});
+        dir = "D6_D_2.png";    matchset = sf3.getNext(); mat = "set"+matchset+ ".png"; vpairscandidate.add(new String[]{dir,mat});
+        dir = "D6_F_4.png";    matchset = sf3.getNext(); mat = "set"+matchset+ ".png"; vpairscandidate.add(new String[]{dir,mat});
+        dir = "D6_G_0.png";   matchset = sf4.getNext(matchset,6); if (matchset==-1)return null ;mat = "set"+matchset+ ".png"; vpairscandidate.add(new String[]{dir,mat});
+        
+         sf3 = new SequenceOfThree(5,6,8);
+        dir = "D7_A_3.png";    matchset = sf3.getNext(); mat = "set"+matchset+ ".png"; vpairscandidate.add(new String[]{dir,mat});
+        dir = "D7_C_1.png";    matchset = sf3.getNext(); mat = "set"+matchset+ ".png"; vpairscandidate.add(new String[]{dir,mat});
+        dir = "D7_E_7.png";    matchset = sf3.getNext(); mat = "set"+matchset+ ".png"; vpairscandidate.add(new String[]{dir,mat});
+        dir = "D7_G_5.png";    matchset = sf4.getNext(matchset,7); if (matchset==-1)return null ;mat = "set"+matchset+ ".png"; vpairscandidate.add(new String[]{dir,mat});
+                
+         sf3 = new SequenceOfThree(5,6,7);
+        dir = "D8_C_5.png";    matchset = sf3.getNext(); mat = "set"+matchset+ ".png"; vpairscandidate.add(new String[]{dir,mat});
+        dir = "D8_D_4.png";    matchset = sf3.getNext(); mat = "set"+matchset+ ".png"; vpairscandidate.add(new String[]{dir,mat}); 
+        dir = "D8_F_2.png";    matchset = sf3.getNext(); mat = "set"+matchset+ ".png"; vpairscandidate.add(new String[]{dir,mat});
+        dir = "D8_H_0.png";     matchset = sf4.getNext(matchset,8); if (matchset==-1)return null ;mat = "set"+matchset+ ".png"; vpairscandidate.add(new String[]{dir,mat});
+                
+                
+        //5678
+        //8567        
+        return vpairscandidate;
+    }
     
+    
+    
+    class SequenceOfFour{
+        Vector <Integer> v = new Vector();
+        public SequenceOfFour(int a, int b, int c, int d){
+            v.addElement(a);
+            v.addElement(b);
+            v.addElement(c);
+            v.addElement(d);
+        }
+        public int getNext(int notval, int notval2){
+            Vector<Integer> vv = new Vector();
+            for(int i=0;i<v.size();i++){
+               Integer ii= v.elementAt(i);
+               if(ii!=notval && ii!=notval2){
+                   vv.addElement(ii);
+               }
+            
+            }
+            if(vv.size()==0){
+               // if(v.size()!=1) CustomDialog.showDialog("ERROR CODE 50");
+                
+                return -1;
+            }
+            
+            int idx = r.nextInt(vv.size());
+            int retval = vv.elementAt(idx);
+            v.removeElementAt(idx);
+            return retval;
+        }
+    }
+    class SequenceOfThree{
+        Vector <Integer> v = new Vector();
+        public SequenceOfThree(int x, int y, int z){
+            v.addElement(x);
+            v.addElement(y);
+            v.addElement(z);
+        }
+        public int getNext(){
+            int idx = r.nextInt(v.size());
+            int retval = v.elementAt(idx);
+            v.removeElementAt(idx);
+            return retval;
+        }
+        
+    }
     
     
     
@@ -150,20 +255,11 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
         
         
         
+     
        
-       String dsets ="1234512345123451234551234451233451223451"; //Index is off by 1
-       String msets= "5123445123345122345112345123451234512345"; //Index is off by 1
+       Vector<int[]> directormatchersets = getReferentlistTraining();
        
-       Vector<int[]> directormatchersets = new Vector();
-       
-       for(int i=0;i<dsets.length();i++){
-           int[] directormatcherset = new int[]{Integer.parseInt(""+dsets.charAt(i))-1, Integer.parseInt(""+msets.charAt(i))-1};
-           System.err.println("TESTING: "+i+ "DSETLENGTH "+dsets.length());
-           if(directormatcherset[0]==directormatcherset[1]){
-               //System.exit(-5678989);
-           }
-           directormatchersets.insertElementAt(directormatcherset, r.nextInt(directormatchersets.size()+1));
-       }
+       System.err.println("TRAININGDIRECTORMATCHERSETZIZE"+ directormatchersets.size());
        
        //System.exit(-5678);
        targetFigs = new Vector();targetFigs.add("A");targetFigs.add("B");targetFigs.add("C");targetFigs.add("D");targetFigs.add("E");targetFigs.add("F");targetFigs.add("G");targetFigs.add("H");
@@ -307,6 +403,68 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
        
        
        
+       
+       0,1
+       0,2
+       0,3
+       0,4
+       
+       
+       1,0
+       1,2
+       1,3
+       1,4
+       
+       2,0
+       2,1
+       2,3
+       2,4
+       
+       3,0
+       3,1
+       3,2
+       3,4
+       
+       4,0
+       4,1
+       4,2
+       4,3
+       
+        0,1
+       0,2
+       0,3
+       0,4
+       
+       
+       1,0
+       1,2
+       1,3
+       1,4
+       
+       2,0
+       2,1
+       2,3
+       2,4
+       
+       3,0
+       3,1
+       3,2
+       3,4
+       
+       4,0
+       4,1
+       4,2
+       4,3
+       //cycle through each block of 20 twice - the last one of the first set is not the first one of the second set
+       
+       
+       //blocks of 8
+       //the last one of a set is never the first one of a set
+       
+       
+       
+       
+       
        ///RAW
        
        
@@ -404,13 +562,34 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
        
        
        
+       /*
+       
+       */
+      // See if possible to generate
+       /*
+       //smaple it..
        
        
        
+       0,1  -> 1,2  -                   
+               1,3
+               1,4
+               2,2
+               2,3
+               2,4
+               3,1 
+               3,2
+               3,3
+               3,4
+               4,0
+               
+               4,2
+               
        
        
+       0,2  0,3 0,4 
        
-       
+       0,1
        
        
        
@@ -512,15 +691,30 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
    
     }
     
+    public void  participantRejoined(Participant p){
+        if(p==pA){
+             cC.c.showStimulusImageFromJarFile_InitializeWindow(pA, 710, 400, "",buttons);
+             cC.c.showStimulusImageEnableButtons(pA, buttons, false);
+        }
+        else{
+              cC.c.showStimulusImageFromJarFile_InitializeWindow(pB, 710, 400, "",buttons);
+               cC.c.showStimulusImageEnableButtons(pB, buttons, false);
+        }
+    }
+    
     
     
     public void startTask(Participant pA, Participant pB){
-        this.pA=pA;
-        this.pB=pB;
+       
+            this.pA=pA;
+            this.pB=pB;
+        
+        
+        
         cC.c.showStimulusImageFromJarFile_InitializeWindow(pA, 710, 400, "",buttons);
         cC.c.showStimulusImageFromJarFile_InitializeWindow(pB, 710, 400, "",buttons);
-        cC.c.showStimulusImageEnableButtons(pB, buttons, false);
-        cC.c.showStimulusImageEnableButtons(pA, buttons, false);
+       // cC.c.showStimulusImageEnableButtons(pB, buttons, false);
+        //cC.c.showStimulusImageEnableButtons(pA, buttons, false);
         //doCountdowntoNextSet_DEPRECATED("Please start!","Next face in " );
         
         Thread t = new Thread(){
@@ -528,6 +722,8 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
                 gameloop();
             }
         };
+      
+        
         t.start();
     }
     
@@ -565,6 +761,10 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
                           hasdonetraining = true;
                           this.loadReferentlistTesting();
                           this.istrainingphase=false;
+                          
+                          Participant pASwap =pA;
+                          pA=pB;
+                          pB=pASwap;
                           
                           this.htscoreCORRECT.putObject(pA, 0);
                           this.htscoreCORRECT.putObject(pB, 0);
@@ -614,7 +814,7 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
      
      
      long startOfCurrentGame = new Date().getTime();
-     long durationOfGame = CustomDialog.getLong("How long is a game?", 90000);
+     long durationOfGame = CustomDialog.getLong("How long is a game?", 60000);
      
      
      
@@ -627,13 +827,26 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
           }catch(Exception e){
               e.printStackTrace();
           }   
+          
+          long bonustimethisgame = 0;
+          startOfCurrentGame = new Date().getTime();
           while(2<5){
               //
               try{
                   
-                 wait(500);
+                 wait(250);
+                 
+                 long time1 = new Date().getTime();
+                 boolean ispaused = this.jjp.isPaused();
+                 while(ispaused){
+                     ispaused = this.jjp.isPaused();
+                     wait(500);
+                     bonustimethisgame=bonustimethisgame+500;
+                 }
+                 
+                 
                  long durationOfGameSoFar = new Date().getTime()-startOfCurrentGame;
-                 long timeRemaining = durationOfGame - durationOfGameSoFar;
+                 long timeRemaining =  bonustimethisgame +   durationOfGame - durationOfGameSoFar;
                  if(timeRemaining<0)timeRemaining =0;
                  
                  Color progressBar = Color.red;
@@ -653,6 +866,7 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
                      this.doCountdowntoNextSet_Step1_Countdown("Your score is: ","Time till next image: ", false, false);
                      this.doCountdowntoNextSet_Step2_LoadNextSet();
                      this.startOfCurrentGame= new Date().getTime();
+                      bonustimethisgame=0;
                      //this.doCountdowntoNextSet_Step3_StopShowingStimulus();
                      this.doCountdowntoNextSet_Step4_ShowMessageAtStartOfTrial();
                  }   
@@ -662,6 +876,7 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
                       this.doCountdowntoNextSet_Step1_Countdown("Your score is: ","Time till next image: ",false, false);
                      this.doCountdowntoNextSet_Step2_LoadNextSet();
                      this.startOfCurrentGame= new Date().getTime();
+                      bonustimethisgame=0;
                      //this.doCountdowntoNextSet_Step3_StopShowingStimulus();
                      this.doCountdowntoNextSet_Step4_ShowMessageAtStartOfTrial();
                  }
@@ -713,42 +928,7 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
                 
                   
                   
-                  if(showTimerInChatWindow)cC.c.newsendInstructionToParticipant(pA, countdownmessageprefix + "5 secs" );
-                  if(showTimerInChatWindow)cC.c.newsendInstructionToParticipant(pB, countdownmessageprefix + "5 secs" );
-                  if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions",countdownmessageprefix + "5 secs" +"\n" ,true, pA,pB );
-                  
-                  Thread.sleep(1000);
-                  //cC.c.changeClientInterface_clearMainWindows(pA);
-                  //cC.c.changeClientInterface_clearMainWindows(pB);
-                  //cC.c.changeClientInterface_backgroundColour(pA, Color.black);
-                  //cC.c.changeClientInterface_backgroundColour(pB, Color.black);
-                  if(showTimerInChatWindow)cC.c.newsendInstructionToParticipant(pA, countdownmessageprefix + "4 secs" );
-                  if(showTimerInChatWindow)cC.c.newsendInstructionToParticipant(pB, countdownmessageprefix + "4 secs" );
-                  if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions",countdownmessageprefix + "4 secs" +"\n" ,true, pA,pB );
-                  Thread.sleep(1000);
-                  //cC.c.changeClientInterface_clearMainWindows(pA);
-                  //cC.c.changeClientInterface_clearMainWindows(pB);
-                  //cC.c.changeClientInterface_backgroundColour(pA, Color.red);
-                  //cC.c.changeClientInterface_backgroundColour(pB, Color.red);
-                  if(showTimerInChatWindow)cC.c.newsendInstructionToParticipant(pA, countdownmessageprefix + "3 secs" );
-                  if(showTimerInChatWindow)cC.c.newsendInstructionToParticipant(pB, countdownmessageprefix + "3 secs" );
-                  if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions",countdownmessageprefix + "3 secs" +"\n" ,true, pA,pB );
-                  Thread.sleep(1000);
-                  //cC.c.changeClientInterface_clearMainWindows(pA);
-                  //cC.c.changeClientInterface_clearMainWindows(pB);
-                  //cC.c.changeClientInterface_backgroundColour(pA, Color.black);
-                  //cC.c.changeClientInterface_backgroundColour(pB, Color.black);
-                  if(showTimerInChatWindow)cC.c.newsendInstructionToParticipant(pA, countdownmessageprefix + "2 secs" );
-                  if(showTimerInChatWindow)cC.c.newsendInstructionToParticipant(pB, countdownmessageprefix + "2 secs" );
-                  if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions",countdownmessageprefix + "2 secs"+"\n"  ,true, pA,pB );
-                  Thread.sleep(1000);
-                  //cC.c.changeClientInterface_clearMainWindows(pA);
-                  //cC.c.changeClientInterface_clearMainWindows(pB);
-                  //cC.c.changeClientInterface_backgroundColour(pA, Color.red);
-                  //cC.c.changeClientInterface_backgroundColour(pB, Color.red);
-                  if(showTimerInChatWindow)cC.c.newsendInstructionToParticipant(pA, countdownmessageprefix + "1 sec" );
-                  if(showTimerInChatWindow)cC.c.newsendInstructionToParticipant(pB,countdownmessageprefix + "1 sec" );
-                  if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions",countdownmessageprefix + "1 secs"+"\n"  ,true, pA,pB );
+                
                   Thread.sleep(1000);
                   
                   if(blocktextentry)   cC.c.changeClientInterface_clearMainWindows(pA);
@@ -767,12 +947,20 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
          
      }
      
+     public void pause(){
+         jjp.setPaused();
+     }
+     
      
      public void doCountdowntoNextSet_Step2_LoadNextSet(){
          loadNextStimulusSetSet(this.directoryname);     
          gamenumber++;
          cC.c.showStimulusImageFromJarFile_ChangeImage(pA, pA_Imagename, durationOfStimulus);
-         cC.c.showStimulusImageFromJarFile_ChangeImage(pB, pB_Imagename, durationOfStimulus);        
+         cC.c.showStimulusImageFromJarFile_ChangeImage(pB, pB_Imagename, durationOfStimulus);  
+          this.jjp.addTextln("Gamenumber: "+gamenumber);
+         this.jjp.addTextln(pA.getParticipantID()+","+pA.getUsername()+" "+pA_Imagename);
+         this.jjp.addTextln(pB.getParticipantID()+","+pB.getUsername()+" "+pB_Imagename);
+         this.jjp.addTextln("");
          currentsethasbeensolved = false;         
      }
      
@@ -1165,7 +1353,7 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
     
     public synchronized void processChatText(Participant sender, String text){
         if(!text.startsWith("/"))return;
-         if(this.istrainingphase&&sender==this.pA)return;
+         if(sender==this.pA)return;
          if(text.length()!=2)return;
          
          if(!istrainingphase && text.endsWith("n")){
@@ -1445,5 +1633,169 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
     
     
     
+    public static void main (String[] args){
+         System.err.println("2");
+         //JointReferenceTaskTwoStages jrt2st = new JointReferenceTaskTwoStages(null);
+         //jrt2st.loadReferentlistTraining();;
+        //loadReferentlistTraining();
+    }
     
+    
+     private static Vector<int[]> getReferentlistTraining(){
+         //loop through sets 0,1,2,3,4
+         //loop 
+         Vector allpairs = new Vector();
+        for(int i=0;i<5;i++){
+            
+            for(int j=0;j<5;j++){
+                if(i!=j){
+                    int[] pairing = new int[]{i,j};
+                    allpairs.add(pairing);
+                }          
+            }   
+        };  
+        
+        
+        
+        
+        //printListOfPairs(allpairs);
+        return getListsTrainingGR(allpairs);
+        
+      
+     }
+     
+     
+     public static Vector<int[]> getListsTrainingGR(Vector<int[]> v){
+          Vector<int[]> firstpart = getRandomValidSequence(v);
+          int[] lastpair= firstpart.lastElement();
+          
+          
+          boolean foundsecondpart = false;
+          
+          Vector<int[]> secondpart = new Vector();
+          while(!foundsecondpart){
+             Vector<int[]>secondpartcandidate = getRandomValidSequence(v);
+             if(secondpartcandidate.firstElement()[0]!=lastpair[0]&&secondpartcandidate.firstElement()[1]!=lastpair[1]){
+                 foundsecondpart = true;
+                 secondpart = secondpartcandidate;
+                 // System.exit(-568);
+             }
+             else{
+                 System.err.println("REJECTING");
+             }
+             
+             
+          }
+          
+         for(int i=0;i<secondpart.size();i++){
+             
+             firstpart.add(secondpart.elementAt(i));
+         }
+         //System.err.println(firstpart.size()); System.exit(-5678);
+          
+         return firstpart;
+     }
+     
+     
+     
+     
+    
+      public static Vector <int[]> getRandomValidSequence(Vector<int[]> v){
+           boolean foundseq = false;
+           while(!foundseq){
+               Vector posslist =  generateRandomSequence(v);
+               foundseq = checkIfListIsValid(posslist);
+               printListOfPairs(posslist);
+               return posslist;
+           }
+           System.exit(-9);
+           return null;
+      }
+      
+      public static boolean checkIfListIsValid(Vector<int[]> v){
+          for(int i=0;i<v.size()-1;i++){
+              int [] paira = v.elementAt(i);
+              int[] pairb = v.elementAt(i+1);
+              if(paira[0]==pairb[0]) return false;
+              if(paira[1]==pairb[1]) return false;
+          }
+          return true;
+      }
+      
+      static Random rr = new Random();
+      
+      public static Vector<int[]> generateRandomSequence(Vector<int[]> v){
+          Vector candidatelist    = new Vector();
+          for(int i=0;i<v.size();i++){
+               candidatelist.insertElementAt(v.elementAt(i), rr.nextInt(candidatelist.size()+1));
+          }
+          
+          return candidatelist;
+      }
+     
+     
+     public static void getList(Vector<int[]> v){
+          Vector<int[]> unused = (Vector) v.clone();
+          for(int i=0;i<v.size();i++){      
+            Vector<int[]> possibleNext = getPermissible(v.elementAt(i)[0],      v.elementAt(i)[1], unused );    
+             printListOfPairs(possibleNext);
+             while(possibleNext.size()>0){
+                 
+             }
+             
+             
+             
+          }
+         
+     }
+     
+     /*
+  
+     (0, 1)  (1, 0)                 (1, 2) (2, 0) (2, 1) (0, 2)
+     
+     
+     (0, 1)  (1, 0)   (2, 1)  (1, 2) (2, 0)  (0, 2)
+     
+     
+     (0, 1)  (1, 0)   (2, 1)         (1, 2) (2, 0)  (0, 2)
+     
+     
+     (0, 1)  (1, 0)                 (1, 2) (2, 0) (2, 1) (0, 2)
+     
+     
+     */
+     
+     public static Vector<int[]> getPermissible(int d, int m, Vector<int[]> unused){
+         Vector<int[]> permissible = new Vector(); 
+         for(int i=0;i<unused.size();i++){
+              int[] pair = unused.elementAt(i);
+              if(pair[0]!=d&&pair[1]!=m){
+                 permissible.addElement(pair);
+              }  
+         }
+         return permissible;
+     }
+     
+    
+     
+     
+     
+     public static void printListOfPairs(Vector<int[]> listv){
+         for(int i=0;i<listv.size();i++){
+                 System.out.print("("+listv.elementAt(i)[0]+", "+ listv.elementAt(i)[1]+") ");
+             }
+             System.out.println("");
+     }
+     
+     
+      public static String getListOfPairsAsString(Vector<int[]> listv){
+         String retval="";
+         for(int i=0;i<listv.size();i++){
+                 retval = retval+("("+listv.elementAt(i)[0]+", "+ listv.elementAt(i)[1]+") ");
+             }
+         
+         return retval;
+     }
+     
+     
 }

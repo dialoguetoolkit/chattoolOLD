@@ -246,14 +246,39 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
     
     
     
-    Vector<String> targetFigs;
+    //Vector<String> targetFigs;
+    
+    
+    
+    class cyclicdispenser {
+        
+        Vector<String> vAllFull = new Vector();
+        Random r = new Random();
+        
+        public Vector<String> itemsRemaining= new Vector();
+        
+        public cyclicdispenser(Vector<String> v){
+            this.vAllFull = (Vector)v.clone();
+        }
+        
+        public String getNext(){
+            if(itemsRemaining.size()==0){
+                itemsRemaining = (Vector)vAllFull.clone();
+                System.err.println("cyclicdispenserlooping");
+            }
+            
+            String retval =    itemsRemaining.elementAt( r.nextInt(itemsRemaining.size()));
+            itemsRemaining.remove(retval);
+            return retval;
+            
+        }
+        
+    }
+    
+    
     
     private void loadReferentlistTraining(){
-         targetFigs= new Vector();targetFigs.add("A");targetFigs.add("B");targetFigs.add("C");targetFigs.add("D");targetFigs.add("E");targetFigs.add("F");targetFigs.add("G");targetFigs.add("H");
        
-        
-        
-        
         
      
        
@@ -262,23 +287,28 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
        System.err.println("TRAININGDIRECTORMATCHERSETZIZE"+ directormatchersets.size());
        
        //System.exit(-5678);
-       targetFigs = new Vector();targetFigs.add("A");targetFigs.add("B");targetFigs.add("C");targetFigs.add("D");targetFigs.add("E");targetFigs.add("F");targetFigs.add("G");targetFigs.add("H");
-       System.err.println("HERESIZE"+targetFigs.size());
+       Vector<String> targettangrams = new Vector();targettangrams.add("A");targettangrams.add("B");targettangrams.add("C");targettangrams.add("D");targettangrams.add("E");targettangrams.add("F");targettangrams.add("G");targettangrams.add("H");
+       
+       cyclicdispenser figures = new cyclicdispenser(targettangrams);
        
        
-       for(int targetFig=0;targetFig<targetFigs.size();targetFig++){
+       
+       
+       
+       for(int targetFigIDX=0;targetFigIDX<8;targetFigIDX++){
             
            for(int i=0;i<5;i++){
                int directorset = directormatchersets.firstElement()[0];
-               String target = targetFigs.elementAt(targetFig);
+               
+               String target = figures.getNext();
                
                int directorsetposition = this.getPositionOfFigureInSetstart0(target, directorset);
                int matcherset = directormatchersets.firstElement()[1];
                int matchersetposition = this.getPositionOfFigureInSetstart0(target, matcherset);
                
-               int[] set = new int[] {directorset, targetFig, directorsetposition, matcherset,matchersetposition};
+               //int[] set = new int[] {directorset, targetFig, directorsetposition, matcherset,matchersetposition};
                
-               String dfilename = "D"+directorset+"_"+targetFigs.elementAt(targetFig)+ "_"+directorsetposition;
+               String dfilename = "D"+directorset+"_"+target+ "_"+directorsetposition;
                
                directormatchersets.removeElementAt(0);
                
@@ -790,7 +820,10 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
      private void loadNextStimulusSetSet(String directoryname){
                   checkIfHasLoopedThroughAll();   
                  
-                  String[] pair = this.vpairs.elementAt(r.nextInt(vpairs.size()));
+                  
+                  String[] pair = this.vpairs.elementAt(0);
+                  
+                 // String[] pair = this.vpairs.elementAt(r.nextInt(vpairs.size()));
                   vpairs.remove(pair);
                   
                  
@@ -1353,12 +1386,23 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
     
     public synchronized void processChatText(Participant sender, String text){
         if(!text.startsWith("/"))return;
-         if(sender==this.pA)return;
+         if(istrainingphase && sender==this.pA)return;
          if(text.length()!=2)return;
          
          if(!istrainingphase && text.endsWith("n")){
              this.currentsethasbeensolved=true;
              return;
+         }
+         if(text.endsWith("N")){
+             this.currentsethasbeensolved=true;
+             return;
+         }
+         else if(text.endsWith("B")){
+             //this.vpairs=new Vector();
+             this.currentsethasbeensolved=true;
+             this.vpairsFULL = new Vector();
+             this.vpairs= new Vector();
+             //System.exit(-567);
          }
          
          
@@ -1635,8 +1679,8 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
     
     public static void main (String[] args){
          System.err.println("2");
-         //JointReferenceTaskTwoStages jrt2st = new JointReferenceTaskTwoStages(null);
-         //jrt2st.loadReferentlistTraining();;
+         JointReferenceTaskTwoStages jrt2st = new JointReferenceTaskTwoStages(null);
+         jrt2st.loadReferentlistTraining();;
         //loadReferentlistTraining();
     }
     

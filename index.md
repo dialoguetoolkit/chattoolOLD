@@ -85,7 +85,7 @@ The source code of the project is hosted at  <a href = "https://github.com/dialo
    
 <p>Philalithis, E (2019) 
 
-<A HREF = https://www.era.lib.ed.ac.uk/bitstream/handle/1842/35831/Philalithis2019.pdf?sequence=1&isAllowed=y>The many Worlds of meaning: A framework for object reference. PhD Thesis. </A> </p>
+<A HREF = "https://www.era.lib.ed.ac.uk/bitstream/handle/1842/35831/Philalithis2019.pdf?sequence=1&isAllowed=y">The many Worlds of meaning: A framework for object reference. PhD Thesis. </A> </p>
 
 <p>Atkinson, M., Mills, G. J., & Smith, K. (2018). <A HREF= "https://academic.oup.com/jole/advance-article/doi/10.1093/jole/lzy010/5146761"> Social group effects on the emergence of communicative conventions and language complexity.</A> Journal of Language Evolution.</p>
 

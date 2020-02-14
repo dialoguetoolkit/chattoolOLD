@@ -70,11 +70,48 @@ The standard approach to creating a new experimental intervention is to:
 ### 
 
 
-# During an experiment
 
-## To get input from the user:
 
-Show a popup and receive the response in the ConversationController object
+# The data collected 
 
+All the data collected from an experiment is stored in a subfolder /data/saved/experimental data
+
+
+## Turn-By-Turn interface
+The main file is turns.txt, which is a CSV file with the "¦" character as separator. It contains the following columns:
+
+ExperimentID
+
+ServerTimestampOfSavingToFile
+
+SubdialogueID
+
+Turntype
+
+SenderID
+
+SenderUsername
+
+ApparentSender
+
+Text
+
+Recipient(s)
+
+NoOfDocumentDeletes
+
+NoOfKeypressDeletes
+
+ClientTimestampONSET
+
+ClientTimestampENTER
+
+ServerTimestampOfReceiptAndOrSending
+
+TextAsformulatedTIMING
+
+TextAsFormulatedLOGSPACE
+
+istypingtimeout
 
 

@@ -6,6 +6,7 @@
 
 package diet.utils.postprocessing;
 
+import diet.server.ConversationController.ui.CustomDialog;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -26,8 +27,12 @@ public class WYSIWYGTranscriptLayout {
     
      public void processDirectory(File directory){
          //         directory =   new File("C:\\New folder (2)\\DATAANALYSIS\\2017.05.19.FaceCommsInteractionDesignClass\\0038FaceComms2016WYSIWYGDyadic_InteractionDesignClass");//wysiwyg_cie_LLLL1_s2580861_o_s3016080.txt";
-        directory =  directory =   new File("C:\\New folder (2)\\DATAANALYSIS\\2017.05.19.FaceCommsInteractionDesignClass\\001RAWDATA\\0040PROCESSING.STEP2");//wysiwyg_cie_LLLL1_s2580861_o_s3016080.txt";
-        directory =   new File("C:\\New folder\\gd2\\2017-2018\\ExpPrag\\LABCHATTOOL\\data\\saved experimental data\\0003FaceComms2016WYSIWYGDyadic_InteractionDesignClass");//wysiwyg_cie_LLLL1_s2580861_o_s3016080.txt";
+       // directory =  directory =   new File("C:\\New folder (2)\\DATAANALYSIS\\2017.05.19.FaceCommsInteractionDesignClass\\001RAWDATA\\0040PROCESSING.STEP2");//wysiwyg_cie_LLLL1_s2580861_o_s3016080.txt";
+        //directory =   new File("C:\\New folder\\gd2\\2017-2018\\ExpPrag\\LABCHATTOOL\\data\\saved experimental data\\0003FaceComms2016WYSIWYGDyadic_InteractionDesignClass");//wysiwyg_cie_LLLL1_s2580861_o_s3016080.txt";
+        
+       // directory = new File("C:\\github3\\chattool\\data\\saved experimental data\\0490Dyadic_WYSIWYGInterface");
+        
+       // directory = new File("C:\\Users\\LX1C\\Desktop\\DBG");
         
        // directory = new File("C:\\New folder (3)\\DATAANALYSIS\\2019.05.FaceComms.SocialMediaClass\\0043FaceComms2016WYSIWYGDyadic_InteractionDesignClass");
        // directory = new File("C:\\New folder (3)\\DATAANALYSIS\\2019.05.FaceComms.SocialMediaClass\\0045FaceComms2016WYSIWYGDyadic_InteractionDesignClass");
@@ -39,7 +44,7 @@ public class WYSIWYGTranscriptLayout {
          for(int i=0;i<listings.length;i++){
              if(listings[i].getName().contains("wysiwyg_cie_")   && listings[i].getName().contains("_o_")){
                  wysiwygfiles.addElement(listings[i]);
-                 System.err.println("ADDING");
+                 System.err.println("ADDING "+ listings[i].getName());
              }
         }
         
@@ -48,6 +53,7 @@ public class WYSIWYGTranscriptLayout {
             String csvTextOTHER = getCSVText(fOTHER);
            
             String fOTHERName = fOTHER.getName();
+            
             String fSelf =      fOTHERName.substring(0,fOTHERName.indexOf("_o_")+3).replace("_o_", "_s_")+".txt";
             String csvTextSELF = getCSVText(new File(directory,fSelf));
             //System.err.println(fSelf);
@@ -60,13 +66,14 @@ public class WYSIWYGTranscriptLayout {
             
             String output = getOutput(csvTextSELF, csvTextOTHER, csvTextWINDOW, 150);
             System.err.println(output);
-            String filename = directory.getName().substring(0, 4) +   fOTHERName.substring(0, 21)+"transcript.txt";
+            
+            String filename = "transcript"+fOTHER.getName().replaceAll(".txt", "")+".txt";
             File outputFile = new File(directory,filename);
             this.saveString(outputFile, output);
             
-            String filenameFULL = directory.getName().substring(0, 4) +   fOTHERName.substring(0,fOTHERName.length()-3)+"transcript.txt";
-            File outputFileFULL = new File(directory,filenameFULL);
-            this.saveString(outputFileFULL, output);
+            //String filenameFULL = fOTHER.getName()+"_transcript2.txt";
+            //File outputFileFULL = new File(directory,filenameFULL);
+            //this.saveString(outputFileFULL, output);
             
         }
          
@@ -90,7 +97,7 @@ public class WYSIWYGTranscriptLayout {
      
       public  String getCSVText(File fother){
        // String other =  "C:\\New folder\\gd2\\experimentdatabackups\\2016.FACECOMMS\\2016.InteractionDesignClass\\0031NEEDS TO BE SET\\wysiwyg_cie_LLLL1_s2580861_o_s3016080.txt";
-         
+         System.err.println("getCSVText is trying to load: "+fother.getName());
         //File fother = new File(other);
          String fotherRAW ="";
          try (BufferedReader br = new BufferedReader(new FileReader(fother))) {
@@ -108,12 +115,14 @@ public class WYSIWYGTranscriptLayout {
              fotherREPLACED2=" "+fotherREPLACED2;
          }
          //System.err.println(fotherREPLACED2);
+         System.err.println("The text is:"+fotherREPLACED2);
          return fotherREPLACED2;
         
      }
      
      
       public String getOutput(String selfCSV, String otherCSV, String windowCSV, int charsperline){
+          System.err.println("running getOutput( ) on "+ selfCSV+ otherCSV + windowCSV);
           selfCSV = selfCSV.replace("¦", "");
           otherCSV = otherCSV.replace("¦", "");
           windowCSV = windowCSV.replace("¦", "");
@@ -123,35 +132,48 @@ public class WYSIWYGTranscriptLayout {
           Vector windowLines = new Vector();
           
           String currentLine ="";
+          boolean isOnlyOneLine=true;
           for(int i=0;i<selfCSV.length();i++){
                currentLine = currentLine + selfCSV.charAt(i);
                if(currentLine.length()>=charsperline){
                    selfLines.add(currentLine);
                    currentLine ="";
+                   isOnlyOneLine=false;
                }   
           }
+          if(isOnlyOneLine)selfLines.add(currentLine);
+          
+          
+          
           currentLine ="";
+          
           for(int i=0;i<otherCSV.length();i++){
                currentLine = currentLine + otherCSV.charAt(i);
                if(currentLine.length()>=charsperline){
                    otherLines.add(currentLine);
                    currentLine ="";
+                   
                }   
           }
+           if(isOnlyOneLine)otherLines.add(currentLine);
+          
           
           currentLine ="";
+          
           for(int i=0;i<windowCSV.length();i++){
                currentLine = currentLine + windowCSV.charAt(i);
                if(currentLine.length()>=charsperline){
                    windowLines.add(currentLine);
                    currentLine ="";
+                   
                }   
           }
-          
+           if(isOnlyOneLine)windowLines.add(currentLine);
          
           
           
           int numberOfLines = Math.max(selfLines.size(), otherLines.size());
+          System.err.println("NUMBER OF LINES IS"+numberOfLines);
           if(selfLines.size()!= otherLines.size()){
               System.err.println("DIFFERENCE IS: "+(selfLines.size()- otherLines.size()));
           }
@@ -186,7 +208,10 @@ public class WYSIWYGTranscriptLayout {
                
           }
           
-          System.err.println(output);
+          System.err.println("get output returns: "+output);
+          
+          
+          
           return output;
       }
       

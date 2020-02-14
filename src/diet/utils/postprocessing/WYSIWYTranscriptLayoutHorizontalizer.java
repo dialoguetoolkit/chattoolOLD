@@ -19,7 +19,11 @@ import java.io.InputStreamReader;
  */
 public class WYSIWYTranscriptLayoutHorizontalizer {
     
-    String directory = "C:\\testing\\";
+   // String directory = "C:\\testing\\";
+    
+     String directory = "C:\\github3\\chattool\\data\\saved experimental data\\0489Dyadic_WYSIWYGInterface";
+        
+    
     
     public static void main(String[] args){
         WYSIWYTranscriptLayoutHorizontalizer wtlh = new WYSIWYTranscriptLayoutHorizontalizer();

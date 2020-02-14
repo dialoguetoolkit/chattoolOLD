@@ -84,12 +84,40 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
     public JointReferenceTaskTwoStages(DefaultConversationController cC, long durationOfStimulus){
          //this.durationOfStimulus=durationOfStimulus;
          this.cC=cC;
+         
+         
+         
+         
+         
+         
+          Vector<String> v = new Vector();
+         v.add("A");
+         v.add("B");
+         v.add("C");
+         
+         cyclicdispenser cd = new cyclicdispenser(v);
+         boolean b = false;
+         while(b){
+             System.out.println(cd.getNext());
+         }
+         
+         
+         
+         
+         
+         
+         
          if(this.istrainingphase){
              this.loadReferentlistTraining();
          }
          else{
              this.loadReferentlistTesting();
          } 
+         
+        
+         
+         
+         
     }
     
     
@@ -254,6 +282,7 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
         
         Vector<String> vAllFull = new Vector();
         Random r = new Random();
+        String mostRecent ="";
         
         public Vector<String> itemsRemaining= new Vector();
         
@@ -261,15 +290,26 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
             this.vAllFull = (Vector)v.clone();
         }
         
+        
+        
+        
         public String getNext(){
-            if(itemsRemaining.size()==0){
-                itemsRemaining = (Vector)vAllFull.clone();
-                System.err.println("cyclicdispenserlooping");
+            if (itemsRemaining.size()==0){
+                itemsRemaining = (Vector<String>)vAllFull.clone();
+                
             }
+            boolean foundnew = false;
+            String candidate = null;
+            while(!foundnew){
+                 candidate = this.itemsRemaining.elementAt(r.nextInt(itemsRemaining.size()));
+                if(!candidate.equalsIgnoreCase(mostRecent)){
+                    foundnew = true;
+                }
+            }
+            mostRecent = candidate;
+            itemsRemaining.remove(candidate);
             
-            String retval =    itemsRemaining.elementAt( r.nextInt(itemsRemaining.size()));
-            itemsRemaining.remove(retval);
-            return retval;
+            return candidate;
             
         }
         

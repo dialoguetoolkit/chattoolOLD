@@ -23,11 +23,18 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/github3/chattool/src/diet/task/JointReference/JointReferenceTaskTwoStages.java</file>
-            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/Dyadic_TurnByTurn_GROUNDING.java</file>
-            <file>file:/C:/github3/chattool/src/diet/client/JFrameStimulusSingleImage.java</file>
-            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/Dyadic_TurnByTurnInterface.java</file>
-            <file>file:/C:/github3/chattool/src/diet/task/JointReference/JointReferenceTaskController.java</file>
+            <file>file:/C:/github3/chattool/src/diet/client/ClientEventHandler.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/DefaultConversationController.java</file>
+            <file>file:/C:/github3/chattool/src/diet/client/ConnectionToServer.java</file>
+            <file>file:/C:/github3/chattool/src/diet/message/MessageWYSIWYGDocumentSyncFromClientRemove.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/WYSIWYGTube/TubeIn_InsertingFakeText.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/WYSIWYGTube/WYSIWYGTube.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/Dyadic_WYSIWYGInterface.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/DefaultWYSIWYGConversationControllerInterface.java</file>
+            <file>file:/C:/github3/chattool/src/diet/message/MessageKeypressed.java</file>
+            <file>file:/C:/github3/chattool/src/diet/client/JChatFrameMultipleWindowWithSendButtonWidthByHeight/JChatFrameMultipleWindowsWithSendButtonWidthByHeight.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/Dyadic_WYSIWYGInterface_Manipulation.java</file>
+            <file>file:/C:/github3/chattool/src/diet/message/MessageWYSIWYGDocumentSyncFromClientInsert.java</file>
         </group>
     </open-files>
 </project-private>

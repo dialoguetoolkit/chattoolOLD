@@ -11,6 +11,7 @@ import diet.server.Conversation;
 import diet.server.ConversationController.DefaultConversationController;
 import diet.server.ConversationController.ui.CustomDialog;
 import diet.server.Participant;
+import diet.utils.postprocessing.WYSIWYGTranscriptLayoutFromClientEvents;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -48,7 +49,19 @@ public class MenuBarHandler implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         String s = e.getActionCommand();
         
-        if(s.equalsIgnoreCase("Collate multiple experiments")){
+        if(s.equalsIgnoreCase( "WYSIWYG Interface: generate transcripts")){
+            WYSIWYGTranscriptLayoutFromClientEvents  wtlfce= new WYSIWYGTranscriptLayoutFromClientEvents();
+            wtlfce.callFromInterface();
+        }
+        
+        
+           
+        
+        
+            
+            
+        
+        else if(s.equalsIgnoreCase("Collate multiple experiments")){
              CollatingData cd = new CollatingData();   
         }
         else if (s.equalsIgnoreCase("Design mazes")){
@@ -191,6 +204,11 @@ public class MenuBarHandler implements ActionListener{
         menuItem = new JMenuItem("Design mazes"); menuItem.addActionListener(this);
         menu.add(menuItem);
         //menuBar.add(menu);
+         menuItem = new JMenuItem("WYSIWYG Interface: generate transcripts"); menuItem.addActionListener(this);
+        menu.add(menuItem);
+        
+        
+     
         
         
         menu = new JMenu("Help");menu.addActionListener(this);

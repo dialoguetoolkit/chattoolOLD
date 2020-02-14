@@ -1171,7 +1171,7 @@ public class ConnectionToServer extends Thread {
      * @param contents
      */
     public void sendClientIsTyping(Keypress kp, String contents){
-         //System.out.println("SENDING KEYPRESSED");
+         System.out.println("SENDING KEYPRESSED");
          MessageKeypressed mkp = new MessageKeypressed(email,username,kp, contents);
          sendMessage(mkp);
     }

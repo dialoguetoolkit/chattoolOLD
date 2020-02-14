@@ -168,3 +168,9 @@ This prettifies the output of TextAsFormulatedTIMING
 **istypingtimeout**
 The parameter that determines how long the "is typing" indicator when a participant presses a key.
 
+
+
+## WYSIWYG Interface
+
+See \docs\wysiwyg_interface.docx 
+

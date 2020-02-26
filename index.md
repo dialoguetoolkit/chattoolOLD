@@ -82,6 +82,12 @@ The source code of the project is hosted at  <a href = "https://github.com/dialo
 # Publications
 
 <p>Mills, G. J. and Healey, P. G. T. (submitted) <a href = "http://homepages.inf.ed.ac.uk/gmills/MillsHealey2013Submission.pdf"><B>A dialogue experimentation toolkit.</B></A>
+ 
+<p>Nölle, J., Fusaroli, R., Mills, G., & Tylén, K. (2019). Language as shaped by the environment: linguistic construal in a collaborative spatial task.</p>
+ 
+<p>Castillo, L., Smith, K., & Branigan, H. P. (2019). Interaction Promotes the Adaptation of Referential Conventions to the Communicative Context. Cognitive science, 43(8), e12780. </p>
+ 
+ <p>Castillo, L., Branigan, H., & Smith, K. (2015). Context influence vs efficiency in establishing conventions: Communities do it better. SEMDIAL 2015 goDIAL, 162. </p>
 
 <p>Castillo, L(2019) <A HREF="https://www.researchgate.net/profile/Lucia_Castillo2/publication/334966060_Interaction_Promotes_the_Adaptation_of_Referential_Conventions_to_the_Communicative_Context/links/5d5a756892851c376369814b/Interaction-Promotes-the-Adaptation-of-Referential-Conventions-to-the-Communicative-Context.pdf">Interaction Promotes the Adaptation of Referential Conventions to the Communicative Context (Phd Thesis)</A>
 

@@ -1,6 +1,6 @@
 # Getting started
 
-This repository is a netbeans project. If opened in netbeans it should run "out of the box"
+This repository is a netbeans (https://netbeans.org/) project. If opened in netbeans it should run "out of the box"
 
 If the jar file is run without any command line parameters it will show a GUI that lets you choose whether to run the server or the client.
 

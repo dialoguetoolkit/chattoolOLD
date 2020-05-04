@@ -42,7 +42,7 @@ public class WYSIWYGTranscriptLayout {
          File[] listings = directory.listFiles();
          Vector wysiwygfiles = new Vector();
          for(int i=0;i<listings.length;i++){
-             if(listings[i].getName().contains("wysiwyg_cie_")   && listings[i].getName().contains("_o_")){
+             if(listings[i].getName().contains("PROCwysiwyg_cie_")   && listings[i].getName().contains("_o_")){
                  wysiwygfiles.addElement(listings[i]);
                  System.err.println("ADDING "+ listings[i].getName());
              }
@@ -67,7 +67,7 @@ public class WYSIWYGTranscriptLayout {
             String output = getOutput(csvTextSELF, csvTextOTHER, csvTextWINDOW, 150);
             System.err.println(output);
             
-            String filename = "transcript"+fOTHER.getName().replaceAll(".txt", "")+".txt";
+            String filename = "TRANSCRIPT_"+fOTHER.getName().replaceAll(".txt", "")+".txt";
             File outputFile = new File(directory,filename);
             this.saveString(outputFile, output);
             

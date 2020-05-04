@@ -124,7 +124,7 @@ public class Metrics {
        if(em.emui.getJMF().jsb==null)return;
         
         
-        long pingpong = timeOnServerOfReceipt - timeOnServerOfReceipt;
+        long pingpong = timeOnServerOfReceipt - timeOnServerOfSending;
        
          if(pingpong>maxPingPong) {
              maxPingPong = pingpong;   

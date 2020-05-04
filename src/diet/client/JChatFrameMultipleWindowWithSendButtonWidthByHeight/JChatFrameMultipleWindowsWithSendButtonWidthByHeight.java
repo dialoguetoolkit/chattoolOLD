@@ -277,10 +277,13 @@ public void changeJProgressBar(final String text,final Color colorForeground, in
        
        final AttribVal avServerId = new AttribVal("serverid",uniqueIDGeneratedByServer);
        
+       System.err.println("CLIENT: BLOCKING CONVERSATION HISTORY! (A)");
+       
        SwingUtilities.invokeLater( new Runnable(){ public void run(){ 
                 boolean performPack=true;
                 System.out.println("SWINGUTILITIES");
           
+                System.err.println("INTERFACEPROPERTIES ARE: "+newInterfaceproperties);
                 
                 if (newInterfaceproperties==ClientInterfaceEventTracker.clearTextEntryField){
                     jf.clearTextEntryField(false);
@@ -304,13 +307,16 @@ public void changeJProgressBar(final String text,final Color colorForeground, in
                      
                 }
                 else if (newInterfaceproperties==ClientInterfaceEventTracker.disableTextEntry){    
+                    System.err.println("CLIENT: DISABLING TEXT ENTRY! (B)");
                     if(jTextEntryPane.isEnabled()){
                           oldActiveTextEntryBackground = jTextEntryPane.getBackground();
                           oldActiveTextEntryForeground = jTextEntryPane.getForeground();    
                      }
+                     System.err.println("CLIENT: DISABLING TEXT ENTRY! (B2)");
                      jTextEntryPane.setEnabled(false);
                      jSENDButton.setEnabled(false);
                      jTextEntryPane.setBackground(Color.GRAY);
+                     System.err.println("CLIENT: DISABLING TEXT ENTRY! (B)");
                 }
                 else if (newInterfaceproperties==ClientInterfaceEventTracker.enableTextEntry){        
                      if(oldActiveTextEntryBackground!=null){
@@ -332,6 +338,8 @@ public void changeJProgressBar(final String text,final Color colorForeground, in
                      
                 }
                  else if (newInterfaceproperties==ClientInterfaceEventTracker.disableTextPane){
+                      System.err.println("CLIENT: BLOCKING CONVERSATION HISTORY! (B)");
+      
                      CardLayout cl = (CardLayout)(cards.getLayout());
                      cl.show(cards, "grey"); 
                 }
@@ -339,6 +347,7 @@ public void changeJProgressBar(final String text,final Color colorForeground, in
                     jccw.setEnableScrollBars(true,jf);
                 }
                 else if (newInterfaceproperties==ClientInterfaceEventTracker.disableScrolling){
+                    System.err.println("CLIENT: DISABLING SCROLLING! (CLIENT)");
                     jccw.setEnableScrollBars(false,jf);
                 }
                 else if (newInterfaceproperties==ClientInterfaceEventTracker.changeScreenBackgroundColour){

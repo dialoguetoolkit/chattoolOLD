@@ -3,12 +3,12 @@
 
 package diet.server.ParticipantPartnering;
 import diet.server.Conversation;
+import diet.server.ConversationController.DefaultConversationController;
 import diet.server.Participant;
 import diet.server.ParticipantPartnering.ui.JPanelParticipantPartnering;
 import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.Vector;
-import javax.swing.JPanel;
 
 
 
@@ -19,11 +19,13 @@ public class ParticipantPartnering {
    
     Hashtable htSubdialogues = new Hashtable();
     public Conversation c;
+    public DefaultConversationController cC;
     
     long subdialogueCOUNTING=0;
     
-    public ParticipantPartnering(Conversation c) {
-        this.c=c;
+    public ParticipantPartnering(DefaultConversationController cC) {
+        this.cC=cC;
+        this.c=cC.getC();
     }   
     
     

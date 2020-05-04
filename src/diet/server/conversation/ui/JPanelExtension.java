@@ -10,12 +10,12 @@ package diet.server.conversation.ui;
  *
  * @author gj
  */
-public class JPanel extends javax.swing.JPanel {
+public class JPanelExtension extends javax.swing.JPanel {
 
     /**
      * Creates new form JPanel
      */
-    public JPanel() {
+    public JPanelExtension() {
         initComponents();
     }
 

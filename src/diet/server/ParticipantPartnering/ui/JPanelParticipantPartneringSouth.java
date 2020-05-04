@@ -6,6 +6,7 @@
 
 package diet.server.ParticipantPartnering.ui;
 
+import diet.server.ConversationController.ui.CustomDialog;
 import diet.server.Participant;
 import diet.server.ParticipantPartnering.ParticipantPartnering;
 import java.util.Date;
@@ -160,13 +161,31 @@ public class JPanelParticipantPartneringSouth extends javax.swing.JPanel impleme
         }
         
         String subdialogueID = this.jTextField2.getText();
+        
+        boolean showIsTyping = CustomDialog.getBoolean("Do you want the participants to get \"is typing\" notifications?");
+        
+        
         if(subdialogueID.equalsIgnoreCase("")){
             subdialogueID = "CREATEDON:"+  new Date().getTime()+"";
         }
         try{
         System.err.println("DEBUGTIME");
         System.err.println("THE TOTAL NUMBER OF PARTICIPANTS BEFORE IS:" +this.jppp.pp.c.getParticipants().getAllParticipants().size());
+        
+        
+        
         pp.createNewSubdialogue(subdialogueID,participantsToSelect);
+        
+        pp.cC.itnt.removeAllRecipientsOfTypingInformation(participantsToSelect);
+        
+        pp.cC.itnt.removeAllSendersOfTypingInformation(participantsToSelect);
+        
+        
+        if(showIsTyping){
+            pp.cC.itnt.addGroupWhoAreMutuallyInformedOfTyping(participantsToSelect);
+        }
+        
+        
         }catch (Exception e){
             e.printStackTrace();
         }

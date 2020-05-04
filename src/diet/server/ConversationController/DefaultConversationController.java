@@ -89,7 +89,7 @@ public abstract class DefaultConversationController  {
         
         
         c.convIO = new IntelligentIO(c,parentDirectory,this.getID());
-        pp = new ParticipantPartnering(c);
+        pp = new ParticipantPartnering(this);
         itnt = new IsTypingOrNotTyping(this, sett.client_TextEntryWindow_istypingtimeout);
       // itnt = new IsTypingOrNotTyping(this, 2500);
        
@@ -105,7 +105,7 @@ public abstract class DefaultConversationController  {
             parentDirectory = parentDirectory + File.separator+ "data"+File.separator+"saved experimental data";
         }
         c.convIO = new IntelligentIO(c,parentDirectory,this.getID());
-        pp = new ParticipantPartnering(c);
+        pp = new ParticipantPartnering(this);
         itnt = new IsTypingOrNotTyping(this, istypingtimeout);
         
     }

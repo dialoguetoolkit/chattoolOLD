@@ -153,7 +153,10 @@ public class JTurnsListTableModel extends AbstractTableModel {
         return t.getSender().getUsername();
     }
     else if(y==5){
-        return t.getApparentSenderUsername();
+        Conversant cnv = t.getApparentSender();
+        if(cnv==null) return "" ;
+        
+        return cnv.getUsername();
     }
     else if(y==6){
         return t.getText();

@@ -7,8 +7,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingUtilities;
 
-import lib.bsh.Interpreter;
-import lib.bsh.util.JConsole;
+
 
 import diet.message.Message;
 import diet.message.MessageKeypressed;
@@ -60,7 +59,7 @@ public class ConversationUIManager {
     
     
     
-    private Interpreter interpreter;
+    
     
     
     
@@ -125,8 +124,10 @@ public class ConversationUIManager {
         //jPanel5.add(js5,BorderLayout.CENTER);     
         
         
+      
         
-        lib.bsh.util.JConsole console = new JConsole();
+      //Removed the Beanshell functionality  
+     /*   lib.bsh.util.JConsole console = new JConsole();
         console.setVisible(true);
         interpreter = new Interpreter( console );
         try{
@@ -142,7 +143,7 @@ public class ConversationUIManager {
             System.out.println("COULD NOT SET UP CONSOLE");
         }  
      // interpreter.set
-      
+       */
         
         
         
@@ -167,7 +168,7 @@ public class ConversationUIManager {
             
         }
         
-        jtp.addTab("Script console", console);
+        //jtp.addTab("Script console", console);
         
         
         
@@ -320,9 +321,7 @@ public class ConversationUIManager {
     * 
     * @return the BeanShell interpreter
     */
-   public Interpreter getInterpreter(){
-       return interpreter;
-   }
+   
    
    /**
     * Closes down the resources associated with the Conversation

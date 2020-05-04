@@ -16,7 +16,7 @@ import javax.swing.SwingUtilities;
  *
  * @author gj
  */
-public class JTranscriptPanel extends JPanel {
+public class JTranscriptPanel extends JPanelExtension {
     
     
     

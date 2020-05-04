@@ -1455,7 +1455,9 @@ public class Conversation extends Thread{
     }
      public void changeClientInterface_disableTextDisplay(Participant recipient){
            MessageChangeClientInterfaceProperties mccip= new MessageChangeClientInterfaceProperties(generateNextIDForClientDisplayConfirm(),ClientInterfaceEventTracker.disableTextPane);
+           System.err.println("BLOCKING CONVERSATION HISTORY! (3A)");
            ps.sendMessageToParticipant(recipient, mccip);
+           System.err.println("BLOCKING CONVERSATION HISTORY! (3B)");
     }
      public void changeClientInterface_disableScrolling(Participant recipient){
            MessageChangeClientInterfaceProperties mccip= new MessageChangeClientInterfaceProperties(generateNextIDForClientDisplayConfirm(),ClientInterfaceEventTracker.disableScrolling);

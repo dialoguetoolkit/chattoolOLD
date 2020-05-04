@@ -52,7 +52,7 @@ public class NormalTurnProducedByParticipant extends Turn implements Serializabl
          this.timeOnServerOfReceipt = timeOnServerOfReceipt;
           
           this.sender=sender;
-          this.apparentSender = apparentSender;
+          super.apparentSender = apparentSender;
           this.text=text;
           this.recipients = recipients;
           this.wasBlockedDuringSending=wasBlocked;
@@ -81,7 +81,7 @@ public class NormalTurnProducedByParticipant extends Turn implements Serializabl
    
     
     public Conversant getApparentSender(){
-        return apparentSender;
+        return super.apparentSender;
     }
     public String getTextString(){
         return text;

@@ -89,6 +89,26 @@ public class IsTypingOrNotTyping extends Thread{
       
     }
     
+    public void removeAllRecipientsOfTypingInformation(Participant sender){
+        this.htPairsWhoAreInformedOfIsTyping.removeAllValuesOfKey(sender);
+    }
+    public void removeAllRecipientsOfTypingInformation(Vector<Participant> senders){
+        for(int i=0;i<senders.size();i++){
+            this.htPairsWhoAreInformedOfIsTyping.removeAllValuesOfKey(senders.elementAt(i));    
+        }
+    }
+    public void removeAllSendersOfTypingInformation(Vector<Participant> recipients){
+        
+        
+        
+        for(int i=0;i<recipients.size();i++){
+            this.htPairsWhoAreInformedOfIsTyping.removeAllKeyValuePairs(recipients.elementAt(i));    
+        }
+    }
+    
+    
+    
+    
     public void addGroupWhoAreMutuallyInformedOfTyping(Vector participants){
         for(int i=0;i<participants.size();i++){
             Participant p1 = (Participant)participants.elementAt(i);

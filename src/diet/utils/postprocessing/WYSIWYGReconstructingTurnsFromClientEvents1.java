@@ -127,7 +127,7 @@ public class WYSIWYGReconstructingTurnsFromClientEvents1 {
     
     
     private void saveAppendedStringLTRForParticipant(File directory, String senderID, String senderUsername, MessageClientInterfaceEvent mcieCURRENT){
-            String filenameSELF =  "NEWwysiwyg_cie_"+senderID+"_"+senderUsername+"_s_.txt";
+            String filenameSELF =  "POSTPROCwysiwyg_cie_"+senderID+"_"+senderUsername+"_s_.txt";
             long numberOfEventsRecorded = (long)this.htNumberOfEventsRecorded.getObject( senderID);
             if(!this.selfHasAlreadySavedClientEvent){
                 String prepend ="";
@@ -146,7 +146,7 @@ public class WYSIWYGReconstructingTurnsFromClientEvents1 {
             Vector thoseAlreadySaved = (Vector)htOthersAlreadySaved.getObject(senderID); 
             for(int i=0;i<thoseAlreadySaved.size();i++){
                 String other = (String)thoseAlreadySaved.elementAt(i);
-                String filenameOTHER = "NEWwysiwyg_cie_"+senderID+"_"+senderUsername+"_o_"+other+".txt"; 
+                String filenameOTHER = "POSTPROCwysiwyg_cie_"+senderID+"_"+senderUsername+"_o_"+other+".txt"; 
                  this.writeToTextFileCreatingIfNecessary(directory,filenameOTHER, DefaultConversationController.sett.recordeddata_CSVSeparator);
             }
                 
@@ -163,7 +163,7 @@ public class WYSIWYGReconstructingTurnsFromClientEvents1 {
                 for(int i=0;i<thoseAlreadySaved.size();i++){
                     
                     String other = (String)thoseAlreadySaved.elementAt(i);
-                    String filenameOTHER = "NEWwysiwyg_cie_"+senderID+"_"+senderUsername+"_o_"+other+".txt"; 
+                    String filenameOTHER = "POSTPROCwysiwyg_cie_"+senderID+"_"+senderUsername+"_o_"+other+".txt"; 
                     if(otherUsername.equalsIgnoreCase(other)){
                          this.writeToTextFileCreatingIfNecessary(directory,filenameOTHER, avText+DefaultConversationController.sett.recordeddata_CSVSeparator);
                         found=true;
@@ -180,7 +180,7 @@ public class WYSIWYGReconstructingTurnsFromClientEvents1 {
                     for(int i=0;i<numberOfEventsRecorded;i++){
                         prepend = prepend +DefaultConversationController.sett.recordeddata_CSVSeparator;
                     }
-                    String filenameOTHER = "NEWwysiwyg_cie_"+senderID+"_"+senderUsername+"_o_"+otherUsername+".txt";
+                    String filenameOTHER = "POSTPROCwysiwyg_cie_"+senderID+"_"+senderUsername+"_o_"+otherUsername+".txt";
                      this.writeToTextFileCreatingIfNecessary(directory,filenameOTHER, prepend);
                      this.writeToTextFileCreatingIfNecessary(directory,filenameOTHER, avText+DefaultConversationController.sett.recordeddata_CSVSeparator);
                     thoseAlreadySaved.addElement(otherUsername);
@@ -196,7 +196,7 @@ public class WYSIWYGReconstructingTurnsFromClientEvents1 {
         
         
         long mostRecentEvent = (long)this.htMostRecentEvent.getObject(senderID);
-        String filenameTIME = "NEWwysiwyg_cie_"+senderID+"_"+senderUsername+"_t_"+".txt";
+        String filenameTIME = "POSTPROCwysiwyg_cie_"+senderID+"_"+senderUsername+"_t_"+".txt";
         if(noOfEvents==1){
              this.writeToTextFileCreatingIfNecessary(directory,filenameTIME, DefaultConversationController.sett.recordeddata_CSVSeparator);
         }
@@ -204,7 +204,7 @@ public class WYSIWYGReconstructingTurnsFromClientEvents1 {
          this.writeToTextFileCreatingIfNecessary(directory,filenameTIME,   timeSincePrevious+DefaultConversationController.sett.recordeddata_CSVSeparator);
         htMostRecentEvent.putObject(senderID, mcieCURRENT.getClientInterfaceEvent().getClientTimeOfDisplay());
        
-        String filenameWINDOW = "NEWwysiwyg_cie_"+senderID+"_"+senderUsername+"_w_"+".txt";
+        String filenameWINDOW = "POSTPROCwysiwyg_cie_"+senderID+"_"+senderUsername+"_w_"+".txt";
         if(noOfEvents==1){
              this.writeToTextFileCreatingIfNecessary(directory,filenameTIME, DefaultConversationController.sett.recordeddata_CSVSeparator);
         }

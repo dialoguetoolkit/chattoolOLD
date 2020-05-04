@@ -8,6 +8,7 @@ package diet.server.conversation.ui;
 
 import diet.server.conversationhistory.ConversationHistory;
 import java.awt.BorderLayout;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.SwingUtilities;
 

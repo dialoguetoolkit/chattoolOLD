@@ -14,7 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
 import javax.swing.SwingUtilities;
 
-import lib.bsh.Interpreter;
+
 import diet.client.ConnectionToServer;
 
 import diet.server.Conversation;

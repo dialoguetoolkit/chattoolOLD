@@ -174,7 +174,7 @@ public class ParticipantConnection extends Thread {
      }
      
     public long getMostRecentLag(){
-        if(this.pongs.size()==0)return 0;
+        if(this.pongs.size()==0)return -1;
         MessagePong mp = (MessagePong)pongs.lastElement();
         
         long pong = mp.getTimeOfReceipt().getTime()-mp.timeOnServerOfCreation;
@@ -207,7 +207,7 @@ public class ParticipantConnection extends Thread {
        }
     }
     }catch (Exception e){
-        
+        e.printStackTrace();
     }
 
     if(o instanceof MessagePong){

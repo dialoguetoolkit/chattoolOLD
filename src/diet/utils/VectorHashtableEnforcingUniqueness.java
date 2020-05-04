@@ -4,7 +4,9 @@
  */
 package diet.utils;
 
+import diet.server.Participant;
 import java.util.Hashtable;
+import java.util.Set;
 import java.util.Vector;
 
 /**
@@ -15,6 +17,24 @@ public class VectorHashtableEnforcingUniqueness {
     
     
     public Hashtable ht = new Hashtable();
+    
+    
+    public void removeAllValuesOfKey(Object key){
+         ht.put(key, new Vector());
+    }
+    
+    public void removeAllKeyValuePairs(Object value){       
+         Set ks  = ht.keySet();
+         for(Object k: ks){
+             Vector values = (Vector)ht.get(k);
+             if(values!=null){
+                 if(values.contains(value)){
+                     values.remove(value);
+                     System.err.println("Removing value");
+                 }
+             }
+         }
+    }
     
     
     public void put(Object key, Object value) {

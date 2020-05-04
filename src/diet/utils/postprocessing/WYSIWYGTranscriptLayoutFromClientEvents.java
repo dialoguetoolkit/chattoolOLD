@@ -43,10 +43,11 @@ public class WYSIWYGTranscriptLayoutFromClientEvents {
            
          // File directory = new File("C:\\New folder (3)\\DATAANALYSIS\\2019.05.FaceComms.SocialMediaClass\\0055FaceComms2016WYSIWYGDyadic_InteractionDesignClass");
           // File directory =  new File("C:\\New folder (3)\\DATAANALYSIS\\2017.05.19.FaceCommsInteractionDesignClass\\001RAWDATA\\0041FaceComms2016WYSIWYGDyadic_InteractionDesignClass");
-         File directory = new File("C:\\github3\\chattool\\data\\saved experimental data\\0490Dyadic_WYSIWYGInterface");
+         //File directory = new File("C:\\github3\\chattool\\data\\saved experimental data\\0490Dyadic_WYSIWYGInterface");
          
         // directory = new File("C:\\Users\\LX1C\\Desktop\\DBG");
         
+        File directory = f;
           
            WYSIWYGReconstructingTurnsFromClientEvents1 wrt1 = new WYSIWYGReconstructingTurnsFromClientEvents1(directory);
            WYSIWYGTranscriptLayout wtl = new WYSIWYGTranscriptLayout();
@@ -68,6 +69,8 @@ public class WYSIWYGTranscriptLayoutFromClientEvents {
                   
                   String sID = mcie.getEmail();   
                   String sUsername = mcie.getUsername();
+                  
+                  //This does a lot of heavy-lifting. It creates a whole new set, prefixed with PROC
                   wrt1.processClientEvent(sID,sUsername, mcie);
                  
                   

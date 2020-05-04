@@ -27,7 +27,7 @@ public class Turn implements Serializable{
   String subdialogueID;
   public transient ConversationHistory cH;
   public String text="";
-  public Conversant apparentSender ;
+   Conversant apparentSender ;
   
    Vector keyPresses = new Vector();
    Vector documentUpdates = new Vector(); 
@@ -80,6 +80,9 @@ public class Turn implements Serializable{
     }
    
     public String getApparentSenderUsername(){
+         
+         
+        
         if(apparentSender==null) return "";
         return apparentSender.getUsername();
     }

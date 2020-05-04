@@ -81,7 +81,7 @@ public class JParticipantsTableModel extends AbstractTableModel {
          return "Time since last turn sent";
      }
      else if(column ==8){
-         return "Network lag";
+         return "Server-client-server roundtrip (msecs)";
      }
      
     else{

@@ -22,7 +22,7 @@ public class ArtificialTurnProducedByServer extends Turn implements Serializable
     
     
   
-  private Conversant apparentSender;
+  
  
   private long timeOnServerOfSending = -999999; 
   
@@ -37,7 +37,7 @@ public class ArtificialTurnProducedByServer extends Turn implements Serializable
          this.timeOnServerOfSending=timeOnServerOfSending;
           
           this.sender=sender;
-          this.apparentSender = apparentSender;
+          super.apparentSender = apparentSender;
           this.text=text;
           this.recipients = recipients;
          
@@ -77,7 +77,7 @@ public class ArtificialTurnProducedByServer extends Turn implements Serializable
     }
     
     public Conversant getApparentSender(){
-        return apparentSender;
+        return super.apparentSender;
     }
     public String getTextString(){
         return text;

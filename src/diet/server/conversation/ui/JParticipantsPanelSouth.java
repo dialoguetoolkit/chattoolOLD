@@ -319,6 +319,7 @@ public class JParticipantsPanelSouth extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Vector pselected = this.getSelected();
+        if(pselected.size()==0)CustomDialog.showDialog("First select participant(s) in the table above");
         for(int i=0;i<pselected.size();i++){
             Participant p = (Participant)pselected.elementAt(i);
             c.newsendInstructionToParticipant(p, this.jTextField4.getText());
@@ -328,6 +329,7 @@ public class JParticipantsPanelSouth extends javax.swing.JPanel {
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         Vector pselected = this.getSelected();
+        if(pselected.size()==0)CustomDialog.showDialog("First select participant(s) in the table above");
         for(int i=0;i<pselected.size();i++){
             Participant p = (Participant)pselected.elementAt(i);
             c.changeClientInterface_enableTextEntry(p);
@@ -342,6 +344,7 @@ public class JParticipantsPanelSouth extends javax.swing.JPanel {
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
        Vector pselected = this.getSelected();
+       if(pselected.size()==0)CustomDialog.showDialog("First select participant(s) in the table above");
         for(int i=0;i<pselected.size();i++){
             Participant p = (Participant)pselected.elementAt(i);
             c.changeClientInterface_disableTextEntry(p);
@@ -351,6 +354,7 @@ public class JParticipantsPanelSouth extends javax.swing.JPanel {
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         Vector pselected = this.getSelected();
+        if(pselected.size()==0)CustomDialog.showDialog("First select participant(s) in the table above");
         for(int i=0;i<pselected.size();i++){
             Participant p = (Participant)pselected.elementAt(i);
             c.changeClientInterface_enableScrolling(p);
@@ -360,6 +364,7 @@ public class JParticipantsPanelSouth extends javax.swing.JPanel {
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
        Vector pselected = this.getSelected();
+       if(pselected.size()==0)CustomDialog.showDialog("First select participant(s) in the table above");
         for(int i=0;i<pselected.size();i++){
             Participant p = (Participant)pselected.elementAt(i);
             c.changeClientInterface_disableScrolling(p);
@@ -369,20 +374,25 @@ public class JParticipantsPanelSouth extends javax.swing.JPanel {
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
         Vector pselected = this.getSelected();
+        if(pselected.size()==0)CustomDialog.showDialog("First select participant(s) in the table above");
         for(int i=0;i<pselected.size();i++){
             Participant p = (Participant)pselected.elementAt(i);
             c.changeClientInterface_enableTextDisplay(p);
             Conversation.printWSln("Main", "Making conversation history visible for"+p.getParticipantID());
+            
         }
     }//GEN-LAST:event_jButton21ActionPerformed
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
         Vector pselected = this.getSelected();
+        if(pselected.size()==0)CustomDialog.showDialog("First select participant(s) in the table above");
         for(int i=0;i<pselected.size();i++){
             Participant p = (Participant)pselected.elementAt(i);
             c.changeClientInterface_disableTextDisplay(p);
             Conversation.printWSln("Main", "Blocking the conversation history of "+p.getParticipantID());
+           System.err.println("BLOCKING CONVERSATION HISTORY! (1)");
         }
+        System.err.println("BLOCKING CONVERSATION HISTORY! (2)");
     }//GEN-LAST:event_jButton22ActionPerformed
 
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
@@ -400,6 +410,7 @@ public class JParticipantsPanelSouth extends javax.swing.JPanel {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         Vector pselected = this.getSelected();
+        if(pselected.size()==0)CustomDialog.showDialog("First select participant(s) in the table above");
         for(int i=0;i<pselected.size();i++){
             Participant p = (Participant)pselected.elementAt(i);
             c.openClientBrowserToWebpage(p, jTextField3.getText());

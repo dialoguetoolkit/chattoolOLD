@@ -1,6 +1,6 @@
 # Getting started
 
-This repository is a netbeans project. If opened in netbeans it should run "out of the box"
+This repository is a netbeans (https://netbeans.org/) project. If opened in netbeans it should run "out of the box"
 
 If the jar file is run without any command line parameters it will show a GUI that lets you choose whether to run the server or the client.
 
@@ -49,7 +49,7 @@ These can be saved in netbeans project configurations
 
 ## ConversationController object
 
-The main part of the chattool is the ConversationController object. The chattool is designed so that when you are program an experiment you only need to modify code in the ConversationController object. 
+The main part of the chattool is the ConversationController object. The chattool is designed so that when you program an experiment you only need to modify code in the ConversationController object. 
 
 The ConversationController sits in the middle between all the participants. All chattext, GUI events, keyboard events are sent to the ConversationController object.
 
@@ -57,7 +57,7 @@ The ConversationController sits in the middle between all the participants. All 
 
 ## Workflow when programming the chattool
 
-The standard approach to creating a new experimental intervention is to:
+The standard approach to creating a new experiment is to:
 
 1. Create a subclass of ```DefaultConversationController``` , e.g. ```MyNewConversationController```
 2. make sure that ```showCCOnGUI()``` returns true (this will display your ConversationController class in the main GUI of the chat-tool)

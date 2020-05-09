@@ -65,42 +65,9 @@ public class JTextPaneRightJustifiedDocument extends DefaultStyledDocument {
    
     
     
-    public synchronized void changeFloorStatus(final int newStatus, boolean deletePendingInserts, final long serverID){
-          
-        
-        
-          if(deletePendingInserts)this.vPendingInserts= new Vector();
-          final JTextPaneRightJustifiedDocument thisjtdoc = this;
-
-          final Vector pendingInsertsToInsert = (Vector)this.vPendingInserts.clone();
-          this.vPendingInserts= new Vector();
-          SwingUtilities.invokeLater(new Runnable(){
-              public void run(){
-                  for(int i=0;i< pendingInsertsToInsert.size();i++){     
-                       Object[] o = (Object[])pendingInsertsToInsert.elementAt(i);
-                       String text = (String)o[1];
-                       thisjtdoc.insertString_PresupposesOnSwingThread(text, Color.black);
-                       
-                       String textInWindow = "ERROR"; 
-                       try {
-                           textInWindow = thisjtdoc.getText(0, thisjtdoc.getLength());
-                       } catch (Exception e){e.printStackTrace();}    
-                       jtprj.cleh.wYSIWYGDocumentHasChangedInsert(text, thisjtdoc.getLength(),textInWindow , jtprj.isControlPressed, jtprj.fadeouttime);    
-                       
-                      
-                       
-                  }
-                  synchronized(thisjtdoc){
-                           state=newStatus;
-                           System.err.println("SETTING STATE TO NEWSTATE:"+newStatus);
-                          jtprj.cleh.wYSIWYGConfirmFloorChange(newStatus, serverID);
-                  }
-              }
-          
-          });
-          
+              
          
-    }
+    
     
     
     
@@ -188,7 +155,7 @@ public class JTextPaneRightJustifiedDocument extends DefaultStyledDocument {
                 vPendingInserts.addElement(pendingInsert);
                  System.err.println("A5");
                 
-                jtprj.cleh.requestFloor(str);
+                 
                  System.err.println("A6");
                 stateHolding.notify();
                  System.err.println("A7");

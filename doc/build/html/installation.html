@@ -35,7 +35,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Welcome to dialoguetoolkit’s documentation!" href="index.html" /> 
+    <link rel="next" title="Programming the chattool" href="programming.html" />
+    <link rel="prev" title="Overview" href="overview.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,7 +82,16 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Downloading and installing the toolkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Downloading and installing the toolkit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#starting-the-server-in-netbeans">Starting the server in Netbeans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#starting-the-server-on-the-command-line">Starting the server on the command-line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#starting-the-server-clients-and-automatically-logging-the-clients-in">Starting the server, clients, and automatically logging the clients in</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="programming.html">Programming the chattool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datacollected.html">Data collected by the chattool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">Best practices</a></li>
 </ul>
 
             
@@ -150,6 +160,27 @@
 <h1>Downloading and installing the toolkit<a class="headerlink" href="#downloading-and-installing-the-toolkit" title="Permalink to this headline">¶</a></h1>
 <p>The toolkit is currently hosted on github at <a class="reference external" href="https://github.com/dialoguetoolkit/chattool">https://github.com/dialoguetoolkit/chattool</a></p>
 <p>The toolkit is stored as a netbeans project (<a class="reference external" href="http://netbeans.org">http://netbeans.org</a>). You can of course use your own IDE, or run it from the command-line. However, it is easiest to run and script using netbeans. If you use netbeans, it should work “out-of-the-box” - there should be no need to play around with linking libraries and directory paths.</p>
+<div class="section" id="starting-the-server-in-netbeans">
+<h2>Starting the server in Netbeans<a class="headerlink" href="#starting-the-server-in-netbeans" title="Permalink to this headline">¶</a></h2>
+<p>To start the server, in netbeans select “Run”</p>
+</div>
+<div class="section" id="starting-the-server-on-the-command-line">
+<h2>Starting the server on the command-line<a class="headerlink" href="#starting-the-server-on-the-command-line" title="Permalink to this headline">¶</a></h2>
+<p>To start the server, use <code class="docutils literal notranslate"><span class="pre">java</span> <span class="pre">-jar</span> <span class="pre">&quot;chattool.jar</span> <span class="pre">SERVER</span></code></p>
+<p>The server will listen for incoming connections on port 20000</p>
+<p>To chage the port number, use <code class="docutils literal notranslate"><span class="pre">java</span> <span class="pre">-jar</span> <span class="pre">&quot;chattool.jar</span> <span class="pre">SERVER</span> <span class="pre">%PORTNUMBER%</span></code></p>
+<p>where <code class="docutils literal notranslate"><span class="pre">%PORTNUMBER%</span></code> is the portnumber</p>
+</div>
+<div class="section" id="starting-the-server-clients-and-automatically-logging-the-clients-in">
+<h2>Starting the server, clients, and automatically logging the clients in<a class="headerlink" href="#starting-the-server-clients-and-automatically-logging-the-clients-in" title="Permalink to this headline">¶</a></h2>
+<p>This becomes essential once you start programming interventions. Using these command-line arguments you can start the server, specify how many clients you want to start, and automatically log the clients in. This means you can test any interventions you program with a single click. Use the following syntax:</p>
+<p><code class="docutils literal notranslate"><span class="pre">java</span> <span class="pre">-jar</span> <span class="pre">&quot;chatool.jar&quot;</span> <span class="pre">nogui_ccname_autologin</span> <span class="pre">CONVERSATIONCONTROLLERNAME</span></code></p>
+<p>For example:</p>
+<p><code class="docutils literal notranslate"><span class="pre">java</span> <span class="pre">-jar</span> <span class="pre">&quot;chatool.jar&quot;</span> <span class="pre">nogui_ccname_autologin</span> <span class="pre">DyadicTurnByTurnInterface</span></code></p>
+<p>his will automatically start the chattool, load the ConversationController object, initialize the clients and log them in.</p>
+<p>The default number of clients to start is 2 (which is specified in <code class="docutils literal notranslate"><span class="pre">diet.Configuration.defaultGroupSize</span></code></p>
+<img alt="./wiki_logo_openalea.png" src="./wiki_logo_openalea.png" />
+</div>
 </div>
 
 
@@ -160,8 +191,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="programming.html" class="btn btn-neutral float-right" title="Programming the chattool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to dialoguetoolkit’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="overview.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

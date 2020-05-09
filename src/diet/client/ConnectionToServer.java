@@ -611,11 +611,7 @@ public class ConnectionToServer extends Thread {
               MessageDisplayCloseWindow mdcw = (MessageDisplayCloseWindow)m;
               wiad.destroyWebpage(mdcw.getID());
           }
-          else if (m instanceof diet.message.MessageWYSIWYGChangeFloorStatus){
-              MessageWYSIWYGChangeFloorStatus mcfs = (MessageWYSIWYGChangeFloorStatus)m;
-              this.cEventHandler.wysiwyg_ChangeFloorStatus(mcfs.newStatus, mcfs.deletePendingInserts, mcfs.serverID);
-             
-          }
+          
          
           else if (m instanceof MessagePopup){
             
@@ -1143,23 +1139,9 @@ public class ConnectionToServer extends Thread {
     }
     
     
-    public void sendWYSIWYGFloorRequest(String s){
-         MessageWYSIWYGFloorRequest mWYSIWYGFR = new MessageWYSIWYGFloorRequest(email, username, s);
-         try{
-             sendMessage(mWYSIWYGFR);
-         }catch (Exception e){
-             e.printStackTrace();
-         }
-    }
+   
     
-    public void sendWYSIWYGFloorChangeConfirm(int newState, long serverid){
-         MessageWYSIWYGFloorChangeConfirm mWYSIWYGFR = new MessageWYSIWYGFloorChangeConfirm(email, username, newState, serverid);
-         try{
-             sendMessage(mWYSIWYGFR);
-         }catch (Exception e){
-             e.printStackTrace();
-         }
-    }
+    
     
     
     

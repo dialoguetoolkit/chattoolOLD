@@ -888,8 +888,8 @@ public class ConfidenceTaskController extends DefaultTaskController{
                         saveScoreForParticipant(pA);
                         saveScoreForParticipant(pB);;
                     }
-                    cC.getC().changeClientInterface_enableTextDisplay(pA);
-                    cC.getC().changeClientInterface_enableTextDisplay(pB);
+                    cC.getC().changeClientInterface_enableConversationHistory(pA);
+                    cC.getC().changeClientInterface_enableConversationHistory(pB);
                     //cC.getC().changeClientInterface_clearMaintextEntryWindow(pA);
                     //cC.getC().changeClientInterface_clearMaintextEntryWindow(pB);
                     
@@ -1183,15 +1183,15 @@ public class ConfidenceTaskController extends DefaultTaskController{
     
     
     public void disableTextDisplayOfClients(){
-        cC.getC().changeClientInterface_disableTextDisplay(pA);
-        cC.getC().changeClientInterface_disableTextDisplay(pB); 
+        cC.getC().changeClientInterface_disableConversationHistory(pA);
+        cC.getC().changeClientInterface_disableConversationHistory(pB); 
     }
     
     public void gotoSTATE1_SendNewStimulusSet(){
         this.saveState();
         resetDataForTrial();
-        cC.getC().changeClientInterface_disableTextDisplay(pA);
-        cC.getC().changeClientInterface_disableTextDisplay(pB); 
+        cC.getC().changeClientInterface_disableConversationHistory(pA);
+        cC.getC().changeClientInterface_disableConversationHistory(pB); 
         
         
         this.state=state1ANSWERINGINDIVIDUALPROBLEMS;

@@ -12,7 +12,6 @@ import diet.message.MessageTask;
 import diet.message.MessageWYSIWYGAppendText;
 import diet.message.MessageWYSIWYGDocumentSyncFromClientInsert;
 import diet.message.MessageWYSIWYGDocumentSyncFromClientRemove;
-import diet.message.MessageWYSIWYGFloorRequest;
 import diet.server.ConnectionListener;
 import diet.server.Conversation;
 import diet.server.ConversationController.ui.CustomDialog;
@@ -174,16 +173,7 @@ public class DefaultWYSIWYGConversationControllerInterface2BACKUPWORKSOK extends
     }
     
    
-     @Override
-    public void processWYSIWYGFloorRequestDEPRECATED(Participant sender,MessageWYSIWYGFloorRequest mwysiwygfr) {
-        //fh.processWYSIWYGFloorRequest(sender, mwysiwygfr);
-        //this.saveOutputFromDocInserts(sender, mwysiwygfr);
-    }
-    
-    
-    public void processWYSIWYGFloorChangeConfirmDEPRECATED(Participant sender, diet.message.MessageWYSIWYGFloorChangeConfirm mwysiwygfcc){
-        //fh.processWYSIWYGFloorChangeConfirm(sender, mwysiwygfcc);
-    }
+  
 
     
    

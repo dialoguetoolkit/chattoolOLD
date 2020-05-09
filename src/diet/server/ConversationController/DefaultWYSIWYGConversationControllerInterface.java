@@ -17,7 +17,6 @@ import diet.message.MessageTask;
 import diet.message.MessageWYSIWYGAppendText;
 import diet.message.MessageWYSIWYGDocumentSyncFromClientInsert;
 import diet.message.MessageWYSIWYGDocumentSyncFromClientRemove;
-import diet.message.MessageWYSIWYGFloorRequest;
 import diet.server.Configuration;
 import diet.server.ConnectionListener;
 import diet.server.Conversation;
@@ -249,16 +248,10 @@ public class DefaultWYSIWYGConversationControllerInterface extends DefaultConver
     }
     
    
-     @Override
-    public void processWYSIWYGFloorRequestDEPRECATED(Participant sender,MessageWYSIWYGFloorRequest mwysiwygfr) {
-        //fh.processWYSIWYGFloorRequest(sender, mwysiwygfr);
-        //this.saveOutputFromDocInserts(sender, mwysiwygfr);
-    }
     
     
-    public void processWYSIWYGFloorChangeConfirmDEPRECATED(Participant sender, diet.message.MessageWYSIWYGFloorChangeConfirm mwysiwygfcc){
-        //fh.processWYSIWYGFloorChangeConfirm(sender, mwysiwygfcc);
-    }
+    
+    
 
     @Override
     public Vector<AttribVal> getAdditionalInformationForParticipant(Participant p) {

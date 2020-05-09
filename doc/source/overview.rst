@@ -1,18 +1,21 @@
 ********
-Overview   
+Overview  
 ********
 
-The chat tool is designed so that you only have to modify one file to design your experiment.
+The best way of getting started is:
+
+1. Download the user manual (see the \usermanual\ directory on github)
+
+2. Follow the quick start guide in the usermanual. Play around with a few setups.
+
+3. Download the source code from github (It should work "out of the box" in netbeans)
+
+4. Read the section on "Programming the chatttool" and the "workflow"
+
+5. Follow one of the vignettes / tutorials on how to progam an intervention
+
+6. Program your intervention  and test/debug it on one machine
+
+7. Run/pilot the intervention on separate machines with human participants
 
 
-
-All the
-
-
-turns that are produced by the participants are sent from the clients to the server, which routes the messages through a diet.server.ConversationController.  This is the main class which determines what happens to the messages. Ordinarily the ConversationController relays the messages to the other participants.
-
-
-
-
-
-s are routed through a diet.server.ConversationController which determines what happens to the messages. Ordinarily messages that are received from 

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package diet.server.ConversationController.obsoltebucket;
+package diet.server.ConversationController.obsoletebucket;
 
 import diet.client.ClientInterfaceEvents.ClientInterfaceEvent;
 import diet.client.ClientInterfaceEvents.ClientInterfaceEventStringPrettifier;
@@ -13,7 +13,6 @@ import diet.message.MessageChatTextFromClient;
 import diet.message.MessageKeypressed;
 import diet.message.MessageWYSIWYGDocumentSyncFromClientInsert;
 import diet.message.MessageWYSIWYGDocumentSyncFromClientRemove;
-import diet.message.MessageWYSIWYGFloorRequest;
 import diet.server.Conversation;
 import diet.server.ConversationController.DefaultConversationController;
 import diet.server.ConversationController.Dyadic_TurnByTurnInterface;

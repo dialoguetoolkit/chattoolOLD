@@ -422,18 +422,9 @@ public class ClientEventHandler {
     
     
     
-    public void requestFloor(String s){
-        cts.sendWYSIWYGFloorRequest(s);
-    }
     
-    public void wysiwyg_ChangeFloorStatus(int newStatus, boolean deletePendingInserts, long serverID){
-        jcf.wysiwyg_ChangeFloorStatus(newStatus, deletePendingInserts, serverID);
-        
-    }
     
-    public void wYSIWYGConfirmFloorChange(int newStatus, long serverID){
-        cts.sendWYSIWYGFloorChangeConfirm(newStatus, serverID);
-    }
     
+   
     
 }

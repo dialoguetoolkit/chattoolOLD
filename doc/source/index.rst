@@ -10,8 +10,12 @@ Welcome to dialoguetoolkit's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   installation
    overview
+   installation
+   programming
+   datacollected
+   bestpractices
+
    
 Indices and tables
 ==================

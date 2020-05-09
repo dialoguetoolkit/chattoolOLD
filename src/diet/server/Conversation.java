@@ -419,35 +419,9 @@ public class Conversation extends Thread{
                // if(DefaultConversationController.debugMESSAGEBLOCKAGE){System.out.println("MCT66609999999m");System.out.flush();}
                //System.out.println("UPDATINGCONTROLPANEL");
 
-                 if (m instanceof MessageWYSIWYGFloorRequest){
-                         MessageWYSIWYGFloorRequest mwysiwygfr = (MessageWYSIWYGFloorRequest)m;
-                         cC.processWYSIWYGFloorRequestDEPRECATED(origin, mwysiwygfr );
-                         try{
-                             
-                         }catch(Exception e){
-                             printWln("Main","There was an error processing floor request");
-                             printWln("Main",e.getMessage());
-                             e.printStackTrace();
-                             this.saveErrorLog("Error processing floor request");
-                             convIO.saveErrorLog(e);  
-                         }
-                                 
-                     }
+                 
                 
-                 if (m instanceof MessageWYSIWYGFloorChangeConfirm){
-                         MessageWYSIWYGFloorChangeConfirm mwysiwygfr = (MessageWYSIWYGFloorChangeConfirm)m;
-                         cC.processWYSIWYGFloorChangeConfirmDEPRECATED(origin, mwysiwygfr );
-                         try{
-                             
-                         }catch(Exception e){
-                             printWln("Main","There was an error processing floor change confirm");
-                             printWln("Main",e.getMessage());
-                             e.printStackTrace();
-                             this.saveErrorLog("Error processing floor change confirm");
-                             convIO.saveErrorLog(e);  
-                         }
-                                 
-                     }
+                 
                  
                 if(m instanceof MessageButtonPressFromClient){
                     MessageButtonPressFromClient mbpfc = (MessageButtonPressFromClient)m; 
@@ -1100,12 +1074,12 @@ public class Conversation extends Thread{
     public void newsaveClientKeypressToFile(Participant sender, MessageKeypressed mkp){
         String subDialogueID = cC.pp.getSubdialogueID(sender);
         if (subDialogueID ==null) subDialogueID = "";
-        this.newsaveClientKeypressToFile(sender, mkp, "");
+        this.newsaveClientKeypressToFile(sender, mkp, subDialogueID);
     }
 
     
     public void newsaveClientKeypressToFile(Participant sender, MessageKeypressed mkp,String subDialogueID ){
-        convIO.saveClientKeypressFromClient(mkp, subDialogueID, subDialogueID);
+        convIO.saveClientKeypressFromClient(mkp, subDialogueID);
     }
 
     //PriorTurnByOther_TimestampOnClientOfReceipt	PriorTurnByOther_ApparentUsername	PriorTurnByOther_Text
@@ -1449,11 +1423,11 @@ public class Conversation extends Thread{
            MessageChangeClientInterfaceProperties mccip= new MessageChangeClientInterfaceProperties(generateNextIDForClientDisplayConfirm(),ClientInterfaceEventTracker.disableTextEntry);
            ps.sendMessageToParticipant(recipient, mccip);
     }
-    public void changeClientInterface_enableTextDisplay(Participant recipient){
+    public void changeClientInterface_enableConversationHistory(Participant recipient){
            MessageChangeClientInterfaceProperties mccip= new MessageChangeClientInterfaceProperties(generateNextIDForClientDisplayConfirm(),ClientInterfaceEventTracker.enableTextPane);
            ps.sendMessageToParticipant(recipient, mccip);
     }
-     public void changeClientInterface_disableTextDisplay(Participant recipient){
+     public void changeClientInterface_disableConversationHistory(Participant recipient){
            MessageChangeClientInterfaceProperties mccip= new MessageChangeClientInterfaceProperties(generateNextIDForClientDisplayConfirm(),ClientInterfaceEventTracker.disableTextPane);
            System.err.println("BLOCKING CONVERSATION HISTORY! (3A)");
            ps.sendMessageToParticipant(recipient, mccip);
@@ -2191,11 +2165,7 @@ public class Conversation extends Thread{
     
     
     
-    public void wysiwyg_changeFloorStatus(Participant p, int newStatus, boolean deletePending, long serverid){
-        MessageWYSIWYGChangeFloorStatus msfs = new MessageWYSIWYGChangeFloorStatus("server","server", newStatus, deletePending, serverid);
-        ps.sendMessageToParticipant(p, msfs);
-       
-    }
+    
 
     
     

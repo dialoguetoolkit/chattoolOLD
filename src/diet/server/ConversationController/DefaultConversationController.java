@@ -342,14 +342,7 @@ public abstract class DefaultConversationController  {
     }
     
     
-    public void processWYSIWYGFloorRequestDEPRECATED(Participant p, MessageWYSIWYGFloorRequest mwysiwygfr){
-       
-    }
-                        
     
-    public void processWYSIWYGFloorChangeConfirmDEPRECATED(Participant sender, diet.message.MessageWYSIWYGFloorChangeConfirm mwysiwygfcc){
-        
-    }
     
     public void processButtonPress(Participant sender, MessageButtonPressFromClient mbfc){
         c.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("buttonpress", sender, mbfc.buttonname);

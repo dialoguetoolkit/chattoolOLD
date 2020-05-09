@@ -19,7 +19,6 @@ import diet.server.conversationhistory.turn.DataToBeSaved;
 import diet.server.conversationhistory.turn.Turn;
 import diet.server.conversationhistory.turn.NormalTurnProducedByParticipant;
 import diet.server.conversationhistory.turn.NormallTurnProducedByParticipantInterceptedByServer;
-import diet.transcript.Transcripts;
 import diet.utils.FilenameToolkit;
 import java.io.File;
 import java.util.Arrays;
@@ -41,7 +40,7 @@ public class IntelligentIO {
     String separator = DefaultConversationController.sett.recordeddata_CSVSeparator;
     Conversation c;
    
-     Transcripts ts; 
+    
     
     
     
@@ -50,7 +49,7 @@ public class IntelligentIO {
         System.err.println("Creating IntelligentIO parent Directory is:" +parentDir);
         System.err.println("Creating IntelligentIO experimentDirectrySuffix is:" +experimentDirectorySuffix);
         this.c=c;
-        ts = new Transcripts(c);
+      
         File pDirF = new File(parentDir);
         String[] dirlist = pDirF.list();
         String prefixNumber=FilenameToolkit.getNextPrefixInteger(dirlist);            
@@ -416,21 +415,13 @@ public class IntelligentIO {
    
     
     
-    public void processTranscript(MessageClientInterfaceEvent mcie){
-       try{  
-         Participant sender = c.getParticipants().findParticipantWithEmail(mcie.getEmail());
-         ts.processClientInterfaceEvent(sender,mcie);
-       }catch(Exception e){
-           e.printStackTrace();
-       } 
-         
-    }
+    
     
     
     long debugcounter=0;
     
     public void saveClientEvent(MessageClientInterfaceEvent mcie){
-         processTranscript(mcie);
+        
          
         
          try{
@@ -492,11 +483,14 @@ public class IntelligentIO {
     }
     
      
-     public void saveClientKeypressFromClient(MessageKeypressed mkp, String subDialogueID, String sender){
+     public void saveClientKeypressFromClient(MessageKeypressed mkp, String subDialogueID){
         //this.saveDataToFile(subDialogueID, sender.getParticipantID(),sender.getUsername(), mkp.getTimeOfSending().getTime(),  mkp.getTimeOfSending(), mkp.getTimeOfReceipt().getTime()mkp.getContentsOfTextEntryWindow(),null);
         String line = "";
         line = line +c.getController().getID() + separator;
         line = line +subDialogueID + separator;
+        line = line +mkp.getEmail() + separator;
+        line = line +mkp.getUsername()+ separator;
+        line = line +mkp.getKeypressed().getKeycode() + separator;
         line = line +mkp.getTimeOfSending().getTime() + separator;
         line = line + mkp.getTimeOfReceipt().getTime() + separator;
         line = line + mkp.getContentsOfTextEntryWindow() +separator+"\n";

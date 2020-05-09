@@ -273,9 +273,7 @@ public class JTextPaneRightJustified extends JTextPane implements KeyListener {
   }
 
 
-   public void  wysiwyg_ChangeFloorStatus(int newStatus, boolean deletePendingInserts, long serverid){
-        this.jtprjfd.changeFloorStatus(newStatus, deletePendingInserts, serverid);
-    }
+   
   
   
     @Override

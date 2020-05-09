@@ -231,13 +231,7 @@ public class JChatFrameRightMostMultipleWindows extends JChatFrame {
          textPane.jtprjfd.insertStringFromOther(appendedText, cForeground, usernameOther);
     }
     
-    @Override
-    public void  wysiwyg_ChangeFloorStatus(int newStatus,  boolean deletePendingInserts, long serverid){
-        //System.exit(-567);
-        JTextPaneRightJustified textPane = (JTextPaneRightJustified)this.textPanes.elementAt(0);
-        
-        textPane.wysiwyg_ChangeFloorStatus(newStatus, deletePendingInserts, serverid);
-    }
+    
 
    
     public void debugrobot(Object param1, Object param2){

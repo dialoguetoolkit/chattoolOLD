@@ -377,7 +377,7 @@ public class JParticipantsPanelSouth extends javax.swing.JPanel {
         if(pselected.size()==0)CustomDialog.showDialog("First select participant(s) in the table above");
         for(int i=0;i<pselected.size();i++){
             Participant p = (Participant)pselected.elementAt(i);
-            c.changeClientInterface_enableTextDisplay(p);
+            c.changeClientInterface_enableConversationHistory(p);
             Conversation.printWSln("Main", "Making conversation history visible for"+p.getParticipantID());
             
         }
@@ -388,7 +388,7 @@ public class JParticipantsPanelSouth extends javax.swing.JPanel {
         if(pselected.size()==0)CustomDialog.showDialog("First select participant(s) in the table above");
         for(int i=0;i<pselected.size();i++){
             Participant p = (Participant)pselected.elementAt(i);
-            c.changeClientInterface_disableTextDisplay(p);
+            c.changeClientInterface_disableConversationHistory(p);
             Conversation.printWSln("Main", "Blocking the conversation history of "+p.getParticipantID());
            System.err.println("BLOCKING CONVERSATION HISTORY! (1)");
         }

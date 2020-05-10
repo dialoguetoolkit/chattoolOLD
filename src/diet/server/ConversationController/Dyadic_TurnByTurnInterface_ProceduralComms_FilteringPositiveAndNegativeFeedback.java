@@ -402,7 +402,7 @@ public class Dyadic_TurnByTurnInterface_ProceduralComms_FilteringPositiveAndNega
             Participant p = c.getParticipants().getAllParticipants().elementAt(i);
             this.changeClientInterfaceCharacterWhitelist(p, " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYX?1234567890");
             c.changeClientInterface_setMaxTextEntryCharLength(p, 10000);   
-            c.newsendInstructionToParticipant(p, "You can now type normally for the next few minutes. After that, text will be blocked again!Try and explain to your partner");
+            c.sendInstructionToParticipant(p, "You can now type normally for the next few minutes. After that, text will be blocked again!Try and explain to your partner");
         }
        
        
@@ -420,8 +420,8 @@ public class Dyadic_TurnByTurnInterface_ProceduralComms_FilteringPositiveAndNega
         }
        for(int i=0;i<this.taskControllers.size();i++){
            PCTask pct = (PCTask)this.taskControllers.elementAt(i);
-           c.newsendInstructionToParticipant(pct.pA, "Blocked again!");
-           c.newsendInstructionToParticipant(pct.pB, "Blocked again!");
+           c.sendInstructionToParticipant(pct.pA, "Blocked again!");
+           c.sendInstructionToParticipant(pct.pB, "Blocked again!");
            this.changeClientInterfaceCharacterWhitelist(pct.pA, pct.pAWhitelist + pct.sharedWhitelist+pct.allowedMetaChars);    
            this.changeClientInterfaceCharacterWhitelist(pct.pB, pct.pBWhitelist+  pct.sharedWhitelist+pct.allowedMetaChars); 
        }
@@ -682,7 +682,7 @@ public class Dyadic_TurnByTurnInterface_ProceduralComms_FilteringPositiveAndNega
         super.processChatText(sender, mct); //To change body of generated methods, choose Tools | Templates.    
         
         String spoofusername = "PersonID"+this.spoofOtherNumber;
-        c.newrelayTurnToPermittedParticipantsWithSpoofUsername(sender, mct, spoofusername);
+        c.relayTurnToPermittedParticipantsWithSpoofUsername(sender, mct, spoofusername);
         
         
         

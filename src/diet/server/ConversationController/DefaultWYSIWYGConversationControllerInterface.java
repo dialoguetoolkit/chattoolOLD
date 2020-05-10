@@ -118,7 +118,7 @@ public class DefaultWYSIWYGConversationControllerInterface extends DefaultConver
         try{
           String text = ""+sett.wysiwyglicense;
           System.err.println("SL01");
-          c.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("Important", "license info", "license info", "license info", "license info", 0, 0, 0, new Vector(),text, new Vector());
+          c.saveAdditionalRowOfDataToSpreadsheetOfTurns("Important", "license info", "license info", "license info", "license info", 0, 0, 0, new Vector(),text, new Vector());
          //System.err.println("SLE");
         }catch(Exception e){
             e.printStackTrace();

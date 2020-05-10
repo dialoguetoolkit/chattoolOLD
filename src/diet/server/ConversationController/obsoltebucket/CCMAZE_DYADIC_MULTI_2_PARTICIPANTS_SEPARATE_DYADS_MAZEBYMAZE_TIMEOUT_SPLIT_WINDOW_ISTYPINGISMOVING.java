@@ -340,7 +340,7 @@ public class CCMAZE_DYADIC_MULTI_2_PARTICIPANTS_SEPARATE_DYADS_MAZEBYMAZE_TIMEOU
           String cvsID="_unset_";
           try{
              cvsID = this.getCVSPREFIX(this.getMazeGameControllerForDyad(sender));
-             c.newsaveClientKeypressToFile(sender, mkp, cvsID);
+             c.saveClientKeypressToFile(sender, mkp, cvsID);
             // c.saveKeypressToFile(sender, mkp,cvsID);
           }catch(Exception e){e.printStackTrace();};
           //if(saveKeypress)c.saveKeypressToFile(sender, mkp,cvsID);

@@ -4,7 +4,7 @@
  */
 package diet.server.experimentmanager.ui;
 
-import diet.keylogging.Keylogging;
+
 import diet.server.ConversationController.ui.CustomDialog;
 import diet.server.experimentmanager.EMStarter;
 import java.awt.Toolkit;
@@ -354,8 +354,7 @@ public class JEMStarter extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
-        Keylogging kl = new Keylogging();
+        
        
     }//GEN-LAST:event_jButton3ActionPerformed
 

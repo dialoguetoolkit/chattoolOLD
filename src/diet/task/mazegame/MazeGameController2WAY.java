@@ -246,8 +246,8 @@ public class MazeGameController2WAY extends DefaultTaskController{
                  vToSaveMatcher.addElement(av12M); 
                  vToSaveMatcher.addElement(av13M); 
                  
-                 c.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("mazeinfov5", pDirector, "", vToSaveDirector);
-                 c.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("mazeinfov5", pMatcher, "", vToSaveMatcher);
+                 c.saveAdditionalRowOfDataToSpreadsheetOfTurns("mazeinfov5", pDirector, "", vToSaveDirector);
+                 c.saveAdditionalRowOfDataToSpreadsheetOfTurns("mazeinfov5", pMatcher, "", vToSaveMatcher);
          
          
                  
@@ -440,10 +440,10 @@ public class MazeGameController2WAY extends DefaultTaskController{
         if(pReloggingIn==pDirector){
              Game gDirector = new Game(pDirectorMazes);
              c.sendTaskMoveToParticipant(pDirector, new MessageNewMazeGame("server","server",gDirector));
-             c.newsendInstructionToParticipant(pDirector, "Please continue");
-             c.newsendInstructionToParticipant(pMatcher, "Network error. Your partner has logged back in. Resetting to the start of the maze");
+             c.sendInstructionToParticipant(pDirector, "Please continue");
+             c.sendInstructionToParticipant(pMatcher, "Network error. Your partner has logged back in. Resetting to the start of the maze");
              
-             if(Debug.debugmazegamereconnect)  c.newsendInstructionToParticipant(pReloggingIn, "(2a) You are the director....and the director ID IS:"+pDirector.getParticipantID()+"....."+pDirector.getUsername());
+             if(Debug.debugmazegamereconnect)  c.sendInstructionToParticipant(pReloggingIn, "(2a) You are the director....and the director ID IS:"+pDirector.getParticipantID()+"....."+pDirector.getUsername());
        
              
             
@@ -453,9 +453,9 @@ public class MazeGameController2WAY extends DefaultTaskController{
              
              
              c.sendTaskMoveToParticipant(pMatcher, new MessageNewMazeGame("server","server",gMatcher1));
-             c.newsendInstructionToParticipant(pMatcher, "Please continue");
-             c.newsendInstructionToParticipant(pDirector, "Network error. Your partner has logged back in. Resetting to the start of the maze");
-              if(Debug.debugmazegamereconnect)  c.newsendInstructionToParticipant(pReloggingIn, "(2b) You are the matcher....and the director ID IS:"+pDirector.getParticipantID()+"....."+pDirector.getUsername());
+             c.sendInstructionToParticipant(pMatcher, "Please continue");
+             c.sendInstructionToParticipant(pDirector, "Network error. Your partner has logged back in. Resetting to the start of the maze");
+              if(Debug.debugmazegamereconnect)  c.sendInstructionToParticipant(pReloggingIn, "(2b) You are the matcher....and the director ID IS:"+pDirector.getParticipantID()+"....."+pDirector.getUsername());
        
         }
         //this.moveToMazeNo(this.mazeNumber);
@@ -670,7 +670,7 @@ synchronized public int getOthersSwitchTraversalCount(String participantname){
 
              }
              try{
-                  c.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("mazemove", origin, "");
+                  c.saveAdditionalRowOfDataToSpreadsheetOfTurns("mazemove", origin, "");
               }catch(Exception e){
                  e.printStackTrace();
               }
@@ -734,7 +734,7 @@ synchronized public int getOthersSwitchTraversalCount(String participantname){
             this.sIOWriting.saveMessage(mscg);
           }
           try{
-              c.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("mazemove", origin, "");
+              c.saveAdditionalRowOfDataToSpreadsheetOfTurns("mazemove", origin, "");
               }catch(Exception e){
               e.printStackTrace();
           }

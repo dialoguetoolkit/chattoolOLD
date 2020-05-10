@@ -70,8 +70,8 @@ public class MazeGameIsOnSwitchCountdownController extends Thread{
                   System.err.println("OPENING GATES");
                   openGates();
                   try{
-                      this.mgc.c.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("gatesopen", pOther, "gatesopen");
-                      this.mgc.c.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("switchactivated", this.pOnSwitch, "switchactivated");
+                      this.mgc.c.saveAdditionalRowOfDataToSpreadsheetOfTurns("gatesopen", pOther, "gatesopen");
+                      this.mgc.c.saveAdditionalRowOfDataToSpreadsheetOfTurns("switchactivated", this.pOnSwitch, "switchactivated");
                      
                       
                   }catch (Exception e){

@@ -1,7 +1,4 @@
 package diet.server.ConversationController;
-import diet.client.ClientInterfaceEvents.ClientInterfaceEvent;
-import diet.client.ClientInterfaceEvents.ClientInterfaceEventStringPrettifier;
-import diet.debug.Debug;
 import diet.message.MessageChatTextFromClient;
 import diet.message.MessageClientInterfaceEvent;
 import diet.message.MessageKeypressed;
@@ -11,16 +8,13 @@ import diet.message.MessageWYSIWYGDocumentSyncFromClientRemove;
 import diet.server.ConnectionListener;
 import diet.server.Conversation;
 import diet.server.Participant;
-import java.awt.event.KeyEvent;
-import java.util.Date;
+import java.util.Random;
 import java.util.Vector;
-import javax.json.JsonObject;
-import javax.json.JsonObjectBuilder;
 
 
 
 
-public class Dyadic_TurnByTurnInterface extends DefaultConversationController{
+public class DyadicTurnByTurn_Tutorial1_InsertingRemovingSubstituting extends DefaultConversationController{
 
     
     
@@ -31,13 +25,13 @@ public class Dyadic_TurnByTurnInterface extends DefaultConversationController{
 
     
     
-    public Dyadic_TurnByTurnInterface(Conversation c) {
+    public DyadicTurnByTurn_Tutorial1_InsertingRemovingSubstituting(Conversation c) {
         super(c);
         String portNumberOfServer = ""+ConnectionListener.staticGetPortNumber();
         this.setID("Dyadic");
         this.experimentHasStarted=true;     
     }
-    public Dyadic_TurnByTurnInterface(Conversation c, long istypingtimeout) {
+    public DyadicTurnByTurn_Tutorial1_InsertingRemovingSubstituting(Conversation c, long istypingtimeout) {
         super(c,istypingtimeout);
         String portNumberOfServer = ""+ConnectionListener.staticGetPortNumber();
         this.setID("Dyadic");
@@ -59,25 +53,23 @@ public class Dyadic_TurnByTurnInterface extends DefaultConversationController{
     @Override
     public synchronized void participantJoinedConversation(final Participant p) {
         super.participantJoinedConversation(p);
+             
     }
-    
-    
     
     
 
     
     @Override
     public void participantRejoinedConversation(Participant p) {     
-        super.participantRejoinedConversation(p);      
+        super.participantRejoinedConversation(p); 
+        if(c.getNoOfParticipants()==1){
+             c.sendInstructionToParticipant(p,"Hello! Please wait for the other participant to log in");
+        }
+        else if (c.getNoOfParticipants()==2){
+             c.sendInstructionToMultipleParticipants(c.getParticipants().getAllParticipants(), "Please start!");
+        }
     }
     
-    
-    
-   
-   
-   
-   
-   
    
    
    public synchronized void processTaskMove(MessageTask mtm, Participant origin) {            
@@ -86,12 +78,39 @@ public class Dyadic_TurnByTurnInterface extends DefaultConversationController{
    
    
     
-    @Override
-    public synchronized void processChatText(Participant sender, MessageChatTextFromClient mct){    
-          itnt.removeSpoofTypingInfoAfterThreshold(sender, new Date().getTime());
+    
+   
+    public synchronized void processChatText2(Participant sender, MessageChatTextFromClient mct){    
           itnt.processTurnSentByClient(sender);
-          c.relayTurnToPermittedParticipants(sender, mct);
+          
+          String turn = mct.getText();    
+          
+          if(turn.contains(":(")) {
+               turn = turn.replace(":(", "");
+               Vector recipients = pp.getRecipients(sender);
+               c.sendArtificialTurnFromApparentOriginToParticipants(sender, recipients, turn);
+          }
+          else{
+                c.relayTurnToPermittedParticipants(sender, mct);  
+          }          
     }
+    
+    
+    Random r = new Random();
+    public synchronized void processChatText(Participant sender, MessageChatTextFromClient mct){    
+          itnt.processTurnSentByClient(sender);
+          
+          if(r.nextBoolean()){
+               String turn = mct.getText() + " :)" ;
+               Vector recipients = pp.getRecipients(sender);
+               
+               c.sendArtificialTurnFromApparentOriginToParticipants(sender, recipients, turn);
+          }
+          else{
+               c.relayTurnToPermittedParticipants(sender, mct);     
+          }      
+    }
+    
     
     
     

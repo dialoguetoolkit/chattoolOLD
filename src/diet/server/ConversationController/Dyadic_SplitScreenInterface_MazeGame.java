@@ -50,7 +50,7 @@ public class Dyadic_SplitScreenInterface_MazeGame extends MazeGameConversationCo
     @Override
     public synchronized void processChatText(Participant sender, MessageChatTextFromClient mct){    
           if(!this.experimentHasStarted){
-              c.newsendInstructionToParticipant(sender, "Please wait for the experiment to start");
+              c.sendInstructionToParticipant(sender, "Please wait for the experiment to start");
               return;
           }
           
@@ -59,12 +59,12 @@ public class Dyadic_SplitScreenInterface_MazeGame extends MazeGameConversationCo
           Vector additionalData = mgcNEW.getAdditionalData(sender);
           if(doSplitScreen(sender)){
               additionalData.addElement(new AttribVal("splitscreen","split"));
-              c.newrelayTurnToPermittedParticipants(sender, mct,additionalData);        
+              c.relayTurnToPermittedParticipants(sender, mct,additionalData);        
               mgcNEW.appendToUI(sender.getUsername()+": "+mct.getText()); 
           }
           else{
              additionalData.addElement(new AttribVal("splitscreen","normal"));
-             c.newrelayTurnToPermittedParticipants(sender, mct,additionalData);        
+             c.relayTurnToPermittedParticipants(sender, mct,additionalData);        
              mgcNEW.appendToUI(sender.getUsername()+": "+mct.getText()); 
              Participant pRecip = (Participant)pp.getRecipients(sender).elementAt(0);
              c.changeClientInterface_clearMainWindowsExceptWindow0(pRecip);
@@ -82,7 +82,7 @@ public class Dyadic_SplitScreenInterface_MazeGame extends MazeGameConversationCo
             Participant recipient = (Participant)pp.getRecipients(sender).elementAt(0);
             Vector additionalValues = this.getAdditionalInformationForParticipant(sender);
             c.changeClientInterface_clearMainWindowsExceptWindow0(recipient);
-            c.newsendArtificialTurnFromApparentOrigin(    sender, recipient, mWYSIWYGkp.getAllTextInWindow()  , 1, additionalValues);
+            c.sendArtificialTurnFromApparentOrigin(    sender, recipient, mWYSIWYGkp.getAllTextInWindow()  , 1, additionalValues);
         }
         
         
@@ -96,7 +96,7 @@ public class Dyadic_SplitScreenInterface_MazeGame extends MazeGameConversationCo
             Participant recipient = (Participant)pp.getRecipients(sender).elementAt(0);
             Vector additionalValues = this.getAdditionalInformationForParticipant(sender);
             c.changeClientInterface_clearMainWindowsExceptWindow0(recipient);
-            c.newsendArtificialTurnFromApparentOrigin(sender, recipient, mWYSIWYGkp.getAllTextInWindow()  , 1, additionalValues);
+            c.sendArtificialTurnFromApparentOrigin(sender, recipient, mWYSIWYGkp.getAllTextInWindow()  , 1, additionalValues);
         }
     }
     

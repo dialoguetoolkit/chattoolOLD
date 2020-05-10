@@ -55,7 +55,7 @@ public class FaceComms2016_TURNBYTUN_TRIADIC_TALITA_BACKUP extends Triadic_TurnB
              this.itntBandC.processTurnSentByClient(sender);
         }
         itnt.processTurnSentByClient(sender);
-        c.newrelayTurnToPermittedParticipants(sender, mct);
+        c.relayTurnToPermittedParticipants(sender, mct);
         fctct.processChatText(sender, mct.getText());  
         if(sender ==pA || sender ==pB){
             this.itntAandB.removeSpoofTypingInfoAfterThreshold(sender, new Date().getTime());

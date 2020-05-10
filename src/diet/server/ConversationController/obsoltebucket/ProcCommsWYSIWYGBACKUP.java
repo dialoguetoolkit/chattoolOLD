@@ -94,7 +94,7 @@ public class ProcCommsWYSIWYGBACKUP extends DefaultWYSIWYGConversationController
     @Override
     public synchronized void processChatText(Participant sender, MessageChatTextFromClient mct) {
         super.processChatText(sender, mct); //To change body of generated methods, choose Tools | Templates.    
-        c.newrelayTurnToPermittedParticipants(sender, mct);
+        c.relayTurnToPermittedParticipants(sender, mct);
         
         
          if(pct!=null  && !   pct.allowedMetaChars.contains( mct.getText())) {

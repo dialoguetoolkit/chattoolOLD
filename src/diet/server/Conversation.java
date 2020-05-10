@@ -519,7 +519,7 @@ public class Conversation extends Thread{
                     }
                     System.out.println(origin.getParticipantID());
                     System.out.println(mkp.getKeypressed());
-                    this.newsaveClientKeypressToFile(origin, mkp);
+                    this.saveClientKeypressToFile(origin, mkp);
                     cC.processKeyPress(origin,mkp);
 
                 }
@@ -575,7 +575,7 @@ public class Conversation extends Thread{
                        String name = (String)mcie.getClientInterfaceEvent().getValue("name");
                         
                       
-                       this.newsaveAdditionalRowOfDataProducedOnCLIENTToSpreadsheetOfTurns( timeOfDisplayOnClient,"stimulusimage_change_confirm"  , origin, name);     
+                       this.saveAdditionalRowOfDataProducedOnCLIENTToSpreadsheetOfTurns( timeOfDisplayOnClient,"stimulusimage_change_confirm"  , origin, name);     
                     }
                     
                    
@@ -616,7 +616,7 @@ public class Conversation extends Thread{
                        
                         String textToSave = (title+"/"+question+"/"+optionsFLATTENED).replaceAll("\n","(NEWLINE)")+ timeOnClientOfShowing+timeOnClientOfChoice+"_"+mpr.getSelection()+"__"+mpr.getSelectedValue();
                        
-                       this.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("popupreceived_"+popupID, origin, textToSave);
+                       this.saveAdditionalRowOfDataToSpreadsheetOfTurns("popupreceived_"+popupID, origin, textToSave);
                        
                      
                        
@@ -664,7 +664,7 @@ public class Conversation extends Thread{
     
     
    
-    public void newsendInstructionToParticipant( Participant recipient, String text, Vector additionalValues){  
+    public void sendInstructionToParticipant( Participant recipient, String text, Vector<AttribVal> additionalValues){  
         String subdialogueID = cC.pp.getSubdialogueID(recipient);
         MutableAttributeSet style = cC.getStyleManager().getStyleForInstructionMessages(recipient);
         int windowNo = cC.getStyleManager().getWindowNumberInWhichParticipantBReceivesTextFromServer_SHOULDBEMOVEDTOATRACKORWINDOWMANAGER(recipient);
@@ -677,7 +677,7 @@ public class Conversation extends Thread{
         cH.saveArtificialMessageCreatedByServer(subdialogueID, mctc.getTimeOfSending().getTime(),  "server",text, recipientNames, additionalValues, false);
     }
     
-    public void newsendInstructionToParticipant( Participant recipient, String text){  
+    public void sendInstructionToParticipant( Participant recipient, String text){  
         String subdialogueID = cC.pp.getSubdialogueID(recipient);
          MutableAttributeSet style = cC.getStyleManager().getStyleForInstructionMessages(recipient);
         int windowNo = cC.getStyleManager().getWindowNumberInWhichParticipantBReceivesTextFromServer_SHOULDBEMOVEDTOATRACKORWINDOWMANAGER(recipient); 
@@ -690,15 +690,15 @@ public class Conversation extends Thread{
         cH.saveArtificialMessageCreatedByServer(subdialogueID, mctc.getTimeOfSending().getTime(), "server",text, recipientNames, new Vector(), false);
     }
    
-    public void newsendInstructionToMultipleParticipants(Vector recipients, String text){
+    public void sendInstructionToMultipleParticipants(Vector recipients, String text){
         for(int i=0;i<recipients.size();i++){
              Participant pRecipient = (Participant )recipients.elementAt(i);
-             newsendInstructionToParticipant(pRecipient, text);
+             sendInstructionToParticipant(pRecipient, text);
         }
     }
     
 
-    public void newsendArtificialTurnFromApparentOrigin( Participant apparentOrigin, Participant recipient, String text){  
+    public void sendArtificialTurnFromApparentOrigin( Participant apparentOrigin, Participant recipient, String text){  
         String subdialogueID = cC.pp.getSubdialogueID(recipient);
         MutableAttributeSet style = cC.getStyleManager().getStyleForRecipient(apparentOrigin, recipient);
         int windowNo = cC.getStyleManager().getWindowNumberInWhichParticipantBReceivesTextFromParticipantA_Deprecated_SHOULDBEMOVEDTOATRACKORWINDOWMANAGER(apparentOrigin, recipient);
@@ -722,7 +722,7 @@ public class Conversation extends Thread{
     
     
     
-    public void newsendArtificialTurnFromApparentOrigin( String apparentOriginUsername, Participant recipient, String text){  
+    public void sendArtificialTurnFromApparentOrigin( String apparentOriginUsername, Participant recipient, String text){  
         String subdialogueID = cC.pp.getSubdialogueID(recipient);
         MutableAttributeSet style = cC.getStyleManager().getStyleFoOTHER1();
         int windowNo = 0;
@@ -753,7 +753,7 @@ public class Conversation extends Thread{
    
     
     
-      public void newsendArtificialTurnFromApparentOrigin( Participant apparentOrigin, Participant recipient, String text, int windowNo, Vector additionalValues){  
+      public void sendArtificialTurnFromApparentOrigin( Participant apparentOrigin, Participant recipient, String text, int windowNo, Vector<AttribVal> additionalValues){  
         String subdialogueID = cC.pp.getSubdialogueID(recipient);
         MutableAttributeSet style = cC.getStyleManager().getStyleForRecipient(apparentOrigin, recipient);     
         MessageChatTextToClient mctc = new MessageChatTextToClient(generateNextIDForClientDisplayConfirm(),"server",apparentOrigin.getUsername(),text,windowNo,true,style);
@@ -778,7 +778,7 @@ public class Conversation extends Thread{
     
    
 
-   public void newsendArtificialTurnFromApparentOriginToRecipient( String apparentOriginUsername, Participant recipient, boolean prefixUsername, String text,  String subdialogueID, MutableAttributeSet style, int windowNo, Vector additionalValues){  
+   public void sendArtificialTurnFromApparentOriginToRecipient( String apparentOriginUsername, Participant recipient, boolean prefixUsername, String text,  String subdialogueID, MutableAttributeSet style, int windowNo, Vector<AttribVal> additionalValues){  
         MessageChatTextToClient mctc = new MessageChatTextToClient(generateNextIDForClientDisplayConfirm(),"server",apparentOriginUsername,text,windowNo,true,style);
         Vector recipientNames = new Vector();
         recipientNames.addElement(recipient.getUsername());
@@ -801,7 +801,7 @@ public class Conversation extends Thread{
         cH.saveArtificialMessageCreatedByServer(subdialogueID, mctc.getTimeOfSending().getTime(), apparentOriginUsername,text, recipientNames, additionalInfo, false);
     }
    
-   public void newsendArtificialTurnFromApparentOriginToMultipleRecipients(String apparentOriginUsername, String subdialogueID ,Vector recipients, String text,   MutableAttributeSet style, int windowNo, Vector additionalValues){  
+   public void sendArtificialTurnFromApparentOriginToMultipleRecipients(String apparentOriginUsername, String subdialogueID ,Vector recipients, String text,   MutableAttributeSet style, int windowNo, Vector<AttribVal> additionalValues){  
         MessageChatTextToClient mctc = new MessageChatTextToClient(generateNextIDForClientDisplayConfirm(),"server",apparentOriginUsername,text,windowNo,true,style);
         Vector recipientNames = new Vector();
         for(int i=0;i<recipients.size();i++){
@@ -825,7 +825,34 @@ public class Conversation extends Thread{
     }
     
    
-   public void newsendArtificialTurnFromApparentOriginToMultipleRecipients(Participant apparentOrigin, Vector recipients, String text   ){   
+   public void sendArtificialTurnFromApparentOriginToParticipantUsernames(Participant apparentOrigin, Vector<String> usernames, String text   ){   
+       
+       
+        Vector additionalInfo = new Vector();
+        try{
+           additionalInfo = cC.getAdditionalInformationForParticipant(apparentOrigin); 
+           if(additionalInfo==null)additionalInfo = new Vector();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+       
+       
+       
+        for(int i=0;i<usernames.size();i++){
+            Participant recipient = this.getParticipants().findParticipantWithUsername((String) usernames.elementAt(i));
+            String subdialogueID = cC.pp.getSubdialogueID(recipient);
+            MutableAttributeSet style = cC.getStyleManager().getStyleForRecipient(apparentOrigin, recipient);
+            int windowNo = cC.getStyleManager().getWindowNumberInWhichParticipantBReceivesTextFromParticipantA_Deprecated_SHOULDBEMOVEDTOATRACKORWINDOWMANAGER(apparentOrigin, recipient);
+            MessageChatTextToClient mctc = new MessageChatTextToClient(generateNextIDForClientDisplayConfirm(),"server",apparentOrigin.getUsername(),text,windowNo,true,style); 
+             Vector recipientName = new Vector();
+            recipientName.addElement(recipient.getUsername());
+            ps.sendMessageToParticipant(recipient,mctc);        
+            cH.saveArtificialMessageCreatedByServer(subdialogueID, mctc.getTimeOfSending().getTime(), apparentOrigin.getUsername(),text, recipientName, additionalInfo, false);
+   
+            }
+         }
+   
+   public void sendArtificialTurnFromApparentOriginToParticipants(Participant apparentOrigin, Vector<Participant> recipients, String text   ){   
        
        
         Vector additionalInfo = new Vector();
@@ -839,7 +866,7 @@ public class Conversation extends Thread{
        
        
         for(int i=0;i<recipients.size();i++){
-            Participant recipient = this.getParticipants().findParticipantWithUsername((String) recipients.elementAt(i));
+            Participant recipient = recipients.elementAt(i);
             String subdialogueID = cC.pp.getSubdialogueID(recipient);
             MutableAttributeSet style = cC.getStyleManager().getStyleForRecipient(apparentOrigin, recipient);
             int windowNo = cC.getStyleManager().getWindowNumberInWhichParticipantBReceivesTextFromParticipantA_Deprecated_SHOULDBEMOVEDTOATRACKORWINDOWMANAGER(apparentOrigin, recipient);
@@ -854,10 +881,42 @@ public class Conversation extends Thread{
    
    
    
+   
+   
+   public void sendArtificialTurnFromApparentOrigin(Participant apparentOrigin,  String text   ){   
+       
+       
+        Vector additionalInfo = new Vector();
+        try{
+           additionalInfo = cC.getAdditionalInformationForParticipant(apparentOrigin); 
+           if(additionalInfo==null)additionalInfo = new Vector();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+       
+       Vector<Participant> recipients = cC.pp.getRecipients(apparentOrigin);
+       
+        for(int i=0;i<recipients.size();i++){
+            Participant recipient = recipients.elementAt(i);
+            String subdialogueID = cC.pp.getSubdialogueID(recipient);
+            MutableAttributeSet style = cC.getStyleManager().getStyleForRecipient(apparentOrigin, recipient);
+            int windowNo = cC.getStyleManager().getWindowNumberInWhichParticipantBReceivesTextFromParticipantA_Deprecated_SHOULDBEMOVEDTOATRACKORWINDOWMANAGER(apparentOrigin, recipient);
+            MessageChatTextToClient mctc = new MessageChatTextToClient(generateNextIDForClientDisplayConfirm(),"server",apparentOrigin.getUsername(),text,windowNo,true,style); 
+             Vector recipientName = new Vector();
+            recipientName.addElement(recipient.getUsername());
+            ps.sendMessageToParticipant(recipient,mctc);        
+            cH.saveArtificialMessageCreatedByServer(subdialogueID, mctc.getTimeOfSending().getTime(), apparentOrigin.getUsername(),text, recipientName, additionalInfo, false);
+   
+            }
+         }
+   
+   
+   
+   
     public void deprecated_sendArtificialTurnToAllParticipants(String text, int windowNo){   ////This is what it calls
           Vector v = ps.getAllParticipants();
           MutableAttributeSet style = cC.getStyleManager().getDefaultStyleForInstructionMessages();
-          this.newsendArtificialTurnFromApparentOriginToMultipleRecipients("", "", v, text, null, windowNo, v);
+          this.sendArtificialTurnFromApparentOriginToMultipleRecipients("", "", v, text, null, windowNo, v);
      }
      
    
@@ -865,14 +924,14 @@ public class Conversation extends Thread{
     
     public void deprecated_sendArtificialTurnFromApparentOriginToRecipient(Participant apparentOrigin,Participant recipient, String text){
         MutableAttributeSet style = cC.getStyleManager().getStyleForInstructionMessages(recipient);
-        newsendArtificialTurnFromApparentOriginToRecipient(apparentOrigin.getUsername(), recipient, true,text, "", style,0, new Vector() );
+        sendArtificialTurnFromApparentOriginToRecipient(apparentOrigin.getUsername(), recipient, true,text, "", style,0, new Vector() );
     }
    
 
     
      public void deprecated_sendArtificialTurnToRecipient(Participant recipient,String text, int windowNo){
          MutableAttributeSet style = cC.getStyleManager().getStyleForInstructionMessages(recipient);
-         newsendArtificialTurnFromApparentOriginToRecipient("", recipient, false,text, "", style,windowNo, new Vector() );
+         sendArtificialTurnFromApparentOriginToRecipient("", recipient, false,text, "", style,windowNo, new Vector() );
          
      }
 
@@ -885,7 +944,7 @@ public class Conversation extends Thread{
      }
 
     public void deprecatedsendArtificialTurnToRecipientWithEnforcedTextColour(Participant recipient,String text, int windowNo, String prefix,  MutableAttributeSet style ){
-        newsendArtificialTurnFromApparentOriginToRecipient("", recipient, false,text, "", style,windowNo, new Vector() );
+        sendArtificialTurnFromApparentOriginToRecipient("", recipient, false,text, "", style,windowNo, new Vector() );
      }    
      
 
@@ -905,17 +964,17 @@ public class Conversation extends Thread{
  
     public void deprecated_sendArtificialTurnToRecipient(Participant recipient,String text, int windowNo, String prefixFORCSVSpreadsheetIDENTIFIER ){
         MutableAttributeSet style = cC.getStyleManager().getStyleForInstructionMessages(recipient);
-        newsendArtificialTurnFromApparentOriginToRecipient("", recipient, false,text, "", style,windowNo, new Vector() );   
+        sendArtificialTurnFromApparentOriginToRecipient("", recipient, false,text, "", style,windowNo, new Vector() );   
     }
     
     
      public void deprecated_sendArtificialMazeGameTurnFromApparentOriginToRecipientWithEnforcedTextColour(String apparentOriginUsername, Participant recipient,String text, int windowNo, String prefixFORCSVSpreadsheetIDENTIFIER,  MutableAttributeSet style ){
-         newsendArtificialTurnFromApparentOriginToRecipient("", recipient, false,text, "", style,windowNo, new Vector() );   
+         sendArtificialTurnFromApparentOriginToRecipient("", recipient, false,text, "", style,windowNo, new Vector() );   
      }
     
     
     public void deprecated_sendArtificialTurnToRecipient(Participant recipient,String text, int windowNo,  MutableAttributeSet style, String prefixFORCSVSpreadsheetIDENTIFIER ){
-         newsendArtificialTurnFromApparentOriginToRecipient("", recipient, false,text, "", style,windowNo, new Vector() );   
+         sendArtificialTurnFromApparentOriginToRecipient("", recipient, false,text, "", style,windowNo, new Vector() );   
     }
     
    
@@ -938,14 +997,14 @@ public class Conversation extends Thread{
     
     
     public void deprecated_saveAdditionalRowOfDataToSpreadsheetOfTurns(Participant recipient, String subdialogueID, String data){
-        this.newsaveAdditionalRowOfDataToSpreadsheetOfTurns(subdialogueID,"data"   , "Server", "server", recipient.getParticipantID()+"."+recipient.getUsername(),new Date().getTime() ,new Date().getTime(), new Date().getTime(), new Vector(), data, new Vector());
+        this.saveAdditionalRowOfDataToSpreadsheetOfTurns(subdialogueID,"data"   , "Server", "server", recipient.getParticipantID()+"."+recipient.getUsername(),new Date().getTime() ,new Date().getTime(), new Date().getTime(), new Vector(), data, new Vector());
  
         //this.saveDataToFile(title, title, question, selection, selection, title, null);
     }
     
     public void deprecated_saveAdditionalRowOfDataToSpreadsheetOfTurns(Participant sender,String recipientName , long timeCREATEDONCLIENT, String subdialogueID, String data){
         //String recipient
-        this.newsaveAdditionalRowOfDataToSpreadsheetOfTurns(subdialogueID, "data",  sender.getParticipantID(), sender.getUsername(), recipientName, timeCREATEDONCLIENT,new Date().getTime(), new Date().getTime(), new Vector()  ,data,  new Vector());
+        this.saveAdditionalRowOfDataToSpreadsheetOfTurns(subdialogueID, "data",  sender.getParticipantID(), sender.getUsername(), recipientName, timeCREATEDONCLIENT,new Date().getTime(), new Date().getTime(), new Vector()  ,data,  new Vector());
  
        
     }
@@ -953,14 +1012,14 @@ public class Conversation extends Thread{
     
     public void deprecated_saveAdditionalRowOfDataToSpreadsheetOfTurns(String subDialogueID, String data){    
         long timeOfCreationOnServer = new Date().getTime();
-        Conversation.this.newsaveAdditionalRowOfDataToSpreadsheetOfTurns(subDialogueID, "data", "server", "server", "server",timeOfCreationOnServer ,timeOfCreationOnServer, timeOfCreationOnServer, new Vector(),data, new Vector());
+        Conversation.this.saveAdditionalRowOfDataToSpreadsheetOfTurns(subDialogueID, "data", "server", "server", "server",timeOfCreationOnServer ,timeOfCreationOnServer, timeOfCreationOnServer, new Vector(),data, new Vector());
         
     }
     
   
      public void deprecated_saveAdditionalRowOfDataToSpreadsheetOfTurns(String subdialogue, String datatype, String senderID, String senderUsername, long timeOfCreationOnClient,long timeOfSendOnClient, long timeOfRELAYONSERVER, String text, Vector additionalData){
         try{
-            newsaveAdditionalRowOfDataToSpreadsheetOfTurns( subdialogue, datatype,  senderID, senderUsername, "", timeOfCreationOnClient , timeOfSendOnClient, timeOfRELAYONSERVER, new Vector(), text, additionalData);
+            Conversation.this.saveAdditionalRowOfDataToSpreadsheetOfTurns( subdialogue, datatype,  senderID, senderUsername, "", timeOfCreationOnClient , timeOfSendOnClient, timeOfRELAYONSERVER, new Vector(), text, additionalData);
         
          }catch (Exception e){
             Conversation.printWSln("Main", "Error saving data");
@@ -969,7 +1028,7 @@ public class Conversation extends Thread{
     
     
     
-    public void newsaveAdditionalRowOfDataToSpreadsheetOfTurns(String subdialogueID, String datatype,  String senderID, String senderUsername, String apparentSenderUsername,long timeOfCreationOnClient ,long timeOfSendOnClient, long timeOfRELAYONSERVER, Vector recipientsNames, String text, Vector<AttribVal> additionalData){
+    public void saveAdditionalRowOfDataToSpreadsheetOfTurns(String subdialogueID, String datatype,  String senderID, String senderUsername, String apparentSenderUsername,long timeOfCreationOnClient ,long timeOfSendOnClient, long timeOfRELAYONSERVER, Vector recipientsNames, String text, Vector<AttribVal> additionalData){
         try{
            //System.err.println("SL02");
            cH.saveDataAsRowInSpreadsheetOfTurns(subdialogueID, datatype,timeOfCreationOnClient ,timeOfSendOnClient, timeOfRELAYONSERVER ,senderID, senderUsername, apparentSenderUsername,text.replaceAll("\n", "(NEWLINE)"),recipientsNames,false,new Vector<Keypress>(), new Vector<DocChange>()  ,new Vector<ClientInterfaceEvent>() , additionalData, false);
@@ -978,7 +1037,7 @@ public class Conversation extends Thread{
         }
     }
     
-    public void newsaveAdditionalRowOfDataProducedOnCLIENTToSpreadsheetOfTurns(long timeOnClient, String datatype,  Participant p, String value){
+    public void saveAdditionalRowOfDataProducedOnCLIENTToSpreadsheetOfTurns(long timeOnClient, String datatype,  Participant p, String value){
         try{
            String subDialogueID = cC.pp.getSubdialogueID(p);
            long timeOfCreationOnClient = timeOnClient; 
@@ -1008,7 +1067,7 @@ public class Conversation extends Thread{
     
     
     
-    public void newsaveAdditionalRowOfDataToSpreadsheetOfTurns(String datatype,  Participant p, String value, long timeOfCreationOnClient){
+    public void saveAdditionalRowOfDataToSpreadsheetOfTurns(String datatype,  Participant p, String value, long timeOfCreationOnClient){
         try{
            String subDialogueID = cC.pp.getSubdialogueID(p);
            //long timeOfCreationOnClient = new Date().getTime(); 
@@ -1035,11 +1094,11 @@ public class Conversation extends Thread{
     }
     
     
-    public void newsaveAdditionalRowOfDataToSpreadsheetOfTurns(String datatype,  Participant p, String value){
+    public void saveAdditionalRowOfDataToSpreadsheetOfTurns(String datatype,  Participant p, String value){
         if(value==null)value ="";
-        newsaveAdditionalRowOfDataToSpreadsheetOfTurns(datatype,  p,  value, new Vector());
+        saveAdditionalRowOfDataToSpreadsheetOfTurns(datatype,  p,  value, new Vector());
     }
-    public void newsaveAdditionalRowOfDataToSpreadsheetOfTurns(String datatype,  Participant p, String value, Vector additionalAttribVals){
+    public void saveAdditionalRowOfDataToSpreadsheetOfTurns(String datatype,  Participant p, String value, Vector additionalAttribVals){
         try{
            if (value==null)value="";
            String subDialogueID = cC.pp.getSubdialogueID(p);
@@ -1071,14 +1130,14 @@ public class Conversation extends Thread{
    
 
     
-    public void newsaveClientKeypressToFile(Participant sender, MessageKeypressed mkp){
+    public void saveClientKeypressToFile(Participant sender, MessageKeypressed mkp){
         String subDialogueID = cC.pp.getSubdialogueID(sender);
         if (subDialogueID ==null) subDialogueID = "";
-        this.newsaveClientKeypressToFile(sender, mkp, subDialogueID);
+        this.saveClientKeypressToFile(sender, mkp, subDialogueID);
     }
 
     
-    public void newsaveClientKeypressToFile(Participant sender, MessageKeypressed mkp,String subDialogueID ){
+    public void saveClientKeypressToFile(Participant sender, MessageKeypressed mkp,String subDialogueID ){
         convIO.saveClientKeypressFromClient(mkp, subDialogueID);
     }
 
@@ -1087,7 +1146,7 @@ public class Conversation extends Thread{
        
     
     
-    public void newsaveClientDocumentchangeToFile(Participant sender,long timeOfCreationOnClient ,long timestamp, String contentsOfWindow){
+    public void saveClientDocumentchangeToFile(Participant sender,long timeOfCreationOnClient ,long timestamp, String contentsOfWindow){
         String subdialogueID = cC.pp.getSubdialogueID(sender);
         convIO.saveClientDocumentChange(cC.getID(), subdialogueID, sender, timeOfCreationOnClient, timestamp, contentsOfWindow);
     }
@@ -1102,7 +1161,7 @@ public class Conversation extends Thread{
      
     
      
-      public void newrelayTurnToParticipant(Participant sender,Participant recipient, MessageChatTextFromClient mct,  MutableAttributeSet style, int windowNumber, String subdialogueID, Vector additionalValues){
+      public void relayTurnToParticipant(Participant sender,Participant recipient, MessageChatTextFromClient mct,  MutableAttributeSet style, int windowNumber, String subdialogueID, Vector<AttribVal> additionalValues){
         mct.setChatTextHasBeenRelayedByServer();
         DocChangesIncomingSequenceFIFO ds = getDocChangesIncoming().setNewTurnAndReturnPreviousTurn(sender,new Date().getTime());
         
@@ -1117,7 +1176,7 @@ public class Conversation extends Thread{
   
       }
       
-      public void newrelayTurnToMultipleParticipants(Participant sender,Vector recipients, MessageChatTextFromClient mct,   int windowNumber, String subdialogueID, Vector additionalValues){
+      public void relayTurnToMultipleParticipants(Participant sender,Vector recipients, MessageChatTextFromClient mct,   int windowNumber, String subdialogueID, Vector<AttribVal> additionalValues){
         mct.setChatTextHasBeenRelayedByServer();
         DocChangesIncomingSequenceFIFO ds = getDocChangesIncoming().setNewTurnAndReturnPreviousTurn(sender,new Date().getTime());
         
@@ -1135,7 +1194,7 @@ public class Conversation extends Thread{
       }
       
       
-      public void newrelayTurnToMultipleParticipants(Participant sender,Vector recipients, MessageChatTextFromClient mct, Vector additionalValues){
+      public void relayTurnToMultipleParticipants(Participant sender,Vector recipients, MessageChatTextFromClient mct, Vector<AttribVal> additionalValues){
         mct.setChatTextHasBeenRelayedByServer();
         DocChangesIncomingSequenceFIFO ds = getDocChangesIncoming().setNewTurnAndReturnPreviousTurn(sender,new Date().getTime());
         
@@ -1154,7 +1213,7 @@ public class Conversation extends Thread{
         cH.saveMessageRelayedToOthers(subdialogueID,mct.getStartOfTypingOnClient(),  mct.getTimeOfSending().getTime(),mct.getTimeOfReceipt().getTime(),sender.getParticipantID(), sender.getUsername(),sender.getUsername(),mct.getText(),pUsernames,false,mct.getKeypresses(),ds.getAllInsertsAndRemoves(),   mct.getClientInterfaceEvents(), additionalValues,false);
       }
       
-      public void newrelayTurnToPermittedParticipants(Participant sender, MessageChatTextFromClient mct, Vector additionalValues){
+      public void relayTurnToPermittedParticipants(Participant sender, MessageChatTextFromClient mct, Vector<AttribVal> additionalValues){
         mct.setChatTextHasBeenRelayedByServer();
         DocChangesIncomingSequenceFIFO ds = getDocChangesIncoming().setNewTurnAndReturnPreviousTurn(sender,new Date().getTime());   
         String subdialogueID = cC.pp.getSubdialogueID(sender);
@@ -1178,7 +1237,7 @@ public class Conversation extends Thread{
       }
       
       
-      public void newrelayTurnToPermittedParticipantsWithSpoofUsername(Participant sender, MessageChatTextFromClient mct, String spoofUsername){
+      public void relayTurnToPermittedParticipantsWithSpoofUsername(Participant sender, MessageChatTextFromClient mct, String spoofUsername){
         mct.setChatTextHasBeenRelayedByServer();
         DocChangesIncomingSequenceFIFO ds = getDocChangesIncoming().setNewTurnAndReturnPreviousTurn(sender,new Date().getTime());
         
@@ -1204,7 +1263,7 @@ public class Conversation extends Thread{
       }
     
       
-      public void newrelayTurnToPermittedParticipants(Participant sender, MessageChatTextFromClient mct){
+      public void relayTurnToPermittedParticipants(Participant sender, MessageChatTextFromClient mct){
         mct.setChatTextHasBeenRelayedByServer();
         DocChangesIncomingSequenceFIFO ds = getDocChangesIncoming().setNewTurnAndReturnPreviousTurn(sender,new Date().getTime());
         
@@ -1320,7 +1379,7 @@ public class Conversation extends Thread{
      */
     public void deprecated_relayTurnToAllOtherParticipants(Participant sender,MessageChatTextFromClient mct, String subdialogueID, Vector recipientsOfChatText){
         mct.setChatTextHasBeenRelayedByServer();
-        this.newrelayTurnToMultipleParticipants(sender, recipientsOfChatText, mct, 0, subdialogueID, recipientsOfChatText);
+        this.relayTurnToMultipleParticipants(sender, recipientsOfChatText, mct, 0, subdialogueID, recipientsOfChatText);
 
        }
     
@@ -1458,7 +1517,7 @@ public class Conversation extends Thread{
         MessageOpenClientBrowserWebpage mocbw=new MessageOpenClientBrowserWebpage(webpage);
         
         ps.sendMessageToParticipant(pRecipient, mocbw);
-        newsaveAdditionalRowOfDataToSpreadsheetOfTurns("openbrowser",  pRecipient, webpage);
+        Conversation.this.saveAdditionalRowOfDataToSpreadsheetOfTurns("openbrowser",  pRecipient, webpage);
         
     }
     
@@ -1648,7 +1707,7 @@ public class Conversation extends Thread{
       * @param prefixFORCSVSpreadsheetIDENTIFIER
       * 
       */
-     public void setNewTurnBeingConstructedNotRelayingOldTurnAddingOldTurnToHistory(Participant p,MessageChatTextFromClient turnNotRelayed, String subdialogueID, Vector additionalValues){
+     public void setNewTurnBeingConstructedNotRelayingOldTurnAddingOldTurnToHistory(Participant p,MessageChatTextFromClient turnNotRelayed, String subdialogueID, Vector<AttribVal> additionalValues){
         DocChangesIncomingSequenceFIFO ds = getDocChangesIncoming().setNewTurnAndReturnPreviousTurn(p,new Date().getTime());
         
         cH.saveInterceptedNonRelayedMessage(subdialogueID, turnNotRelayed.getStartOfTypingOnClient(), turnNotRelayed.getTimeOfSending().getTime(), turnNotRelayed.getTimeOfReceipt().getTime(), 
@@ -1686,7 +1745,7 @@ public class Conversation extends Thread{
         additionalValues.addElement(av1);
         additionalValues.addElement(av2);
         additionalValues.addElement(av3);        
-        newrelayTurnToParticipant( sender, recipient,  mct,  style,  0, "",  additionalValues);
+        relayTurnToParticipant( sender, recipient,  mct,  style,  0, "",  additionalValues);
     
     }
     
@@ -1699,7 +1758,7 @@ public class Conversation extends Thread{
         additionalValues.addElement(av1);
         additionalValues.addElement(av2);
         additionalValues.addElement(av3);        
-        newrelayTurnToParticipant( sender, recipient,  mct,  style,  windowNo, "",  additionalValues);
+        relayTurnToParticipant( sender, recipient,  mct,  style,  windowNo, "",  additionalValues);
      }
     
     
@@ -1753,7 +1812,7 @@ public class Conversation extends Thread{
            }
         }     
             
-        this.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("gridtextchangeselection", recipient, datatobesaved);
+        this.saveAdditionalRowOfDataToSpreadsheetOfTurns("gridtextchangeselection", recipient, datatobesaved);
         
          
     }
@@ -1783,7 +1842,7 @@ public class Conversation extends Thread{
            }
         }  
         
-        this.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("gridtextinitialize", recipient, datatobesaved);
+        this.saveAdditionalRowOfDataToSpreadsheetOfTurns("gridtextinitialize", recipient, datatobesaved);
     }
     
     public void gridTextStimuli_changeTexts(Participant recipient, String[][] names, long serverID){
@@ -1796,7 +1855,7 @@ public class Conversation extends Thread{
                  datatobesaved = datatobesaved+ " ["+i+","+j+"]:"+ names[i][j];          
             }    
         }
-        this.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("gridtextchangetext", recipient, datatobesaved);   
+        this.saveAdditionalRowOfDataToSpreadsheetOfTurns("gridtextchangetext", recipient, datatobesaved);   
     }
     
     
@@ -1893,6 +1952,13 @@ public class Conversation extends Thread{
     public Participants getParticipants(){
         return this.ps;
     }
+    
+    public int getNoOfParticipants(){
+        return this.getParticipants().getAllParticipants().size();
+    }
+    
+    
+    
     public DocChangesIncoming getDocChangesIncoming(){
         return this.turnsconstructed;
     }
@@ -1900,6 +1966,9 @@ public class Conversation extends Thread{
         return this.turnsconstructed.getTurnBeingConstructed(p);
     }
    
+    
+    
+    
 
     public IntelligentIO getConvIO(){
         return convIO;
@@ -1961,13 +2030,13 @@ public class Conversation extends Thread{
          for(int i=0;i<buttonnames.length;i++){
               allButtonnames = allButtonnames+ "{"+buttonnames[i]+"}";
          }
-         newsaveAdditionalRowOfDataToSpreadsheetOfTurns("stimulusimage_initialize",  p, "Width:"+width+" Height:"+height+ " Filename:"+imagename);
+         Conversation.this.saveAdditionalRowOfDataToSpreadsheetOfTurns("stimulusimage_initialize",  p, "Width:"+width+" Height:"+height+ " Filename:"+imagename);
     }
     
     public void showStimulusImageFromJarFile_ChangeImage(Participant p,String imagename, long durationmsecs){
          diet.message.MessageStimulusImageChangeImage msidjf = new MessageStimulusImageChangeImage( imagename, durationmsecs );
          ps.sendMessageToParticipant(p,  msidjf);
-         newsaveAdditionalRowOfDataToSpreadsheetOfTurns("stimulusimage_change_instruction",  p, "Filename:"+imagename+ " Duration:"+durationmsecs);
+         Conversation.this.saveAdditionalRowOfDataToSpreadsheetOfTurns("stimulusimage_change_instruction",  p, "Filename:"+imagename+ " Duration:"+durationmsecs);
     }
     
     public void showStimulusImageEnableButtons(Participant p,String[] buttonnames, boolean enable){
@@ -1983,7 +2052,7 @@ public class Conversation extends Thread{
              type = "disable";
          }
          
-         newsaveAdditionalRowOfDataToSpreadsheetOfTurns("stimulusimage_buttons_"+type,  p,allButtonnames );
+         Conversation.this.saveAdditionalRowOfDataToSpreadsheetOfTurns("stimulusimage_buttons_"+type,  p,allButtonnames );
     }
     
     

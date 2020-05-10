@@ -212,15 +212,15 @@ The columns are
   | ⁰d ¹¹⁰o ¹⁸⁹g ¹⁸²←  ³⁴⁸←  ¹⁴⁸i ²⁸⁹g
   |
   | 
-  | The format also records the "is typing" notifications that are displayed on the participant's screen. This makes it possible to determine whether participants start/continue/stop typing when they see their partner start/stop typing. Suppose a participant is in the middle of typing the turn "this shape is red". Halfway through, while typing "shape" , the other participant starts typing, which displays an "is typing" notification in the status bar of the chat client. This could yield:
+  | The format also records the "is typing" notifications that are displayed on the participant's screen. This makes it possible to determine whether participants start/continue/stop typing when they see their partner start/stop typing. Suppose Participant A is in the middle of typing the turn "this shape is red". Halfway through, while typing "shape" , Participant B starts typing, which displays an "Participant B is typing" notification in Participant A's status bar. This could yield:
   |
   | ⁰T ¹¹⁰h ²⁸⁹i ¹⁸²s   ³²    ³⁴⁸s  ⁸⁰h ¹¹⁰a ¹⁰⊆ ²⁸⁹p ¹⁸²e   ⁵⁸⁰⁰  ⊇ ⁶⁰⁰i  ⁵⁰⁰s  ⁴⁹⁰  ³⁰⁰r ²⁸⁹e ¹⁰⁰d  ³⁰⁰ENTER 
   | 
-  | The start of an “is typing” notification is represented with “⊆” and the end of the “is typing” notification is represented with "⊇". Notice also, that from this representation you can see that the participant received the “is typing” notification just before typing "p". You can also see that after finishing typing “shape”, the participant paused. 5.8 seconds later, the participant received a notification that their partner had stopped typing. Then 600 msecs later, the participant resumed, typing "i"
+  | The start of an “is typing” notification is represented with “⊆” and the end of the “is typing” notification is represented with "⊇". Notice also, that from this representation you can see that the participant received the “is typing” notification just before typing "p". You can also see that after finishing typing “shape”, Participant A paused. 5.8 seconds later, Participant A received a notification that Participant B had stopped typing. Then 600 msecs later, Participant A resumed, typing "i"
   |
   |
   |
-  | This format also records the moment when turns appear in the conversation history window. Because text-chat is asynchronous, this means that at any point, while a participant is formulating a turn, it can happen that the other person sends a turn. This is recorded by the chat-tool. Suppose, a participant is typing “The yellow circle”, but half-way through typing “yellow”, the other person sends their turn, e.g. “now?”, this could yield: 
+  | This format also records the moment when turns appear in the conversation history window. Because text-chat is asynchronous, this means that at any point, while a participant is formulating a turn, it can happen that the other person sends a turn. This is recorded by the chat-tool. Suppose Participant A is typing  “The yellow circle”, but half-way through typing “yellow”, Participant B sends their turn “now?”. This could yield: 
   | 
   | ⁰T ¹¹⁰h ²⁸⁹e  ¹⁸²   ³⁴⁸y  ⁸⁰⁰e ¹¹⁰l    ³⁰⁷【Participant1: now?】²⁸⁹l ¹⁸²o ⁵⁸w  ⁶⁰⁰  ⁵⁰⁰c  ⁴⁹⁰i  ³⁰⁰r ²⁸⁹c ¹⁰⁰l  ³⁰⁰e
   | 

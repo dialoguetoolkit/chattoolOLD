@@ -182,7 +182,7 @@ public class MazeGameConversationControllerMultipleDyads extends DefaultConversa
              itnt.addPairWhoAreMutuallyInformedOfTyping(pL, pR);
              Vector recipients = new Vector();
              recipients.addElement(pL); recipients.addElement(pR);
-             c.newsendInstructionToMultipleParticipants(recipients, "Please start!");
+             c.sendInstructionToMultipleParticipants(recipients, "Please start!");
         }
         this.experimentHasStarted=true;
     }
@@ -219,7 +219,7 @@ public class MazeGameConversationControllerMultipleDyads extends DefaultConversa
              itnt.addPairWhoAreMutuallyInformedOfTyping(pL, pR);
              Vector recipients = new Vector();
              recipients.addElement(pL); recipients.addElement(pR);
-             c.newsendInstructionToMultipleParticipants(recipients, "Please start!");
+             c.sendInstructionToMultipleParticipants(recipients, "Please start!");
         }
         this.experimentHasStarted=true;
         
@@ -281,7 +281,7 @@ public class MazeGameConversationControllerMultipleDyads extends DefaultConversa
     public void participantRejoinedConversation(Participant p) {
        
        if(Debug.debugmazegamereconnect)   {
-           c.newsendInstructionToParticipant(p, "Your ID (1)is registered as:"+p.getParticipantID()+"....."+p.getUsername());
+           c.sendInstructionToParticipant(p, "Your ID (1)is registered as:"+p.getParticipantID()+"....."+p.getUsername());
            
        }
        
@@ -327,14 +327,14 @@ public class MazeGameConversationControllerMultipleDyads extends DefaultConversa
     @Override
     public synchronized void processChatText(Participant sender, MessageChatTextFromClient mct){    
           if(!this.experimentHasStarted){
-              c.newsendInstructionToParticipant(sender, "Please wait for the experiment to start");
+              c.sendInstructionToParticipant(sender, "Please wait for the experiment to start");
               return;
           }
           
           this.itnt.processTurnSentByClient(sender);
           MazeGameController2WAY mgcNEW = this.getMazeGameController(sender);
           Vector additionalData = mgcNEW.getAdditionalData(sender);  
-          c.newrelayTurnToPermittedParticipants(sender, mct,additionalData);        
+          c.relayTurnToPermittedParticipants(sender, mct,additionalData);        
           mgcNEW.appendToUI(sender.getUsername()+": "+mct.getText());      
     }
     

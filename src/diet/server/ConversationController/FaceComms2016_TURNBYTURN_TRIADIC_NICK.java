@@ -65,20 +65,20 @@ public class FaceComms2016_TURNBYTURN_TRIADIC_NICK extends Triadic_TurnByTurnInt
         if(sender == this.pA){
             this.itntAandC.processTurnSentByClient(sender);
             this.itntAandB.processTurnSentByClient(pA);
-            c.newrelayTurnToPermittedParticipants(sender, mct);
+            c.relayTurnToPermittedParticipants(sender, mct);
             
         }
         else if (sender == this.pB){
             this.itntBandC.processTurnSentByClient(sender);
             this.itntAandB.processTurnSentByClient(pB);
-            c.newrelayTurnToPermittedParticipants(sender, mct);
+            c.relayTurnToPermittedParticipants(sender, mct);
         }
         else if (sender ==this.pCExcluded){
              this.itntAandC.processTurnSentByClient(sender);
              this.itntBandC.processTurnSentByClient(sender);
              this.itntAandC.removeSpoofTypingInfoAfterThreshold(sender, new Date().getTime());
              this.itntBandC.removeSpoofTypingInfoAfterThreshold(sender, new Date().getTime());
-             c.newrelayTurnToPermittedParticipants(sender, mct);
+             c.relayTurnToPermittedParticipants(sender, mct);
              this.calculateNewDelayTime();
         }  
        

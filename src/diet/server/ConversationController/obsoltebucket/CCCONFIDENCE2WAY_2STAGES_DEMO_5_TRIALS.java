@@ -54,7 +54,7 @@ public class CCCONFIDENCE2WAY_2STAGES_DEMO_5_TRIALS extends CCCONFIDENCE {
     @Override
     public void processKeyPress(Participant sender,MessageKeypressed mkp){
         //c.informIsTypingToAllowedParticipants(sender);//,mkp);
-        c.newsaveClientKeypressToFile(sender, mkp);
+        c.saveClientKeypressToFile(sender, mkp);
 
     }
 

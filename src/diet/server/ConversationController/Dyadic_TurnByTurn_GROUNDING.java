@@ -44,7 +44,7 @@ public class Dyadic_TurnByTurn_GROUNDING extends DefaultConversationController{
         else{
             
              itnt.processTurnSentByClient(sender);
-             c.newrelayTurnToPermittedParticipants(sender, mct);
+             c.relayTurnToPermittedParticipants(sender, mct);
         }
         
         

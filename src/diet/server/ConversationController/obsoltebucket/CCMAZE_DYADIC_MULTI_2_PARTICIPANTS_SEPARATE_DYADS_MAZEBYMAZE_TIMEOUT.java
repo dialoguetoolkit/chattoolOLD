@@ -516,7 +516,7 @@ public class CCMAZE_DYADIC_MULTI_2_PARTICIPANTS_SEPARATE_DYADS_MAZEBYMAZE_TIMEOU
     @Override
     public void processKeyPress(Participant sender,MessageKeypressed mkp){
         //c.informIsTypingToAllowedParticipants(sender);//,mkp);
-          if(saveKeypress)c.newsaveClientKeypressToFile(sender, mkp);
+          if(saveKeypress)c.saveClientKeypressToFile(sender, mkp);
     }
 
     public void stopSavingKeypress(){

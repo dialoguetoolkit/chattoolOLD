@@ -231,7 +231,8 @@ public class JInterventionsPanel extends javax.swing.JPanel {
         Vector v = new Vector(recipients);
         String apparentSenderUsername = (String)jList1.getSelectedValue();
         Participant apparentSender = c.getParticipants().findParticipantWithUsername(apparentSenderUsername);
-        c.newsendArtificialTurnFromApparentOriginToMultipleRecipients(apparentSender, v, message);
+        //c.sendArtificialTurnFromApparentOriginToRecipients(apparentSender, v, message);
+        c.sendArtificialTurnFromApparentOriginToParticipantUsernames(apparentSender, v, message);
       }catch (Exception e){
           e.printStackTrace();
       }

@@ -14,7 +14,8 @@ Welcome to dialoguetoolkit's documentation!
    installation
    programming
    datacollected
-   bestpractices
+   tipstricks
+   tutorials
 
    
 Indices and tables

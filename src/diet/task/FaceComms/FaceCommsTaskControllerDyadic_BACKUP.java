@@ -199,8 +199,8 @@ public class FaceCommsTaskControllerDyadic_BACKUP {
                   cC.c.changeClientInterface_disableTextEntry(pB);
                   
                   
-                  if(firstmessage!=null  && !firstmessage.equalsIgnoreCase(""))cC.c.newsendInstructionToParticipant(pA, firstmessage );
-                  if(firstmessage!=null && !firstmessage.equalsIgnoreCase("")) cC.c.newsendInstructionToParticipant(pB, firstmessage );
+                  if(firstmessage!=null  && !firstmessage.equalsIgnoreCase(""))cC.c.sendInstructionToParticipant(pA, firstmessage );
+                  if(firstmessage!=null && !firstmessage.equalsIgnoreCase("")) cC.c.sendInstructionToParticipant(pB, firstmessage );
                 
                   if(firstmessage!=null  && !firstmessage.equalsIgnoreCase("") &&displayname!=null){
                       cC.c.textOutputWindow_ChangeText("instructions", firstmessage +scoreA+"\n" ,true, pA );
@@ -210,8 +210,8 @@ public class FaceCommsTaskControllerDyadic_BACKUP {
                   
                   //cC.c.changeClientInterface_backgroundColour(pA, Color.red);
                   //cC.c.changeClientInterface_backgroundColour(pB, Color.red);
-                  cC.c.newsendInstructionToParticipant(pA, countdownmessageprefix + "5 secs" );
-                  cC.c.newsendInstructionToParticipant(pB, countdownmessageprefix + "5 secs" );
+                  cC.c.sendInstructionToParticipant(pA, countdownmessageprefix + "5 secs" );
+                  cC.c.sendInstructionToParticipant(pB, countdownmessageprefix + "5 secs" );
                   if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions",countdownmessageprefix + "5 secs" +"\n" ,true, pA,pB );
                   
                   Thread.sleep(1000);
@@ -219,32 +219,32 @@ public class FaceCommsTaskControllerDyadic_BACKUP {
                   //cC.c.changeClientInterface_clearMainWindows(pB);
                   //cC.c.changeClientInterface_backgroundColour(pA, Color.black);
                   //cC.c.changeClientInterface_backgroundColour(pB, Color.black);
-                  cC.c.newsendInstructionToParticipant(pA, countdownmessageprefix + "4 secs" );
-                  cC.c.newsendInstructionToParticipant(pB, countdownmessageprefix + "4 secs" );
+                  cC.c.sendInstructionToParticipant(pA, countdownmessageprefix + "4 secs" );
+                  cC.c.sendInstructionToParticipant(pB, countdownmessageprefix + "4 secs" );
                   if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions",countdownmessageprefix + "4 secs" +"\n" ,true, pA,pB );
                   Thread.sleep(1000);
                   //cC.c.changeClientInterface_clearMainWindows(pA);
                   //cC.c.changeClientInterface_clearMainWindows(pB);
                   //cC.c.changeClientInterface_backgroundColour(pA, Color.red);
                   //cC.c.changeClientInterface_backgroundColour(pB, Color.red);
-                  cC.c.newsendInstructionToParticipant(pA, countdownmessageprefix + "3 secs" );
-                  cC.c.newsendInstructionToParticipant(pB, countdownmessageprefix + "3 secs" );
+                  cC.c.sendInstructionToParticipant(pA, countdownmessageprefix + "3 secs" );
+                  cC.c.sendInstructionToParticipant(pB, countdownmessageprefix + "3 secs" );
                   if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions",countdownmessageprefix + "3 secs" +"\n" ,true, pA,pB );
                   Thread.sleep(1000);
                   //cC.c.changeClientInterface_clearMainWindows(pA);
                   //cC.c.changeClientInterface_clearMainWindows(pB);
                   //cC.c.changeClientInterface_backgroundColour(pA, Color.black);
                   //cC.c.changeClientInterface_backgroundColour(pB, Color.black);
-                  cC.c.newsendInstructionToParticipant(pA, countdownmessageprefix + "2 secs" );
-                  cC.c.newsendInstructionToParticipant(pB, countdownmessageprefix + "2 secs" );
+                  cC.c.sendInstructionToParticipant(pA, countdownmessageprefix + "2 secs" );
+                  cC.c.sendInstructionToParticipant(pB, countdownmessageprefix + "2 secs" );
                   if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions",countdownmessageprefix + "2 secs"+"\n"  ,true, pA,pB );
                   Thread.sleep(1000);
                   //cC.c.changeClientInterface_clearMainWindows(pA);
                   //cC.c.changeClientInterface_clearMainWindows(pB);
                   //cC.c.changeClientInterface_backgroundColour(pA, Color.red);
                   //cC.c.changeClientInterface_backgroundColour(pB, Color.red);
-                  cC.c.newsendInstructionToParticipant(pA, countdownmessageprefix + "1 sec" );
-                  cC.c.newsendInstructionToParticipant(pB,countdownmessageprefix + "1 sec" );
+                  cC.c.sendInstructionToParticipant(pA, countdownmessageprefix + "1 sec" );
+                  cC.c.sendInstructionToParticipant(pB,countdownmessageprefix + "1 sec" );
                   if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions",countdownmessageprefix + "1 secs"+"\n"  ,true, pA,pB );
                   Thread.sleep(1000);
                   cC.c.changeClientInterface_clearMainWindows(pA);
@@ -322,8 +322,8 @@ public class FaceCommsTaskControllerDyadic_BACKUP {
                              String outputPA = myFormatter.format( (double)  htPOINTS.getObject(pA));
                              String outputPB = myFormatter.format( (double)  htPOINTS.getObject(pB));
                              
-                             cC.c.newsendInstructionToParticipant(pA, "Your score is: "+ outputPA );
-                             cC.c.newsendInstructionToParticipant(pB, "Your score is: "+ outputPB );
+                             cC.c.sendInstructionToParticipant(pA, "Your score is: "+ outputPA );
+                             cC.c.sendInstructionToParticipant(pB, "Your score is: "+ outputPB );
                   
                            
                          
@@ -343,10 +343,10 @@ public class FaceCommsTaskControllerDyadic_BACKUP {
                                  if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions","Choose same or different:"+"\n",false, pA,pB );
                             
                             
-                            cC.c.newsendInstructionToParticipant(pA,"enter '/s' if you saw the same face");
-                            cC.c.newsendInstructionToParticipant(pA,"enter '/d' if you saw different faces");
-                            cC.c.newsendInstructionToParticipant(pB,"enter '/s' if you saw the same face");
-                            cC.c.newsendInstructionToParticipant(pB,"enter '/d' if you saw different faces");
+                            cC.c.sendInstructionToParticipant(pA,"enter '/s' if you saw the same face");
+                            cC.c.sendInstructionToParticipant(pA,"enter '/d' if you saw different faces");
+                            cC.c.sendInstructionToParticipant(pB,"enter '/s' if you saw the same face");
+                            cC.c.sendInstructionToParticipant(pB,"enter '/d' if you saw different faces");
                             
                             
                        }catch(Exception eee){
@@ -383,7 +383,7 @@ public class FaceCommsTaskControllerDyadic_BACKUP {
     public void processChatText(Participant sender, String text){
         if(!text.startsWith("/"))return;
         if(this.currentsethasbeensolved){
-            cC.c.newsendInstructionToParticipant(sender,"The current face has already been solved");
+            cC.c.sendInstructionToParticipant(sender,"The current face has already been solved");
             return;
             
         }
@@ -396,16 +396,16 @@ public class FaceCommsTaskControllerDyadic_BACKUP {
         if(text.equalsIgnoreCase("/s")){
             if(areTheyTheSame()){
                  this.updateScores(true);
-                cC.c.newsendInstructionToParticipant(pA, "CORRECT! They are the SAME!" + scoreA);
-                 cC.c.newsendInstructionToParticipant(pB, "CORRECT! They are the SAME!" + scoreB);
+                cC.c.sendInstructionToParticipant(pA, "CORRECT! They are the SAME!" + scoreA);
+                 cC.c.sendInstructionToParticipant(pB, "CORRECT! They are the SAME!" + scoreB);
                  this.currentsethasbeensolved=true;
                  doCountdowntoNextSet("CORRECT! They are the SAME", "Next face in "  );
                 
             }
             else{
                 this.updateScores(false);
-                cC.c.newsendInstructionToParticipant(pA, "INCORRECT! They are DIFFERENT!" + scoreA);
-                cC.c.newsendInstructionToParticipant(pB, "INCORRECT! They are DIFFERENT!" + scoreB);
+                cC.c.sendInstructionToParticipant(pA, "INCORRECT! They are DIFFERENT!" + scoreA);
+                cC.c.sendInstructionToParticipant(pB, "INCORRECT! They are DIFFERENT!" + scoreB);
                 this.currentsethasbeensolved=true;
                 doCountdowntoNextSet("INCORRECT! They are  DIFFERENT","Next face in " );
                 
@@ -414,25 +414,25 @@ public class FaceCommsTaskControllerDyadic_BACKUP {
         else if(text.equalsIgnoreCase("/d")){
             if(!areTheyTheSame()){
                 this.updateScores(true); 
-                cC.c.newsendInstructionToParticipant(pA, "CORRECT! They are DIFFERENT!" + scoreA);
-                 cC.c.newsendInstructionToParticipant(pB, "CORRECT! They are DIFFERENT!"+  scoreB);
+                cC.c.sendInstructionToParticipant(pA, "CORRECT! They are DIFFERENT!" + scoreA);
+                 cC.c.sendInstructionToParticipant(pB, "CORRECT! They are DIFFERENT!"+  scoreB);
                  this.currentsethasbeensolved=true;
                  doCountdowntoNextSet("CORRECT! They are DIFFERENT",  "Next face in " );
                  
             }
             else{
                 this.updateScores(false);
-                cC.c.newsendInstructionToParticipant(pA, "INCORRECT! They are the SAME!" + scoreA);
-                cC.c.newsendInstructionToParticipant(pB, "INCORRECT! They are the SAME!" + scoreB);
+                cC.c.sendInstructionToParticipant(pA, "INCORRECT! They are the SAME!" + scoreA);
+                cC.c.sendInstructionToParticipant(pB, "INCORRECT! They are the SAME!" + scoreB);
                 this.currentsethasbeensolved=true;
                 doCountdowntoNextSet("INCORRECT! They are the SAME", "Next face in " );
                 
             }
         }
         else{
-            cC.c.newsendInstructionToParticipant(sender,"Incorrect command:");
-            cC.c.newsendInstructionToParticipant(sender,"Choose '/s' if you think they are the same");
-            cC.c.newsendInstructionToParticipant(sender,"Choose '/d' if you think they are different");        
+            cC.c.sendInstructionToParticipant(sender,"Incorrect command:");
+            cC.c.sendInstructionToParticipant(sender,"Choose '/s' if you think they are the same");
+            cC.c.sendInstructionToParticipant(sender,"Choose '/d' if you think they are different");        
         }
     }
     
@@ -485,12 +485,12 @@ public class FaceCommsTaskControllerDyadic_BACKUP {
             
         }
         
-        cC.c.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("gamedata_score_correct", pA, ""+this.getScoreCORRECT(pA));
-        cC.c.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("gamedata_score_correct", pB, ""+this.getScoreCORRECT(pB));
-        cC.c.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("gamedata_score_incorrect", pA, ""+this.getScoreINCORRECT(pA));
-        cC.c.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("gamedata_score_incorrect", pB, ""+this.getScoreINCORRECT(pB));
-        cC.c.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("gamedata_score_points", pA, ""+(double)  this.htPOINTS.getObject(pA));
-        cC.c.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("gamedata_score_points", pB, ""+(double)  this.htPOINTS.getObject(pB));
+        cC.c.saveAdditionalRowOfDataToSpreadsheetOfTurns("gamedata_score_correct", pA, ""+this.getScoreCORRECT(pA));
+        cC.c.saveAdditionalRowOfDataToSpreadsheetOfTurns("gamedata_score_correct", pB, ""+this.getScoreCORRECT(pB));
+        cC.c.saveAdditionalRowOfDataToSpreadsheetOfTurns("gamedata_score_incorrect", pA, ""+this.getScoreINCORRECT(pA));
+        cC.c.saveAdditionalRowOfDataToSpreadsheetOfTurns("gamedata_score_incorrect", pB, ""+this.getScoreINCORRECT(pB));
+        cC.c.saveAdditionalRowOfDataToSpreadsheetOfTurns("gamedata_score_points", pA, ""+(double)  this.htPOINTS.getObject(pA));
+        cC.c.saveAdditionalRowOfDataToSpreadsheetOfTurns("gamedata_score_points", pB, ""+(double)  this.htPOINTS.getObject(pB));
         
         Conversation.printWSln("Main", pA.getUsername()+" has "+(double)  this.htPOINTS.getObject(pA));
         Conversation.printWSln("Main", pB.getUsername()+" has "+(double)  this.htPOINTS.getObject(pB));

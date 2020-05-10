@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Best practices" href="bestpractices.html" />
+    <link rel="next" title="Data collected by the chattool" href="datacollected.html" />
     <link rel="prev" title="Downloading and installing the toolkit" href="installation.html" /> 
 </head>
 
@@ -82,16 +82,17 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="datacollected.html">Data collected by the chattool</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Downloading and installing the toolkit</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Programming the chattool</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#workflow-when-programming-the-chattool">Workflow when programming the chattool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-login-process-of-how-participants-connect-to-the-server">The login process of how participants connect to the server:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-change-the-properties-of-chat-interfaces">How to change the properties of chat interfaces</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="datacollected.html">Data collected by the chattool</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">Best practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tipstricks.html">Tips &amp; tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
 </ul>
 
             
@@ -181,6 +182,37 @@
 <li><p>Once the setup works properly, pilot the experiment on separate computers.</p></li>
 </ol>
 </div>
+<div class="section" id="the-login-process-of-how-participants-connect-to-the-server">
+<h2>The login process of how participants connect to the server:<a class="headerlink" href="#the-login-process-of-how-participants-connect-to-the-server" title="Permalink to this headline">¶</a></h2>
+<p>When a ConversationController object has been started and is waiting for a connection from a client,</p>
+<p>When a client connects to the server,</p>
+<ol class="arabic">
+<li><p>The server requests the participant ID from the participant.</p></li>
+<li><p>This participantID is routed to <code class="docutils literal notranslate"><span class="pre">requestParticipantJoinedConversation(String</span> <span class="pre">id)</span></code> in the ConversationController object. If the ID is ok, the method returns “true”. The default behaviour of the chattool is to accept all IDs - but you can put a whitelist of participant IDs here. You also might want to block participants logging in once the group size reaches a maximum.</p></li>
+<li><p>If the participantID is deemed OK, the server requests the participant username from the client.</p></li>
+<li><p>The client displays a “Please enter your username” .</p></li>
+<li><p>When the server receives the username from the client, it creates a new <code class="docutils literal notranslate"><span class="pre">diet.server.Participant</span></code> object for that Participant. This <code class="docutils literal notranslate"><span class="pre">Participant</span></code> object is then passed to the ConversationController in the <code class="docutils literal notranslate"><span class="pre">participantJoinedConversation(Participant</span> <span class="pre">p)</span></code> method.</p></li>
+<li><p>The default behaviour of <code class="docutils literal notranslate"><span class="pre">participantJoinedConversation(Participant</span> <span class="pre">p)</span></code> is to assign participants to groups of size 2. (You can change this value in <code class="docutils literal notranslate"><span class="pre">Configuration.defaultGroupSize</span></code>) and to ensure that participants who are assigned to the same group see each other’s typing notifications. (N.B These two functionalities have to be kept separate to allow “spoof” messages and “spoof” typing notifications). You can see the code that does this in the superclass <code class="docutils literal notranslate"><span class="pre">DefaultConversationController.</span> <span class="pre">participantJoinedConversation(Participant</span> <span class="pre">p)</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">participantJoinedConversationButNotAssignedToGroup</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">participantJoinedConversationButNotAssignedToGroup</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">==</span> <span class="n">Configuration</span><span class="o">.</span><span class="n">defaultGroupSize</span><span class="p">){</span>
+       <span class="n">pp</span><span class="o">.</span><span class="n">createNewSubdialogue</span><span class="p">(</span><span class="n">participantJoinedConversationButNotAssignedToGroup</span><span class="p">);</span>             <span class="n">itnt</span><span class="o">.</span><span class="n">addGroupWhoAreMutuallyInformedOfTyping</span><span class="p">(</span><span class="n">participantJoinedConversationButNotAssignedToGroup</span><span class="p">);</span>
+       <span class="n">participantJoinedConversationButNotAssignedToGroup</span><span class="o">.</span><span class="n">removeAllElements</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>If you want to send a custom message to the participant when they login, you can edit your ConversationController’s <code class="docutils literal notranslate"><span class="pre">participantJoinedConversation()</span></code> method:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="n">public</span> <span class="n">synchronized</span> <span class="n">void</span> <span class="n">participantJoinedConversation</span><span class="p">(</span><span class="n">final</span> <span class="n">Participant</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">super</span><span class="o">.</span><span class="n">participantJoinedConversation</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>  <span class="o">//</span><span class="n">Keep</span> <span class="n">this</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">code</span> <span class="o">-</span> <span class="n">to</span> <span class="n">assign</span> <span class="n">participants</span> <span class="n">to</span> <span class="n">groups</span> <span class="ow">and</span> <span class="n">ensure</span> <span class="n">they</span> <span class="n">see</span> <span class="n">each</span> <span class="n">other</span><span class="s1">&#39;s typing notification.</span>
+
+            <span class="n">cC</span><span class="o">.</span><span class="n">sendInstructionToParticipant</span><span class="p">(</span> <span class="n">p</span><span class="p">,</span> <span class="s2">&quot;Hello and welcome to the experiment!&quot;</span><span class="p">)</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
 <div class="section" id="how-to-change-the-properties-of-chat-interfaces">
 <h2>How to change the properties of chat interfaces<a class="headerlink" href="#how-to-change-the-properties-of-chat-interfaces" title="Permalink to this headline">¶</a></h2>
 <p>There are two ways of customizing the client interfaces:</p>
@@ -204,7 +236,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="bestpractices.html" class="btn btn-neutral float-right" title="Best practices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="datacollected.html" class="btn btn-neutral float-right" title="Data collected by the chattool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="installation.html" class="btn btn-neutral float-left" title="Downloading and installing the toolkit" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

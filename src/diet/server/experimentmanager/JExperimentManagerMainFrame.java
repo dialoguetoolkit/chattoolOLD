@@ -110,6 +110,7 @@ public class JExperimentManagerMainFrame extends JFrame{
     
     public void addConvIOtoLeftTabbedPane(String tabName,JTabbedPane jtp){
         this.jltp.displayPanelAddingIfNecessary(tabName,jtp);     
+       
     }
     
     public void removeConvIOFromLeftTabbedPane(JComponent jc){

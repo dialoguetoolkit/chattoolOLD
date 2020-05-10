@@ -300,7 +300,7 @@ public class CC1DISCOURSE_AND_PRAGMATICS_RECHETEREN_SIMPLIFIEDMAZES  extends CCM
           String cvsID="_unset_";
           try{
           cvsID = this.getCVSPREFIX(this.getMazeGameControllerForDyad(sender));
-          c.newsaveClientKeypressToFile(sender, mkp,cvsID);
+          c.saveClientKeypressToFile(sender, mkp,cvsID);
           }catch(Exception e){};
           
            

@@ -188,6 +188,7 @@ public abstract class DefaultConversationController  {
         participantJoinedConversationButNotAssignedToGroup.add(p);
         if(participantJoinedConversationButNotAssignedToGroup.size()== Configuration.defaultGroupSize){
              pp.createNewSubdialogue(participantJoinedConversationButNotAssignedToGroup);
+             itnt.addGroupWhoAreMutuallyInformedOfTyping(participantJoinedConversationButNotAssignedToGroup);           
              participantJoinedConversationButNotAssignedToGroup.removeAllElements();
        }
       
@@ -264,7 +265,7 @@ public abstract class DefaultConversationController  {
         
         
         if(!this.experimentHasStarted){
-            c.newsendInstructionToParticipant(sender, "Please wait until the experiment has started");
+            c.sendInstructionToParticipant(sender, "Please wait until the experiment has started");
         }
         
         itnt.processTurnSentByClient(sender);
@@ -345,7 +346,7 @@ public abstract class DefaultConversationController  {
     
     
     public void processButtonPress(Participant sender, MessageButtonPressFromClient mbfc){
-        c.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("buttonpress", sender, mbfc.buttonname);
+        c.saveAdditionalRowOfDataToSpreadsheetOfTurns("buttonpress", sender, mbfc.buttonname);
     }
             
     

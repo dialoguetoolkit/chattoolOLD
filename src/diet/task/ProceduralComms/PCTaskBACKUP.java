@@ -106,8 +106,8 @@ public class PCTaskBACKUP implements JTrialTimerActionRecipientInterface{
                     cC.c.changeClientInterface_clearMainWindows(pB);
                     int sizesucc = pcset.moves.size();
                     increaseScoresSuccess(sizesucc);
-                    cC.c.newsendInstructionToParticipant(pA,"CORRECT! Your score is: "+  (Long)PCTaskBACKUP.htwdcSCORE.getObject(pA) );
-                    cC.c.newsendInstructionToParticipant(pB,"CORRECT! Your score is: "+  (Long)PCTaskBACKUP.htwdcSCORE.getObject(pB) );
+                    cC.c.sendInstructionToParticipant(pA,"CORRECT! Your score is: "+  (Long)PCTaskBACKUP.htwdcSCORE.getObject(pA) );
+                    cC.c.sendInstructionToParticipant(pB,"CORRECT! Your score is: "+  (Long)PCTaskBACKUP.htwdcSCORE.getObject(pB) );
                     
                     
                   

@@ -32,7 +32,7 @@ public class DefaultMultipartyConversationControllerBackup extends DefaultConver
           
            
            this.pp.createNewSubdialogue(c.getParticipants().getAllParticipants());
-           c.newsendInstructionToMultipleParticipants(v, "Thankyou. Please start");
+           c.sendInstructionToMultipleParticipants(v, "Thankyou. Please start");
            
            
            
@@ -49,7 +49,7 @@ public class DefaultMultipartyConversationControllerBackup extends DefaultConver
     @Override
     public void processChatText(Participant sender,MessageChatTextFromClient mct){    
           Vector recipients = pp.getRecipients(sender);  
-          c.newrelayTurnToPermittedParticipants(sender, mct);
+          c.relayTurnToPermittedParticipants(sender, mct);
           
           
     }

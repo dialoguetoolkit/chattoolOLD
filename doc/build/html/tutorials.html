@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tutorials &mdash; dialoguetoolkit  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Tips &amp; tricks" href="tipstricks.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> dialoguetoolkit
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Downloading and installing the toolkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programming.html">Programming the chattool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datacollected.html">Data collected by the chattool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tipstricks.html">Tips &amp; tricks</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tutorial1-inserting-removing-substituting-text-in-participants-turns">Tutorial1 - Inserting, removing, substituting text in participants’ turns</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#inserting-text-in-participants-turns">Inserting text in participants’ turns.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#removing-text-from-participants-turns">Removing text from participants’ turns</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">dialoguetoolkit</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Tutorials</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/tutorials.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tutorials">
+<h1>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h1>
+<p>From a programming perspective, there are, broadly speaking, seven different types of experiment:</p>
+<ul class="simple">
+<li><p>Interventions that intercept a turn and insert additional text into the turn.</p></li>
+<li><p>Interventions that intercept a turn and remove text from the turn.</p></li>
+<li><p>Interventions that intercept and modify text from a participant’s turn.</p></li>
+<li><p>Interventions that intercept turns and do not relay them to other participants (i.e. “shadowbanning”).</p></li>
+<li><p>Interventions that intercept turns and spoof the origin of the turn - e.g. making a turn produced by participant A appear to be produced by participant B.</p></li>
+<li><p>Interventions that compose artificial turns that appear to a recipient as if they were produced by another participant.</p></li>
+<li><p>Interventions that modify the timing of participants’ turns.</p></li>
+<li><p>Interventions that assign participants to different groups (e.g. to different subcommunities).</p></li>
+<li><p>Interventions that modify features of the chat interface (E.g. size, colour), etc.</p></li>
+</ul>
+<p>Of course - some experiments might involve multiple types of intervention - e.g. manipulating the timing and apparent identity of participants’ turns.</p>
+<div class="section" id="tutorial1-inserting-removing-substituting-text-in-participants-turns">
+<h2>Tutorial1 - Inserting, removing, substituting text in participants’ turns<a class="headerlink" href="#tutorial1-inserting-removing-substituting-text-in-participants-turns" title="Permalink to this headline">¶</a></h2>
+<p>This is a toy setup which randomly adds smiley emoticons to participants’ turns - without participants realizing it!</p>
+<p>To keep this tutorial simple, this experiment assumes you will be running experiments with two participants.</p>
+<p>For this experiment we will use the Turn By Turn Interface. To use this interface in a new experiment you need to create a subclass of it.</p>
+<p>Create a copy of <code class="docutils literal notranslate"><span class="pre">diet.server.ConversationController.DyadicTurnByTurn_Tutorial1_InsertingRemovingSubstituting</span></code> and call it <code class="docutils literal notranslate"><span class="pre">DyadicTurnByTurn_Tutorial1_InsertingRemovingSubstituting</span></code>. You can do this automatically in netbeans by right-clicking <code class="docutils literal notranslate"><span class="pre">Dyadic_TurnByTurnInterface</span></code>, selecting “Refactor” , then selecting “Copy” and entering “DyadicTurnByTurn_Tutorial1_InsertingRemovingSubstituting” as the new name. Make sure the destination package is diet.server.ConversationController.</p>
+<p>Make sure that your ConversationController object has:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>public static boolean showcCONGUI(){
+     return true;
+}
+</pre></div>
+</div>
+<p>This will make sure that the ConversationController object is displayed in the GUI window of the server. Select “Run project” to start the server GUI. You should see the newly created conversationcontroller object in the GUI.</p>
+<img alt="./tutorial1A.png" src="./tutorial1A.png" />
+<p>Press the “Auto login” button. This should run the intervention and start two clients. Confirm that participants can send each other text.</p>
+<p>Now we can program the intervention. The ConversationController object has a whole set of methods for determining who sees what.</p>
+<p>First, let’s add a welcome message for the participants, and an instruction to start when both participants log in:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>public synchronized void participantJoinedConversation(final Participant p) {
+    super.participantJoinedConversation(p);  //Keep this in your code - to assign participants to groups and ensure they see each other&#39;s typing notification.
+            if(c.getNoOfParticipants()==1){
+         c.sendInstructionToParticipant(p,&quot;Hello! Please wait for the other participant to log in&quot;);
+    }
+    else if (c.getNoOfParticipants()==2){
+         c.sendInstructionToMultipleParticipants(c.getParticipants().getAllParticipants(), &quot;Please start!&quot;);
+    }
+
+}
+</pre></div>
+</div>
+<div class="section" id="inserting-text-in-participants-turns">
+<h3>Inserting text in participants’ turns.<a class="headerlink" href="#inserting-text-in-participants-turns" title="Permalink to this headline">¶</a></h3>
+<p>To create the intervention that manipulates the text, customize the <code class="docutils literal notranslate"><span class="pre">processChatText(...)</span></code> method.  Before modifying it, the code looks like this.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">processChatText</span><span class="p">(</span><span class="n">Participant</span> <span class="n">sender</span><span class="p">,</span> <span class="n">MessageChatTextFromClient</span> <span class="n">mct</span><span class="p">){</span>
+       <span class="n">itnt</span><span class="p">.</span><span class="na">processTurnSentByClient</span><span class="p">(</span><span class="n">sender</span><span class="p">);</span>
+       <span class="n">c</span><span class="p">.</span><span class="na">relayTurnToPermittedParticipants</span><span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">mct</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>This code does two things. Line 2 takes care of the typing status messages:  This code sends instructions to all the participants other than <code class="docutils literal notranslate"><span class="pre">sender</span></code>, instructing them to stop displaying the “participant X” is typing status message. Line 3 sends the message from the sender to all the other participants.</p>
+<p>To create the intervention, the ConversationController needs to intercept the incoming turn and add an emoticon to it. Change <code class="docutils literal notranslate"><span class="pre">processChatText(..)</span></code> to</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">Random</span> <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
+ <span class="kd">public</span> <span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">processChatText</span><span class="p">(</span><span class="n">Participant</span> <span class="n">sender</span><span class="p">,</span> <span class="n">MessageChatTextFromClient</span> <span class="n">mct</span><span class="p">){</span>
+       <span class="n">itnt</span><span class="p">.</span><span class="na">processTurnSentByClient</span><span class="p">(</span><span class="n">sender</span><span class="p">);</span>
+
+       <span class="k">if</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="na">nextBoolean</span><span class="p">()){</span>
+            <span class="n">String</span> <span class="n">turn</span> <span class="o">=</span> <span class="n">mct</span><span class="p">.</span><span class="na">getText</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; :)&quot;</span> <span class="p">;</span>
+            <span class="n">Vector</span> <span class="n">recipients</span> <span class="o">=</span> <span class="n">pp</span><span class="p">.</span><span class="na">getRecipients</span><span class="p">(</span><span class="n">sender</span><span class="p">);</span>
+            <span class="n">c</span><span class="p">.</span><span class="na">sendArtificialTurnFromApparentOriginToRecipients</span><span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">recipients</span><span class="p">,</span> <span class="n">turn</span><span class="p">);</span>
+       <span class="p">}</span>
+       <span class="k">else</span><span class="p">{</span>
+            <span class="n">c</span><span class="p">.</span><span class="na">relayTurnToPermittedParticipants</span><span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">mct</span><span class="p">);</span>
+       <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>This code randomly chooses whether to perform the intervention or not.  Line 6 extracts the original turn from the <code class="docutils literal notranslate"><span class="pre">MessageChatText</span></code> message and uses it to construct the new message with a smiley emoticon “:)” appended to it. Line 7 retrieves the list of  participants who receive the turn (in this case it is only one participant). Line 8 sends the artificial turn. Line 8 is important because it does two things: (1) It sends the artificial message to the other participant(s) (2) It ensures that the correct information is saved in the output file “turns.txt. To illustrate this, consider the following table from “turns.txt” in the output folder:</p>
+<img alt="./tutorial1Adata.png" src="./tutorial1Adata.png" />
+<p>This corresponds to a dialogue between two participants. The first participant has ID LLLL3 and username LLLL3. The second participant has ID RRRR4 and username RRRR4. They had the following dialogue:</p>
+<ol class="arabic simple">
+<li><p><strong>LLLL3:</strong> Hello</p></li>
+<li><p><strong>RRRR4:</strong> Hi</p></li>
+<li><p><strong>LLLL3:</strong> How are you?</p></li>
+<li><p><strong>RRRR4:</strong> I am great</p></li>
+<li><p><strong>LLLL3:</strong> great</p></li>
+</ol>
+<p>Where turns 1 and 4 were artificially modified by the server.
+Notice how, although the dialogue has 5 turns, there are 7 rows of data in the output. This is because whenever a turn is not relayed to all participants, the server automatically saves it as an  “intercepted turn” (see column D - Turntype, in the spreadsheet). Look at the first row of data in the spreadsheet. Notice how the intercepted turn has “server” as the sole recipient. Notice also how the modified turn is saved as an “artificial turn”(see column D - Turntype). This “artificialturn” is sent from the server (column E), but the ApparentSender (column G) is LLL3.</p>
+<p>Important: When programming interventions it is important to distinguish between artificial turns and turns that are relayed. The reason is that.</p>
+</div>
+<div class="section" id="removing-text-from-participants-turns">
+<h3>Removing text from participants’ turns<a class="headerlink" href="#removing-text-from-participants-turns" title="Permalink to this headline">¶</a></h3>
+<p>Suppose that you want to write code that removes all unhappy emoticons “:(” from participants’ turns. This can be done by adding one more line to the code from the previous example:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="kd">public</span> <span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">processChatText</span><span class="p">(</span><span class="n">Participant</span> <span class="n">sender</span><span class="p">,</span> <span class="n">MessageChatTextFromClient</span> <span class="n">mct</span><span class="p">){</span>
+       <span class="n">itnt</span><span class="p">.</span><span class="na">processTurnSentByClient</span><span class="p">(</span><span class="n">sender</span><span class="p">);</span>
+
+       <span class="n">String</span> <span class="n">turn</span> <span class="o">=</span> <span class="n">mct</span><span class="p">.</span><span class="na">getText</span><span class="p">();</span>
+
+       <span class="k">if</span><span class="p">(</span><span class="n">turn</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">&quot;:(&quot;</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">turn</span> <span class="o">=</span> <span class="n">turn</span><span class="p">.</span><span class="na">replace</span><span class="p">(</span><span class="s">&quot;:(&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
+            <span class="n">Vector</span> <span class="n">recipients</span> <span class="o">=</span> <span class="n">pp</span><span class="p">.</span><span class="na">getRecipients</span><span class="p">(</span><span class="n">sender</span><span class="p">);</span>
+            <span class="n">c</span><span class="p">.</span><span class="na">sendArtificialTurnFromApparentOriginToRecipients</span><span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">recipients</span><span class="p">,</span> <span class="n">turn</span><span class="p">);</span>
+       <span class="p">}</span>
+       <span class="k">else</span><span class="p">{</span>
+             <span class="n">c</span><span class="p">.</span><span class="na">relayTurnToPermittedParticipants</span><span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">mct</span><span class="p">);</span>
+       <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>I</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="tipstricks.html" class="btn btn-neutral float-left" title="Tips &amp; tricks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, gjmills
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

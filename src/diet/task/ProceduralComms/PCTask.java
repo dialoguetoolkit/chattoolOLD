@@ -129,8 +129,8 @@ public class PCTask implements JTrialTimerActionRecipientInterface{
                     cC.c.changeClientInterface_clearMainWindows(pB);
                     int sizesucc = pcset.moves.size();
                     updateScoresSuccess(pA,pB, sizesucc);
-                    cC.c.newsendInstructionToParticipant(pA,"CORRECT! Your score is: "+  (Long)PCTask.htwdcSCORE.getObject(pA) );
-                    cC.c.newsendInstructionToParticipant(pB,"CORRECT! Your score is: "+  (Long)PCTask.htwdcSCORE.getObject(pB) );
+                    cC.c.sendInstructionToParticipant(pA,"CORRECT! Your score is: "+  (Long)PCTask.htwdcSCORE.getObject(pA) );
+                    cC.c.sendInstructionToParticipant(pB,"CORRECT! Your score is: "+  (Long)PCTask.htwdcSCORE.getObject(pB) );
 
                      cC.c.textOutputWindow_ChangeText("instructions", "CORRECT: " ,false, pA );   
                      cC.c.textOutputWindow_ChangeText("instructions", "CORRECT: " ,false, pB );   
@@ -747,8 +747,8 @@ public class PCTask implements JTrialTimerActionRecipientInterface{
             cC.c.changeClientInterface_clearMainWindows(pA);
             cC.c.changeClientInterface_clearMainWindows(pB);
             
-             cC.c.newsendInstructionToParticipant(pA,"TIMEOUT! NEXT SET." );
-             cC.c.newsendInstructionToParticipant(pB,"TIMEOUT! NEXT SET" );
+             cC.c.sendInstructionToParticipant(pA,"TIMEOUT! NEXT SET." );
+             cC.c.sendInstructionToParticipant(pB,"TIMEOUT! NEXT SET" );
             
             
             this.decreaseScoresTimeout(pA,pB,this.pcset.moves.size());

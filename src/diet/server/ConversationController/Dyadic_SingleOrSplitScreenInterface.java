@@ -105,7 +105,7 @@ public class Dyadic_SingleOrSplitScreenInterface extends DefaultConversationCont
          
               Vector additionalData = new Vector();
               additionalData.addElement(new AttribVal("splitscreen","split"));
-              c.newrelayTurnToPermittedParticipants(sender, mct,additionalData);        
+              c.relayTurnToPermittedParticipants(sender, mct,additionalData);        
              
          
           
@@ -137,7 +137,7 @@ public class Dyadic_SingleOrSplitScreenInterface extends DefaultConversationCont
             Participant recipient = (Participant)pp.getRecipients(sender).elementAt(0);
             Vector additionalValues = this.getAdditionalInformationForParticipant(sender);
             c.changeClientInterface_clearMainWindowsExceptWindow0(recipient);  
-            c.newsendArtificialTurnFromApparentOrigin(sender, recipient, mWYSIWYGkp.getAllTextInWindow()  , 1, additionalValues);
+            c.sendArtificialTurnFromApparentOrigin(sender, recipient, mWYSIWYGkp.getAllTextInWindow()  , 1, additionalValues);
 
     }
     
@@ -149,7 +149,7 @@ public class Dyadic_SingleOrSplitScreenInterface extends DefaultConversationCont
          Participant recipient = (Participant)pp.getRecipients(sender).elementAt(0);
          Vector additionalValues = this.getAdditionalInformationForParticipant(sender);
          c.changeClientInterface_clearMainWindowsExceptWindow0(recipient);
-         c.newsendArtificialTurnFromApparentOrigin(sender, recipient, mWYSIWYGkp.getAllTextInWindow()  , 1, additionalValues);
+         c.sendArtificialTurnFromApparentOrigin(sender, recipient, mWYSIWYGkp.getAllTextInWindow()  , 1, additionalValues);
 
     }
     

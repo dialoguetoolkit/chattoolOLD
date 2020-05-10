@@ -416,7 +416,7 @@ public class CCCONFIDENCE4WAY extends CCCONFIDENCE implements InterfaceForJCount
     public void processChatText(Participant sender,MessageChatTextFromClient mct){    
         if(c.getParticipants().getAllParticipants().size()<4){
                //c.sendArtificialTurnToRecipient(sender, "PLEASE WAIT TILL EVERYONE HAS LOGGED IN! THANKS", 0);
-               c.newsendInstructionToParticipant(sender, "PLEASE WAIT TILL EVERYONE HAS LOGGED IN! THANKS");
+               c.sendInstructionToParticipant(sender, "PLEASE WAIT TILL EVERYONE HAS LOGGED IN! THANKS");
                return;
         }   
         
@@ -459,7 +459,7 @@ public class CCCONFIDENCE4WAY extends CCCONFIDENCE implements InterfaceForJCount
                      
                      
                      
-                     c.newsendArtificialTurnFromApparentOrigin(pApparentPartnerOfRecipient, pPhysicalPartner, mct.getText());
+                     c.sendArtificialTurnFromApparentOrigin(pApparentPartnerOfRecipient, pPhysicalPartner, mct.getText());
                 
              
              } 

@@ -40,6 +40,40 @@ The standard approach to creating a new experiment is to:
 6. Once the setup works properly, pilot the experiment on separate computers.
    
 
+The login process of how participants connect to the server:
+############################################################
+
+When a ConversationController object has been started and is waiting for a connection from a client, 
+
+When a client connects to the server, 
+
+1. The server requests the participant ID from the participant.
+2. This participantID is routed to ``requestParticipantJoinedConversation(String id)`` in the ConversationController object. If the ID is ok, the method returns "true". The default behaviour of the chattool is to accept all IDs - but you can put a whitelist of participant IDs here. You also might want to block participants logging in once the group size reaches a maximum.
+3. If the participantID is deemed OK, the server requests the participant username from the client.
+4. The client displays a "Please enter your username" . 
+5. When the server receives the username from the client, it creates a new ``diet.server.Participant`` object for that Participant. This ``Participant`` object is then passed to the ConversationController in the ``participantJoinedConversation(Participant p)`` method. 
+6. The default behaviour of ``participantJoinedConversation(Participant p)`` is to assign participants to groups of size 2. (You can change this value in ``Configuration.defaultGroupSize``) and to ensure that participants who are assigned to the same group see each other's typing notifications. (N.B These two functionalities have to be kept separate to allow "spoof" messages and "spoof" typing notifications). You can see the code that does this in the superclass ``DefaultConversationController. participantJoinedConversation(Participant p)`` ::
+   
+      participantJoinedConversationButNotAssignedToGroup.add(p);
+        if(participantJoinedConversationButNotAssignedToGroup.size()== Configuration.defaultGroupSize){
+             pp.createNewSubdialogue(participantJoinedConversationButNotAssignedToGroup);             itnt.addGroupWhoAreMutuallyInformedOfTyping(participantJoinedConversationButNotAssignedToGroup);           
+             participantJoinedConversationButNotAssignedToGroup.removeAllElements();
+      }
+   
+7. If you want to send a custom message to the participant when they login, you can edit your ConversationController's ``participantJoinedConversation()`` method::
+    
+	 public synchronized void participantJoinedConversation(final Participant p) {
+        super.participantJoinedConversation(p);  //Keep this in your code - to assign participants to groups and ensure they see each other's typing notification.
+		
+		cC.sendInstructionToParticipant( p, "Hello and welcome to the experiment!")
+         
+    }
+
+
+
+   
+   
+   
 How to change the properties of chat interfaces 
 ###############################################
 

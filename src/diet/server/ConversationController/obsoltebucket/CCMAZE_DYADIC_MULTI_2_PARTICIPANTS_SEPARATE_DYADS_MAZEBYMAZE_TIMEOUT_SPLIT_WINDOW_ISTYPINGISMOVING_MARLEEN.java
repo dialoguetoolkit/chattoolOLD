@@ -627,7 +627,7 @@ public class CCMAZE_DYADIC_MULTI_2_PARTICIPANTS_SEPARATE_DYADS_MAZEBYMAZE_TIMEOU
           else if(interfaceNumber==3) {
                 c.changeClientInterface_clearMainWindowsExceptWindow0(pRecipient);
                // c.sendArtificialTurnToRecipientWithEnforcedTextColour(pRecipient, textInBox, 1, sm.defaultFONTSETTINGSOTHER, info+"UPDATEINFOASTYPED");
-                c.newsendArtificialTurnFromApparentOriginToRecipient(sender.getUsername(), pRecipient, true, textInBox, info+"UPDATEINFOASTYPED", sm.defaultFONTSETTINGSOTHER1 , 1, new Vector());
+                c.sendArtificialTurnFromApparentOriginToRecipient(sender.getUsername(), pRecipient, true, textInBox, info+"UPDATEINFOASTYPED", sm.defaultFONTSETTINGSOTHER1 , 1, new Vector());
                
                 
           }

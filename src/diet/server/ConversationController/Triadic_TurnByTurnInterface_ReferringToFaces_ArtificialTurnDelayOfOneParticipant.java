@@ -48,11 +48,11 @@ public class Triadic_TurnByTurnInterface_ReferringToFaces_ArtificialTurnDelayOfO
         
         if(sender == this.pA){
             this.itnt.processTurnSentByClient(pA);
-             c.newrelayTurnToPermittedParticipants(sender, mct);
+             c.relayTurnToPermittedParticipants(sender, mct);
         }
         else if (sender == this.pB){
              this.itnt.processTurnSentByClient(pB);
-             c.newrelayTurnToPermittedParticipants(sender, mct);
+             c.relayTurnToPermittedParticipants(sender, mct);
         }
         else if (sender ==this.pCExcluded){
             if (this.performManipulation()){
@@ -60,7 +60,7 @@ public class Triadic_TurnByTurnInterface_ReferringToFaces_ArtificialTurnDelayOfO
                this.itnt.removeSpoofTypingInfoAfterThreshold(pA, new Date().getTime()+this.delayOfC+1);
             }
             else{
-                c.newrelayTurnToPermittedParticipants(sender, mct);
+                c.relayTurnToPermittedParticipants(sender, mct);
             }
         }
         //itnt.processTurnSentByClient(sender);

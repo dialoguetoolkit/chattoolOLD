@@ -184,7 +184,7 @@ public class WYSIWYGReconstructingTurnsFromDocInserts {
         Vector avs = this.cC.getAdditionalInformationForParticipant(p);
         // avs.addElement(av);
         
-        cC.c.newsaveAdditionalRowOfDataToSpreadsheetOfTurns(subdialogueID, "WYSIWYGSERVERTURN", p.getParticipantID(), p.getUsername(), p.getUsername(), clientTimeOfStart, clientTimeOfEnd, serverTimeOfReceipt, recipientsNames,text, avs);
+        cC.c.saveAdditionalRowOfDataToSpreadsheetOfTurns(subdialogueID, "WYSIWYGSERVERTURN", p.getParticipantID(), p.getUsername(), p.getUsername(), clientTimeOfStart, clientTimeOfEnd, serverTimeOfReceipt, recipientsNames,text, avs);
         
         
        // cC.c.getHistory().saveMessageRelayedToOthers(text, clientTimeOfStart, clientTimeOfEnd, serverTimeOfReceipt, text, subdialogueID, textWithFloorRequests, text, recipientsNames, true, avs, recipientsNames, recipientsNames, recipientsNames, true);

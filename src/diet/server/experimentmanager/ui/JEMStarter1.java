@@ -4,7 +4,7 @@
  */
 package diet.server.experimentmanager.ui;
 
-import diet.keylogging.Keylogging;
+
 import diet.server.ConversationController.ui.CustomDialog;
 import diet.server.experimentmanager.EMStarter;
 import java.awt.Toolkit;

@@ -300,8 +300,8 @@ public class JointReferenceTaskController_BACKUP implements JTrialTimerActionRec
                      this.doCountdowntoNextSet_Step4_ShowMessageAtStartOfTrial();
                  }   
                  else if(timeRemaining<=0){
-                        cC.c.newsendInstructionToParticipant(pA, "You ran out of time!" );
-                        cC.c.newsendInstructionToParticipant(pB, "You ran out of time!" );
+                        cC.c.sendInstructionToParticipant(pA, "You ran out of time!" );
+                        cC.c.sendInstructionToParticipant(pB, "You ran out of time!" );
                       this.doCountdowntoNextSet_Step1_Countdown("Your score is: ","Time till next image: ",false, false);
                      this.doCountdowntoNextSet_Step2_LoadNextSet();
                      this.startOfCurrentGame= new Date().getTime();
@@ -333,8 +333,8 @@ public class JointReferenceTaskController_BACKUP implements JTrialTimerActionRec
      public void doCountdowntoNextSet_Step1_Countdown(final String  firstmessage,final  String countdownmessageprefix, boolean showTimerInChatWindow  ,boolean blocktextentry) throws Exception{
        
                 
-                  cC.c.newsendInstructionToParticipant(pA, "Loading next set");
-                  cC.c.newsendInstructionToParticipant(pB, "Loading next set");
+                  cC.c.sendInstructionToParticipant(pA, "Loading next set");
+                  cC.c.sendInstructionToParticipant(pB, "Loading next set");
                  
                      
                
@@ -356,8 +356,8 @@ public class JointReferenceTaskController_BACKUP implements JTrialTimerActionRec
                 
                   
                   
-                  if(showTimerInChatWindow)cC.c.newsendInstructionToParticipant(pA, countdownmessageprefix + "5 secs" );
-                  if(showTimerInChatWindow)cC.c.newsendInstructionToParticipant(pB, countdownmessageprefix + "5 secs" );
+                  if(showTimerInChatWindow)cC.c.sendInstructionToParticipant(pA, countdownmessageprefix + "5 secs" );
+                  if(showTimerInChatWindow)cC.c.sendInstructionToParticipant(pB, countdownmessageprefix + "5 secs" );
                   if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions",countdownmessageprefix + "5 secs" +"\n" ,true, pA,pB );
                   
                   Thread.sleep(1000);
@@ -365,32 +365,32 @@ public class JointReferenceTaskController_BACKUP implements JTrialTimerActionRec
                   //cC.c.changeClientInterface_clearMainWindows(pB);
                   //cC.c.changeClientInterface_backgroundColour(pA, Color.black);
                   //cC.c.changeClientInterface_backgroundColour(pB, Color.black);
-                  if(showTimerInChatWindow)cC.c.newsendInstructionToParticipant(pA, countdownmessageprefix + "4 secs" );
-                  if(showTimerInChatWindow)cC.c.newsendInstructionToParticipant(pB, countdownmessageprefix + "4 secs" );
+                  if(showTimerInChatWindow)cC.c.sendInstructionToParticipant(pA, countdownmessageprefix + "4 secs" );
+                  if(showTimerInChatWindow)cC.c.sendInstructionToParticipant(pB, countdownmessageprefix + "4 secs" );
                   if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions",countdownmessageprefix + "4 secs" +"\n" ,true, pA,pB );
                   Thread.sleep(1000);
                   //cC.c.changeClientInterface_clearMainWindows(pA);
                   //cC.c.changeClientInterface_clearMainWindows(pB);
                   //cC.c.changeClientInterface_backgroundColour(pA, Color.red);
                   //cC.c.changeClientInterface_backgroundColour(pB, Color.red);
-                  if(showTimerInChatWindow)cC.c.newsendInstructionToParticipant(pA, countdownmessageprefix + "3 secs" );
-                  if(showTimerInChatWindow)cC.c.newsendInstructionToParticipant(pB, countdownmessageprefix + "3 secs" );
+                  if(showTimerInChatWindow)cC.c.sendInstructionToParticipant(pA, countdownmessageprefix + "3 secs" );
+                  if(showTimerInChatWindow)cC.c.sendInstructionToParticipant(pB, countdownmessageprefix + "3 secs" );
                   if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions",countdownmessageprefix + "3 secs" +"\n" ,true, pA,pB );
                   Thread.sleep(1000);
                   //cC.c.changeClientInterface_clearMainWindows(pA);
                   //cC.c.changeClientInterface_clearMainWindows(pB);
                   //cC.c.changeClientInterface_backgroundColour(pA, Color.black);
                   //cC.c.changeClientInterface_backgroundColour(pB, Color.black);
-                  if(showTimerInChatWindow)cC.c.newsendInstructionToParticipant(pA, countdownmessageprefix + "2 secs" );
-                  if(showTimerInChatWindow)cC.c.newsendInstructionToParticipant(pB, countdownmessageprefix + "2 secs" );
+                  if(showTimerInChatWindow)cC.c.sendInstructionToParticipant(pA, countdownmessageprefix + "2 secs" );
+                  if(showTimerInChatWindow)cC.c.sendInstructionToParticipant(pB, countdownmessageprefix + "2 secs" );
                   if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions",countdownmessageprefix + "2 secs"+"\n"  ,true, pA,pB );
                   Thread.sleep(1000);
                   //cC.c.changeClientInterface_clearMainWindows(pA);
                   //cC.c.changeClientInterface_clearMainWindows(pB);
                   //cC.c.changeClientInterface_backgroundColour(pA, Color.red);
                   //cC.c.changeClientInterface_backgroundColour(pB, Color.red);
-                  if(showTimerInChatWindow)cC.c.newsendInstructionToParticipant(pA, countdownmessageprefix + "1 sec" );
-                  if(showTimerInChatWindow)cC.c.newsendInstructionToParticipant(pB,countdownmessageprefix + "1 sec" );
+                  if(showTimerInChatWindow)cC.c.sendInstructionToParticipant(pA, countdownmessageprefix + "1 sec" );
+                  if(showTimerInChatWindow)cC.c.sendInstructionToParticipant(pB,countdownmessageprefix + "1 sec" );
                   if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions",countdownmessageprefix + "1 secs"+"\n"  ,true, pA,pB );
                   Thread.sleep(1000);
                   
@@ -604,8 +604,8 @@ public class JointReferenceTaskController_BACKUP implements JTrialTimerActionRec
                   cC.c.changeClientInterface_disableTextEntry(pB);
                   
                   
-                  if(firstmessage!=null  && !firstmessage.equalsIgnoreCase(""))cC.c.newsendInstructionToParticipant(pA, firstmessage );
-                  if(firstmessage!=null && !firstmessage.equalsIgnoreCase("")) cC.c.newsendInstructionToParticipant(pB, firstmessage );
+                  if(firstmessage!=null  && !firstmessage.equalsIgnoreCase(""))cC.c.sendInstructionToParticipant(pA, firstmessage );
+                  if(firstmessage!=null && !firstmessage.equalsIgnoreCase("")) cC.c.sendInstructionToParticipant(pB, firstmessage );
                 
                   if(firstmessage!=null  && !firstmessage.equalsIgnoreCase("") &&displayname!=null){
                       cC.c.textOutputWindow_ChangeText("instructions", firstmessage +scoreA+"\n" ,true, pA );
@@ -615,8 +615,8 @@ public class JointReferenceTaskController_BACKUP implements JTrialTimerActionRec
                   
                   //cC.c.changeClientInterface_backgroundColour(pA, Color.red);
                   //cC.c.changeClientInterface_backgroundColour(pB, Color.red);
-                  cC.c.newsendInstructionToParticipant(pA, countdownmessageprefix + "5 secs" );
-                  cC.c.newsendInstructionToParticipant(pB, countdownmessageprefix + "5 secs" );
+                  cC.c.sendInstructionToParticipant(pA, countdownmessageprefix + "5 secs" );
+                  cC.c.sendInstructionToParticipant(pB, countdownmessageprefix + "5 secs" );
                   if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions",countdownmessageprefix + "5 secs" +"\n" ,true, pA,pB );
                   
                   Thread.sleep(1000);
@@ -624,32 +624,32 @@ public class JointReferenceTaskController_BACKUP implements JTrialTimerActionRec
                   //cC.c.changeClientInterface_clearMainWindows(pB);
                   //cC.c.changeClientInterface_backgroundColour(pA, Color.black);
                   //cC.c.changeClientInterface_backgroundColour(pB, Color.black);
-                  cC.c.newsendInstructionToParticipant(pA, countdownmessageprefix + "4 secs" );
-                  cC.c.newsendInstructionToParticipant(pB, countdownmessageprefix + "4 secs" );
+                  cC.c.sendInstructionToParticipant(pA, countdownmessageprefix + "4 secs" );
+                  cC.c.sendInstructionToParticipant(pB, countdownmessageprefix + "4 secs" );
                   if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions",countdownmessageprefix + "4 secs" +"\n" ,true, pA,pB );
                   Thread.sleep(1000);
                   //cC.c.changeClientInterface_clearMainWindows(pA);
                   //cC.c.changeClientInterface_clearMainWindows(pB);
                   //cC.c.changeClientInterface_backgroundColour(pA, Color.red);
                   //cC.c.changeClientInterface_backgroundColour(pB, Color.red);
-                  cC.c.newsendInstructionToParticipant(pA, countdownmessageprefix + "3 secs" );
-                  cC.c.newsendInstructionToParticipant(pB, countdownmessageprefix + "3 secs" );
+                  cC.c.sendInstructionToParticipant(pA, countdownmessageprefix + "3 secs" );
+                  cC.c.sendInstructionToParticipant(pB, countdownmessageprefix + "3 secs" );
                   if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions",countdownmessageprefix + "3 secs" +"\n" ,true, pA,pB );
                   Thread.sleep(1000);
                   //cC.c.changeClientInterface_clearMainWindows(pA);
                   //cC.c.changeClientInterface_clearMainWindows(pB);
                   //cC.c.changeClientInterface_backgroundColour(pA, Color.black);
                   //cC.c.changeClientInterface_backgroundColour(pB, Color.black);
-                  cC.c.newsendInstructionToParticipant(pA, countdownmessageprefix + "2 secs" );
-                  cC.c.newsendInstructionToParticipant(pB, countdownmessageprefix + "2 secs" );
+                  cC.c.sendInstructionToParticipant(pA, countdownmessageprefix + "2 secs" );
+                  cC.c.sendInstructionToParticipant(pB, countdownmessageprefix + "2 secs" );
                   if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions",countdownmessageprefix + "2 secs"+"\n"  ,true, pA,pB );
                   Thread.sleep(1000);
                   //cC.c.changeClientInterface_clearMainWindows(pA);
                   //cC.c.changeClientInterface_clearMainWindows(pB);
                   //cC.c.changeClientInterface_backgroundColour(pA, Color.red);
                   //cC.c.changeClientInterface_backgroundColour(pB, Color.red);
-                  cC.c.newsendInstructionToParticipant(pA, countdownmessageprefix + "1 sec" );
-                  cC.c.newsendInstructionToParticipant(pB,countdownmessageprefix + "1 sec" );
+                  cC.c.sendInstructionToParticipant(pA, countdownmessageprefix + "1 sec" );
+                  cC.c.sendInstructionToParticipant(pB,countdownmessageprefix + "1 sec" );
                   if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions",countdownmessageprefix + "1 secs"+"\n"  ,true, pA,pB );
                   Thread.sleep(1000);
                   cC.c.changeClientInterface_clearMainWindows(pA);
@@ -730,8 +730,8 @@ public class JointReferenceTaskController_BACKUP implements JTrialTimerActionRec
                              String outputPA = myFormatter.format( (double)  htPOINTS.getObject(pA));
                              String outputPB = myFormatter.format( (double)  htPOINTS.getObject(pB));
                              
-                             cC.c.newsendInstructionToParticipant(pA, "Your score is: "+ outputPA );
-                             cC.c.newsendInstructionToParticipant(pB, "Your score is: "+ outputPB );
+                             cC.c.sendInstructionToParticipant(pA, "Your score is: "+ outputPA );
+                             cC.c.sendInstructionToParticipant(pB, "Your score is: "+ outputPB );
                   
                             
                          
@@ -749,10 +749,10 @@ public class JointReferenceTaskController_BACKUP implements JTrialTimerActionRec
                                  if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions","Your score is: "+ (double)  htPOINTS.getObject(pB) +"\n",true, pB );
                                  if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions","Choose same or different:"+"\n",false, pA,pB );
                             
-                            cC.c.newsendInstructionToParticipant(pA,"enter '/s' if you saw the same face");
-                            cC.c.newsendInstructionToParticipant(pA,"enter '/d' if you saw different faces");
-                            cC.c.newsendInstructionToParticipant(pB,"enter '/s' if you saw the same face");
-                            cC.c.newsendInstructionToParticipant(pB,"enter '/d' if you saw different faces");
+                            cC.c.sendInstructionToParticipant(pA,"enter '/s' if you saw the same face");
+                            cC.c.sendInstructionToParticipant(pA,"enter '/d' if you saw different faces");
+                            cC.c.sendInstructionToParticipant(pB,"enter '/s' if you saw the same face");
+                            cC.c.sendInstructionToParticipant(pB,"enter '/d' if you saw different faces");
                             
                             
                        }catch(Exception eee){
@@ -802,7 +802,7 @@ public class JointReferenceTaskController_BACKUP implements JTrialTimerActionRec
     public synchronized void processChatText(Participant sender, String text){
         if(!text.startsWith("/"))return;
         if(this.currentsethasbeensolved){
-            cC.c.newsendInstructionToParticipant(sender,"The current face has already been solved");
+            cC.c.sendInstructionToParticipant(sender,"The current face has already been solved");
             return;
             
         }
@@ -816,8 +816,8 @@ public class JointReferenceTaskController_BACKUP implements JTrialTimerActionRec
                  this.updateScores(true);
                   String scoreA = " Score: "+(Double)this.htPOINTS.getObject(pA);
                   String scoreB = " Score: "+(Double)this.htPOINTS.getObject(pB);
-                  if(showFeedbackToDirector) cC.c.newsendInstructionToParticipant(pA, "CORRECT! " + scoreA);
-                 cC.c.newsendInstructionToParticipant(pB, "CORRECT! " + scoreB);
+                  if(showFeedbackToDirector) cC.c.sendInstructionToParticipant(pA, "CORRECT! " + scoreA);
+                 cC.c.sendInstructionToParticipant(pB, "CORRECT! " + scoreB);
                  this.currentsethasbeensolved=true;
                  //doCountdowntoNextSet_DEPRECATED("CORRECT! They are the SAME", "Next face in "  );
                 
@@ -826,8 +826,8 @@ public class JointReferenceTaskController_BACKUP implements JTrialTimerActionRec
                 this.updateScores(false);
                  String scoreA = " Score: "+(Double)this.htPOINTS.getObject(pA);
                  String scoreB = " Score: "+(Double)this.htPOINTS.getObject(pB);
-                 if(showFeedbackToDirector)cC.c.newsendInstructionToParticipant(pA, "INCORRECT! " + scoreA);
-                cC.c.newsendInstructionToParticipant(pB, "INCORRECT! " + scoreB);
+                 if(showFeedbackToDirector)cC.c.sendInstructionToParticipant(pA, "INCORRECT! " + scoreA);
+                cC.c.sendInstructionToParticipant(pB, "INCORRECT! " + scoreB);
                 this.currentsethasbeensolved=true;
                 //doCountdowntoNextSet_DEPRECATED("INCORRECT! They are  DIFFERENT","Next face in " );
                 
@@ -835,9 +835,9 @@ public class JointReferenceTaskController_BACKUP implements JTrialTimerActionRec
         
         }
         else{
-            cC.c.newsendInstructionToParticipant(sender,"Incorrect command:");
-            cC.c.newsendInstructionToParticipant(sender,"Choose '/s' if you think they are the same");
-            cC.c.newsendInstructionToParticipant(sender,"Choose '/d' if you think they are different");        
+            cC.c.sendInstructionToParticipant(sender,"Incorrect command:");
+            cC.c.sendInstructionToParticipant(sender,"Choose '/s' if you think they are the same");
+            cC.c.sendInstructionToParticipant(sender,"Choose '/d' if you think they are different");        
         }
     }
     
@@ -890,12 +890,12 @@ public class JointReferenceTaskController_BACKUP implements JTrialTimerActionRec
             
         }
         
-        cC.c.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("gamedata_score_correct", pA, ""+this.getScoreCORRECT(pA));
-        cC.c.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("gamedata_score_correct", pB, ""+this.getScoreCORRECT(pB));
-        cC.c.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("gamedata_score_incorrect", pA, ""+this.getScoreINCORRECT(pA));
-        cC.c.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("gamedata_score_incorrect", pB, ""+this.getScoreINCORRECT(pB));
-        cC.c.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("gamedata_score_points", pA, ""+(double)  this.htPOINTS.getObject(pA));
-        cC.c.newsaveAdditionalRowOfDataToSpreadsheetOfTurns("gamedata_score_points", pB, ""+(double)  this.htPOINTS.getObject(pB));
+        cC.c.saveAdditionalRowOfDataToSpreadsheetOfTurns("gamedata_score_correct", pA, ""+this.getScoreCORRECT(pA));
+        cC.c.saveAdditionalRowOfDataToSpreadsheetOfTurns("gamedata_score_correct", pB, ""+this.getScoreCORRECT(pB));
+        cC.c.saveAdditionalRowOfDataToSpreadsheetOfTurns("gamedata_score_incorrect", pA, ""+this.getScoreINCORRECT(pA));
+        cC.c.saveAdditionalRowOfDataToSpreadsheetOfTurns("gamedata_score_incorrect", pB, ""+this.getScoreINCORRECT(pB));
+        cC.c.saveAdditionalRowOfDataToSpreadsheetOfTurns("gamedata_score_points", pA, ""+(double)  this.htPOINTS.getObject(pA));
+        cC.c.saveAdditionalRowOfDataToSpreadsheetOfTurns("gamedata_score_points", pB, ""+(double)  this.htPOINTS.getObject(pB));
         
         Conversation.printWSln("Main", pA.getUsername()+" has "+(double)  this.htPOINTS.getObject(pA));
         Conversation.printWSln("Main", pB.getUsername()+" has "+(double)  this.htPOINTS.getObject(pB));

@@ -51,7 +51,7 @@ public class Dyadic_TurnByTurnInterface_ConfidenceTask extends CCCONFIDENCE {
     @Override
     public void processKeyPress(Participant sender,MessageKeypressed mkp){
         //c.informIsTypingToAllowedParticipants(sender);//,mkp);
-        c.newsaveClientKeypressToFile(sender, mkp);
+        c.saveClientKeypressToFile(sender, mkp);
 
     }
 

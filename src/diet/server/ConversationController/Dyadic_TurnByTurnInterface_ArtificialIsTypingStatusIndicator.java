@@ -109,7 +109,7 @@ public class Dyadic_TurnByTurnInterface_ArtificialIsTypingStatusIndicator extend
           
          
           itnt.processTurnSentByClient(sender);       
-          c.newrelayTurnToPermittedParticipants(sender, mct);
+          c.relayTurnToPermittedParticipants(sender, mct);
           
           this.pAIsInterrupted=r.nextBoolean();
           this.pBIsInterrupted=r.nextBoolean();

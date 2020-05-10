@@ -112,13 +112,16 @@ public class JLeftTabbedPanel extends TabbedPanel{
           tab.getProperties().addSuperObject(titledTabProperties);
           super.addTab(tab);
           this.allComponentsTabs.put(jp, tab);
+          super.setSelectedTab(tab);
         }
         else {
           TitledTabWithFontSettings tab = new TitledTabWithFontSettings(s,null,jp,null,fontSize);//null,fontSize);
           tab.getProperties().addSuperObject(titledTabProperties);
           super.addTab(tab);
+          super.setSelectedTab(tab);
           
         }
+       
                 
     }
    

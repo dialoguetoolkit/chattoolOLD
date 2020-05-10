@@ -112,7 +112,7 @@ public class TestController extends Dyadic_TurnByTurnInterface{
         if(sender ==pA || sender ==pB){
             this.itntAandB.removeSpoofTypingInfoAfterThreshold(sender, new Date().getTime());
        }
-       c.newrelayTurnToPermittedParticipants(sender, mct);
+       c.relayTurnToPermittedParticipants(sender, mct);
         
       String[] newOptions = {"yes","no"}; 
        

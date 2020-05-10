@@ -181,7 +181,7 @@ public class Dyadic_WYSIWYGInterface_ReferringToFaces  extends DefaultWYSIWYGCon
             itnt.addPairWhoAreMutuallyInformedOfTyping(pL, pR);
             Vector recipients = new Vector();
             recipients.addElement(pL); recipients.addElement(pR);
-            c.newsendInstructionToMultipleParticipants(recipients, "Please start!");
+            c.sendInstructionToMultipleParticipants(recipients, "Please start!");
         }
         this.participantsQueuedLLLL.removeAllElements();
         this.participantsQueuedRRRRR.removeAllElements();

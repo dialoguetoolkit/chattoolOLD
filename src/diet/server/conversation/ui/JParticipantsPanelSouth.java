@@ -322,7 +322,7 @@ public class JParticipantsPanelSouth extends javax.swing.JPanel {
         if(pselected.size()==0)CustomDialog.showDialog("First select participant(s) in the table above");
         for(int i=0;i<pselected.size();i++){
             Participant p = (Participant)pselected.elementAt(i);
-            c.newsendInstructionToParticipant(p, this.jTextField4.getText());
+            c.sendInstructionToParticipant(p, this.jTextField4.getText());
             Conversation.printWSln("Main", "Sending instructions "+jTextField4.getText()+" to "+p.getParticipantID());
         }
     }//GEN-LAST:event_jButton2ActionPerformed

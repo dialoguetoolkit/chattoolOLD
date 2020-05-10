@@ -50,18 +50,18 @@ public class Triadic_TurnByTurnInterface_ReferringToFaces_ArtificialIsTypingStat
         if(sender == this.pA){
             itnt.processTurnSentByClient(pA);
             itnt.removeSpoofTypingInfoAfterThreshold(pCExcluded, new Date().getTime());
-            c.newrelayTurnToPermittedParticipants(sender, mct);
+            c.relayTurnToPermittedParticipants(sender, mct);
             
         }
         else if (sender == this.pB){
             itnt.processTurnSentByClient(pB);
             itnt.removeSpoofTypingInfoAfterThreshold(pCExcluded, new Date().getTime());
-            c.newrelayTurnToPermittedParticipants(sender, mct);
+            c.relayTurnToPermittedParticipants(sender, mct);
         }
         else if (sender ==this.pCExcluded){
              itnt.processTurnSentByClient(pCExcluded);
              itnt.removeSpoofTypingInfoAfterThreshold(pCExcluded, new Date().getTime());
-             c.newrelayTurnToPermittedParticipants(sender, mct);
+             c.relayTurnToPermittedParticipants(sender, mct);
              
         }  
        

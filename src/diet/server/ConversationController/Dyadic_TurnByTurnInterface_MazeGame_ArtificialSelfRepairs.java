@@ -39,7 +39,7 @@ public class Dyadic_TurnByTurnInterface_MazeGame_ArtificialSelfRepairs extends M
     public synchronized void processChatText(Participant sender, MessageChatTextFromClient mct) {
       
         if(!this.experimentHasStarted){
-              c.newsendInstructionToParticipant(sender, "Please wait for the experiment to start");
+              c.sendInstructionToParticipant(sender, "Please wait for the experiment to start");
               return;
         }
         
@@ -70,7 +70,7 @@ public class Dyadic_TurnByTurnInterface_MazeGame_ArtificialSelfRepairs extends M
                    this.itnt.processTurnSentByClient(sender);
                    MazeGameController2WAY mgcNEW = this.getMazeGameController(sender);
                    Vector additionalData = mgcNEW.getAdditionalData(sender);  
-                   c.newrelayTurnToPermittedParticipants(sender, mct,additionalData);        
+                   c.relayTurnToPermittedParticipants(sender, mct,additionalData);        
                    mgcNEW.appendToUI(sender.getUsername()+": "+mct.getText());      
                    sr.setNewTurn(sender);
                    return;
@@ -82,7 +82,7 @@ public class Dyadic_TurnByTurnInterface_MazeGame_ArtificialSelfRepairs extends M
                this.itnt.processTurnSentByClient(sender);
                MazeGameController2WAY mgcNEW = this.getMazeGameController(sender);
                Vector additionalData = mgcNEW.getAdditionalData(sender);  
-               c.newrelayTurnToPermittedParticipants(sender, mct,additionalData);        
+               c.relayTurnToPermittedParticipants(sender, mct,additionalData);        
                mgcNEW.appendToUI(sender.getUsername()+": "+mct.getText());      
                sr.setNewTurn(sender);
                return;
@@ -97,7 +97,7 @@ public class Dyadic_TurnByTurnInterface_MazeGame_ArtificialSelfRepairs extends M
              MazeGameController2WAY mgcNEW = this.getMazeGameController(sender);
              Vector additionalData = mgcNEW.getAdditionalData(sender);  
                  
-             c.newsendArtificialTurnFromApparentOrigin(sender, pRecipient, fullChangedTurn);
+             c.sendArtificialTurnFromApparentOrigin(sender, pRecipient, fullChangedTurn);
                
              mgcNEW.appendToUI("*"+sender.getUsername()+": "+mct.getText());
               mgcNEW.appendToUI("**"+sender.getUsername()+": "+fullChangedTurn);
@@ -122,7 +122,7 @@ public class Dyadic_TurnByTurnInterface_MazeGame_ArtificialSelfRepairs extends M
     @Override
     public synchronized void participantJoinedConversation(Participant p) {
         super.participantJoinedConversation(p); //To change body of generated methods, choose Tools | Templates.
-        c.newsendInstructionToParticipant(p, "Demo setup - 3 scenarios");
+        c.sendInstructionToParticipant(p, "Demo setup - 3 scenarios");
     }
     
     

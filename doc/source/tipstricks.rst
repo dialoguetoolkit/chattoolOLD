@@ -1,6 +1,6 @@
-**************
-Best practices  
-**************
+*************
+Tips & tricks  
+*************
 
 This is a small list of observations and pointers which we don't know where else to put.
 

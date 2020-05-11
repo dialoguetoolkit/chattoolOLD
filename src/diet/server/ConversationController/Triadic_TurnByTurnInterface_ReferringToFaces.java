@@ -56,7 +56,7 @@ public class Triadic_TurnByTurnInterface_ReferringToFaces extends DefaultConvers
     @Override
     public synchronized void participantJoinedConversation(Participant p) {
         super.participantJoinedConversation(p);
-        c.displayNEWWebpage(p, "instructions", "instructions", "", 500, 500, false, true);
+        c.textOutputWindow_Initialize(p, "instructions", "instructions", "", 500, 500, false, true);
         
          if(c.getParticipants().getAllParticipants().size()==3){
             pp.createNewSubdialogue(c.getParticipants().getAllParticipants());

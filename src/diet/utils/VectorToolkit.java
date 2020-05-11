@@ -11,7 +11,6 @@ package diet.utils;
 
 
 import diet.message.MessageChatTextFromClient;
-import diet.task.ProceduralCommsDEPRECATED.Move;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -117,31 +116,6 @@ public class VectorToolkit {
     }
 
 
-    public static  Move[] flattenVofV_AndTurnToArray(Vector vINPUT){
-        Vector vFLATTENED = new Vector();
-        for(int i=0;i<vINPUT.size();i++){
-            Object o = vINPUT.elementAt(i);
-            if(o instanceof Vector){
-                Vector vo = (Vector)o;
-                for(int j=0;j<vo.size();j++){
-                    Object o2 = vo.elementAt(j);
-                    vFLATTENED.addElement(o2);
-                }
-            }
-            else{
-                vFLATTENED.addElement(o);
-            }
-        }
-        //return vFLATTENED;
-        Move[] mArray = new Move[vFLATTENED.size()];
-        for(int i=0;i<vFLATTENED.size();i++){
-            Object o = vFLATTENED.elementAt(i);
-            mArray[i]=(Move)o;
-
-        }
-        return mArray;
-
-    }
     
     
     

@@ -73,7 +73,7 @@ public class FaceComms2016_TURNBYTURN_DYADIC_NDJ extends Dyadic_TurnByTurnInterf
     @Override
     public synchronized void participantJoinedConversation(Participant p) {   
        // super.participantJoinedConversation(p);
-        c.displayNEWWebpage(p, "instructions", "instructions", "", 500, 500, false, true);
+        c.textOutputWindow_Initialize(p, "instructions", "instructions", "", 500, 500, false, true);
         if(c.getParticipants().getAllParticipants().size()==2){
             Participant pA = (Participant)c.getParticipants().getAllParticipants().elementAt(0);
             Participant pB = (Participant)c.getParticipants().getAllParticipants().elementAt(1);
@@ -92,7 +92,7 @@ public class FaceComms2016_TURNBYTURN_DYADIC_NDJ extends Dyadic_TurnByTurnInterf
     @Override
     public void participantRejoinedConversation(Participant p) {
         super.participantRejoinedConversation(p); //To change body of generated methods, choose Tools | Templates.
-        c.displayNEWWebpage(p, "instructions", "instructions", "", 500, 500, false, true);
+        c.textOutputWindow_Initialize(p, "instructions", "instructions", "", 500, 500, false, true);
         fctc.processChatText(p, "/d");
     }
     

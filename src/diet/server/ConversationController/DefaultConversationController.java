@@ -41,35 +41,48 @@ import javax.swing.text.MutableAttributeSet;
  * to send the artificially created messages to the participants.
  *
  *
- * @author user
+ * @author gjmills
  */
 public abstract class DefaultConversationController  {
  
     public Conversation c;
     
+    
+    /**
+     * The configuration file for the chat-tool
+     */
     public static Configuration sett = new Configuration();
-    //The confguration file for the chat-tool
-  
+   
+    /**
+     * Used to generate ParticipantIDs when using the autologin function when developing
+     */
     public static CyclicRandomParticipantIDGeneratorGROOP autologinParticipantIDGenerator = new CyclicRandomParticipantIDGeneratorGROOP(); 
-    //Used to generate ParticipantIDs when using the autologin function when developing
-    
+  
+  
+    /**
+     * This object is used to generate the "is tpying" status indicator messages - note that these can be manipulated  
+     */
     public IsTypingOrNotTyping itnt; //= new IsTypingOrNotTyping(this, param_isTypingTimeOut);
-    //This object is used to generate the "is tpying" status indicator messages - note that these can be manipulated    
+   
     
+    /**
+     * This is used to store who speaks with whom 
+     */
     public ParticipantPartnering pp;
-    //This is used to store who speaks with whom
     
+    
+    /**
+     * This is used to make sure that each person sees other participants' text with consistent colours / fonts 
+     */
     public StyleManager sm = new StyleManager(this);
-    //This is used to make sure that each person sees other participants' text with consistent colours / fonts
     
+    
+    /**
+     * Many experiments also involve some dialogue task 
+     */
     public TaskControllerInterface tc;
-    //Many experiments also involve some dialogue task
-    
-     public Random r = new Random(new Date().getTime());
-    
-     
-     
-     
+        
+    public Random r = new Random(new Date().getTime());
      
     public boolean experimentHasStarted = false; 
     
@@ -86,12 +99,10 @@ public abstract class DefaultConversationController  {
         else{
             parentDirectory = parentDirectory + File.separator+ "data"+File.separator+"saved experimental data";
         }
-        
-        
+            
         c.convIO = new IntelligentIO(c,parentDirectory,this.getID());
         pp = new ParticipantPartnering(this);
         itnt = new IsTypingOrNotTyping(this, sett.client_TextEntryWindow_istypingtimeout);
-      // itnt = new IsTypingOrNotTyping(this, 2500);
        
     }
     
@@ -117,26 +128,35 @@ public abstract class DefaultConversationController  {
         
     }
     
+    /**
+     * 
+     * @return whether the ConversationController object is displayed in the GUI.
+     */
     public static boolean showcCONGUI() {
         return false;
     }
 
+    /**
+     * 
+     * @return the Conversation object
+     */
     public Conversation getC() {
         return c;
     }
    
-    
-    
-   
-   
+    /**
+     * 
+     * @return the StyleManager, which is responsible for determining the fonts and colours of participants' text.
+     */
     public StyleManager getStyleManager() {
         return sm;
     }
 
     
     
-     /**
+    /**
     * Called by the client when the client attempts to connect to the server
+    * This is step 1 in the login process.
     */   
     public boolean requestParticipantJoinConversation(String participantID) {
         return true;
@@ -144,9 +164,13 @@ public abstract class DefaultConversationController  {
     
     
             
+   
+    
     /**
-    * Sends the setup information to the client interface
-    */
+     * Step 2 in the login process (after participant successfully entered ID and Username)
+     * 
+     * @return the Message containing the setup information that is sent to the client after successful logging in.
+     */
    public MessageClientSetupParameters processRequestForInitialChatToolSettings(){      
                boolean alignmentIsVertical = true;
                boolean deletesPermitted =true;
@@ -183,7 +207,13 @@ public abstract class DefaultConversationController  {
     }
     
   
-    
+    /**
+     * Third stage in the login process.
+     * Use this method to determine what instructions the participant is sent when they login
+     * Use this method to initialize aspects of the task that depend on participants logging in.
+     * 
+     * @param p Participant who has just logged in
+     */
     public void participantJoinedConversation(Participant p){
         participantJoinedConversationButNotAssignedToGroup.add(p);
         if(participantJoinedConversationButNotAssignedToGroup.size()== Configuration.defaultGroupSize){
@@ -197,7 +227,13 @@ public abstract class DefaultConversationController  {
      
     
     
-    
+    /**
+     * 
+     * This is invoked if a participant who has already logged "joined" the experiment logs in again. 
+     * This typically happens if their computer crashes or if they restart their computer.
+     * 
+     * @param p the participant who logs back in.
+     */
     public void participantRejoinedConversation(Participant p) {
     }
    
@@ -274,12 +310,23 @@ public abstract class DefaultConversationController  {
         }
     }
     
-     
+    
+    /**
+     * 
+     * This method is invoked when the client performs a move in a task (e.g. moving position marker in the maze game, selecting a referent)
+     * 
+     * @param mt The taskmove
+     * @param p  The participant who performed the task move.
+     */
     public void processTaskMove(MessageTask mt, Participant p){
          if(tc!=null){
            tc.processTaskMove(mt, p);
         }
     }
+    
+    /**
+     * Sends an instruction to the taskcontroller to close down.
+     */
     public void closeDown(){
         if(tc!=null){
            tc.closeDown();
@@ -288,24 +335,44 @@ public abstract class DefaultConversationController  {
     
    
 
+    /**
+     * Invoked after the server instructs the client to display a popup using {@link diet.server.Conversation.showPopupOnClientQueryInfo}, and the client selects one of the options.
+     * 
+     * @param origin The participant who pressed one of the options on the popup button
+     * @param mpr The message containing information about the selection.
+     */
     public void processPopupResponse(Participant origin, MessagePopupResponseFromClient mpr) {
     }
 
+    /**
+     * 
+     * This method receives all the updates from the clients' interfaces. This is very finegrained information about everything the participants perceived on their screens. 
+     * This data is saved to "clientinterfaceevents.txt". 
+     * For turn-based interventions, this information is probably too finegrained!
+     * 
+     * @param origin Participant who generated the interface event
+     * @param mce message describing the interface event
+     */
     public void processClientEvent(Participant origin, MessageClientInterfaceEvent mce){
        
         
     }
     
+   
     
-    
-   public void startExperiment(){
-       this.experimentHasStarted=true;
-   }
+   
     
     
     
     
-
+     /**
+      * 
+      * This method is used when saving data to turns.txt. 
+      * If you want to save additional information for a participant to file, override this method.
+      * 
+      * @param p
+      * @return 
+      */
      public Vector<AttribVal> getAdditionalInformationForParticipant(Participant p){
          try{
              AttribVal av = new AttribVal("istypingtimeout",""+itnt.getIsTypingTimeout());
@@ -321,14 +388,15 @@ public abstract class DefaultConversationController  {
 
     
 
-    public void cmnd(String command) {
-        if (command.equalsIgnoreCase("////d")) {
-            Vector v = c.getParticipants().getAllParticipants();
-            Participant p = (Participant) v.elementAt(0);
-            p.getConnection().dispose();
-        }
-    }
-
+    
+    /**
+     * 
+     * This allows the experimenter to run commands on the server, e.g. when debugging.
+     * Currently, the only command implemented is to kill the ParticipantConnection
+     * 
+     * @param p
+     * @param command 
+     */
     public void cmnd(Participant p, String command) {
         if (command.equalsIgnoreCase("////d")) {
             if (p != null) {
@@ -338,36 +406,56 @@ public abstract class DefaultConversationController  {
     }
     
     
+    /**
+     * 
+     * After a participant stops typing the "is typing" messages persists for an additional duration.
+     * 
+     * @param n number of milliseconds the "is typing" message is displayed.
+     */
     public void setIsTypingTimeout(int n){
         this.itnt.setInactivityThreshold(n);
     }
     
     
     
-    
+    /**
+     * 
+     * Invoked when one of the participants presses buttons that are displayed underneath their stimulus, created with {@link dier.server.Conversation.showStimulusImageFromJarFile_InitializeWindow}
+     * 
+     * @param sender
+     * @param mbfc 
+     */
     public void processButtonPress(Participant sender, MessageButtonPressFromClient mbfc){
         c.saveAdditionalRowOfDataToSpreadsheetOfTurns("buttonpress", sender, mbfc.buttonname);
     }
             
     
-    public void debugDoRobot(String scenarioname, long duration){
-        Vector allParticipants = new Vector();
-        for(int i=0;i<allParticipants.size();i++){
-             
-        }
-        
-        
-    }
-           
+    
+    /**
+     * 
+     * @return the default settings of the chattool
+     */       
     public Configuration getSettings(){
         return DefaultConversationController.sett;
     }
     
     String id = getClass().getSimpleName();
-    public void setID(String s){
-        
+    
+    
+    /**
+     * 
+     * Set the ID of the experiment (stored in the turns.txt file)
+     * 
+     * @param s the ID of the experiment
+     */
+    public void setID(String s){    
         this.id=s;
     }
+    
+    /**
+     * 
+     * @return the ID of the experiment
+     */
     public String getID(){
         if(id==null)return "notset";
         if(id.length()==0) return "notset";

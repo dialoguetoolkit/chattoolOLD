@@ -68,7 +68,7 @@ public class ProcCommsWYSIWYGBACKUP extends DefaultWYSIWYGConversationController
         this.changeClientInterfaceCharacterWhitelist(p, "");
         c.changeClientInterface_setMaxTextEntryCharLength(p, 1);
         
-        c.displayNEWWebpage(p, "instructions", "instructions", "", 500, 600, false, true);
+        c.textOutputWindow_Initialize(p, "instructions", "instructions", "", 500, 600, false, true);
         if(c.getParticipants().getAllParticipants().size()==2 ){
              pp.createNewSubdialogue(c.getParticipants().getAllParticipants());
              pct=new PCTask(this,c.getParticipants().getAllParticipants().elementAt(0), c.getParticipants().getAllParticipants().elementAt(1));

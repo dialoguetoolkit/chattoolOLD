@@ -90,17 +90,17 @@ public class IntelligentIO {
      
     
     public void writeToObjectFileCreatingIfNecessary(String filename, Object o){
-             if(DefaultConversationController.sett.debug_debugTime)c.saveTime("5A");
+             if(DefaultConversationController.sett.debug_debugTime)c.debug_SaveEvent("5A");
              IntelligentObjectFileWriter iofw = (IntelligentObjectFileWriter) this.htObjectFiles.get(filename);
-             if(DefaultConversationController.sett.debug_debugTime)c.saveTime("5B");
+             if(DefaultConversationController.sett.debug_debugTime)c.debug_SaveEvent("5B");
              if(iofw==null){
                  iofw = new IntelligentObjectFileWriter(new File(conversationDirectory,filename));
                  this.htObjectFiles.put(filename, iofw);
-                  if(DefaultConversationController.sett.debug_debugTime)c.saveTime("5BBBBBBBBBB");
+                  if(DefaultConversationController.sett.debug_debugTime)c.debug_SaveEvent("5BBBBBBBBBB");
              }
-             if(DefaultConversationController.sett.debug_debugTime)c.saveTime("5C");
+             if(DefaultConversationController.sett.debug_debugTime)c.debug_SaveEvent("5C");
              iofw.saveObject(o);  
-             if(DefaultConversationController.sett.debug_debugTime)c.saveTime("5D");
+             if(DefaultConversationController.sett.debug_debugTime)c.debug_SaveEvent("5D");
     }
     
     public void writeToThrowableFileCreatingIfNecessary(String filename, Throwable t){

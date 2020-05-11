@@ -37,7 +37,7 @@ public class Dyadic_TurnByTurnInterface_MazeGame extends MazeGameConversationCon
     @Override
     public synchronized void processChatText(Participant sender, MessageChatTextFromClient mct) {
       super.processChatText(sender, mct);
-       
+      
                 
                 
     }

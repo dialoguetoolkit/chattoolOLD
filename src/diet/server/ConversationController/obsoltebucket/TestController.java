@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package diet.server.ConversationController.obsoletebucket;
+package diet.server.ConversationController.obsoltebucket;
 
 import diet.client.ClientInterfaceEvents.ClientInterfaceEvent;
 import diet.client.ClientInterfaceEvents.ClientInterfaceEventStringPrettifier;
@@ -105,7 +105,7 @@ public class TestController extends Dyadic_TurnByTurnInterface{
     public synchronized void processChatText(Participant sender, MessageChatTextFromClient mct) {
         //itnt.removeSpoofTypingInfoAfterThreshold(sender, new Date().getTime());
         //c.newrelayTurnToPermittedParticipants(sender, mct);
-        c.newDelayedRelayTurnToPermittedParticipants(sender, mct, 3000);
+        c.sendArtificialDelayedTurnToPermittedParticipants(sender, mct.getText(), 3000);
        
         if(2<5)return;
         

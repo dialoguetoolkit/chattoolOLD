@@ -133,7 +133,7 @@ public class Configuration implements Cloneable{
     public  String debug_fakeTypingByClientSTOPTrigger = "/stopdebug"; //This is used by the client to generate fake "is typing events"
     
     
-    ///Be very! vareful modifying this. If it is modified without checking all its uses - can lead to crash!
+    ///Be very! careful modifying this. If it is modified without checking all its uses - can lead to crash!
     static public  String[] recordeddata_mainoutputfileheader_HEADER = {"ExperimentID", "ServerTimestampOfSavingToFile", "SubdialogueID", "Turntype", "SernderID", "SenderUsername", "ApparentSender", "Text", 
          "Recipient(s)", "NoOfDocumentDeletes", "NoOfKeypressDeletes", "ClientTimestampONSET", "ClientTimestampENTER", "ServerTimestampOfReceiptAndOrSending","TextAsformulatedTIMING","TextAsFormulatedLOGSPACE"};
          

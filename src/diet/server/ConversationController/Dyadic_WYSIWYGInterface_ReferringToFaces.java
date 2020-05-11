@@ -136,7 +136,7 @@ public class Dyadic_WYSIWYGInterface_ReferringToFaces  extends DefaultWYSIWYGCon
     @Override
     public synchronized void participantJoinedConversation(final Participant p) {
         super.participantJoinedConversation(p);
-        c.displayNEWWebpage(p, "instructions", "instructions", "", 500, 500, false, true);
+        c.textOutputWindow_Initialize(p, "instructions", "instructions", "", 500, 500, false, true);
         
         if(p.getParticipantID().startsWith("LLLL")){
             this.participantsQueuedLLLL.addElement(p);
@@ -155,7 +155,7 @@ public class Dyadic_WYSIWYGInterface_ReferringToFaces  extends DefaultWYSIWYGCon
 
     @Override
     public void participantRejoinedConversation(Participant p) {
-        c.displayNEWWebpage(p, "instructions", "instructions", "", 500, 500, false, true);
+        c.textOutputWindow_Initialize(p, "instructions", "instructions", "", 500, 500, false, true);
         final  String[] buttons = {"same","different"};
         c.showStimulusImageFromJarFile_InitializeWindow(p, 500, 580, "",buttons);
         super.participantRejoinedConversation(p); //To change body of generated methods, choose Tools | Templates.

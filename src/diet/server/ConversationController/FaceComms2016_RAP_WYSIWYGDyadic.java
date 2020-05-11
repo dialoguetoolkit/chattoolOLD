@@ -49,7 +49,7 @@ public class FaceComms2016_RAP_WYSIWYGDyadic  extends DefaultWYSIWYGConversation
     @Override
     public synchronized void participantJoinedConversation(final Participant p) {
         this.changeClientInterfaceToRightJustified(p,800,100,durationOfTextFadeout, 2,2);
-        c.displayNEWWebpage(p, "instructions", "instructions", "", 500, 500, false, true);
+        c.textOutputWindow_Initialize(p, "instructions", "instructions", "", 500, 500, false, true);
         if(c.getParticipants().getAllParticipants().size()==2){
             Participant pA = (Participant)c.getParticipants().getAllParticipants().elementAt(0);
             Participant pB = (Participant)c.getParticipants().getAllParticipants().elementAt(1);
@@ -63,7 +63,7 @@ public class FaceComms2016_RAP_WYSIWYGDyadic  extends DefaultWYSIWYGConversation
     @Override
     public void participantRejoinedConversation(Participant p) {
         this.changeClientInterfaceToRightJustified(p,800,100,durationOfTextFadeout, 2,2);
-        c.displayNEWWebpage(p, "instructions", "instructions", "", 500, 500, false, true);
+        c.textOutputWindow_Initialize(p, "instructions", "instructions", "", 500, 500, false, true);
         super.participantRejoinedConversation(p); //To change body of generated methods, choose Tools | Templates.
     }
     

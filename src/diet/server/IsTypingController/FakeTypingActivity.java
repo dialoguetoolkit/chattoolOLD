@@ -28,7 +28,7 @@ public class FakeTypingActivity extends Thread {
      
      
      
-     public synchronized void addIsTypingInfo(Participant pOrigin, long timeOfEvent, Participant[] recipients){
+     public synchronized void addIsTypingInfo(Participant pOrigin, long timeOfEvent, Participant[] recripients){
           
          FakeTyping ftNEW = new FakeTyping(pOrigin, timeOfEvent);
          if(fakeactivity.size()==0){

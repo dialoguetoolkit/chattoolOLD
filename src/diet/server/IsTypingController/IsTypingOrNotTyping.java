@@ -182,7 +182,7 @@ public class IsTypingOrNotTyping extends Thread{
             //cC.getC().changeClientInterface_changeBorderOnChatFrame(pRecipient, 0, this.isDoingColour);
             //cC.getC().changeClientInterface_changeTypingIndicator_IsTyping(pRecipient, p.getUsername()+" is typing");
             //cC.getC().changeClientInterface_displayTextOnStatusBar(pRecipient, p.getUsername()+" is typing");
-            String id = cC.c.generateNextIDForClientDisplayConfirm() + "it";  //"istyping"
+            String id = cC.c.generateNextClientInterfaceEventIDForClientDisplayConfirm() + "it";  //"istyping"
             if(this.useSendersStyleInStatusBar){
                   MutableAttributeSet mas = cC.sm.getStyleForRecipient(p, pRecipient);
                   MessageChangeClientInterfaceProperties mccip= new MessageChangeClientInterfaceProperties(id,ClientInterfaceEventTracker.displayTextInStatusBar, p.getUsername()+" is typing", mas);
@@ -226,7 +226,7 @@ public class IsTypingOrNotTyping extends Thread{
             //cC.getC().changeClientInterface_changeBorderOnChatFrame(pRecipient, 0, this.isNotTypingColour);
             //cC.getC().changeClientInterface_displayTextOnStatusBar(pRecipient," ");
             // cC.getC().changeClientInterface_changeTypingIndicator_NOTTyping(pRecipient, " ");
-            String id = cC.c.generateNextIDForClientDisplayConfirm() + "nt"; //"not typing"
+            String id = cC.c.generateNextClientInterfaceEventIDForClientDisplayConfirm() + "nt"; //"not typing"
             MessageChangeClientInterfaceProperties mccip= new MessageChangeClientInterfaceProperties(id,ClientInterfaceEventTracker.displayTextInStatusBar," ");
             cC.c.getParticipants().sendMessageToParticipant(pRecipient, mccip);   
         }

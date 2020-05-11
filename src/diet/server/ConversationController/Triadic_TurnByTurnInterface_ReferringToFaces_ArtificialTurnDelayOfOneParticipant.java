@@ -56,7 +56,7 @@ public class Triadic_TurnByTurnInterface_ReferringToFaces_ArtificialTurnDelayOfO
         }
         else if (sender ==this.pCExcluded){
             if (this.performManipulation()){
-               this.c.newDelayedRelayTurnToPermittedParticipants(sender, mct, delayOfC);
+               this.c.sendArtificialDelayedTurnToPermittedParticipants(sender, mct.getText(), delayOfC);
                this.itnt.removeSpoofTypingInfoAfterThreshold(pA, new Date().getTime()+this.delayOfC+1);
             }
             else{
@@ -69,7 +69,7 @@ public class Triadic_TurnByTurnInterface_ReferringToFaces_ArtificialTurnDelayOfO
         boolean wentToNextTrial = fctct.processChatText(sender, mct.getText());  
         if(wentToNextTrial){
             this.itntDelayed.removeSpoofTypingInfoAfterThreshold(this.pCExcluded, new Date().getTime());
-            this.c.newRemoveAllDelayedMessages();
+            this.c.removeAllDelayedMessages();
         }
         
         //c.newDelayedRelayTurnToPermittedParticipants(sender, mct, 2000);
@@ -82,7 +82,7 @@ public class Triadic_TurnByTurnInterface_ReferringToFaces_ArtificialTurnDelayOfO
 
     @Override
     public synchronized void participantJoinedConversation(Participant p) {
-       c.displayNEWWebpage(p, "instructions", "instructions", "", 500, 500, false, true);
+       c.textOutputWindow_Initialize(p, "instructions", "instructions", "", 500, 500, false, true);
         
          if(c.getParticipants().getAllParticipants().size()==3){
             pp.createNewSubdialogue(c.getParticipants().getAllParticipants());

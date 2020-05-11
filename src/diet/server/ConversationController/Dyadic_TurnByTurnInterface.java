@@ -59,6 +59,8 @@ public class Dyadic_TurnByTurnInterface extends DefaultConversationController{
     @Override
     public synchronized void participantJoinedConversation(final Participant p) {
         super.participantJoinedConversation(p);
+        
+        
     }
     
     

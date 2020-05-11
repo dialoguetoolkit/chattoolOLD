@@ -47,9 +47,9 @@ public class Participants {
      * @return next mesage from participants
      */
     public Message getNextMessage(){
-        if(DefaultConversationController.sett.debug_debugTime)Conversation.statC.saveTime("A");
+        if(DefaultConversationController.sett.debug_debugTime)Conversation.statC.debug_SaveEvent("A");
         Message m = getNextMessageBlocking();
-        if(DefaultConversationController.sett.debug_debugTime)Conversation.statC.saveTime("B");
+        if(DefaultConversationController.sett.debug_debugTime)Conversation.statC.debug_SaveEvent("B");
         if(m instanceof MessageChatTextFromClient && diet.debug.Debug.debugtimers ){    
           ((MessageChatTextFromClient)m).saveTime("serverParticipants.loadedbynewthreadfromqueue");
         }

@@ -210,13 +210,13 @@ public class Dyadic_WYSIWYGInterface_Manipulation extends DefaultWYSIWYGConversa
     
       public void changeClientInterfaceToRightJustified(Participant recipient, int width, int height, long duration , int state, int numberOfWindows){
          Dimension d = new Dimension(width,height);
-         MessageChangeClientInterfaceProperties mccip= new MessageChangeClientInterfaceProperties(c.generateNextIDForClientDisplayConfirm(),ClientInterfaceEventTracker.changetoCBYC_MultipleTrack, d,duration, state, numberOfWindows);
+         MessageChangeClientInterfaceProperties mccip= new MessageChangeClientInterfaceProperties(c.generateNextClientInterfaceEventIDForClientDisplayConfirm(),ClientInterfaceEventTracker.changetoCBYC_MultipleTrack, d,duration, state, numberOfWindows);
          c.getParticipants().sendMessageToParticipant(recipient, mccip);    
      }
     
       public void changeClientInterfaceCharacterWhitelist(Participant recipient, String whitelist){
          
-         MessageChangeClientInterfaceProperties mccip= new MessageChangeClientInterfaceProperties(c.generateNextIDForClientDisplayConfirm(),ClientInterfaceEventTracker.setCharWhitelist, whitelist);
+         MessageChangeClientInterfaceProperties mccip= new MessageChangeClientInterfaceProperties(c.generateNextClientInterfaceEventIDForClientDisplayConfirm(),ClientInterfaceEventTracker.setCharWhitelist, whitelist);
          c.getParticipants().sendMessageToParticipant(recipient, mccip);    
         
      }

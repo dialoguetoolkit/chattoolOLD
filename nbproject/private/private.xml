@@ -11,45 +11,76 @@
             <url>src/diet/server/Conversation.java</url>
             <bookmark id="1">
                 <name/>
-                <line>1086</line>
+                <line>1053</line>
                 <key/>
             </bookmark>
             <bookmark id="0">
                 <name/>
-                <line>2014</line>
+                <line>1993</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/github3/chattool/src/diet/client/ClientEventHandler.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ExperimentManager.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/Dyadic_TurnByTurnInterface_MazeGame.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/Participants.java</file>
+            <file>file:/C:/github3/chattool/src/diet/client/JChatFrameRightMost/JTextPaneRightJustifiedDocument.java</file>
             <file>file:/C:/github3/chattool/src/diet/server/experimentmanager/JLeftTabbedPanel.java</file>
             <file>file:/C:/github3/chattool/src/diet/server/conversation/ui/JParticipantsTableModel.java</file>
-            <file>file:/C:/github3/chattool/src/diet/server/conversation/ui/JTurnsListTable.java</file>
             <file>file:/C:/github3/chattool/src/diet/utils/VectorHashtableEnforcingUniqueness.java</file>
-            <file>file:/C:/github3/chattool/src/diet/server/io/IntelligentIO.java</file>
             <file>file:/C:/github3/chattool/src/diet/server/conversationhistory/turn/NormalTurnProducedByParticipant.java</file>
-            <file>file:/C:/github3/chattool/src/diet/server/ParticipantConnection.java</file>
-            <file>file:/C:/github3/chattool/src/diet/server/Configuration.java</file>
             <file>file:/C:/github3/chattool/src/diet/server/experimentmanager/JReplayPanel.java</file>
-            <file>file:/C:/github3/chattool/src/diet/server/experimentmanager/JStatusBar.java</file>
             <file>file:/C:/github3/chattool/src/diet/utils/postprocessing/collatingdata/CollatingData.java</file>
-            <file>file:/C:/github3/chattool/src/diet/server/conversation/ui/JParticipantsPanelSouth.java</file>
             <file>file:/C:/github3/chattool/src/diet/utils/postprocessing/WYSIWYGTranscriptLayout.java</file>
-            <file>file:/C:/github3/chattool/src/diet/utils/postprocessing/WYSIWYGReconstructingTurnsFromClientEvents1.java</file>
-            <file>file:/C:/github3/chattool/src/diet/server/conversation/ui/JParticipantsTable.java</file>
-            <file>file:/C:/github3/chattool/src/diet/server/experimentmanager/JReplayTableModel.java</file>
-            <file>file:/C:/github3/chattool/src/diet/server/experimentmanager/JLeftTabbedPanelCloseButton.java</file>
-            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/DefaultConversationController.java</file>
+            <file>file:/C:/github3/chattool/src/diet/client/JChatFrameRightMost/JTextPaneRightJustified.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/experimentmanager/ui/JEMStarter.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/DyadicTurnByTurn_Tutorial2_MultipartyInteraction.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/GroupAssignment.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/IsTypingController/FakeTypingActivity.java</file>
             <file>file:/C:/github3/chattool/src/diet/server/conversation/ui/JTurnsListTableModel.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/experimentmanager/ui/JEMStarter111.java</file>
             <file>file:/C:/github3/chattool/src/diet/server/IsTypingController/IsTypingOrNotTyping.java</file>
-            <file>file:/C:/github3/chattool/src/diet/server/conversationhistory/turn/ArtificialTurnProducedByServer.java</file>
             <file>file:/C:/github3/chattool/src/diet/server/ParticipantPartnering/ParticipantPartnering.java</file>
             <file>file:/C:/github3/chattool/src/diet/server/conversation/ui/JTurnsHorizontalTableModel.java</file>
-            <file>file:/C:/github3/chattool/src/diet/server/conversation/ui/JParticipantsPanel.java</file>
-            <file>file:/C:/github3/chattool/src/diet/server/ParticipantPartnering/ui/JPanelParticipantPartneringSouth.java</file>
+            <file>file:/C:/github3/chattool/src/diet/client/JChatFrame.java</file>
             <file>file:/C:/github3/chattool/src/diet/server/Metrics.java</file>
             <file>file:/C:/github3/chattool/src/diet/utils/postprocessing/WYSIWYGTranscriptLayoutFromClientEvents.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/experimentmanager/EMUI.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/obsoltebucket/TestController.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/conversation/ui/JInterventionsPanel.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/experimentmanager/ui/JEMStarter1.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/conversation/ui/JTurnsListTable.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/Dyadic_TurnByTurnInterface.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/io/IntelligentIO.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ParticipantConnection.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/Configuration.java</file>
+            <file>file:/C:/github3/chattool/src/diet/client/ConnectionToServer.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/experimentmanager/JStatusBar.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/conversation/ui/JParticipantsPanelSouth.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/DefaultWYSIWYGConversationControllerInterface.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/Dyadic_WYSIWYGInterface_ReferringToFaces.java</file>
+            <file>file:/C:/github3/chattool/src/diet/utils/postprocessing/WYSIWYGReconstructingTurnsFromClientEvents1.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/conversation/ui/JParticipantsTable.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/Dyadic_WYSIWYGInterface_Manipulation.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/experimentmanager/JReplayTableModel.java</file>
+            <file>file:/C:/github3/chattool/src/diet/client/ClientInterfaceEvents/ClientInterfaceEvent.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/Dyadic_TurnByTurnInterface_MazeGame_ArtificialSelfRepairs.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/conversationhistory/ConversationHistory.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/experimentmanager/JLeftTabbedPanelCloseButton.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/DefaultConversationController.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ParticipantPartnering/SubDialogue.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/experimentmanager/JExperimentManagerMainFrame.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ConversationController/DefaultWYSIWYGConversationControllerInterface2BACKUPWORKSOK.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/conversationhistory/turn/ArtificialTurnProducedByServer.java</file>
+            <file>file:/C:/github3/chattool/src/diet/client/ClientInterfaceEvents/ClientInterfaceEventTracker.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/conversation/ui/JParticipantsPanel.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/ParticipantPartnering/ui/JPanelParticipantPartneringSouth.java</file>
+            <file>file:/C:/github3/chattool/src/diet/client/JChatFrameRightMost/JChatFrameRightMostMultipleWindows.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/Conversation.java</file>
+            <file>file:/C:/github3/chattool/src/diet/server/experimentmanager/ui/JEMStarter11.java</file>
             <file>file:/C:/github3/chattool/src/diet/server/conversationhistory/turn/Turn.java</file>
         </group>
     </open-files>

@@ -111,17 +111,15 @@ This corresponds to a dialogue between two participants. The first participant h
 5. **LLLL3:** great
  
 Where turns 1 and 4 were artificially modified by the server. 
-Notice how, although the dialogue has 5 turns, there are 7 rows of data in the output. This is because whenever a turn is not relayed to all participants, the server automatically saves it as an  "intercepted turn" (see column D - Turntype, in the spreadsheet). Look at the first row of data in the spreadsheet. Notice how the intercepted turn has "server" as the sole recipient. Notice also how the modified turn is saved as an "artificial turn"(see column D - Turntype). This "artificialturn" is sent from the server (column E), but the ApparentSender (column G) is LLL3.
+Notice how, although the dialogue has 5 turns, there are 7 rows of data in the output. This is because whenever a turn is not relayed to all participants, the server automatically saves it as an  "intercepted turn" (see column D - Turntype, in the spreadsheet). Look at the first row of data in the spreadsheet. Notice how the intercepted turn has "server" as the sole recipient. Notice also how the modified turn is saved as an "artificial turn"(see column D - Turntype). This "artificialturn" is sent from the server (column E), but the ApparentSender (column G) is LLLL3.
 
-
-Important: When programming interventions it is important to distinguish between artificial turns and turns that are relayed. The reason is that. 
 
 
 
 Removing text from participants' turns
 --------------------------------------
 
-Suppose that you want to write code that removes all unhappy emoticons ":(" from participants' turns. This can be done by adding one more line to the code from the previous example:
+Suppose, instead that you want to write code that removes all unhappy emoticons ":(" from participants' turns. This can be done by adding one more line to the code from the previous example:
 
 .. code-block:: java
    :linenos:
@@ -134,7 +132,7 @@ Suppose that you want to write code that removes all unhappy emoticons ":(" from
           if(turn.contains(":(")) {
                turn = turn.replace(":(", "");
                Vector recipients = pp.getRecipients(sender);
-               c.sendArtificialTurnFromApparentOriginToRecipients(sender, recipients, turn);
+               c.sendArtificialTurnFromApparentOriginToParticipants(sender, recipients, turn);
           }
           else{
                 c.relayTurnToPermittedParticipants(sender, mct);  
@@ -142,16 +140,247 @@ Suppose that you want to write code that removes all unhappy emoticons ":(" from
     }
    
    
+Modifying text from participants' turns
+---------------------------------------
+
+Suppose, instead that you want to write code that replaces all instances of the word "sad" with "happy". The code for doing this is almost exactly the same as the previous example:
+
+
+
+.. code-block:: java
+   :linenos:
+   
+       public synchronized void processChatText(Participant sender, MessageChatTextFromClient mct){    
+          itnt.processTurnSentByClient(sender);
+          
+          String turn = mct.getText();
+          
+          if(turn.contains(":(")) {
+               turn = turn.replace("sad", "happy");
+               Vector recipients = pp.getRecipients(sender);
+               c.sendArtificialTurnFromApparentOriginToParticipants(sender, recipients, turn);
+          }
+          else{
+                c.relayTurnToPermittedParticipants(sender, mct);  
+          }          
+    }
+	
+
+Blocking entire turns (shadowbanning)
+-------------------------------------
+
+Suppose, instead that you want to write code that blocks any turn that contains the word "sad".
+
+
+
+.. code-block:: java
+   :linenos:
+   
+       public synchronized void processChatText(Participant sender, MessageChatTextFromClient mct){    
+                  
+          String turn = mct.getText();
+          
+          if(!turn.contains("sad")) {
+		       itnt.processTurnSentByClient(sender);
+               c.relayTurnToPermittedParticipants(sender, mct);  
+          }
+          else{
+                
+          }          
+    }
+
+
+
+Extending the code
+------------------
+
+The techniques in this tutorial can be chained together to program interventions where participants engage in short sequences of interaction with the server that is spoofing their conversational partner.
 
 
 
 
 
+Tutorial2 - Multiparty interaction: Spoofing identities
+=======================================================
+
+This experiment involves a setup with three participants: A, B, C. 
+Participant A randomly sees messages from B appear as posts from C.
+
+
+Before running this tutorial, make sure you have carried out tutorial 1 (i.e. that you know how to create your own subclass of DefaultConversationController,, and start it). 
+
+First, create a new ConversationController class called ``DyadicTurnByTurn_Tutorial2_MultipartyInteraction`` (following the same steps in tutorial 1).
+
+In order to make the GUI automatically start 3 participants, instead of two, chnage the associated parameter ``sett.login_numberOfParticipants = 3;`` in the constructor of the ConversationController:
+
+.. code-block:: java
+   :linenos:
+   :emphasize-lines: 6,13
+
+   public DyadicTurnByTurn_Tutorial2_MultipartyInteraction(Conversation c) {
+        super(c);
+        String portNumberOfServer = ""+ConnectionListener.staticGetPortNumber();
+        this.setID("Dyadic");
+        this.experimentHasStarted=true;     
+        sett.login_numberOfParticipants = 3; 
+   }
+   public DyadicTurnByTurn_Tutorial2_MultipartyInteraction(Conversation c, long istypingtimeout) {
+        super(c,istypingtimeout);
+        String portNumberOfServer = ""+ConnectionListener.staticGetPortNumber();
+        this.setID("Dyadic");
+        this.experimentHasStarted=true;
+        sett.login_numberOfParticipants = 3;    
+   }
+
+
+
+
+First it needs to be changed to assign participants to conversations of 3 participants. This can be done in the ``participantJoinedConversation(..)
+
+.. code-block:: java
+   :linenos:
+   
+   Participant pA,pB,pC;
+    
+   public synchronized void participantJoinedConversation(final Participant p) {
+       // super.participantJoinedConversation(p);
+       Vector allP = c.getAllParticipantsAsList();   
+       
+       if(c.getNoOfParticipants()==1)pA=p;
+       else if(c.getNoOfParticipants()==2)pB=p;
+       else if(c.getNoOfParticipants()==3)pC=p;
+       
+       if(allP.size()==3){
+           pp.createNewSubdialogue(allP);   
+       }     
+    }
+
+Notice how Line 4 is commented out (this is because the default functionality is dyadic groups). Line 4 checks how many participants are currently logged in. Lines 7,8,9 assign participants to particular roles. In this experiment, pA will be the one receiving the spoof turns. (In a proper experiment you would do this randomly or based on participants' IDs) If there are 3 participants, they are assigned to a new group (Line 11). 
+
+The code below performs the manipulation. The way it works is that the first 10 turns of the dialogue proceed normally. After 10 turns participant A sees B's turns as if they are produced by C. A sees C's turns as if they are produced by B.   B and C see each other's turns veridically. 
+
+
+.. code-block:: java 
+   :linenos:
+   
+    long msgcount=0; 
+    boolean doSwap = true;
+   
+    public synchronized void processChatText(Participant sender, MessageChatTextFromClient mct){ 
+        msgcount++;
+        if(msgcount>10)doSwap=true;
+        
+        if(!doSwap || sender ==pA){
+             itnt.processTurnSentByClient(sender);
+             c.relayTurnToPermittedParticipants(sender, mct);
+             return;
+         }
+         if(sender==pB ){
+              c.sendArtificialTurnFromApparentOrigin(pC, pA, mct.getText());
+              c.sendArtificialTurnFromApparentOrigin(pB, pC, mct.getText());
+         }
+         if(sender==pC ){
+              c.sendArtificialTurnFromApparentOrigin(pB, pA, mct.getText());
+              c.sendArtificialTurnFromApparentOrigin(pC, pB, mct.getText());
+         }  
+         
+    }
+
+	
+Tutorial3 - Manipulating the timing of turns
+============================================
+
+This is a simple add-on to the previous tutorial. 
+
+Suppose you want to delay Participant pA's turns. This can be achieved using the ``Conversation.relayDELAYEDTurnToPermittedParticipants(...)`` method.
+
+.. code-block:: java 
+   :linenos:
+   :emphasize-lines: 7
+
+      public synchronized void processChatText(Participant sender, MessageChatTextFromClient mct){ 
+        msgcount++;
+        if(msgcount>10)doSwap=true;
+        
+        if(!doSwap || sender ==pA){
+             itnt.processTurnSentByClient(sender);
+             c.relayDELAYEDTurnToPermittedParticipants(sender, mct, 3000);
+             return;
+         }
+         if(sender==pB ){
+              c.sendArtificialTurnFromApparentOrigin(pC, pA, mct.getText());
+              c.sendArtificialTurnFromApparentOrigin(pB, pC, mct.getText());
+         }
+         if(sender==pC ){
+              c.sendArtificialTurnFromApparentOrigin(pB, pA, mct.getText());
+              c.sendArtificialTurnFromApparentOrigin(pC, pB, mct.getText());
+         }     
+    }
+
+Tutorial4 - Linguistic subcommunities: Dynamically creating/mixing groups
+=========================================================================
+
+Before running this tutorial, make sure you have carried out tutorial 1 (i.e. that you know how to create your own subclass of DefaultConversationController,, and start it). 
+
+This tutorial shows how to run an experiment with 8 participants (p1, p2, p3, p4, p5, p6, p7, p8) . Initially there are four pairs (p1,p2), (p3,p4) , (p5,p6), (p7,p8). After 10 turns, participants are then paired with another partner. (p1,p3), (p2,p4), (p5,p7), (p6,p8).
+
+First, create a new ConversationController class called ``DyadicTurnByTurn_Tutorial2_MultipartyInteraction`` (following the same steps in tutorial 1).
+
+Then, to assign participants to the correct dyad at login, do 
+
+.. code-block:: java 
+   :linenos:
+   
+    public synchronized void participantJoinedConversation(final Participant p) {
+       // super.participantJoinedConversation(p);
+       Vector<Participant> allP = c.getAllParticipantsAsList();   
+       
+       if(c.getNoOfParticipants()==8){
+           pp.createNewSubdialogue(allP.elementAt(0), allP.elementAt(1));
+           pp.createNewSubdialogue(allP.elementAt(2), allP.elementAt(3));
+           pp.createNewSubdialogue(allP.elementAt(4), allP.elementAt(5));
+           pp.createNewSubdialogue(allP.elementAt(6), allP.elementAt(7));
+           
+           itnt.addPairWhoAreMutuallyInformedOfTyping(allP.elementAt(0), allP.elementAt(1));
+           itnt.addPairWhoAreMutuallyInformedOfTyping(allP.elementAt(2), allP.elementAt(3));
+           itnt.addPairWhoAreMutuallyInformedOfTyping(allP.elementAt(4), allP.elementAt(5));
+           itnt.addPairWhoAreMutuallyInformedOfTyping(allP.elementAt(6), allP.elementAt(7));
+       }
+       else{
+           c.sendInstructionToParticipant(p,"Please wait for other participants to login");
+       }  
+    }
+
+The code to reassign participants to different partners is almost identical:
+
+
+
+.. code-block:: java 
+   :linenos:
+   
+      long msgcount=0; 
+     
+    public synchronized void processChatText(Participant sender, MessageChatTextFromClient mct){  
+       msgcount++;
+       if(msgcount==10){
+           Vector<Participant> allP = c.getAllParticipantsAsList();   
+           pp.createNewSubdialogue(allP.elementAt(0), allP.elementAt(2));
+           pp.createNewSubdialogue(allP.elementAt(1), allP.elementAt(3));
+           pp.createNewSubdialogue(allP.elementAt(4), allP.elementAt(6));
+           pp.createNewSubdialogue(allP.elementAt(5), allP.elementAt(7));
+           
+           itnt.addPairWhoAreMutuallyInformedOfTyping(allP.elementAt(0), allP.elementAt(2));
+           itnt.addPairWhoAreMutuallyInformedOfTyping(allP.elementAt(1), allP.elementAt(3));
+           itnt.addPairWhoAreMutuallyInformedOfTyping(allP.elementAt(4), allP.elementAt(6));
+           itnt.addPairWhoAreMutuallyInformedOfTyping(allP.elementAt(5), allP.elementAt(7));
+       }
+    }
+   
+Note: This is a "toy" implementation, for illustrative purposes. It would be possible in this experiment for the "swap" to be triggered before all participants had sent a turn.
+   
+   
 
 
 
 
 
-
-
-I

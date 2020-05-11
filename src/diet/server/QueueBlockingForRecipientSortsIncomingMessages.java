@@ -93,19 +93,19 @@ public class QueueBlockingForRecipientSortsIncomingMessages {
      * @return first message in the queue
      */
     synchronized public Message getNextMessageBlocking(){
-       if(DefaultConversationController.sett.debug_debugTime)Conversation.statC.saveTime("C");
+       if(DefaultConversationController.sett.debug_debugTime)Conversation.statC.debug_SaveEvent("C");
        while(incomingMessages.size()==0){
-            if(DefaultConversationController.sett.debug_debugTime)Conversation.statC.saveTime("D-SLEEPING");
+            if(DefaultConversationController.sett.debug_debugTime)Conversation.statC.debug_SaveEvent("D-SLEEPING");
            try{
              
              wait();
-             if(DefaultConversationController.sett.debug_debugTime)Conversation.statC.saveTime("E-WOKEN");
+             if(DefaultConversationController.sett.debug_debugTime)Conversation.statC.debug_SaveEvent("E-WOKEN");
            }catch(Exception e){
                System.out.println("QueueBlockingForRecipient WOKEN UP: "+new Date().getTime());
-               if(DefaultConversationController.sett.debug_debugTime)Conversation.statC.saveTime("F");
+               if(DefaultConversationController.sett.debug_debugTime)Conversation.statC.debug_SaveEvent("F");
            }  
        }
-       if(DefaultConversationController.sett.debug_debugTime)Conversation.statC.saveTime("G");
+       if(DefaultConversationController.sett.debug_debugTime)Conversation.statC.debug_SaveEvent("G");
 
        Message firstObject= (Message)incomingMessages.elementAt(0);
        if(DefaultConversationController.sett.debug_debugMESSAGEBLOCKAGE){System.out.println("MCT4957");System.out.flush();}

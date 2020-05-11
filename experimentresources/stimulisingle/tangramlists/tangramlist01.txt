@@ -1,3 +1,3 @@
-000_D_03.png 000_M_15.png
-001_D_06.png 001_M_18.png
-002_D_01.png 002_M_13.png
+000_D_03.png 000_M_15.png BIG
+001_D_06.png 001_M_18.png SMALL
+002_D_01.png 002_M_13.png BIG

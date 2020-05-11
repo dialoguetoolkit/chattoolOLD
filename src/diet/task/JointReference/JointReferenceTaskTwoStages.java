@@ -1751,6 +1751,7 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
      
      public static Vector<int[]> getListsTrainingGR(Vector<int[]> v){
           Vector<int[]> firstpart = getRandomValidSequence(v);
+          
           int[] lastpair= firstpart.lastElement();
           
           

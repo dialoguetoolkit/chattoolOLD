@@ -379,8 +379,28 @@ The code to reassign participants to different partners is almost identical:
 Note: This is a "toy" implementation, for illustrative purposes. It would be possible in this experiment for the "swap" to be triggered before all participants had sent a turn.
    
    
+Tutorial5 -
+
+Running a tangram game experiment with custom images.
 
 
+Displaying stimuli on the clients /
+
+Getting input from the users - public void showPopupOnClientQueryInfo
+
+Displaying progress bars
+
+N.B. If you are doing 
+
+
+ Interacting with system? chatbot? / 
+ 
+ How to save data to the file (save a data row) OR saving additionaal attribvals
+
+
+
+
+WYSIWYG - adding random smileys to the WYSIWYG Interface
 
 
 

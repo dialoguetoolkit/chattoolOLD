@@ -1,0 +1,720 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>This is the API &mdash; dialoguetoolkit  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Overview" href="overview.html" />
+    <link rel="prev" title="Welcome to dialoguetoolkit’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> dialoguetoolkit
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">This is the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Downloading and installing the toolkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programming.html">Programming the chattool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datacollected.html">Data collected by the chattool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tipstricks.html">Tips &amp; tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">dialoguetoolkit</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>This is the API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="this-is-the-api">
+<h1>This is the API<a class="headerlink" href="#this-is-the-api" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>This is the main server class. Each experiment has an associated Conversation object. The Conversation object
+acts as the intermediary between the clients. It constantly checks for incoming messages, and relays them to a
+ConversationController object that determines whether the message should be transformed.</p>
+<p>The Conversation object contains methods that should be used to send messages to clients.</p>
+<p>&#64;author gjmills</p>
+</div></blockquote>
+<blockquote>
+<div><p>This method retrieves the individual settings for the Conversation by extracting
+the <a class="reference external" href="mailto:{&#37;&#52;&#48;link">{<span>&#64;</span>link</a> diet.parameters.Parameter} objects from <a class="reference external" href="mailto:{&#37;&#52;&#48;link">{<span>&#64;</span>link</a> diet.parameters.ExperimentSettings}.
+It instantiates the correct <a class="reference external" href="mailto:{&#37;&#52;&#48;link">{<span>&#64;</span>link</a> ConversationController} using dynamic class loading if necessary, <a class="reference external" href="mailto:{&#37;&#52;&#48;link">{<span>&#64;</span>link</a> TaskController} (if any), ensures the data will be saved
+in a particular directory.</p>
+<p>&lt;p&gt;After initializing the components, it starts the ConversationController Thread.</p>
+<p>&lt;p&gt;Editing this method has to be done carefully. The sequence of the objects that are initialized is very
+important as there are many complex interdependencies.</p>
+<p>&#64;param nameOfConversationController The string used to identify the experiment</p>
+</div></blockquote>
+<blockquote>
+<div><p>Returns the collection of tables that are associated with this Conversation
+&#64;return ConversationUIManager</p>
+</div></blockquote>
+<blockquote>
+<div><p>When a client connects to the server when logging on, it checks that the participant ID is OK
+&#64;param participantID The ID entered by the participant on the client
+&#64;return permission to login</p>
+</div></blockquote>
+<blockquote>
+<div><p>Adds participant to the Conversation and sends the participant a MessageClientSetupParameters message with
+the necessary window and client settings.</p>
+<p>&#64;param p Participant to be added to the Conversation</p>
+</div></blockquote>
+<blockquote>
+<div><p>This method still needs to be implemented and verified.
+&#64;param p</p>
+</div></blockquote>
+<blockquote>
+<div><p>Saves the name of an event to a log file “debuggingevents.txt”
+&#64;param eventName The name of the event</p>
+</div></blockquote>
+<blockquote>
+<div><p>Loop that polls <a class="reference external" href="mailto:{&#37;&#52;&#48;link">{<span>&#64;</span>link</a> Participants} for any incoming messages. On receiving a message it calls the corresponding
+methods in <a class="reference external" href="mailto:{&#37;&#52;&#48;link">{<span>&#64;</span>link</a> diet.server.ConversationController}.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Sends instructions from the server to the client. The message is displayed in the conversation history window.
+This ensures that the message is coloured differently:  messages sent by the participants (the default colour is red).
+It also ensures that the message is stored in the correct format in the turns.txt datafile.</p>
+<p>&#64;param recipient The participant who receives the instruction message
+&#64;param text The text to be displayed in the conversation history window
+&#64;param additionalValues A vector (can be empty) where you can add attribute/value pairs to be added to “turns.txt”</p>
+</div></blockquote>
+<blockquote>
+<div><p>Sends instructions from the server to the client. The message is displayed in the conversation history window.
+This ensures that the message is coloured differently:  messages sent by the participants (the default colour is red).
+It also ensures that the message is stored in the correct format in the turns.txt datafile.</p>
+<p>&#64;param recipient The participant who receives the instruction message
+&#64;param text The text to be displayed in the conversation history window</p>
+</div></blockquote>
+<blockquote>
+<div><p>Sends instructions from the server to multiple clients. The message is displayed in the conversation history window.
+This ensures that the message is coloured differently:  messages sent by the participants (the default colour is red).
+It also ensures that the message is stored in the correct format in the turns.txt datafile.</p>
+<p>&#64;param recipients The participants who receive the instruction message
+&#64;param text The text to be displayed in the conversation history window</p>
+</div></blockquote>
+<blockquote>
+<div><p>Displays a fake turn in the conversation history window of the participant, which appears to come from another participant.
+*
+&#64;param apparentOrigin The participant who the turn appears to originate from
+&#64;param recipient The participant who receives the turn
+&#64;param text The text of the turn</p>
+</div></blockquote>
+<blockquote>
+<div><p>Displays a fake turn in the conversation history window of the recipient, which appears to come from another participant.
+This method is useful if you want to spoof the username of a participant who isn’t actually participating in the conversation.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p>&#64;param apparentOriginUsername The username of the participant who the turn appears to originate from.
+&#64;param recipient The participant who receives the turn
+&#64;param text The text of the turn</p>
+</div></blockquote>
+<blockquote>
+<div><p>Displays a fake turn in the conversation history window of the participant, which appears to come from another participant.
+*
+&#64;param apparentOrigin The participant who the turn appears to originate from
+&#64;param recipient The participant who receives the turn
+&#64;param text The text of the turn
+&#64;param additionalValues A vector (can be empty) where you can add attribute/value pairs to be added to “turns.txt”</p>
+</div></blockquote>
+<blockquote>
+<div><p>Displays a fake turn in the conversation history window of multiple participants.
+*
+&#64;param apparentOrigin The participant who the turn appears to originate from
+&#64;param usernames The usernames of the participants who receive the text
+&#64;param text The text of the fake turn</p>
+</div></blockquote>
+<blockquote>
+<div><p>Displays a fake turn in the conversation history window of multiple participants.
+*
+&#64;param apparentOrigin The participant who the turn appears to originate from
+&#64;param usernames The participants who receive the fake turn
+&#64;param text The text of the fake turn</p>
+</div></blockquote>
+<blockquote>
+<div><p>Deprecated - included because some older interventions still use this method.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Deprecated - included because some older interventions still use this method.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Deprecated - included because some older interventions still use this method.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Deprecated - included because some older interventions still use this method.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Deprecated - included because some older interventions still use this method.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Deprecated - included because some older interventions still use this method.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Shows a popup message on the client. The response is sent back to the <a class="reference external" href="mailto:{&#37;&#52;&#48;link">{<span>&#64;</span>link</a> diet.server.DefaultConversationController.processPopupResponse(Participant origin, MessagePopupResponseFromClient mpr)}</p>
+<p>&#64;param popupID Your code should provide a unique ID so that when the response is received, it is clear what it is answering.
+&#64;param question The text displayed in the popup
+&#64;param options A list of options that the participant can select
+&#64;param title This will be displayed on the titlebar of the popup window
+&#64;param selection This is the default selected value</p>
+</div></blockquote>
+<blockquote>
+<div><p>Deprecated - included because some older interventions still use this method.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Deprecated - included because some older interventions still use this method.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Deprecated - included because some older interventions still use this method.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Deprecated - included because some older interventions still use this method.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Saves data to the “turns.txt” datafile.</p>
+<p>If your code calls this directly - feel free to customize the fields how you see fit. If you do this, it is best to ensure you create your own unique value for datatype</p>
+<p>&#64;param subdialogueID The identifier of the subdialogue
+&#64;param datatype The type of data, e.g. “normalturn”, “interceptedturn”, “data”
+&#64;param senderID The ID of the participant who generated the turn/data (can also be “server” for interventions or for data being saved)
+&#64;param senderUsername The username of the participant who generated the turn/data (can also be “server” for interventions or for data being saved)
+&#64;param apparentSenderUsername This field is only relevant for fake turns, where the apparent sender is different from the actual sender.
+&#64;param timeOfCreationOnClient The time on the client when the data was created (Not relevant for data that is created on server)
+&#64;param timeOfSendOnClient The time on the client when the data was sent (Not relevant for data that is created on server)
+&#64;param timeOfRELAYONSERVER The time on the server when the data was received/relayed from one participant to the other.
+&#64;param recipientsNames The participants who received this data
+&#64;param text The data (Save your data to this value)
+&#64;param additionalData A list of attribute/value pairs that will also be saved to the file as separate columns</p>
+</div></blockquote>
+<blockquote>
+<div><p>Saves data to the “turns.txt” datafile.</p>
+<p>&#64;param datatype The type of data, e.g. “normalturn”, “interceptedturn”, “data”
+&#64;param p The participant associated with the data
+&#64;param value The data (Save your data to this value)</p>
+</div></blockquote>
+<blockquote>
+<div><p>Saves data to the “turns.txt” datafile.</p>
+<p>&#64;param datatype The type of data, e.g. “normalturn”, “interceptedturn”, “data”
+&#64;param p The participant associated with the data
+&#64;param value The data (Save your data to this value)
+&#64;param additionalAttribVals A list of attribute/value pairs that will also be saved to the file as separate columns</p>
+</div></blockquote>
+<blockquote>
+<div><p>Saves keypress data to the “keyspressed.txt” datafile.</p>
+<p>This is handled automatically - your code shouldn’t have to call/modify this.</p>
+<p>&#64;param sender The participant who generated the keypress
+&#64;param mkp the keypress information</p>
+</div></blockquote>
+<blockquote>
+<div><p>Saves keypress data to the “keyspressed.txt” datafile.</p>
+<p>This is handled automatically - your code shouldn’t have to call/modify this.</p>
+<p>&#64;param sender The participant who generated the keypress
+&#64;param mkp The keypress information
+&#64;param subdialogueID The subdialogue ID of the participant
+&#64;param additionalAttribVals A list of attribute/value pairs that will also be saved to the file as separate columns</p>
+</div></blockquote>
+<blockquote>
+<div><p>Called by ConversationController to send a turn it has received, unmodified, to the other participants
+If the ConversationController object modifies the turn in any way, e.g.adding,deleting,substituting characters, or manipulating the timing, use one of the sendArtificialTurn methods.</p>
+<p>&#64;param sender The participant who created the turn
+&#64;param recipients The participants who will receive the turn
+&#64;param mct The original message produced by the sender
+&#64;param windowNumber The window number on the client in which the message will be displayed. This is only relevant for the multiple window version of the  Turn By Turn Interface. The default window number is 0.
+&#64;param subdialogueID The subdialogue ID of the participant</p>
+</div></blockquote>
+<blockquote>
+<div><p>Called by ConversationController to send a turn it has received, unmodified, to the other participants
+If the ConversationController object modifies the turn in any way, e.g.adding,deleting,substituting characters, or manipulating the timing, use one of the sendArtificialTurn methods.
+This method retrieves the SubdialogueID from the ConversationController object.</p>
+<p>&#64;param sender The participant who created the turn
+&#64;param recipients The participants who will receive the turn
+&#64;param mct The original message produced by the sender
+&#64;param additionalAttribVals A list of attribute/value pairs that will also be saved to the file as separate columns</p>
+</div></blockquote>
+<blockquote>
+<div><p>Called by ConversationController to send a turn it has received, unmodified, to the other participants
+If the ConversationController object modifies the turn in any way, e.g.adding,deleting,substituting characters, or manipulating the timing, use one of the sendArtificialTurn methods.
+This method retrieves the SubdialogueID from the ConversationController object
+This method retrieves the recipients from the ConversationController object</p>
+<p>&#64;param sender The participant who created the turn
+&#64;param recipients The participants who will receive the turn
+&#64;param mct The original message produced by the sender</p>
+</div></blockquote>
+<blockquote>
+<div><p>Called by ConversationController to send a turn it has received, unmodified, to the other participants
+If the ConversationController object modifies the turn in any way, e.g.adding,deleting,substituting characters, or manipulating the timing, use one of the sendArtificialTurn methods.
+This method retrieves the SubdialogueID from the ConversationController object
+This method retrieves the recipients from the ConversationController object</p>
+<p>&#64;param sender The participant who created the turn
+&#64;param mct The original message produced by the sender</p>
+</div></blockquote>
+<blockquote>
+<div><p>Removes all messages that are in the queue of outgoing delayed messages. These are the messages that were sent with</p>
+</div></blockquote>
+<blockquote>
+<div><p>Called by ConversationController to send a delayed turn
+This method retrieves the SubdialogueID from the ConversationController object
+This method retrieves the recipients from the ConversationController object</p>
+<p>IMPORTANT: This information is saved in the turns.txt file when the instruction is made, not when it is actually sent!
+If you want to see the exact moment when it was received, look at the TextAsformulatedTIMING column in “turns.txt”. It will be displayed there when it is received.
+The exact moment it is received is also saved in the “clientinterfaceevents.txt”
+Note that this method saves an additional attribute/value pair that records the delay.    *</p>
+<p>&#64;param sender The participant who created the turn
+&#64;param long the delay (in milliseconds) when the turn is sent.
+&#64;param text The message to be sent</p>
+</div></blockquote>
+<blockquote>
+<div><p>Clears the turn formulation box in the Turn By Turn interface</p>
+<p>&#64;param recipient The participant whose box gets cleared</p>
+</div></blockquote>
+<blockquote>
+<div><p>Clears the conversation history window in the Turn By Turn interface</p>
+<p>&#64;param recipient The participant whose conversation history is cleared</p>
+</div></blockquote>
+<blockquote>
+<div><p>In the multiple window version of the Turn By Turn Interface, this clears all windows apart from window 0 (which is typically the window where the participant’s own turns are displayed)</p>
+<p>&#64;param recipient The participant whose windows are cleared</p>
+</div></blockquote>
+<blockquote>
+<div><p>Enables the text entry box in the Turn By Turn interface
+&#64;param recipient</p>
+</div></blockquote>
+<blockquote>
+<div><p>Specifies the maximum number of characters that can be typed in the turn formulation box. This is useful, as it prevents partcipants from typing long monologues.</p>
+<p>&#64;param recipient whose text entry box is modified.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Disables the text entry box in the Turn By Turn interface. Prevents the participant from viewing/typing text.
+&#64;param recipient</p>
+</div></blockquote>
+<blockquote>
+<div><p>Enables the conversation history in the Turn By Turn interface.
+&#64;param recipient</p>
+</div></blockquote>
+<blockquote>
+<div><p>Disables the conversation history window in the Turn By Turn interface. Prevents the participant from viewing the conversation history
+&#64;param recipient</p>
+</div></blockquote>
+<blockquote>
+<div><p>Prevents the participant from scrolling the conversation history window.
+&#64;param recipient</p>
+</div></blockquote>
+<blockquote>
+<div><p>Allows the participant to scroll the conversation history window.
+&#64;param recipient</p>
+</div></blockquote>
+<blockquote>
+<div><p>Changes the background colour of the interface. This can be useful to e.g. flash the interface to signal a task state.</p>
+<p>&#64;param recipient
+&#64;param newColor</p>
+</div></blockquote>
+<blockquote>
+<div><p>To test/debug the chattool, this sends instructions to the client to generate random keypresses.</p>
+<p>&#64;param recipient
+&#64;param nameOfDebugScenario
+&#64;param duration How long the keypresses should be generated for</p>
+</div></blockquote>
+<blockquote>
+<div><p>Instructs the client’s operating system to open a browser window and load a webpage.</p>
+<p>Important - test this before relying on it in an experiment, as it is controlling code outside of java, on the local machine.</p>
+<p>&#64;param pRecipient
+&#64;param webpage</p>
+</div></blockquote>
+<blockquote>
+<div><p>This allows participants to delete their turns in the text formulation window.</p>
+<p>&#64;param recipient</p>
+</div></blockquote>
+<blockquote>
+<div><p>This prevents participants from deleting their turns in the text formulation window.</p>
+<p>&#64;param recipient</p>
+</div></blockquote>
+<blockquote>
+<div><p>This is specific to the maze game. This command allows status messages to be displayed superimposed over the mazes in the maze game window.</p>
+<p>&#64;param recipient
+&#64;param text Text to be displayed
+&#64;param lengthOfTime duration of message</p>
+</div></blockquote>
+<blockquote>
+<div><p>Change the border of the client’s chatwindow- can be useful for notifications</p>
+<p>&#64;param recipient
+&#64;param width Width in pixels of the border
+&#64;param colour new colour of the border</p>
+</div></blockquote>
+<blockquote>
+<div><p>This is specific to the maze game.
+Change the border of the client’s maze game window - can be useful for notifications</p>
+<p>&#64;param recipient
+&#64;param width Width in pixels of the border
+&#64;param colour new colour of the border</p>
+</div></blockquote>
+<blockquote>
+<div><p>Generates a unique ID for instructions that are sent to the clients. These IDs are shown in “clientinterfaceevents.txt”</p>
+</div></blockquote>
+<blockquote>
+<div><p>Saves the turn that is not being relayed to the log files. It also resets the queue of incoming messages associated with the participant.
+There is an additional</p>
+<p>&#64;param p
+&#64;param turnNotRelayed
+&#64;param prefixFORCSVSpreadsheetIDENTIFIER</p>
+</div></blockquote>
+<blockquote>
+<div><p>Sends sets of images to the clients, to be displayed during the experiment. These images are used for the Confidence Expression task.
+This method works, but is somewhat overkill. Instead of sending serialized images via the network connection, it is much quicker to save the images in the jar file</p>
+<p>&#64;param recipient The participant who receives the images
+&#64;param serializedImages The set of serialized images
+&#64;param width The width of the window that will be displayed on the client
+&#64;param height The height of the window that will be displayed on the client
+&#64;param additionalInfo Additional information that is saved to the “turns.txt” file (This way of saving additional info is deprecated - use attribute/value pairs)</p>
+</div></blockquote>
+<blockquote>
+<div><p>Commands to display stimuli in the Confidence task.</p>
+<p>&#64;param recipient the participant who sees the images
+&#64;param fixation1time how long a fixation cross is displayed before the main stimulus
+&#64;param stimulus1time how long the first stimulus is shown for
+&#64;param blankscreen1time how long a bland screen is shown before showing the second fixation cross
+&#64;param fixation2time how long the fixation cross is displayed before the second stimulus
+&#64;param stimulus2time how long the second stimulus is displayed for
+&#64;param blankscreen2time how long a blankscreen is displayed before the participant is asked for a choice
+&#64;param stimulus1ID the image name of the first stimulus
+&#64;param stimulus2ID The image name of the second stimulus
+&#64;param prefixFORCSVSpreadsheet Additional information that is saved to the “turns.txt” file (This way of saving additional info is deprecated - use attribute/value pairs)</p>
+</div></blockquote>
+<blockquote>
+<div><p>Displays text in the stimulus window</p>
+<p>&#64;param recipient Participant who receives the text
+&#64;param text Text displayed in the window
+&#64;param panelName The image name that is displayed in the window
+&#64;param textColour The colour of the text
+&#64;param positionX The x position of the text in the window
+&#64;param positionY The y position of the text in the window
+&#64;param lengthOfTime How long the text is displayed for
+&#64;param prefixFORCSVSpreadsheet Additional information that is saved to the “turns.txt” file (This way of saving additional info is deprecated - use attribute/value pairs)</p>
+</div></blockquote>
+<blockquote>
+<div><p>Sends task move (e.g. move in the maze game) to a participant.
+&#64;param p
+&#64;param mt</p>
+</div></blockquote>
+<blockquote>
+<div><p>Returns the location on the local file system where the data from the experiment is saved
+&#64;return File representing the enclosing folder/directory containing the data from the experiment</p>
+</div></blockquote>
+<blockquote>
+<div><p>&#64;return the conversation history of the experiment This is a representation of all turns/messages by the server to the clients.</p>
+</div></blockquote>
+<blockquote>
+<div><p>&#64;return the active conversation controller object</p>
+</div></blockquote>
+<blockquote>
+<div><p>&#64;return all participants currently logged in</p>
+</div></blockquote>
+<blockquote>
+<div><p>&#64;return the Participants objects that contains (1) all participants logged in (2) methods for sending messages to participants</p>
+</div></blockquote>
+<blockquote>
+<div><p>&#64;return the number of participants who are currently logged in</p>
+</div></blockquote>
+<blockquote>
+<div><p>&#64;return the object responsible for saving files to the experiment folder</p>
+</div></blockquote>
+<blockquote>
+<div><p>Sends a kill command to close down participants</p>
+<p>&#64;param p the participant to be closed</p>
+</div></blockquote>
+<blockquote>
+<div><p>Attempts to close down the Conversation and associated resources.
+&#64;param sendCloseToClients</p>
+</div></blockquote>
+<blockquote>
+<div><p>Used to show the stimulus on a client’s interface.. This is the most straightforward.
+The file needs to be saved  in the jar file (netbeans does this automatically for folders in /experimentresources/
+When showing stimuli, this should be used to display the first stimulus</p>
+<p>&#64;param p The participant who sees the image
+&#64;param width The width of the stimulus window
+&#64;param height The height of the stimulus window
+&#64;param imagename The name of the image (should be in the jar file)
+&#64;param buttonnames A list of buttonnames that appear underneath the stimulus window.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Used to change the stimulus on a client’s interface.
+To initialize the window on the chat client use <a class="reference external" href="mailto:{&#37;&#52;&#48;link">{<span>&#64;</span>link</a> showStimulusImageFromJarFile_InitializeWindow} for the first stimulus.
+The file needs to be saved  in the jar file (netbeans does this automatically for folders in /experimentresources/
+When showing stimuli, this should be used to display the first stimulus</p>
+<p>&#64;param p The participant who sees the image
+&#64;param imagename The name of the image (should be in the jar file)
+&#64;param durationmsecs Duration of the stimulus.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Enables/disables the buttons underneath the stimulus.
+This is useful, e.g. for preventing participants for making a choice at particular moments in the experiment.</p>
+<p>&#64;param p the participant already displaying a stimulus window
+&#64;param buttonnames the names of the buttons to enable/disable
+&#64;param enable whether the button(s) are enabled/disabled</p>
+</div></blockquote>
+<blockquote>
+<div><p>Creates a simple text window where instructions can be displayed</p>
+<p>&#64;param p Participant who receives the instructions
+&#64;param id an ID given to the instructions
+&#64;param header Text displayed at the top of the window (this is somewhat unwieldy, but it does work…)
+&#64;param width width of the window
+&#64;param height height of the window
+&#64;param vScrollBar whether a scrollbar is activated
+&#64;param displayCOURIERFONT  whether the message is displayed in monospace font</p>
+</div></blockquote>
+<blockquote>
+<div><p>Displays an image in the text window on the client from a url.
+This is not recommended - it is much better to include images in the jar file, using the showStimulusImageEnableButtons(..) method .
+They load much quicker, and there isn’t the uncertainty of relying on webservers.</p>
+<p>&#64;param p Participant who sees the image
+&#64;param id an ID given to the stimulus
+&#64;param imageurl the url of the image.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Changes the text in the text output window on the clients</p>
+<p>&#64;param id an ID to identify the type of message that is displayed
+&#64;param newtext The text that is displayed
+&#64;param append whether to append or replace the text that is currently being displayed
+&#64;param prtss list of Participants who receive the instructions.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Closes the window</p>
+<p>&#64;param p  participant that receives the instruction
+&#64;param id the window that is to be closed.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Creates a progress bar on the client</p>
+<p>&#64;param p Participant where the progress bar is created
+&#64;param id Where the Progress bar should be displayed: “CHATFRAME”= under the chat window  “instructions”=under the window created with <a class="reference external" href="mailto:{&#37;&#52;&#48;link">{<span>&#64;</span>link</a> textOutputWindow_Initialize}
+&#64;param text The text displayed in the progress bar
+&#64;param foreCol The foreground colour of the progressbar
+&#64;param value  A value between 0 and 100 representing how complete the progressbar is displayed.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Creates a progress bar on all clients.</p>
+<ul class="simple">
+<li><p>&#64;param id Where the Progress bar should be displayed: “CHATFRAME”= under the chat window  “instructions”=under the window created with <a class="reference external" href="mailto:{&#37;&#52;&#48;link">{<span>&#64;</span>link</a> textOutputWindow_Initialize}</p></li>
+</ul>
+<p>&#64;param text The text displayed in the progress bar
+&#64;param foreCol The foreground colour of the progressbar
+&#64;param value  A value between 0 and 100 representing how complete the progressbar is displayed.</p>
+</div></blockquote>
+<blockquote>
+<div><p>&#64;return the ExperimentManager which is responsible for logging in of clients.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Prints text to the GUI in one of the status windows</p>
+<p>&#64;param windowName The name of the window where text is displayed. If the window doesn’t exist, it is created.
+&#64;param text The text that is appended to the window.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Prints text to the GUI in one of the status windows</p>
+<p>&#64;param windowName The name of the window where text is displayed. If the window doesn’t exist, it is created.
+&#64;param text The text that is appended to the window.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Prints text to the GUI in one of the status windows and saves it to the log file in the experiment directory</p>
+<p>&#64;param windowName The name of the window where text is displayed. If the window doesn’t exist, it is created.
+&#64;param text The text that is appended to the window.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Prints text to the GUI in one of the status windows and saves it to the log file in the experiment directory</p>
+<p>&#64;param windowName The name of the window where text is displayed. If the window doesn’t exist, it is created.
+&#64;param text The text that is appended to the window.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Saves errors (throwables) to the experiment folder</p>
+<p>&#64;param t error to be saved to</p>
+</div></blockquote>
+<blockquote>
+<div><p>Saves errors to the experiment folder</p>
+<p>&#64;param s string describing the error</p>
+</div></blockquote>
+<blockquote>
+<div><p>Saves errors (throwables) to the experiment folder</p>
+<p>&#64;param t error to be saved to</p>
+</div></blockquote>
+<blockquote>
+<div><p>Saves errors to the experiment folder</p>
+<p>&#64;param s string describing the error</p>
+</div></blockquote>
+<blockquote>
+<div><p>&#64;return whether the conversation is executing the main loop of checking for incoming messages.</p>
+</div></blockquote>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="overview.html" class="btn btn-neutral float-right" title="Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to dialoguetoolkit’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, gjmills
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -20,6 +20,9 @@ From a programming perspective, there are, broadly speaking, seven different typ
 
 Of course - some experiments might involve multiple types of intervention - e.g. manipulating the timing and apparent identity of participants' turns. 
 
+Important: All the tutorials below only require you to modify code in your ``ConversationController`` object. Most/all of the methods you will call are in the ``diet.server.Conversation``. The same applies when you program your own interventions - the chattool is designed so you only have to worry about the ConversationController object. The rest is taken care of in the chattool.
+
+
 Tutorial1 - Inserting, removing, substituting text in participants' turns
 =========================================================================
 
@@ -380,6 +383,16 @@ Note: This is a "toy" implementation, for illustrative purposes. It would be pos
    
    
 Tutorial5 -
+
+In this tutorial you will learn how 
+
+
+
+
+
+
+
+
 
 Running a tangram game experiment with custom images.
 

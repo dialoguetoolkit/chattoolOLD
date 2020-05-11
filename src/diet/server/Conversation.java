@@ -1894,6 +1894,33 @@ public class Conversation extends Thread{
     }
     
     
+       /**
+     * 
+     * Enables/disables the buttons underneath the stimulus. 
+     * This is useful, e.g. for preventing participants for making a choice at particular moments in the experiment.
+     * 
+     * @param p the participant already displaying a stimulus window
+     * @param buttonnames the names of the buttons to enable/disable
+     * @param enable whether the button(s) are enabled/disabled
+     */
+    public void showStimulusImageReplaceWithNewButtons(Participant p,String[] buttonnames, boolean enable){
+         diet.message.MessageStimulusImageReplaceWithNewButtons msirwnb = new MessageStimulusImageReplaceWithNewButtons( buttonnames, enable );
+         ps.sendMessageToParticipant(p,  msirwnb);
+         String allButtonnames="Buttons: ";
+         for(int i=0;i<buttonnames.length;i++){
+             allButtonnames = allButtonnames+ "{"+buttonnames[i]+"}";
+         }
+         
+         String type="enable";
+         if(!enable) {
+             type = "disable";
+         }
+         
+         Conversation.this.saveAdditionalRowOfDataToSpreadsheetOfTurns("stimulusimage_buttons_"+type,  p,allButtonnames );
+    }
+    
+      
+    
     
     
      

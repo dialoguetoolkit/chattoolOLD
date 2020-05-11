@@ -38,21 +38,26 @@ public class JFrameStimulusSingleImage extends JFrame implements WindowListener,
     JPanelStimulusSingleImage jpssi;
     JPanel jsp = new JPanel();
     Vector jbuttons = new Vector();
+    public int prefwidth ;
+    public int prefheight;
     
     
     
     
     public JFrameStimulusSingleImage(ConnectionToServer cts, int width, int height, String[] buttonnames) throws HeadlessException {
         super(cts.getUsername()); 
+        this.prefwidth=width;
+        this.prefheight=height;
         this.addWindowListener(this);
          //this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
          this.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
          
         this.getContentPane().setLayout(new BorderLayout());
         jpssi = new JPanelStimulusSingleImage(cts);
-        jpssi.setPreferredSize(new Dimension(width,height));
+        jpssi.setPreferredSize(new Dimension(width,height)); //For the buttons
         jpssi.setMinimumSize(new Dimension(width,height));
         jpssi.setMaximumSize(new Dimension(width,height));
+        //jpssi.setBackground(Color.BLACK);
        
         this.getContentPane().add(jpssi, BorderLayout.CENTER);
         this.cts = cts;
@@ -60,21 +65,33 @@ public class JFrameStimulusSingleImage extends JFrame implements WindowListener,
         
         JPanel southPanel = new JPanel();
         southPanel.setLayout(new BorderLayout());
-        JPanel southPanelNorth = new JPanel();
-        JPanel southPanelSouth = new JPanel();
+        
+        southPanel.setPreferredSize(new Dimension(width,30));
+        //southPanel.setBackground(Color.white);
+        //JPanel southPanelNorth = new JPanel();
+        
+        
+        //JPanel southPanelSouth = new JPanel();
+        //southPanel.setBackground(Color.red);
+        //southPanelNorth.setBackground(Color.green);
+        //southPanelSouth.setBackground(Color.blue);
         
         
         for(int i=0;i<buttonnames.length;i++){
            JButton jb = new JButton(buttonnames[i]);
            jb.setFocusable(false);
            
-           southPanelNorth.add(jb);    
+           southPanel.add(jb);    
            this.jbuttons.add(jb);
            jb.addActionListener(this);
+           currentButtons.add(jb);
         }
         
-        southPanel.add(southPanelNorth,BorderLayout.NORTH);
-        southPanel.add(southPanelSouth,BorderLayout.SOUTH);
+        //southPanel.add(southPanelNorth,BorderLayout.NORTH);
+        //southPanel.add(southPanelSouth,BorderLayout.SOUTH);
+        
+         southPanel.setPreferredSize(new Dimension(this.prefwidth,40));
+        jcurrentbuttonpanel=southPanel;
         
         this.getContentPane().add(southPanel,BorderLayout.SOUTH);
         
@@ -84,6 +101,62 @@ public class JFrameStimulusSingleImage extends JFrame implements WindowListener,
         this.pack();    
     }
     
+    JPanel jcurrentbuttonpanel;
+    Vector<JButton> currentButtons=new Vector();
+    
+    
+    
+    
+       
+    private void newButtons(String[] buttonnames, boolean enabled){
+        //Disconnect
+        jcurrentbuttonpanel.setVisible(false);
+        this.getContentPane().remove(jcurrentbuttonpanel);
+        for(int i=0;i<currentButtons.size();i++){
+            currentButtons.elementAt(i).removeActionListener(this);
+        }
+        currentButtons=new Vector();
+        //Create new
+        JPanel southPanel = new JPanel();
+        JPanel southPanelNorth = new JPanel();
+        JPanel southPanelSouth = new JPanel();   
+        for(int i=0;i<buttonnames.length;i++){
+           JButton jb = new JButton(buttonnames[i]);
+           jb.setFocusable(false);
+           jb.setEnabled(enabled);
+           southPanel.add(jb);    
+           this.jbuttons.add(jb);
+           jb.addActionListener(this);
+           currentButtons.add(jb);
+        }
+       
+        southPanel.setPreferredSize(new Dimension(this.prefwidth,40));
+        //southPanel.setBackground(Color.white);
+        
+        //southPanel.add(southPanelNorth,BorderLayout.NORTH);
+        //southPanel.add(southPanelSouth,BorderLayout.SOUTH);
+        jcurrentbuttonpanel= southPanel;
+        
+        //southPanel.setBackground(Color.red);
+        //southPanelNorth.setBackground(Color.green);
+        //southPanelSouth.setBackground(Color.blue);
+        
+        this.getContentPane().add(southPanel,BorderLayout.SOUTH);
+        
+        
+        
+        
+    }
+    
+    
+    public void addNewButtons(final String[] buttonnames, final boolean enable){
+        SwingUtilities.invokeLater(new Runnable(){
+            public void run(){
+                newButtons( buttonnames,enable);
+            }
+        });
+      
+    }
     
     
     public void enableButtons(final String[] buttonnames, final boolean enable){

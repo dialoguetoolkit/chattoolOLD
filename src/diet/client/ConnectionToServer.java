@@ -604,7 +604,19 @@ public class ConnectionToServer extends Thread {
                        }
               });         
           }
+          else if (m instanceof diet.message.MessageStimulusImageReplaceWithNewButtons){
+              final MessageStimulusImageReplaceWithNewButtons msirwnb = (MessageStimulusImageReplaceWithNewButtons)m;
+              //String name = msiciForStatic.nameOfImage;
+              //long duration = msiciForStatic.duration;
+              SwingUtilities.invokeLater(new Runnable(){
+                       public void run(){
+                          if(jfssi!=null)jfssi.addNewButtons(msirwnb.buttonnames, msirwnb.enable);
+                       }
+              });         
+          }
           
+          
+           
           
 
           else if (m instanceof MessageDisplayCloseWindow){

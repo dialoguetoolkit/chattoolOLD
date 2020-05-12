@@ -1836,11 +1836,12 @@ public class Conversation extends Thread{
      * @param p The participant who sees the image
      * @param width The width of the stimulus window
      * @param height The height of the stimulus window
-     * @param imagename The name of the image (should be in the jar file) 
+     * @param imagename The name of the image 
+     * @param isindirectory Whether the image is in the jar file OR is a physical file.
      * @param buttonnames A list of buttonnames that appear underneath the stimulus window.
      */    
-    public void showStimulusImageFromJarFile_InitializeWindow(Participant p, int width, int height, String imagename, String[] buttonnames){
-         diet.message.MessageStimulusImageDisplayNewJFrame msidjf = new MessageStimulusImageDisplayNewJFrame( width, height, imagename,buttonnames );
+    public void showStimulusImageFromJarFile_InitializeWindow(Participant p, int width, int height, String imagename, boolean isindirectory, String[] buttonnames){
+         diet.message.MessageStimulusImageDisplayNewJFrame msidjf = new MessageStimulusImageDisplayNewJFrame( width, height, imagename, isindirectory,  buttonnames );
          ps.sendMessageToParticipant(p,  msidjf);
          String allButtonnames="Buttons: ";
          for(int i=0;i<buttonnames.length;i++){
@@ -1859,10 +1860,11 @@ public class Conversation extends Thread{
      * 
      * @param p The participant who sees the image
      * @param imagename The name of the image (should be in the jar file) 
+     * @param isindirectory Whether the image is in the jar file OR is a physical file.
      * @param durationmsecs Duration of the stimulus.
      */    
-    public void showStimulusImageFromJarFile_ChangeImage(Participant p,String imagename, long durationmsecs){
-         diet.message.MessageStimulusImageChangeImage msidjf = new MessageStimulusImageChangeImage( imagename, durationmsecs );
+    public void showStimulusImageFromJarFile_ChangeImage(Participant p,String imagename, boolean isindirectory,long durationmsecs){
+         diet.message.MessageStimulusImageChangeImage msidjf = new MessageStimulusImageChangeImage( imagename,isindirectory ,durationmsecs );
          ps.sendMessageToParticipant(p,  msidjf);
          Conversation.this.saveAdditionalRowOfDataToSpreadsheetOfTurns("stimulusimage_change_instruction",  p, "Filename:"+imagename+ " Duration:"+durationmsecs);
     }

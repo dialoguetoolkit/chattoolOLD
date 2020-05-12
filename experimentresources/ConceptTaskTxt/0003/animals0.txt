@@ -1,9 +1,0 @@
-36641|Proboscis Monkey
-49219|ant
-106969|frogs
-159250|humans
-164609|kitty
-203984|woof
-224219|ponies
-234172|eels
-262281|Okapi

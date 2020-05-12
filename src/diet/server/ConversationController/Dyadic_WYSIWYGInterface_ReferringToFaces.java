@@ -157,7 +157,7 @@ public class Dyadic_WYSIWYGInterface_ReferringToFaces  extends DefaultWYSIWYGCon
     public void participantRejoinedConversation(Participant p) {
         c.textOutputWindow_Initialize(p, "instructions", "instructions", "", 500, 500, false, true);
         final  String[] buttons = {"same","different"};
-        c.showStimulusImageFromJarFile_InitializeWindow(p, 500, 580, "",buttons);
+        c.showStimulusImageFromJarFile_InitializeWindow(p, 500, 580, "",false, buttons);
         super.participantRejoinedConversation(p); //To change body of generated methods, choose Tools | Templates.
     }
     

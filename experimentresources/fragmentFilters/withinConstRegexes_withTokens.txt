@@ -1,2 +1,0 @@
-((\s*|.+_.+\s+)+)((\S+_(PRP\$|DT)\s+(\S+_(JJ|NN)\s+)*)\S+_NN[SP]*)(\s+.+_VB[DGNPZ]*)(\s+.+_(IN|DT|TO))\s*
-((\s*|.+_.+\s+)+)(((\S+_(JJ|NN)\s+)*)\S+_NN[SP]*)(\s+.+_VB[DGNPZ]*)(\s+.+_(IN|DT|TO))\s*

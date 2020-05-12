@@ -1,8 +1,0 @@
-5625|obstacle courses
-35343|brewing?
-39500|and fermenting.
-66437|i suppose you sometimes see them used to store explosives for detonation.
-92078|if you're planning to do that with them still in the barrel then it's not really @storage@ any more, it's more like a bomb,
-178968|you sometimes see them used as buoyancy aids.
-185843|for floating people/things.
-284828|you could use the stick to move it!

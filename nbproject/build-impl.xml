@@ -20,8 +20,8 @@ is divided into following sections:
 
         -->
 <project xmlns:if="ant:if" xmlns:j2seproject1="http://www.netbeans.org/ns/j2se-project/1" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxrpc="http://www.netbeans.org/ns/j2se-project/jax-rpc" xmlns:unless="ant:unless" basedir=".." default="default" name="chattool-impl">
-    <import file="build-native.xml"/>
     <import file="jnlp-impl.xml"/>
+    <import file="build-native.xml"/>
     <fail message="Please build using Ant 1.8.0 or higher.">
         <condition>
             <not>
@@ -117,7 +117,7 @@ is divided into following sections:
                 </not>
             </condition>
         </fail>
-        <j2seproject3:modulename property="module.name" sourcepath="${src.tangramset01.dir}:${src.tangramlists.dir}:${src.lists.dir}:${src.discoursepragmatics.dir}:${src.stimulisingle.dir}:${src.mazegame.dir}:${src.dir}"/>
+        <j2seproject3:modulename property="module.name" sourcepath="${src.tangramlists.dir}:${src.stimuli.dir}:${src.lists.dir}:${src.stimulisingle.dir}:${src.mazegame.dir}:${src.dir}"/>
         <condition property="named.module.internal">
             <and>
                 <isset property="module.name"/>
@@ -210,10 +210,9 @@ is divided into following sections:
         </condition>
         <condition property="have.sources">
             <or>
-                <available file="${src.tangramset01.dir}"/>
                 <available file="${src.tangramlists.dir}"/>
+                <available file="${src.stimuli.dir}"/>
                 <available file="${src.lists.dir}"/>
-                <available file="${src.discoursepragmatics.dir}"/>
                 <available file="${src.stimulisingle.dir}"/>
                 <available file="${src.mazegame.dir}"/>
                 <available file="${src.dir}"/>
@@ -319,10 +318,9 @@ is divided into following sections:
         <!-- You can override this target in the ../build.xml file. -->
     </target>
     <target depends="-pre-init,-init-private,-init-libraries,-init-user,-init-project,-do-init" name="-init-check">
-        <fail unless="src.tangramset01.dir">Must set src.tangramset01.dir</fail>
         <fail unless="src.tangramlists.dir">Must set src.tangramlists.dir</fail>
+        <fail unless="src.stimuli.dir">Must set src.stimuli.dir</fail>
         <fail unless="src.lists.dir">Must set src.lists.dir</fail>
-        <fail unless="src.discoursepragmatics.dir">Must set src.discoursepragmatics.dir</fail>
         <fail unless="src.stimulisingle.dir">Must set src.stimulisingle.dir</fail>
         <fail unless="src.mazegame.dir">Must set src.mazegame.dir</fail>
         <fail unless="src.dir">Must set src.dir</fail>
@@ -346,7 +344,7 @@ is divided into following sections:
     </target>
     <target depends="-init-ap-cmdline-properties,-init-source-module-properties" if="modules.supported.internal" name="-init-macrodef-javac-with-module">
         <macrodef name="javac" uri="http://www.netbeans.org/ns/j2se-project/3">
-            <attribute default="${src.tangramset01.dir}:${src.tangramlists.dir}:${src.lists.dir}:${src.discoursepragmatics.dir}:${src.stimulisingle.dir}:${src.mazegame.dir}:${src.dir}" name="srcdir"/>
+            <attribute default="${src.tangramlists.dir}:${src.stimuli.dir}:${src.lists.dir}:${src.stimulisingle.dir}:${src.mazegame.dir}:${src.dir}" name="srcdir"/>
             <attribute default="${build.classes.dir}" name="destdir"/>
             <attribute default="${javac.classpath}" name="classpath"/>
             <attribute default="${javac.modulepath}" name="modulepath"/>
@@ -358,7 +356,7 @@ is divided into following sections:
             <attribute default="${excludes}" name="excludes"/>
             <attribute default="${javac.debug}" name="debug"/>
             <attribute default="${empty.dir}" name="sourcepath" unless:set="named.module.internal"/>
-            <attribute default="${src.tangramset01.dir}:${src.tangramlists.dir}:${src.lists.dir}:${src.discoursepragmatics.dir}:${src.stimulisingle.dir}:${src.mazegame.dir}:${src.dir}" if:set="named.module.internal" name="sourcepath"/>
+            <attribute default="${src.tangramlists.dir}:${src.stimuli.dir}:${src.lists.dir}:${src.stimulisingle.dir}:${src.mazegame.dir}:${src.dir}" if:set="named.module.internal" name="sourcepath"/>
             <attribute default="${empty.dir}" name="gensrcdir"/>
             <element name="customize" optional="true"/>
             <sequential>
@@ -413,7 +411,7 @@ is divided into following sections:
     </target>
     <target depends="-init-ap-cmdline-properties,-init-source-module-properties" if="ap.supported.internal" name="-init-macrodef-javac-with-processors" unless="modules.supported.internal">
         <macrodef name="javac" uri="http://www.netbeans.org/ns/j2se-project/3">
-            <attribute default="${src.tangramset01.dir}:${src.tangramlists.dir}:${src.lists.dir}:${src.discoursepragmatics.dir}:${src.stimulisingle.dir}:${src.mazegame.dir}:${src.dir}" name="srcdir"/>
+            <attribute default="${src.tangramlists.dir}:${src.stimuli.dir}:${src.lists.dir}:${src.stimulisingle.dir}:${src.mazegame.dir}:${src.dir}" name="srcdir"/>
             <attribute default="${build.classes.dir}" name="destdir"/>
             <attribute default="${javac.classpath}" name="classpath"/>
             <attribute default="${javac.modulepath}" name="modulepath"/>
@@ -456,7 +454,7 @@ is divided into following sections:
     </target>
     <target depends="-init-ap-cmdline-properties,-init-source-module-properties" name="-init-macrodef-javac-without-processors" unless="ap.supported.internal">
         <macrodef name="javac" uri="http://www.netbeans.org/ns/j2se-project/3">
-            <attribute default="${src.tangramset01.dir}:${src.tangramlists.dir}:${src.lists.dir}:${src.discoursepragmatics.dir}:${src.stimulisingle.dir}:${src.mazegame.dir}:${src.dir}" name="srcdir"/>
+            <attribute default="${src.tangramlists.dir}:${src.stimuli.dir}:${src.lists.dir}:${src.stimulisingle.dir}:${src.mazegame.dir}:${src.dir}" name="srcdir"/>
             <attribute default="${build.classes.dir}" name="destdir"/>
             <attribute default="${javac.classpath}" name="classpath"/>
             <attribute default="${javac.modulepath}" name="modulepath"/>
@@ -491,7 +489,7 @@ is divided into following sections:
     </target>
     <target depends="-init-macrodef-javac-with-module,-init-macrodef-javac-with-processors,-init-macrodef-javac-without-processors" name="-init-macrodef-javac">
         <macrodef name="depend" uri="http://www.netbeans.org/ns/j2se-project/3">
-            <attribute default="${src.tangramset01.dir}:${src.tangramlists.dir}:${src.lists.dir}:${src.discoursepragmatics.dir}:${src.stimulisingle.dir}:${src.mazegame.dir}:${src.dir}" name="srcdir"/>
+            <attribute default="${src.tangramlists.dir}:${src.stimuli.dir}:${src.lists.dir}:${src.stimulisingle.dir}:${src.mazegame.dir}:${src.dir}" name="srcdir"/>
             <attribute default="${build.classes.dir}" name="destdir"/>
             <attribute default="${javac.classpath}" name="classpath"/>
             <sequential>
@@ -1119,15 +1117,14 @@ is divided into following sections:
                 <include name="*"/>
             </dirset>
         </pathconvert>
-        <j2seproject3:depend srcdir="${src.tangramset01.dir}:${src.tangramlists.dir}:${src.lists.dir}:${src.discoursepragmatics.dir}:${src.stimulisingle.dir}:${src.mazegame.dir}:${src.dir}:${build.generated.subdirs}"/>
+        <j2seproject3:depend srcdir="${src.tangramlists.dir}:${src.stimuli.dir}:${src.lists.dir}:${src.stimulisingle.dir}:${src.mazegame.dir}:${src.dir}:${build.generated.subdirs}"/>
     </target>
     <target depends="init,deps-jar,-pre-pre-compile,-pre-compile, -copy-persistence-xml,-compile-depend" if="have.sources" name="-do-compile">
         <j2seproject3:javac gensrcdir="${build.generated.sources.dir}"/>
         <copy todir="${build.classes.dir}">
-            <fileset dir="${src.tangramset01.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
             <fileset dir="${src.tangramlists.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${src.stimuli.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
             <fileset dir="${src.lists.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
-            <fileset dir="${src.discoursepragmatics.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
             <fileset dir="${src.stimulisingle.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
             <fileset dir="${src.mazegame.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
             <fileset dir="${src.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
@@ -1151,7 +1148,7 @@ is divided into following sections:
     <target depends="init,deps-jar,-pre-pre-compile" name="-do-compile-single">
         <fail unless="javac.includes">Must select some files in the IDE or set javac.includes</fail>
         <j2seproject3:force-recompile/>
-        <j2seproject3:javac excludes="" gensrcdir="${build.generated.sources.dir}" includes="${javac.includes}, module-info.java" sourcepath="${src.tangramset01.dir}:${src.tangramlists.dir}:${src.lists.dir}:${src.discoursepragmatics.dir}:${src.stimulisingle.dir}:${src.mazegame.dir}:${src.dir}"/>
+        <j2seproject3:javac excludes="" gensrcdir="${build.generated.sources.dir}" includes="${javac.includes}, module-info.java" sourcepath="${src.tangramlists.dir}:${src.stimuli.dir}:${src.lists.dir}:${src.stimulisingle.dir}:${src.mazegame.dir}:${src.dir}"/>
     </target>
     <target name="-post-compile-single">
         <!-- Empty placeholder for easier customization. -->
@@ -1543,16 +1540,13 @@ is divided into following sections:
             <classpath>
                 <path path="${javac.classpath}"/>
             </classpath>
-            <fileset dir="${src.tangramset01.dir}" excludes="${bug5101868workaround},${excludes}" includes="${includes}">
-                <filename name="**/*.java"/>
-            </fileset>
             <fileset dir="${src.tangramlists.dir}" excludes="${bug5101868workaround},${excludes}" includes="${includes}">
                 <filename name="**/*.java"/>
             </fileset>
-            <fileset dir="${src.lists.dir}" excludes="${bug5101868workaround},${excludes}" includes="${includes}">
+            <fileset dir="${src.stimuli.dir}" excludes="${bug5101868workaround},${excludes}" includes="${includes}">
                 <filename name="**/*.java"/>
             </fileset>
-            <fileset dir="${src.discoursepragmatics.dir}" excludes="${bug5101868workaround},${excludes}" includes="${includes}">
+            <fileset dir="${src.lists.dir}" excludes="${bug5101868workaround},${excludes}" includes="${includes}">
                 <filename name="**/*.java"/>
             </fileset>
             <fileset dir="${src.stimulisingle.dir}" excludes="${bug5101868workaround},${excludes}" includes="${includes}">
@@ -1572,16 +1566,13 @@ is divided into following sections:
             <arg line="${javadoc.html5.cmd.line.arg}"/>
         </javadoc>
         <copy todir="${dist.javadoc.dir}">
-            <fileset dir="${src.tangramset01.dir}" excludes="${excludes}" includes="${includes}">
-                <filename name="**/doc-files/**"/>
-            </fileset>
             <fileset dir="${src.tangramlists.dir}" excludes="${excludes}" includes="${includes}">
                 <filename name="**/doc-files/**"/>
             </fileset>
-            <fileset dir="${src.lists.dir}" excludes="${excludes}" includes="${includes}">
+            <fileset dir="${src.stimuli.dir}" excludes="${excludes}" includes="${includes}">
                 <filename name="**/doc-files/**"/>
             </fileset>
-            <fileset dir="${src.discoursepragmatics.dir}" excludes="${excludes}" includes="${includes}">
+            <fileset dir="${src.lists.dir}" excludes="${excludes}" includes="${includes}">
                 <filename name="**/doc-files/**"/>
             </fileset>
             <fileset dir="${src.stimulisingle.dir}" excludes="${excludes}" includes="${includes}">

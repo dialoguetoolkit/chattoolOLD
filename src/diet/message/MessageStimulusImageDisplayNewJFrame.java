@@ -18,15 +18,17 @@ public class MessageStimulusImageDisplayNewJFrame extends Message{
     public int height;
     public String nameOfImage;
     public String[] buttonsUnderneath;
+    public boolean isinexperimentresources;
 
     
-    public MessageStimulusImageDisplayNewJFrame(int width, int height, String nameOfImage , String[] buttonsUnderneath){
+    public MessageStimulusImageDisplayNewJFrame(int width, int height, String nameOfImage , boolean isinexperimentresources, String[] buttonsUnderneath){
         super("server","server");
         this.id=id;
         this.width=width;
         this.height=height;
         this.nameOfImage=nameOfImage;
         this.buttonsUnderneath=buttonsUnderneath;
+        this.isinexperimentresources=isinexperimentresources;
            
     }
 

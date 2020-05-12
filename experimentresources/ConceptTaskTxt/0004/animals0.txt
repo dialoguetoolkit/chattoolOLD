@@ -1,5 +1,0 @@
-27562|fish 
-171937|bears 
-218531|bird 
-282297|slugs 
-296953|worms 

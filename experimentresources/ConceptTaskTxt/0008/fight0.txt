@@ -1,6 +1,0 @@
-12906|arcade
-16625|boxing
-27562|button
-32265|thumb
-42547|finger
-43968|hand

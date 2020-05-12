@@ -6,24 +6,28 @@
 
 package diet.task.CustomizableReferentialTask;
 
-import diet.task.JointReference.*;
 import diet.attribval.AttribVal;
 import diet.server.Conversation;
 import diet.server.ConversationController.DefaultConversationController;
 import diet.server.ConversationController.ui.CustomDialog;
 import diet.server.Participant;
-import diet.task.ProceduralComms.JTrialTimer;
 import diet.task.ProceduralComms.JTrialTimerActionRecipientInterface;
 import diet.utils.HashtableWithDefaultvalue;
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.Date;
 import java.util.Random;
 import java.util.Vector;
+import javax.imageio.ImageIO;
 
 /**
  *
@@ -31,17 +35,17 @@ import java.util.Vector;
  */
 public class CustomizableReferentialTask implements JTrialTimerActionRecipientInterface {
 
-    JJPauser jjp =new JJPauser();
+    JPauser jjp =new JPauser();
 
     DefaultConversationController cC;
     
-    JTrialTimer  jtt;// = new JTrialTimer(this, 10000);
+   // JTrialTimer  jtt;// = new JTrialTimer(this, 10000);
     
    // double probabOfSame= 0.5;//CustomDialog.getDouble("Enter the probability of SAME stimuli", 0, 1, 0.5);
     public Participant pA;
     public Participant pB;
     Random r = new Random();
-    final long durationOfStimulus = 500000;// = CustomDialog.getLong("How long should the stimuli be displayed for?", 5000);
+    final long durationOfStimulus =  CustomDialog.getLong("How long should the stimuli be displayed for?", 5000);
     //boolean blockTextEntryDuringStimulus = true;// = CustomDialog.getBoolean("Block text entry while stimulus is displayed?", "block", "do not block");
     
     //String   pA_Imagename;
@@ -62,40 +66,83 @@ public class CustomizableReferentialTask implements JTrialTimerActionRecipientIn
     double correctscoreinrement = 10;//CustomDialog.getDouble("What is the score increment for correct guesses?", 10);
     double incorrectpenalty = 5;//CustomDialog.getDouble("What is the point penalty for incorrect guesses?", 5);
     
-   // final  String[] buttons = {"test1","test2", "test3", "test4", "test5"};
-   // final  String[] buttons2 = {"testA","testB", "testC", "testD", "testE"};
+   
+    boolean showButtons = CustomDialog.getBoolean("Do you want to show buttons underneath the stimuli on the clients?", "Buttons", "No Buttons");
     
-    boolean showButtons = CustomDialog.getBoolean("Do you want to show buttons uncerneath the stimuli on the clients?", "Buttons", "No Buttons");
+    String displayname = "instructions";     
     
-     String displayname = "instructions";
+    boolean showFeedbackToDirector = false;
+    boolean showFeedbackToMatcher = false;
+      
+    String option="tangramlist01.txt";
+    String directoryname =  "tangramset01";//"tangramset02directortraining";
+      
+    int stimuluswidth = -1;
+    int stimulusheight=-1;   
     
-      
-      boolean showFeedbackToDirector = false;
-      boolean showFeedbackToMatcher = false;
-      
-      String option="tangramlist01.txt";
-      String directoryname = "tangramset02directortraining";
-      
-      
-      //Vector loadedTraining = new Vector();
-      //Vector loadedTEsting = new Vector();
-      
+    boolean isinphysicalfolder = false;
+    
+    public Vector<String[]> vstimuli = new Vector();
+    public Vector<String[]> vstimuliFULL = new Vector();
     
     public CustomizableReferentialTask(DefaultConversationController cC) {
         //durationOfStimulus = 5000;//CustomDialog.getLong("How long should the stimuli be displayed for?", 5000);
         //blockTextEntryDuringStimulus = CustomDialog.getBoolean("Block text entry while stimulus is displayed?", "block", "do not block");
         this.cC=cC;
-        jtt = new JTrialTimer(this, 10000);
+        //jtt = new JTrialTimer(this, 10000);
     }
     public CustomizableReferentialTask(DefaultConversationController cC, long durationOfStimulus){
          //this.durationOfStimulus=durationOfStimulus;
          this.cC=cC;      
-         loadStimuliList();
+         loadFromFile();
+         
+         //loadStimuliList();
+         Dimension d =  getImageHeights();
+         if(d.width==-1||d.height==-1) {
+             CustomDialog.showDialog("The server can't find the images in the JAR file\nTry recompiling the project!");
+         }
+         stimuluswidth=d.width;
+         stimulusheight=d.height;
     }
+ 
     
-    File referentlist;
-    String directoryinjarofreferentimages;
     
+   private void loadFromFile(){
+       String userdir = System.getProperty("user.dir");
+       String directory = (userdir+File.separator+"experimentresources"+ File.separator+ "stimuli");
+       
+       File stimulisequence = CustomDialog.loadFile(directory, "Choose the text file containing the sequences of stimuli. \nIt must be in the same directory as the stimuli", null);
+       String foldername = stimulisequence.getParentFile().getName();
+       this.directoryname=foldername;
+       if(stimulisequence==null)CustomDialog.showDialog("Couldn't find the file!");
+       Vector data = new Vector();
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(stimulisequence)); 
+            String st;
+            String header = br.readLine();
+            while ((st = br.readLine()) != null){ 
+                 System.out.println(st);
+                 
+                 st= st.replace(" ", "");
+                 String[] row =  st.split("¦");
+                 data.addElement(row);
+                 System.out.println("Split to:");
+                 for(int i =0;i<row.length;i++){
+                     System.out.print(row[i]+ "|");
+                 }
+                 System.out.println("");
+                  
+                 
+                 
+            } 
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+      
+        this.vstimuli=(Vector<String[]>)data.clone();
+        this.vstimuliFULL=(Vector<String[]>)data.clone();
+   }
+  
     
       
   
@@ -107,7 +154,6 @@ public class CustomizableReferentialTask implements JTrialTimerActionRecipientIn
          String[] round5 = {"set1.png",  "D0_B_1.png","1", "1,2,3,4,5,6,7,8",  "5"};
          String[] round6 = {"D0_C_2.png", "set2.png", "2", "1,2,3,4,5,6,7,8",  "1"};
          
-         
          vstimuli.add(round1);
          vstimuli.add(round2);
          vstimuli.add(round3);
@@ -115,8 +161,28 @@ public class CustomizableReferentialTask implements JTrialTimerActionRecipientIn
          vstimuli.add(round5);
          vstimuli.add(round6);
          
+         vstimuliFULL = (Vector<String[]>)vstimuli.clone();
+         
     }
     
+    
+    public Dimension getImageHeights(){   
+        String firstfilename = directoryname+"/"+vstimuliFULL.elementAt(0)[0];
+        System.err.println("Trying to get image heights for: "+firstfilename);
+        BufferedImage bimg =null ;
+        try {   
+             ClassLoader cldr = CustomizableReferentialTask.class.getClassLoader();
+             URL url = cldr.getResource(firstfilename);
+             bimg = ImageIO.read(url);
+             int width = bimg.getWidth();
+             int height = bimg.getHeight();
+             return (new Dimension(width,height)); 
+       } catch (IOException ex) {
+            // handle exception...
+           ex.printStackTrace();   
+       } 
+        return new Dimension(-1,-1); 
+    }   
     
     
     
@@ -146,8 +212,7 @@ public class CustomizableReferentialTask implements JTrialTimerActionRecipientIn
     
     
     
-    public Vector<String[]> vstimuli = new Vector();
-    public Vector<String[]> vstimuliFULL = new Vector();
+    
     
   
     public boolean participantCanMakeChoice(Participant p){
@@ -168,7 +233,7 @@ public class CustomizableReferentialTask implements JTrialTimerActionRecipientIn
     
     public void  participantRejoined(Participant p){
         if(p==pA){
-             cC.c.showStimulusImageFromJarFile_InitializeWindow(pA, 710, 400, "",emptybuttons);
+             cC.c.showStimulusImageFromJarFile_InitializeWindow(pA, this.stimuluswidth, this.stimulusheight, "",false, emptybuttons);
              if(this.showButtons){
                  cC.c.showStimulusImageEnableButtons(pA, this.getButtonsFromOptions(), false);
              }else{
@@ -179,7 +244,7 @@ public class CustomizableReferentialTask implements JTrialTimerActionRecipientIn
              
         }
         else{
-              cC.c.showStimulusImageFromJarFile_InitializeWindow(pB, 710, 400, "",emptybuttons);
+              cC.c.showStimulusImageFromJarFile_InitializeWindow(pB, stimuluswidth, stimulusheight, "",false, emptybuttons);
               if(this.showButtons){
                  cC.c.showStimulusImageEnableButtons(pB, this.getButtonsFromOptions(), false);
              }else{
@@ -200,10 +265,8 @@ public class CustomizableReferentialTask implements JTrialTimerActionRecipientIn
                this.pB=pA;
                this.pA=pB; 
             }
-        
- 
-        cC.c.showStimulusImageFromJarFile_InitializeWindow(pA, 710, 400, "",emptybuttons);
-        cC.c.showStimulusImageFromJarFile_InitializeWindow(pB, 710, 400, "",emptybuttons);
+        cC.c.showStimulusImageFromJarFile_InitializeWindow(pA, stimuluswidth, stimulusheight, "",this.isinphysicalfolder,emptybuttons);
+        cC.c.showStimulusImageFromJarFile_InitializeWindow(pB, stimuluswidth, stimulusheight, "",this.isinphysicalfolder,emptybuttons);
         
         try{
             //Thread.sleep(10000);
@@ -276,6 +339,10 @@ public class CustomizableReferentialTask implements JTrialTimerActionRecipientIn
                       if(showButtons) cC.c.showStimulusImageReplaceWithNewButtons(pB, emptybuttons, true );  
                   }
                   Conversation.printWSln("Main", "THE FACES ARE:"  + this.currentTrial[0]+"----"+this.currentTrial[1]);
+                  
+                  
+                  
+                  
           
      }
     
@@ -344,9 +411,10 @@ public class CustomizableReferentialTask implements JTrialTimerActionRecipientIn
                      this.doCountdowntoNextSet_Step4_ShowMessageAtStartOfTrial();
                  }   
                  else if(timeRemaining<=0){
-                        cC.c.sendInstructionToParticipant(pA, "You ran out of time!" );
-                        cC.c.sendInstructionToParticipant(pB, "You ran out of time!" );
-                      this.doCountdowntoNextSet_Step1_Countdown("Your score is: ","Time till next image: ",false, false);
+                     this.jjp.addTextln("TIMEOUT");
+                     cC.c.sendInstructionToParticipant(pA, "You ran out of time!" );
+                     cC.c.sendInstructionToParticipant(pB, "You ran out of time!" );
+                     this.doCountdowntoNextSet_Step1_Countdown("Your score is: ","Time till next image: ",false, false);
                      this.doCountdowntoNextSet_Step2_LoadNextSet();
                      this.startOfCurrentGame= new Date().getTime();
                       bonustimethisgame=0;
@@ -395,8 +463,8 @@ public class CustomizableReferentialTask implements JTrialTimerActionRecipientIn
                
                   
                   
-                  cC.c.showStimulusImageFromJarFile_ChangeImage(pA, directoryname+"/"+this.currentTrial[0], 1); //Making the image disappear
-                  cC.c.showStimulusImageFromJarFile_ChangeImage(pB, directoryname+"/"+this.currentTrial[1], 1); //Making the image disappear
+               //   cC.c.showStimulusImageFromJarFile_ChangeImage(pA, directoryname+"/"+this.currentTrial[0],this.isinphysicalfolder, 1); //Making the image disappear
+               //   cC.c.showStimulusImageFromJarFile_ChangeImage(pB, directoryname+"/"+this.currentTrial[1], this.isinphysicalfolder, 1); //Making the image disappear
                   
                   
                   
@@ -415,7 +483,8 @@ public class CustomizableReferentialTask implements JTrialTimerActionRecipientIn
                   
                   if(blocktextentry)   cC.c.changeClientInterface_clearMainWindows(pA);
                    if(blocktextentry) cC.c.changeClientInterface_clearMainWindows(pB);
-                  if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions","" ,false, pA,pB );
+                   if(displayname!=null) cC.c.textOutputWindow_ChangeText("instructions","" ,false, pA,pB );
+                  
                   //cC.c.changeClientInterface_backgroundColour(pA, Color.white);
                   //cC.c.changeClientInterface_backgroundColour(pB, Color.white);
                   //cC.c.newsendInstructionToParticipant(pA, "Please " );
@@ -437,12 +506,15 @@ public class CustomizableReferentialTask implements JTrialTimerActionRecipientIn
      public void doCountdowntoNextSet_Step2_LoadNextSet(){
          loadNextStimulusSetSet(this.directoryname);     
          gamenumber++;
-         cC.c.showStimulusImageFromJarFile_ChangeImage(pA, directoryname+"/"+this.currentTrial[0], durationOfStimulus);
-         cC.c.showStimulusImageFromJarFile_ChangeImage(pB, directoryname+"/"+this.currentTrial[1], durationOfStimulus);  
-          this.jjp.addTextln("Gamenumber: "+gamenumber);
+         cC.c.showStimulusImageFromJarFile_ChangeImage(pA, directoryname+"/"+this.currentTrial[0], this.isinphysicalfolder,durationOfStimulus);
+         cC.c.showStimulusImageFromJarFile_ChangeImage(pB, directoryname+"/"+this.currentTrial[1], this.isinphysicalfolder,durationOfStimulus);  
+        
+         this.jjp.addTextln("");
+         this.jjp.addTextln("Gamenumber: "+gamenumber + "/"+this.vstimuliFULL.size());
          this.jjp.addTextln(pA.getParticipantID()+","+pA.getUsername()+" "+directoryname+"/"+this.currentTrial[0]);
          this.jjp.addTextln(pB.getParticipantID()+","+pB.getUsername()+" "+directoryname+"/"+this.currentTrial[1]);
-         this.jjp.addTextln("");
+         this.jjp.addTextln("Target: "+currentTrial[4]);
+         
          currentsethasbeensolved = false;         
      }
      
@@ -600,6 +672,7 @@ public class CustomizableReferentialTask implements JTrialTimerActionRecipientIn
         command=command.toUpperCase();
         command = command.replace("/", "");
         
+        this.jjp.addTextln(sender.getParticipantID()+" "+ sender.getUsername() + " "+ "Selected: "+command);
         
         String permittedSender = currentTrial[2];
         
@@ -676,6 +749,8 @@ public class CustomizableReferentialTask implements JTrialTimerActionRecipientIn
     
     public void updateScores(boolean success){
         if(success){
+            this.jjp.addTextln("CORRECT");
+            
             int scorepAsuccess = this.getScoreCORRECT(pA);
             this.htscoreCORRECT.putObject(pA, scorepAsuccess+1);
             
@@ -693,6 +768,7 @@ public class CustomizableReferentialTask implements JTrialTimerActionRecipientIn
             
         }
         else{
+            this.jjp.addTextln("INCORRECT");
              int scorepAsuccess = this.getScoreINCORRECT(pA);
             this.htscoreINCORRECT.putObject(pA, scorepAsuccess+1);
             
@@ -783,7 +859,7 @@ public class CustomizableReferentialTask implements JTrialTimerActionRecipientIn
     public void processNotification(String nameOfEvent) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         if(nameOfEvent.equalsIgnoreCase("timeout")){
-            
+            //this.jjp.addTextln("CORRECT");
         }
     }
 

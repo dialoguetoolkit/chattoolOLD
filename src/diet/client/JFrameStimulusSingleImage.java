@@ -17,6 +17,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Date;
@@ -201,49 +202,43 @@ public class JFrameStimulusSingleImage extends JFrame implements WindowListener,
     }
     
     
-    public void displayImage(final String jarresourcename){
+    public void displayImage(final String jarresourcename, boolean isphysicalfile){
         
         if(jarresourcename==null)return;
         if(jarresourcename.equalsIgnoreCase(""))return;
         
-        
-        System.err.println("Trying to LOAD "+jarresourcename);
-        BufferedImage image =null ;
-
-        try {
-             
-             ClassLoader cldr = JFrameStimulusSingleImage.class.getClassLoader();
-             URL url = cldr.getResource(jarresourcename);
-             image = ImageIO.read(url);
-             //image = ImageIO.read(new File("C:\\sourceforge\\experimentresources\\gridstimuli\\stimuliset5\\A01.png"));
-       } catch (IOException ex) {
-            // handle exception...
-          
-           ex.printStackTrace();
-           
-       }
-        final BufferedImage finalimage = image;
-        if(finalimage==null){
-            return;
+       System.err.println("Trying to LOAD1 "+jarresourcename);
+        BufferedImage bi=null;
+        if(isphysicalfile){
+            bi = loadFromDirectory(jarresourcename);
         }
+        else{
+            bi = loadFromJar(jarresourcename);
+        }
+        
+        if(bi==null){
+            cts.sendErrorMessage("ERROR: Could not find "+jarresourcename);
+            CustomDialog.showDialog("ERROR: Could not find "+jarresourcename );
+            
+        }
+        
+        final BufferedImage finalimage = bi;
+        final JFrameStimulusSingleImage jfssi = this;
         SwingUtilities.invokeLater(new Runnable(){
-            public void run(){
+           public void run(){                    
                 jpssi.changeImage(finalimage, jarresourcename);
             }
             
-        });    
+        });
     }
     
     JFrameStimulusSingleImageCountdownThread jfssictCurrent;
     
     
-     public void displayImage(final String jarresourcename, final long duration){
-        
-        System.err.println("Trying to LOAD1 "+jarresourcename);
-        BufferedImage image =null ;
-
+ 
+ public BufferedImage loadFromJar(String jarresourcename){
+     BufferedImage image =null ;
         try {
-             
              ClassLoader cldr = JFrameStimulusSingleImage.class.getClassLoader();
              URL url = cldr.getResource(jarresourcename);
              image = ImageIO.read(url);
@@ -253,45 +248,57 @@ public class JFrameStimulusSingleImage extends JFrame implements WindowListener,
             // handle exception...
            ex.printStackTrace();
            System.err.println("ERROR TRYING TO LOAD3: "+jarresourcename);
-           
+            cts.sendErrorMessage(ex);
        }
-        final BufferedImage finalimage = image;
+        return image;
+ }
+ 
+ 
+ public BufferedImage loadFromDirectory(String jarresourcename){
+      String currentDirectory = System.getProperty("user.dir");
+      
+      jarresourcename = jarresourcename.replace("/", File.separator);
+      jarresourcename = jarresourcename.replace("\\", File.separator);
+      
+      String filename= currentDirectory+File.separator+  "experimentresources"+ File.separator+   "stimuli"+ File.separator+ jarresourcename;
+      System.err.println("loadfromdirectory: "+filename);
+      try{
+      BufferedImage image = ImageIO.read(new File(filename));
+      return image;
+      } catch (Exception e){
+          cts.sendErrorMessage(e);
+      }
+      return null;
+ }
+    
+    
+ public void displayImage(final String resourcename, boolean  isindirectoryfinal, long duration){
+        
+        System.err.println("Trying to LOAD1 "+resourcename);
+        BufferedImage bi=null;
+        if(isindirectoryfinal){
+            bi = loadFromDirectory(resourcename);
+        }
+        else{
+            bi = loadFromJar(resourcename);
+        }
+        
+        if(bi==null){
+            cts.sendErrorMessage("ERROR: Could not find "+resourcename);
+            CustomDialog.showDialog("ERROR: Could not find "+resourcename );
+            
+        }
+        
+        final BufferedImage finalimage = bi;
         final JFrameStimulusSingleImage jfssi = this;
         SwingUtilities.invokeLater(new Runnable(){
-            public void run(){
-                
-                
-                jpssi.changeImage(finalimage, jarresourcename,duration);
-                
-                
+           public void run(){                    
+                jpssi.changeImage(finalimage, resourcename,duration);
             }
             
         });
         
     }
-    
-    
-     /*
-     Thread t = new Thread(){
-                    public void run(){
-                         
-                        while(new Date().getTime()-startdisplaytime < duration)  {
-                          try{
-                            long remainingtime = new Date().getTime()-startdisplaytime; 
-                            Thread.sleep(remainingtime+1);
-                         }catch(Exception e){
-                             e.printStackTrace();
-                         }
-                        }
-                       jfssi.displayBackgroundColour(Color.GRAY);
-                      
-                       }
-                       
-                };
-     
-     
-     */
-    
     
     
 

@@ -1,0 +1,7 @@
+P1 IMAGE   ¦P2 IMAGE    ¦MATCHER, 1=P1, 2=P2, B=BOTH ¦BUTTONS DISPLAYED ¦CORRECT ANSWER
+D0_A_0.png ¦set0.png    ¦2                           ¦1,2,3,4,5,6,7,8   ¦1
+set1.png   ¦D0_B_1.png  ¦1                           ¦1,2,3,4,5,6,7,8   ¦5
+D0_C_2.png ¦set2.png    ¦2                           ¦1,2,3,4,5,6,7,8   ¦1
+D0_A_0.png ¦set0.png    ¦2                           ¦1,2,3,4,5,6,7,8   ¦1
+set1.png   ¦D0_B_1.png  ¦1                           ¦1,2,3,4,5,6,7,8   ¦5
+D0_C_2.png ¦set2.png    ¦2                           ¦1,2,3,4,5,6,7,8   ¦1

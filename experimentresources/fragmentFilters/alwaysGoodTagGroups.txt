@@ -1,4 +1,0 @@
-High_Low
-Low_Mid
-Mid_Low
-

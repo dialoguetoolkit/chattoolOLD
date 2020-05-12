@@ -99,8 +99,8 @@ public class FaceCommsTaskControllerDyadic_BACKUP {
     public void startTask(Participant pA, Participant pB){
         this.pA=pA;
         this.pB=pB;
-        cC.c.showStimulusImageFromJarFile_InitializeWindow(pA, 500, 580, "",buttons);
-        cC.c.showStimulusImageFromJarFile_InitializeWindow(pB, 500, 580, "",buttons);
+        cC.c.showStimulusImageFromJarFile_InitializeWindow(pA, 500, 580, "",false, buttons);
+        cC.c.showStimulusImageFromJarFile_InitializeWindow(pB, 500, 580, "",false, buttons);
         cC.c.showStimulusImageEnableButtons(pB, buttons, false);
         cC.c.showStimulusImageEnableButtons(pA, buttons, false);
         doCountdowntoNextSet("Please start!","Next face in " );
@@ -264,8 +264,8 @@ public class FaceCommsTaskControllerDyadic_BACKUP {
                   
                  
                   gamenumber++;
-                  cC.c.showStimulusImageFromJarFile_ChangeImage(pA, pA_Imagename, durationOfStimulus);
-                  cC.c.showStimulusImageFromJarFile_ChangeImage(pB, pB_Imagename, durationOfStimulus);
+                  cC.c.showStimulusImageFromJarFile_ChangeImage(pA, pA_Imagename, false,durationOfStimulus);
+                  cC.c.showStimulusImageFromJarFile_ChangeImage(pB, pB_Imagename, false, durationOfStimulus);
                   
                   
                   

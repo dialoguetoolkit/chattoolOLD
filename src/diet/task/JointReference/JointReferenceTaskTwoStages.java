@@ -763,11 +763,11 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
     
     public void  participantRejoined(Participant p){
         if(p==pA){
-             cC.c.showStimulusImageFromJarFile_InitializeWindow(pA, 710, 400, "",buttons);
+             cC.c.showStimulusImageFromJarFile_InitializeWindow(pA, 710, 400, "",false,buttons);
              cC.c.showStimulusImageEnableButtons(pA, buttons, false);
         }
         else{
-              cC.c.showStimulusImageFromJarFile_InitializeWindow(pB, 710, 400, "",buttons);
+              cC.c.showStimulusImageFromJarFile_InitializeWindow(pB, 710, 400, "",false, buttons);
                cC.c.showStimulusImageEnableButtons(pB, buttons, false);
         }
     }
@@ -781,8 +781,8 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
         
         
         
-        cC.c.showStimulusImageFromJarFile_InitializeWindow(pA, 710, 400, "",buttons);
-        cC.c.showStimulusImageFromJarFile_InitializeWindow(pB, 710, 400, "",buttons);
+        cC.c.showStimulusImageFromJarFile_InitializeWindow(pA, 710, 400, "",false, buttons);
+        cC.c.showStimulusImageFromJarFile_InitializeWindow(pB, 710, 400, "",false, buttons);
        // cC.c.showStimulusImageEnableButtons(pB, buttons, false);
         //cC.c.showStimulusImageEnableButtons(pA, buttons, false);
         //doCountdowntoNextSet_DEPRECATED("Please start!","Next face in " );
@@ -986,8 +986,8 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
                   cC.c.showStimulusImageEnableButtons(pB, buttons, false);
                   cC.c.showStimulusImageEnableButtons(pA, buttons, false);
                   
-                  cC.c.showStimulusImageFromJarFile_ChangeImage(pA, pA_Imagename, 1); //Making the image disappear
-                  cC.c.showStimulusImageFromJarFile_ChangeImage(pB, pB_Imagename, 1); //Making the image disappear
+                  cC.c.showStimulusImageFromJarFile_ChangeImage(pA, pA_Imagename, false,1); //Making the image disappear
+                  cC.c.showStimulusImageFromJarFile_ChangeImage(pB, pB_Imagename, false, 1); //Making the image disappear
                   
                   
                   
@@ -1028,8 +1028,8 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
      public void doCountdowntoNextSet_Step2_LoadNextSet(){
          loadNextStimulusSetSet(this.directoryname);     
          gamenumber++;
-         cC.c.showStimulusImageFromJarFile_ChangeImage(pA, pA_Imagename, durationOfStimulus);
-         cC.c.showStimulusImageFromJarFile_ChangeImage(pB, pB_Imagename, durationOfStimulus);  
+         cC.c.showStimulusImageFromJarFile_ChangeImage(pA, pA_Imagename,false, durationOfStimulus);
+         cC.c.showStimulusImageFromJarFile_ChangeImage(pB, pB_Imagename, false,durationOfStimulus);  
           this.jjp.addTextln("Gamenumber: "+gamenumber);
          this.jjp.addTextln(pA.getParticipantID()+","+pA.getUsername()+" "+pA_Imagename);
          this.jjp.addTextln(pB.getParticipantID()+","+pB.getUsername()+" "+pB_Imagename);
@@ -1287,8 +1287,8 @@ public class JointReferenceTaskTwoStages implements JTrialTimerActionRecipientIn
                   
                  
                   gamenumber++;
-                  cC.c.showStimulusImageFromJarFile_ChangeImage(pA, pA_Imagename, durationOfStimulus);
-                  cC.c.showStimulusImageFromJarFile_ChangeImage(pB, pB_Imagename, durationOfStimulus);
+                  cC.c.showStimulusImageFromJarFile_ChangeImage(pA, pA_Imagename, false,durationOfStimulus);
+                  cC.c.showStimulusImageFromJarFile_ChangeImage(pB, pB_Imagename, false, durationOfStimulus);
                   
                   
                   

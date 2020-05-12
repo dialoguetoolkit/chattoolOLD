@@ -576,7 +576,8 @@ public class ConnectionToServer extends Thread {
                        public void run(){
                            jfssi = new JFrameStimulusSingleImage(ctsForStatic, msidj.width, msidj.height, msidj.buttonsUnderneath);
                            String name = msidj.nameOfImage;
-                           jfssi.displayImage(name);
+                           boolean isinexperimentresources = msidj.isinexperimentresources;
+                           jfssi.displayImage(name, isinexperimentresources);
                        }
                     });
                     
@@ -587,9 +588,10 @@ public class ConnectionToServer extends Thread {
               final MessageStimulusImageChangeImage msiciForStatic = (MessageStimulusImageChangeImage)m;
               final String name = msiciForStatic.nameOfImage;
               final long duration = msiciForStatic.duration;
+              final boolean isindirectory = msiciForStatic.isindirectory;
               SwingUtilities.invokeLater(new Runnable(){
                        public void run(){
-                          if(jfssi!=null)jfssi.displayImage(name, duration);
+                          if(jfssi!=null)jfssi.displayImage(name, isindirectory,duration);
                          
                        }
               });         

@@ -1,6 +1,6 @@
 There are two sets of docs:
 
-If you want to use the toolkit without programming, see the usermanual in the /docsusermanual folder
+If you want to use the toolkit without programming, see the usermanual: https://github.com/dialoguetoolkit/chattool/blob/master/docsusermanual/chattool_usermanual_May2020.pdf
 
 The docs for programming the toolkit are available at: https://dialoguetoolkit.readthedocs.io/en/stable/
 

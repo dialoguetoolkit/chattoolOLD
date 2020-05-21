@@ -45,7 +45,7 @@ public class CustomizableReferentialTask implements JTrialTimerActionRecipientIn
     public Participant pA;
     public Participant pB;
     Random r = new Random();
-    final long durationOfStimulus =  CustomDialog.getLong("How long should the stimuli be displayed for?", 5000);
+    final long durationOfStimulus =  CustomDialog.getLong("How long should the stimuli be displayed for?", 600000);
     //boolean blockTextEntryDuringStimulus = true;// = CustomDialog.getBoolean("Block text entry while stimulus is displayed?", "block", "do not block");
     
     //String   pA_Imagename;
@@ -71,8 +71,8 @@ public class CustomizableReferentialTask implements JTrialTimerActionRecipientIn
     
     String displayname = "instructions";     
     
-    boolean showFeedbackToDirector = false;
-    boolean showFeedbackToMatcher = false;
+    boolean showFeedbackToDirector = CustomDialog.getBoolean("Does the director receive feedback from the task about success/failure?", "Receives feedback", "No feedback");
+    boolean showFeedbackToMatcher = CustomDialog.getBoolean("Does the matcher receive feedback from the task about success/failure?", "Receives feedback", "No feedback");
       
     String option="tangramlist01.txt";
     String directoryname =  "tangramset01";//"tangramset02directortraining";
@@ -111,6 +111,9 @@ public class CustomizableReferentialTask implements JTrialTimerActionRecipientIn
        String userdir = System.getProperty("user.dir");
        String directory = (userdir+File.separator+"experimentresources"+ File.separator+ "stimuli");
        
+       CustomDialog.showDialog("Important:\n\n(1) The stimuli must be in a subdirectory of /experimentresources/stimuli.\n"
+               + "(2) The file containing the stimuli sequence must be in the same subdirectory as the stimuli.\n"
+               + "\n(See usermanual for more details!)");
        File stimulisequence = CustomDialog.loadFile(directory, "Choose the text file containing the sequences of stimuli. \nIt must be in the same directory as the stimuli", null);
        String foldername = stimulisequence.getParentFile().getName();
        this.directoryname=foldername;
@@ -141,9 +144,27 @@ public class CustomizableReferentialTask implements JTrialTimerActionRecipientIn
       
         this.vstimuli=(Vector<String[]>)data.clone();
         this.vstimuliFULL=(Vector<String[]>)data.clone();
+        this.checkStimuliFilesExist();
    }
   
     
+   private void checkStimuliFilesExist(){
+       String userdir = System.getProperty("user.dir");
+       String dir = (userdir+File.separator+"experimentresources"+ File.separator+ "stimuli"+ File.separator+directoryname);
+       
+       
+       for(int i=0;i<this.vstimuliFULL.size();i++){
+           File f1 = new File(dir, (String)vstimuliFULL.elementAt(i)[0]);
+           if(!f1.exists()){
+               CustomDialog.showDialog("Can't find file:\n\n"+f1.getAbsolutePath()+"\n\nCheck and fix the stimuli sequence before running the experiment!" );
+           }
+           File f2 = new File(dir, (String)vstimuliFULL.elementAt(i)[1]);
+           if(!f2.exists()){
+               CustomDialog.showDialog("Can't find file:\n\n"+f2.getAbsolutePath()+"\n\nCheck and fix the stimuli sequence before running the experiment!" );
+           }
+       }
+   }
+   
       
   
     private void loadStimuliList(){
@@ -257,14 +278,29 @@ public class CustomizableReferentialTask implements JTrialTimerActionRecipientIn
     String[] emptybuttons ={};
     
     public void startTask(Participant pA, Participant pB){
+        
             if(pA.getParticipantID().contains("1")){
                this.pA=pA;
                this.pB=pB;    
             }
-            else{
+            else if(pB.getParticipantID().contains("1")){
                this.pB=pA;
                this.pA=pB; 
             }
+            else{
+                boolean order = r.nextBoolean();
+                if(order){
+                      this.pA=pA;
+                      this.pB=pB;     
+                }
+                else{
+                      this.pB=pA;
+                      this.pA=pB;  
+                }
+                
+               
+            }
+            
         cC.c.showStimulusImageFromJarFile_InitializeWindow(pA, stimuluswidth, stimulusheight, "",this.isinphysicalfolder,emptybuttons);
         cC.c.showStimulusImageFromJarFile_InitializeWindow(pB, stimuluswidth, stimulusheight, "",this.isinphysicalfolder,emptybuttons);
         

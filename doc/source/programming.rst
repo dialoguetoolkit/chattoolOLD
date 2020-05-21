@@ -13,7 +13,7 @@ When the ``ConversationController`` object receives a turn  from one of the clie
 It also automatically takes care of saving the data (i.e. all keypresses), and ensures, e.g. that the participants receive "is typing" notifications.
 
 
-Think of the ConversationController object as a switchboard operator that controls the wiring of the switchboard. The plugs of the switchboard are almost all located in the ``diet.server.Conversation.java`` object.  
+Think of the ConversationController object as a switchboard operator that controls the wiring of the switchboard. The sockets of the switchboard (for patching incoming and outgoing connections) are located in the ``diet.server.Conversation.java`` object.  
 
 In 99% of experimental designs, you should only have to modify code in your custom subclass of ```diet.server.ConversationController``` which controls the interaction by calling code in ```diet.server.Conversation```
 

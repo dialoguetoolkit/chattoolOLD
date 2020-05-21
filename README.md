@@ -1,3 +1,11 @@
+There are two sets of docs:
+
+If you want to use the toolkit without programming, see the usermanual in the /docsusermanual folder
+
+The docs for programming the toolkit are available at: https://dialoguetoolkit.readthedocs.io/en/latest/
+
+
+
 # Getting started
 
 This repository is a netbeans (https://netbeans.org/) project. If opened in netbeans it should run "out of the box"

@@ -2,7 +2,7 @@ There are two sets of docs:
 
 If you want to use the toolkit without programming, see the usermanual in the /docsusermanual folder
 
-The docs for programming the toolkit are available at: https://dialoguetoolkit.readthedocs.io/en/latest/
+The docs for programming the toolkit are available at: https://dialoguetoolkit.readthedocs.io/en/stable/
 
 
 

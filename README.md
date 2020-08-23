@@ -1,3 +1,12 @@
+# About
+
+This is the previous version (up till August 2020) of the chattool, which is archived here.
+
+
+
+
+
+
 There are two sets of docs:
 
 If you want to use the toolkit without programming, see the usermanual: https://github.com/dialoguetoolkit/chattool/blob/master/docsusermanual/chattool_usermanual_May2020.pdf
